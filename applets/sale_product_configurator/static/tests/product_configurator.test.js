@@ -242,7 +242,7 @@ QUnit.module('Product Configurator', {
                         '<field name="product_custom_attribute_value_ids" invisible="1" />' +
                     '</group>' +
                     '<footer>' +
-                        '<button string="Add" class="btn-primary o_sale_product_configurator_add disabled"/>' +
+                        '<button string="Add" class="btn-primary rounded-sm o_sale_product_configurator_add disabled"/>' +
                         '<button string="Cancel" class="btn-secondary" special="cancel"/>' +
                     '</footer>' +
                 '</form>',

@@ -2254,7 +2254,7 @@
         <div t-if="view" role="dialog" id="reset_template_confirmation" class="modal" tabindex="-1" t-ignore="true">
             <div class="modal-dialog">
                 <form role="form">
-                    <div class="modal-content">
+                    <div class="modal-content rounded-sm">
                         <header class="modal-header">
                             <h4 class="modal-title">Reset templates</h4>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">×</button>

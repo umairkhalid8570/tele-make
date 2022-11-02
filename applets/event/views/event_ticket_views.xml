@@ -117,7 +117,7 @@
                 <field name="seats_unconfirmed"/>
                 <templates>
                     <t t-name="kanban-box">
-                        <div t-attf-class="oe_kanban_card oe_kanban_global_click">
+                        <div t-attf-class="oe_kanban_card rounded-sm oe_kanban_global_click">
                             <div class="row">
                                 <div class="col-8">
                                     <strong><t t-esc="record.name.value"/></strong>

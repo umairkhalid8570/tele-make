@@ -13,8 +13,8 @@ from tele import http, _
 from tele.exceptions import AccessError
 from tele.http import request
 from tele.tools import consteq
-from tele.addons.portal.controllers.mail import _message_post_helper
-from tele.addons.portal.controllers.portal import CustomerPortal, pager as portal_pager, get_records_pager
+from tele.applets.portal.controllers.mail import _message_post_helper
+from tele.applets.portal.controllers.portal import CustomerPortal, pager as portal_pager, get_records_pager
 import logging
 _logger = logging.getLogger(__name__)
 

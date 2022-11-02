@@ -135,7 +135,7 @@
                 <field name="location_dest_id" invisible="1"/>
                 <templates>
                     <t t-name="kanban-box">
-                        <div t-attf-class="oe_kanban_card oe_kanban_global_click">
+                        <div t-attf-class="oe_kanban_card rounded-sm oe_kanban_global_click">
                             <strong><field name="product_id"/></strong>
                             <field name="picking_id"/>
                             <div class="row">

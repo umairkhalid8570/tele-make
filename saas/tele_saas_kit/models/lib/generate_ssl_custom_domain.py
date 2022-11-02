@@ -229,7 +229,7 @@ if __name__ == '__main__':
     subdomain = "trial_test_4.tele12-saas.tele.com"
     custom_domain = "gc-new.tele12-saas.tele.com"
 
-    main_add(subdomain=subdomain, custom_domain=custom_domain, ssl_flag=True, module_path="/opt/tele14/tele_addons/tele_saas_kit/")
+    main_add(subdomain=subdomain, custom_domain=custom_domain, ssl_flag=True, module_path="/opt/tele14/tele_applets/tele_saas_kit/")
     
     # EVERTHING UNDERNEATH THIS IS FOR TESTING
     #tele_saas_data = os.getcwd()

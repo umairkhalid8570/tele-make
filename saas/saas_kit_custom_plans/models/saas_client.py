@@ -8,12 +8,12 @@
 #################################################################################
 
 from tele import models, api, fields, _
-from tele.addons.auth_signup.models.res_partner import random_token as generate_token
+from tele.applets.auth_signup.models.res_partner import random_token as generate_token
 from tele.exceptions import UserError, Warning
 from tele.modules.module import get_module_resource
-from tele.addons.tele_saas_kit.models.lib import query
-from tele.addons.tele_saas_kit.models.lib import saas
-from tele.addons.tele_saas_kit.models.lib import client
+from tele.applets.tele_saas_kit.models.lib import query
+from tele.applets.tele_saas_kit.models.lib import saas
+from tele.applets.tele_saas_kit.models.lib import client
 
 
 import logging
@@ -106,7 +106,7 @@ class CustomSaasClient(models.Model):
                     obj.container_id = response.get("container_id", False)
                     obj.state = "started"
 
-                    obj.data_directory_path = response.get("extra-addons", False)
+                    obj.data_directory_path = response.get("extra-applets", False)
                     obj.install_modules()
 
                 else:

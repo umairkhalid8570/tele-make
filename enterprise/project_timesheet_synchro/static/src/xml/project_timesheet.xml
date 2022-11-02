@@ -149,7 +149,7 @@
                 </div>
                 <div role="dialog" class="modal pt_deletion_from_list_modal" aria-hidden="true">
                     <div class="modal-dialog modal-sm">
-                        <div class="modal-content">
+                        <div class="modal-content rounded-sm">
                             <main class="modal-body">
                                 Would you like to delete this activity?
                             </main>
@@ -413,7 +413,7 @@
             <!-- Modal to confirm deletion of an activity -->
             <div role="dialog" class="modal pt_deletion_modal" aria-hidden="true">
                 <div class="modal-dialog modal-sm">
-                    <div class="modal-content">
+                    <div class="modal-content rounded-sm">
                         <main class="modal-body">
                             Are you sure that you want to delete this activity?
                         </main>
@@ -471,7 +471,7 @@
                 </div>
                 <div role="dialog" class="modal pt_reset_modal" aria-hidden="true">
                     <div class="modal-dialog modal-sm">
-                        <div class="modal-content">
+                        <div class="modal-content rounded-sm">
                             <main class="modal-body">
                                 Are you sure that you want to reset the app?
                             </main>
@@ -484,7 +484,7 @@
                 </div>
                 <div role="dialog" class="modal pt_keep_guest_data" aria-hidden="true">
                     <div class="modal-dialog modal-sm">
-                        <div class="modal-content">
+                        <div class="modal-content rounded-sm">
                             <main class="modal-body">
                                 Would you like the activities, projects and tasks that you created as a guest user to be synchronized as well?<br/> Note that this will create new projects and tasks on your Tele instance
                             </main>

@@ -457,7 +457,7 @@
                         </div>
                     </group>
                     <footer>
-                        <button string="Create" name="close_dialog" type="object" class="btn-primary o_create_job" data-hotkey="q"/>
+                        <button string="Create" name="close_dialog" type="object" class="btn-primary rounded-sm o_create_job" data-hotkey="q"/>
                         <button string="Discard" class="btn-secondary" special="cancel" data-hotkey="z"/>
                     </footer>
                 </sheet>

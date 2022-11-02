@@ -1575,7 +1575,7 @@
 
         <div class="modal fade" t-att-data-spam-ids="str(posts_ids.ids)" id="markAllAsSpam" tabindex="-1" role="dialog" aria-labelledby="markAllAsSpam" aria-hidden="true">
             <div class="modal-dialog" role="document">
-                <div class="modal-content">
+                <div class="modal-content rounded-sm">
                     <div class="modal-header d-flex align-items-center pb-0">
                         <div class="text-muted mr-2">Filter by:</div>
                         <ul class="nav nav-tabs border-bottom-0" id="myTab" role="tablist">

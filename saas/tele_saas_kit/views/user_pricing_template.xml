@@ -20,7 +20,7 @@
 
                 <div class="modal fade" id="modify_min_users">
                     <div class="modal-dialog modal-md">
-                        <div class="modal-content">
+                        <div class="modal-content rounded-sm">
                             <div class="modal-header">
                                 <h4 class="modal-title">Update number of users of your instance
                                 </h4>

@@ -56,7 +56,7 @@
                     <field name="user_id"/>
                     <templates>
                         <t t-name="kanban-box">
-                            <div t-attf-class="oe_kanban_card oe_kanban_global_click">
+                            <div t-attf-class="oe_kanban_card rounded-sm oe_kanban_global_click">
                                 <div>
                                     <strong><span><field name="analytic_id"/></span></strong>
                                 </div>

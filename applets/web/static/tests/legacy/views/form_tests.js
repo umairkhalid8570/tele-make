@@ -9643,8 +9643,8 @@ QUnit.module('Views', {
             arch: '<form string="Partners">' +
                     '<field name="state" invisible="1"/>' +
                     '<header>' +
-                        '<button name="post" class="btn-primary firstButton" string="Confirm" type="object"/>' +
-                        '<button name="post" class="btn-primary secondButton" string="Confirm2" type="object"/>' +
+                        '<button name="post" class="btn-primary rounded-sm firstButton" string="Confirm" type="object"/>' +
+                        '<button name="post" class="btn-primary rounded-sm secondButton" string="Confirm2" type="object"/>' +
                     '</header>' +
                     '<sheet>' +
                         '<group>' +
@@ -9676,8 +9676,8 @@ QUnit.module('Views', {
             arch: '<form string="Partners">' +
                     '<field name="state" invisible="1"/>' +
                     '<header>' +
-                        '<button name="post" class="btn-primary firstButton" string="Confirm" type="object"/>' +
-                        '<button name="post" class="btn-primary secondButton" string="Confirm2" type="object"/>' +
+                        '<button name="post" class="btn-primary rounded-sm firstButton" string="Confirm" type="object"/>' +
+                        '<button name="post" class="btn-primary rounded-sm secondButton" string="Confirm2" type="object"/>' +
                     '</header>' +
                     '<sheet>' +
                         '<group>' +

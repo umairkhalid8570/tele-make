@@ -5,7 +5,7 @@ import getpass
 
 PYTHON_ENV = "/usr/bin/python3"
 LOG_FILE_PATH = "/var/log/tele/backup_cron.log"
-BACKUP_SCRIPT_PATH = "/tele/tele_addons/tele_backup_restore/models/lib/saas_client_backup.py"
+BACKUP_SCRIPT_PATH = "/tele/tele_applets/tele_backup_restore/models/lib/saas_client_backup.py"
 
 _logger = logging.getLogger(__name__)
 

@@ -11,7 +11,7 @@ from tele import http, _
 from tele.http import request
 from tele.exceptions import UserError
 
-from tele.addons.tele_saas_kit.controllers.main import MailController
+from tele.applets.tele_saas_kit.controllers.main import MailController
 
 import logging
 

@@ -12,7 +12,7 @@ import logging
 import json
 from tele import http, _, fields
 from tele.http import request
-from tele.addons.website_sale.controllers.main import WebsiteSale
+from tele.applets.website_sale.controllers.main import WebsiteSale
 from tele.tools.json import scriptsafe as json_scriptsafe
 
 _logger = logging.getLogger(__name__)

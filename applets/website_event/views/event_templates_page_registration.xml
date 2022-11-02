@@ -272,7 +272,7 @@
         <div class="modal-dialog modal-lg" role="document">
             <form id="attendee_registration" t-attf-action="/event/#{slug(event)}/registration/confirm" method="post" class="js_website_submit_form">
                 <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
-                <div class="modal-content">
+                <div class="modal-content rounded-sm">
                     <div class="modal-header align-items-center">
                         <h4 class="modal-title">Attendees</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span>×</span></button>

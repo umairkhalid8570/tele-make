@@ -5,7 +5,7 @@
         <div role="dialog" class="modal fade" id="ups_bill_my_account_service">
             <div class="modal-dialog">
                 <form id="set_property_ups_carrier_account" action="/shop/property_ups_carrier_account/set" method="post">
-                    <div class="modal-content">
+                    <div class="modal-content rounded-sm">
                         <header class="modal-header">
                             <h4 class="modal-titled">UPS Bill My Account</h4>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">x</button>

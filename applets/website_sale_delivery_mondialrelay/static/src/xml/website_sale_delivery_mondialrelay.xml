@@ -3,7 +3,7 @@
     <t t-name="website_sale_delivery_mondialrelay">
          <div class="modal fade" id="modal_mondialrelay" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="rounded modal-dialog modal-lg">
-                <div class="modal-content">
+                <div class="modal-content rounded-sm">
                     <div class="modal-header">
                         <div class="h5 modal-title">Choose your Parcel Point</div>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">

@@ -349,7 +349,7 @@ tele.define('web.owl_dialog_tests', function (require) {
                 const $modal = $(
                     `<div role="dialog" class="${className}" tabindex="-1">
                         <div class="modal-dialog medium">
-                            <div class="modal-content">
+                            <div class="modal-content rounded-sm">
                                 <main class="modal-body">The modal body</main>
                             </div>
                         </div>

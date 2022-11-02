@@ -222,7 +222,7 @@
                         </div>
 
                         <div class="modal-dialog" t-if="not sale_order.has_to_be_signed(True) and sale_order.has_to_be_paid(True)">
-                            <div class="modal-content">
+                            <div class="modal-content rounded-sm">
                                 <header class="modal-header">
                                     <h4 class="modal-title">Validate Order</h4>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">×</button>

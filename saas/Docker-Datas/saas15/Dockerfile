@@ -64,11 +64,11 @@ Run set -x; \
 
 
 
-#Mount /var/lib/tele to allow restoring filestore and /mnt/extra-addons for users addons
-RUN mkdir -p /mnt/extra-addons \
+#Mount /var/lib/tele to allow restoring filestore and /mnt/extra-applets for users applets
+RUN mkdir -p /mnt/extra-applets \
         && mkdir -p /opt/data_dir \
         && chown -R tele /opt/data_dir \
-        && chown -R tele /mnt/extra-addons
+        && chown -R tele /mnt/extra-applets
 
 COPY ./entrypoint.sh /
 COPY ./run_tele.sh /

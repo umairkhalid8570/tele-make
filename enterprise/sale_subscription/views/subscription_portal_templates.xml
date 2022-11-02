@@ -249,7 +249,7 @@
                             <!-- ======  Change Payment Method ====== -->
                             <div t-if="account.stage_category == 'progress' and not account.to_renew" role="dialog" class="modal fade" id="payment_managing">
                                 <div class="modal-dialog">
-                                    <div class="modal-content">
+                                    <div class="modal-content rounded-sm">
                                         <header class="modal-header">
                                             <h4 class="modal-title">Pay With</h4>
                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">??</button>
@@ -291,7 +291,7 @@
                 <!-- ======  MODAL: Close Subscription ====== -->
                 <div role="dialog" class="modal fade" id="wc-modal-close" t-if="display_close" aria-hidden="true">
                     <div class="modal-dialog">
-                        <div class="modal-content">
+                        <div class="modal-content rounded-sm">
                             <header class="modal-header">
                                 <h4 class="modal-title">Close Subscription</h4>
                             </header>

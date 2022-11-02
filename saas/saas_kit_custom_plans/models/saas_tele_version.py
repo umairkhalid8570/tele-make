@@ -11,8 +11,8 @@ from tele import models, fields, api
 from tele.exceptions import UserError, Warning
 from tele.models import NewId
 from tele.modules.module import get_module_resource
-from tele.addons.tele_saas_kit.models.lib import saas
-from tele.addons.tele_saas_kit.models.lib import query
+from tele.applets.tele_saas_kit.models.lib import saas
+from tele.applets.tele_saas_kit.models.lib import query
 
 import logging
 
@@ -125,7 +125,7 @@ class SaasTeleVersion(models.Model):
         data['free_users'] = int(IrDefault.get('res.config.settings', 'free_users') or 0) if data['is_free_users'] else 0
         data['is_free_users'] = data['is_free_users'] if data['free_users'] else False
         data['due_user_cost'] = int(IrDefault.get('res.config.settings', 'due_user_cost') or 0)
-        data['addons_path'] = IrDefault.get('res.config.settings', 'addons_path')
+        data['applets_path'] = IrDefault.get('res.config.settings', 'applets_path')
         data['max_users'] = IrDefault.get('res.config.settings', 'max_users')
         data['is_multi_server'] = IrDefault.get('res.config.settings', 'is_multi_server')
         data['user_cost'] = int(IrDefault.get('res.config.settings', 'user_cost') or 0)

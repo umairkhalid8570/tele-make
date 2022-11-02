@@ -61,16 +61,16 @@ RUN set -x; \
     && chmod 640 /etc/tele/tele-server.conf \
     && pip3 install wheel
 
-#Mount /var/lib/tele to allow restoring filestore and /mnt/extra-addons for users addons
+#Mount /var/lib/tele to allow restoring filestore and /mnt/extra-applets for users applets
 Run set -x; \
-    mkdir -p /mnt/extra-addons \
-    && chown -R tele /mnt/extra-addons \
+    mkdir -p /mnt/extra-applets \
+    && chown -R tele /mnt/extra-applets \
     && pip3 install -r /opt/tele/requirements.txt
 
 COPY ./entrypoint.sh /
 COPY ./run_tele.sh /
 
-#VOLUME ["/mnt/extra-addons","/opt/data_dir"]
+#VOLUME ["/mnt/extra-applets","/opt/data_dir"]
 # Install rtlcss (on Debian buster)
 RUN npm install -g rtlcss
 

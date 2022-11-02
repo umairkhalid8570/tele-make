@@ -749,7 +749,7 @@ QUnit.module('Views', {
             res_id: 1,
             buttons: [{
                 text: 'Click me !',
-                classes: "btn-secondary o_form_button_magic",
+                classes: "btn-secondary rounded-sm o_form_button_magic",
                 close: true,
                 click: function () {
                     return reject ? Promise.reject() : Promise.resolve();

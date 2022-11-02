@@ -252,7 +252,7 @@
                 t-on-click="_onBackdropClick"
                 >
                 <div class="modal-dialog" t-att-class="size">
-                    <div class="modal-content" t-att-class="props.contentClass">
+                    <div class="modal-content rounded-sm" t-att-class="props.contentClass">
                         <header t-if="props.renderHeader" class="modal-header">
                             <h4 class="modal-title">
                                 <t t-esc="props.title"/>

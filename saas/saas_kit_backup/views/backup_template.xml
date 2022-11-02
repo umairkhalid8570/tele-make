@@ -10,7 +10,7 @@
             <div class="container mb64 backup_process_main">
                 <div class="modal fade" id="create_backup_process_model">
                     <div class="modal-dialog modal-md">
-                        <div class="modal-content">
+                        <div class="modal-content rounded-sm">
                             <div class="modal-header">
                                 <h4 class="modal-title">Enter Backup Process Details
                                 </h4>
@@ -184,7 +184,7 @@
                                             </div>
                                             <div class="modal fade" id="replace_stage_instance">
                                                 <div class="modal-dialog modal-md">
-                                                    <div class="modal-content">
+                                                    <div class="modal-content rounded-sm">
                                                         <div class="modal-header">
                                                             <h4 class="modal-title">Staging instance(s) already running. Please select a instance to replace with new Instance.
                                                             </h4>

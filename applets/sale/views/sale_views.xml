@@ -167,7 +167,7 @@
                     <progressbar field="activity_state" colors='{"planned": "success", "today": "warning", "overdue": "danger"}'/>
                     <templates>
                         <t t-name="kanban-box">
-                            <div t-attf-class="oe_kanban_card oe_kanban_global_click">
+                            <div t-attf-class="oe_kanban_card rounded-sm oe_kanban_global_click">
                                 <div class="o_kanban_record_top mb16">
                                     <div class="o_kanban_record_headings mt4">
                                         <strong class="o_kanban_record_title"><span><t t-esc="record.partner_id.value"/></span></strong>
@@ -594,7 +594,7 @@
                                     <field name="company_id" invisible="1"/>
                                     <templates>
                                         <t t-name="kanban-box">
-                                            <div t-attf-class="oe_kanban_card oe_kanban_global_click pl-0 pr-0 {{ record.display_type.raw_value ? 'o_is_' + record.display_type.raw_value : '' }}">
+                                            <div t-attf-class="oe_kanban_card rounded-sm oe_kanban_global_click pl-0 pr-0 {{ record.display_type.raw_value ? 'o_is_' + record.display_type.raw_value : '' }}">
                                                 <t t-if="!record.display_type.raw_value">
                                                     <div class="row no-gutters">
                                                         <div class="col-2 pr-3">

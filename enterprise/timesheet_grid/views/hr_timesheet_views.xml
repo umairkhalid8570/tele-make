@@ -332,7 +332,7 @@
             <field name="mode">primary</field>
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='unit_amount']" position="before">
-                    <button type="object" class="btn-primary o_timesheet_validate" name="action_validate_timesheet" string="Validate"/>
+                    <button type="object" class="btn-primary rounded-sm o_timesheet_validate" name="action_validate_timesheet" string="Validate"/>
                 </xpath>
             </field>
         </record>
@@ -413,7 +413,7 @@
                         attrs="{'invisible': ['|', ('display_timer_start_primary', '=', False), ('encode_uom_in_days', '=', True)]}" groups="hr_timesheet.group_hr_timesheet_user" icon="fa-clock-o"/>
                     <button class="btn-secondary" name="action_timer_start" type="object" string="Start" data-hotkey="z" title="Start timer"
                         attrs="{'invisible': ['|', ('display_timer_start_secondary', '=', False), ('encode_uom_in_days', '=', True)]}" groups="hr_timesheet.group_hr_timesheet_user" icon="fa-clock-o"/>
-                    <button class="btn-primary o_fsm_stop" name="action_timer_stop" type="object" string="Stop" data-hotkey="z" title="Stop timer"
+                    <button class="btn-primary rounded-sm o_fsm_stop" name="action_timer_stop" type="object" string="Stop" data-hotkey="z" title="Stop timer"
                         attrs="{'invisible': ['|', ('display_timer_stop', '=', False), ('encode_uom_in_days', '=', True)]}" groups="hr_timesheet.group_hr_timesheet_user" icon="fa-clock-o"/>
                     <button class="btn-secondary" name="action_timer_pause" type="object" string="Pause" data-hotkey="w" title="Pause timer"
                         attrs="{'invisible': ['|', ('display_timer_pause', '=', False), ('encode_uom_in_days', '=', True)]}" groups="hr_timesheet.group_hr_timesheet_user"/>

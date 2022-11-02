@@ -55,7 +55,7 @@ class tele_container:
         self.container_passwd = parser.get("options","container_passwd")
         self.template_tele_port = parser.get("options","template_tele_port_v"+version)
         self.template_tele_lport = parser.get("options","template_tele_lport_v"+version)
-        self.common_addons = parser.get("options","common_addons_v"+version)
+        self.common_applets = parser.get("options","common_applets_v"+version)
         self.tele_template = parser.get("options","tele_template_v"+version)
         self.data_dir = parser.get("options","data_dir_path")
         self.tele_image = parser.get("options","tele_image_v"+version)
@@ -166,14 +166,14 @@ class tele_container:
             _logger.info("Errro",e)
             raise e
 
-    def mkdir_mnt_extra_addons(self, folder):
+    def mkdir_mnt_extra_applets(self, folder):
         try:
             path = self.tele_config+"/"+folder+"/data-dir"
             #os.mkdir(path)
             os.makedirs(path,exist_ok=True)
             os.chmod(path,0o777)
             _logger.info("Folder %s created"%path)
-            self.response['extra-addons'] = path
+            self.response['extra-applets'] = path
             return path
         except OSError as e:
             _logger.info("Errro",e)
@@ -227,8 +227,8 @@ class tele_container:
             self.add_config_paramenter(self.tele_config+"/"+name+"/tele-server.conf","db_host = %s"%self.db_host) 
             self.add_config_paramenter(self.tele_config+"/"+name+"/tele-server.conf","db_port = %s"%self.db_port) 
             self.add_config_paramenter(self.tele_config+"/"+name+"/tele-server.conf","db_password = %s"%self.db_password) 
-            extra_path = self.mkdir_mnt_extra_addons(name)
-            self.dclient.containers.run(image=self.tele_image,name=name,detach=True,volumes={extra_path:{'bind':self.data_dir,"mode":"rw"}, path: {'bind': "/etc/tele/", 'mode': 'rw'},self.common_addons:{'bind': "/mnt/extra-addons", 'mode': 'rw'}},ports={8069:port, 8071:lport},tty=True,restart_policy={"Name":"unless-stopped"}) #Start the container
+            extra_path = self.mkdir_mnt_extra_applets(name)
+            self.dclient.containers.run(image=self.tele_image,name=name,detach=True,volumes={extra_path:{'bind':self.data_dir,"mode":"rw"}, path: {'bind': "/etc/tele/", 'mode': 'rw'},self.common_applets:{'bind': "/mnt/extra-applets", 'mode': 'rw'}},ports={8069:port, 8071:lport},tty=True,restart_policy={"Name":"unless-stopped"}) #Start the container
             _logger.info("Let's give Tele 2s")
             time.sleep(2)
             self.response['container_id'] = self.response['name']
@@ -438,14 +438,14 @@ def create_db_template(db_template=None,modules=None, config_path=None,host_serv
         _logger.info("NNNNAAAA %s"%TeleObject.tele_template)
         try:
             path = TeleObject.mkdir_TeleConfig(TeleObject.tele_template,"tele-template.conf") #Mounting the tele.conf file. Should ask user for the location.Assuming /root/Tele/config/$name for now. 
-            extra_path = TeleObject.mkdir_mnt_extra_addons(TeleObject.tele_template)
+            extra_path = TeleObject.mkdir_mnt_extra_applets(TeleObject.tele_template)
             TeleObject.add_config_paramenter(TeleObject.tele_config+"/"+TeleObject.tele_template+"/tele-server.conf","db_user = %s"%TeleObject.db_user) 
             TeleObject.add_config_paramenter(TeleObject.tele_config+"/"+TeleObject.tele_template+"/tele-server.conf","admin_passwd = %s"%TeleObject.template_master) 
             TeleObject.add_config_paramenter(TeleObject.tele_config+"/"+TeleObject.tele_template+"/tele-server.conf","db_port = %s"%TeleObject.db_port) 
             TeleObject.add_config_paramenter(TeleObject.tele_config+"/"+TeleObject.tele_template+"/tele-server.conf","db_host = %s"%TeleObject.db_host) 
             TeleObject.add_config_paramenter(TeleObject.tele_config+"/"+TeleObject.tele_template+"/tele-server.conf","db_password = %s"%TeleObject.db_password)
 
-            TeleObject.dclient.containers.run(image = TeleObject.tele_image, name = TeleObject.tele_template, detach = True, volumes = {extra_path:{'bind':TeleObject.data_dir,"mode":"rw"}, path: {'bind': "/etc/tele/", 'mode': 'rw'}, TeleObject.common_addons:{'bind': "/mnt/extra-addons", 'mode': 'rw'}}, ports = {8069:TeleObject.template_tele_port,8071:TeleObject.template_tele_lport}, tty = True,restart_policy={"Name":"unless-stopped"}) #Start the container
+            TeleObject.dclient.containers.run(image = TeleObject.tele_image, name = TeleObject.tele_template, detach = True, volumes = {extra_path:{'bind':TeleObject.data_dir,"mode":"rw"}, path: {'bind': "/etc/tele/", 'mode': 'rw'}, TeleObject.common_applets:{'bind': "/mnt/extra-applets", 'mode': 'rw'}}, ports = {8069:TeleObject.template_tele_port,8071:TeleObject.template_tele_lport}, tty = True,restart_policy={"Name":"unless-stopped"}) #Start the container
             _logger.info("Let's give Tele 2s")
             time.sleep(2)
 

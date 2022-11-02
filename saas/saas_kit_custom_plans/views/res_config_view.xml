@@ -46,8 +46,8 @@
                             <div class="o_setting_right_pane oe_inline">
                                 <div class="content-group" >
                                     <div class="row">
-                                        <label for="addons_path" class="col-md-3 o_light_label"/>
-                                        <field name="addons_path" required="1"/>
+                                        <label for="applets_path" class="col-md-3 o_light_label"/>
+                                        <field name="applets_path" required="1"/>
                                     </div>
                                 </div>  
                                 <div class="text-muted">

@@ -56,7 +56,7 @@
                             <field name="task_id" invisible="1"/>
                             <templates>
                                 <t t-name="kanban-box">
-                                    <div t-attf-class="oe_kanban_card oe_kanban_global_click">
+                                    <div t-attf-class="oe_kanban_card rounded-sm oe_kanban_global_click">
                                         <div class="row">
                                             <div class="col-6">
                                                 <strong><span><t t-esc="record.employee_id.value"/></span></strong>

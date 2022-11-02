@@ -44,13 +44,13 @@ class SaasClient(models.Model):
     _description = 'Class for managing SaaS Instances(Clients)'
 
     @api.depends('data_directory_path')
-    def _compute_addons_path(self):
+    def _compute_applets_path(self):
         for obj in self:
             if obj.data_directory_path and type(obj.id) != NewId:
-                obj.addons_path = "{}/addons/15.0".format(
+                obj.applets_path = "{}/applets/15.0".format(
                     obj.data_directory_path)
             else:
-                obj.addons_path = ""
+                obj.applets_path = ""
 
     name = fields.Char(string="Name")
     client_url = fields.Char(string="URL")
@@ -62,7 +62,7 @@ class SaasClient(models.Model):
     container_name = fields.Char(string="Instance Name")
     container_id = fields.Char(string="Instance ID")
     data_directory_path = fields.Char(string="Data Directory Path")
-    addons_path = fields.Char(compute='_compute_addons_path', string="Extra Addons Path")
+    applets_path = fields.Char(compute='_compute_applets_path', string="Extra Applets Path")
     saas_module_ids = fields.One2many(comodel_name="saas.module.status", inverse_name="client_id", string="Related Modules")
     server_id = fields.Many2one(comodel_name="saas.server", string="SaaS Server")
     invitation_url = fields.Char("Invitation URL")
@@ -120,7 +120,7 @@ class SaasClient(models.Model):
                 obj.container_id = response.get("container_id", False)
                 obj.state = "started"
 
-                obj.data_directory_path = response.get("extra-addons", False)
+                obj.data_directory_path = response.get("extra-applets", False)
                 if response.get("modules_installation", False):
                     for module_status_id in obj.saas_module_ids:
                         module_status_id.status = 'installed'

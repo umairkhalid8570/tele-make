@@ -32,7 +32,7 @@
                     <t t-call="hr_contract_salary.salary_package_next_step_button"/>
                     <div role="dialog" id="hr_cs_modal" class="modal fade" tabindex="-1" aria-hidden="true">
                         <div class="modal-dialog" role="document">
-                            <div class="modal-content">
+                            <div class="modal-content rounded-sm">
                                 <header class="modal-header">
                                     <h3 class="modal-title">Net calculation</h3>
                                     <a role="button" class="btn btn-secondary rounded-sm close" data-dismiss="modal" aria-label="close"><span t-translation="off">&amp;times</span></a>

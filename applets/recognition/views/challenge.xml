@@ -144,7 +144,7 @@
                 <field name="user_ids"/>
                 <templates>
                     <t t-name="kanban-box">
-                        <div t-attf-class="oe_kanban_card o_kanban_recognition oe_kanban_global_click">
+                        <div t-attf-class="oe_kanban_card rounded-sm o_kanban_recognition oe_kanban_global_click">
                             <div class="o_kanban_content">
                                <strong>
                                    <h4 class="o_kanban_record_title"><field name="name"/></h4>

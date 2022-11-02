@@ -11,7 +11,7 @@ from tele import fields, api, models
 from tele.exceptions import UserError
 from tele.tools.config import config
 
-from tele.addons.tele_backup_restore.models.lib import manage_backup_crons
+from tele.applets.tele_backup_restore.models.lib import manage_backup_crons
 from datetime import datetime
 
 import logging

@@ -17,7 +17,7 @@
 from werkzeug.exceptions import BadRequest
 from tele.http import request
 from tele import http
-from tele.addons.web.controllers.main import Home, ensure_db
+from tele.applets.web.controllers.main import Home, ensure_db
 import logging
 import base64
 

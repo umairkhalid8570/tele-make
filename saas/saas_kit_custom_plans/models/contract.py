@@ -8,9 +8,9 @@
 #################################################################################
 
 from tele import models, api, fields, _
-from tele.addons.auth_signup.models.res_partner import random_token as generate_token
+from tele.applets.auth_signup.models.res_partner import random_token as generate_token
 from tele.exceptions import UserError, Warning
-from tele.addons.tele_saas_kit.models.lib import query
+from tele.applets.tele_saas_kit.models.lib import query
 
 
 from dateutil.relativedelta import relativedelta

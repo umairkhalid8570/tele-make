@@ -9,7 +9,7 @@
                 t-ref="modal"
                 >
                 <div class="modal-dialog" t-att-class="size">
-                    <div class="modal-content" t-att-class="contentClass">
+                    <div class="modal-content rounded-sm" t-att-class="contentClass">
                         <header t-if="renderHeader" class="modal-header">
                             <h4 class="modal-title">
                                 <t t-esc="title"/>

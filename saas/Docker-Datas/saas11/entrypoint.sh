@@ -5,9 +5,9 @@
 echo "Entering The entrypoint.sh"
 echo "Setting up Pip3 dependency if any"
 
-if [ -f /mnt/extra-addons/requirements.txt ];
+if [ -f /mnt/extra-applets/requirements.txt ];
 then
-        pip3 install -r /mnt/extra-addons/requirements.txt
+        pip3 install -r /mnt/extra-applets/requirements.txt
 fi
 
 echo "Call sent for starting Tele"

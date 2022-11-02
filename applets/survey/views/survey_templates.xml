@@ -113,7 +113,7 @@
         <!-- Modal used to display error message, i.c.o. ajax error -->
         <div role="dialog" class="modal fade" id="MasterTabErrorModal" >
             <div class="modal-dialog">
-                <div class="modal-content">
+                <div class="modal-content rounded-sm">
                     <header class="modal-header">
                         <h4 class="modal-title">A problem has occurred</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">×</button>

@@ -243,7 +243,7 @@
                    <field name="currency_id"/>
                    <templates>
                         <t t-name="kanban-box">
-                            <div t-attf-class="oe_kanban_card oe_kanban_global_click">
+                            <div t-attf-class="oe_kanban_card rounded-sm oe_kanban_global_click">
                                 <div t-attf-class="#{!selection_mode ? 'text-center' : ''}">
                                    <strong><span><field name="display_name"/></span></strong>
                                 </div>
@@ -370,7 +370,7 @@
                     <field name="amount"/>
                     <templates>
                         <t t-name="kanban-box">
-                            <div t-attf-class="oe_kanban_card oe_kanban_global_click">
+                            <div t-attf-class="oe_kanban_card rounded-sm oe_kanban_global_click">
                                 <div class="row">
                                     <div class="col-6">
                                         <strong><span><t t-esc="record.name.value"/></span></strong>

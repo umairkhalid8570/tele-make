@@ -33,7 +33,7 @@
         <xpath expr="//table[@id='saas_apps_table']" position="after">
             <div class="modal fade" id="add_apps" >
                 <div class="modal-dialog modal-md">
-                    <div class="modal-content" style="overflow: scroll;">
+                    <div class="modal-content rounded-sm" style="overflow: scroll;">
                         <div class="modal-header" style="margin-top:3%;">
                             <div class="modal-title" id="add_app_text">Add Apps
                             </div>

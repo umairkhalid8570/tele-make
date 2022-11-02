@@ -232,7 +232,7 @@
                 <field name="type_id"/>
                 <templates>
                     <t t-name="kanban-box">
-                        <div t-attf-class="oe_kanban_card oe_kanban_global_click">
+                        <div t-attf-class="oe_kanban_card rounded-sm oe_kanban_global_click">
                             <div class="o_kanban_record_top">
                                 <div class="o_kanban_record_headings mt4">
                                     <strong class="o_kanban_record_title"><span><field name="name"/></span></strong>

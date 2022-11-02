@@ -45,7 +45,7 @@ QUnit.module('Views', {
             var banner_html =`
                 <div class="modal o_onboarding_modal o_technical_modal" tabindex="-1" role="dialog">
                     <div class="modal-dialog" role="document">
-                        <div class="modal-content">
+                        <div class="modal-content rounded-sm">
                             <div class="modal-footer">
                                 <a type="action" class="btn btn-primary rounded-sm" data-dismiss="modal"
                                 data-toggle="collapse" href=".o_onboarding_container">

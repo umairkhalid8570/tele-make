@@ -117,7 +117,7 @@ var FormViewDialog = ViewDialog.extend({
         if (!options.buttons) {
             options.buttons = [{
                 text: options.close_text || (readonly ? _t("Close") : _t("Discard")),
-                classes: "btn-secondary o_form_button_cancel",
+                classes: "btn-secondary rounded-sm o_form_button_cancel",
                 close: true,
                 click: function () {
                     if (!readonly) {

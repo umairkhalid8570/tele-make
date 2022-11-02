@@ -14,7 +14,7 @@ from dateutil.relativedelta import relativedelta
 from werkzeug.urls import url_encode
 from tele.modules.module import get_module_resource
 from tele.exceptions import UserError, Warning, ValidationError
-from tele.addons.auth_signup.models.res_partner import random_token as generate_token
+from tele.applets.auth_signup.models.res_partner import random_token as generate_token
 from . lib import query
 from . lib import generate_ssl_custom_domain
 

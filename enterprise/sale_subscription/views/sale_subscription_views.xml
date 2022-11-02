@@ -601,7 +601,7 @@
                 <progressbar field="activity_state" colors='{"planned": "success", "today": "warning", "overdue": "danger"}' help="This bar allows to filter the opportunities based on scheduled activities."/>
                 <templates>
                     <t t-name="kanban-box">
-                        <div t-attf-class="oe_kanban_card oe_kanban_global_click">
+                        <div t-attf-class="oe_kanban_card rounded-sm oe_kanban_global_click">
                             <div class="oe_kanban_content">
                                 <strong class="float-right">
                                     <field name="recurring_total" widget="monetary"/>
