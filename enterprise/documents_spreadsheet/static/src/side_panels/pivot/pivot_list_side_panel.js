@@ -2,7 +2,7 @@
 
 import { PivotDetailsSidePanel } from "./pivot_details_side_panel";
 
-export default class PivotSidePanel extends owl.Component {
+export default class PivotSidePanel extends twl.Component {
     constructor() {
         super(...arguments);
         this.getters = this.env.getters;

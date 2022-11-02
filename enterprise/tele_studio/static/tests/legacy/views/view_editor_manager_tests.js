@@ -3,11 +3,11 @@ tele.define('tele_studio.ViewEditorManager_tests', function (require) {
 
 const { afterEach, beforeEach, start } = require('@mail/utils/test_utils');
 
-var AbstractFieldOwl = require('web.AbstractFieldOwl');
+var AbstractFieldTwl = require('web.AbstractFieldTwl');
 var ace = require('web_editor.ace');
 var concurrency = require('web.concurrency');
 var fieldRegistry = require('web.field_registry');
-var fieldRegistryOwl = require('web.field_registry_owl');
+var fieldRegistryTwl = require('web.field_registry_twl');
 var framework = require('web.framework');
 var ListRenderer = require('web.ListRenderer');
 var testUtils = require('web.test_utils');
@@ -6101,12 +6101,12 @@ QUnit.module('ViewEditorManager', {
     QUnit.test("Sidebar should display component field's widgets", async function (assert) {
         assert.expect(1);
 
-        class CompField extends AbstractFieldOwl {}
-        CompField.template = owl.tags.xml`<div></div>`;
+        class CompField extends AbstractFieldTwl {}
+        CompField.template = twl.tags.xml`<div></div>`;
         CompField.description = 'Component Field';
         CompField.supportedFieldTypes = ['char'];
 
-        fieldRegistryOwl.add('comp_field', CompField);
+        fieldRegistryTwl.add('comp_field', CompField);
 
         const arch = `
             <form><sheet>
@@ -6128,7 +6128,7 @@ QUnit.module('ViewEditorManager', {
 
         assert.ok(displayedWidgetNames.includes(CompField.description));
 
-        delete fieldRegistryOwl.map.comp_field;
+        delete fieldRegistryTwl.map.comp_field;
 
         vem.destroy();
     });
@@ -7306,13 +7306,13 @@ QUnit.module('ViewEditorManager', {
 
         await testUtils.dom.click(vem.$('.o_tele_studio_xml_editor'));
         await xmlEditorDef;
-        await testUtils.owlCompatibilityExtraNextTick();
+        await testUtils.twlCompatibilityExtraNextTick();
 
         assert.containsOnce(vem, '.o_ace_view_editor', "the XML editor should be opened");
         assert.containsNone(vem, '.o_tele_studio_sidebar');
 
         await testUtils.dom.click(".o_ace_view_editor .o_button_section button[data-action='close']");
-        await testUtils.owlCompatibilityExtraNextTick();
+        await testUtils.twlCompatibilityExtraNextTick();
         assert.containsNone(vem, '.o_ace_view_editor');
         assert.containsOnce(vem, '.o_tele_studio_sidebar');
         assert.containsOnce(vem, '.o_legacy_graph_renderer');

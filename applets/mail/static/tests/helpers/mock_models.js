@@ -190,8 +190,8 @@ export class MockModels {
             },
             'res.users.settings': {
                 fields: {
-                    is_discuss_sidebar_category_channel_open: { string: "Is Discuss Sidebar Category Channel Open?", type: 'boolean', default: true },
-                    is_discuss_sidebar_category_chat_open: { string: "Is Discuss Sidebar Category Chat Open?", type: 'boolean', default: true },
+                    is_discuss_sidebar_category_channel_open: { string: "Is Connect Sidebar Category Channel Open?", type: 'boolean', default: true },
+                    is_discuss_sidebar_category_chat_open: { string: "Is Connect Sidebar Category Chat Open?", type: 'boolean', default: true },
                     user_id: { string: "User Id", type: 'many2one', relation: 'res.users' },
                 },
                 records: [],

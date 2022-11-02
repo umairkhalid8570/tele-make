@@ -37,7 +37,7 @@
         </div>
     </t>
 
-    <div t-name="web_cohort.Legacy.CohortRenderer" class="o_legacy_cohort_view" owl="1">
+    <div t-name="web_cohort.Legacy.CohortRenderer" class="o_legacy_cohort_view" twl="1">
         <div t-if="props.hasContent">
             <div t-if="props.comparisonReport &amp;&amp; (props.comparisonReport.rows.length || props.report.rows.length)" class="table-responsive">
                 <t t-call="CohortView.tableTitle">
@@ -79,7 +79,7 @@
         </t>
     </div>
 
-    <t t-name="CohortView.tableTitle" owl="1">
+    <t t-name="CohortView.tableTitle" twl="1">
         <table class="table text-center mb0">
             <thead>
                 <tr>
@@ -91,7 +91,7 @@
         </table>
     </t>
 
-    <t t-name="CohortView.tableContent" owl="1">
+    <t t-name="CohortView.tableContent" twl="1">
         <table class="table text-center mb0">
             <thead>
                 <tr>

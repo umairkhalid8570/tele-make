@@ -1,11 +1,11 @@
 tele.define('web.FavoriteMenu', function (require) {
     "use strict";
 
-    const Dialog = require('web.OwlDialog');
+    const Dialog = require('web.TwlDialog');
     const { FACET_ICONS } = require("web.searchUtils");
     const Registry = require('web.Registry');
     const { useModel } = require('web.Model');
-    const { Component, useState } = owl;
+    const { Component, useState } = twl;
 
     /**
      * 'Favorites' menu
@@ -64,7 +64,7 @@ tele.define('web.FavoriteMenu', function (require) {
 
         /**
          * @private
-         * @param {OwlEvent} ev
+         * @param {TwlEvent} ev
          */
         onFavoriteSelected(ev) {
             ev.stopPropagation();

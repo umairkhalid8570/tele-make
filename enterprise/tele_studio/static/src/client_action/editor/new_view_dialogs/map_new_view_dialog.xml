@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <templates>
 
-<t t-name="tele_studio.MapNewViewFieldsSelector" owl="1" >
+<t t-name="tele_studio.MapNewViewFieldsSelector" twl="1" >
   <div>
       <div class="form-text text-muted">Select the contact field to use to get the coordinates of your records.</div>
       <div class="o_tele_studio_select mt-4">

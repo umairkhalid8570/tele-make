@@ -4,7 +4,7 @@ import { registry } from "@web/core/registry";
 import { useAutofocus, useService } from "@web/core/utils/hooks";
 import { sprintf } from "@web/core/utils/strings";
 
-const { Component, useState } = owl;
+const { Component, useState } = twl;
 const favoriteMenuRegistry = registry.category("favoriteMenu");
 
 /**

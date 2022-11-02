@@ -1,7 +1,7 @@
 tele.define('timesheet_grid.GridRenderer', function (require) {
     "use strict";
 
-    const { ComponentAdapter } = require('web.OwlCompatibility');
+    const { ComponentAdapter } = require('web.TwlCompatibility');
     const GridRenderer = require('web_grid.GridRenderer');
     const TimesheetM2OAvatarEmployee = require('timesheet_grid.TimesheetM2OAvatarEmployee');
 

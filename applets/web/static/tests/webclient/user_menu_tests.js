@@ -14,7 +14,7 @@ import { makeFakeLocalizationService } from "../helpers/mock_services";
 import { click, getFixture, patchWithCleanup } from "../helpers/utils";
 import { session } from "@web/session";
 
-const { mount } = owl;
+const { mount } = twl;
 const serviceRegistry = registry.category("services");
 const userMenuRegistry = registry.category("user_menuitems");
 let target;

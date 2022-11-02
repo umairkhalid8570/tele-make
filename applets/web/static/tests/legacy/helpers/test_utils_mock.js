@@ -32,7 +32,7 @@ const DebouncedField = basic_fields.DebouncedField;
 //------------------------------------------------------------------------------
 
 /**
- * Returns a mocked environment to be used by OWL components in tests, with
+ * Returns a mocked environment to be used by TWL components in tests, with
  * requested services (+ ajax, local_storage and session_storage) deployed.
  *
  * @private
@@ -49,7 +49,7 @@ const DebouncedField = basic_fields.DebouncedField;
  * @param {MockServer} [mockServer]
  * @returns {Promise<Object>} env
  */
-async function _getMockedOwlEnv(params, mockServer) {
+async function _getMockedTwlEnv(params, mockServer) {
     params.env = params.env || {};
 
     const database = {parameters: params.translateParameters || {}};
@@ -325,7 +325,7 @@ function removeSrcAttribute(el, rpc) {
 }
 
 /**
- * Add a mock environment to test Owl Components. This function generates a test
+ * Add a mock environment to test Twl Components. This function generates a test
  * env and sets it on the given Component. It also has several side effects,
  * like patching the global session or config objects. It returns a cleanup
  * function to call at the end of the test.
@@ -350,7 +350,7 @@ function removeSrcAttribute(el, rpc) {
  * @param {MockServer} [mockServer]
  * @returns {Promise<function>} the cleanup function
  */
-async function addMockEnvironmentOwl(Component, params, mockServer) {
+async function addMockEnvironmentTwl(Component, params, mockServer) {
     params = params || {};
 
     // instantiate a mockServer if not provided
@@ -407,12 +407,12 @@ async function addMockEnvironmentOwl(Component, params, mockServer) {
     // mock global objects for legacy widgets (session, config...)
     const restoreMockedGlobalObjects = _mockGlobalObjects(params);
 
-    // set the test env on owl Component
-    const env = await _getMockedOwlEnv(params, mockServer);
+    // set the test env on twl Component
+    const env = await _getMockedTwlEnv(params, mockServer);
     const originalEnv = Component.env;
     Component.env = makeTestEnvironment(env, mockServer.performRpc.bind(mockServer));
 
-    // while we have a mix between Owl and legacy stuff, some of them triggering
+    // while we have a mix between Twl and legacy stuff, some of them triggering
     // events on the env.bus (a new Bus instance especially created for the current
     // test), the others using core.bus, we have to ensure that events triggered
     // on env.bus are also triggered on core.bus (note that outside the testing
@@ -537,12 +537,12 @@ async function addMockEnvironment(widget, params) {
         widget: widget,
     });
 
-    // build and set the Owl env on Component
+    // build and set the Twl env on Component
     if (!('mockSRC' in params)) { // redirect src rpcs to the mock server
         params.mockSRC = true;
     }
-    const cleanUp = await addMockEnvironmentOwl(owl.Component, params, mockServer);
-    const env = owl.Component.env;
+    const cleanUp = await addMockEnvironmentTwl(twl.Component, params, mockServer);
+    const env = twl.Component.env;
 
     // ensure to clean up everything when the widget will be destroyed
     const destroy = widget.destroy;
@@ -727,7 +727,7 @@ function patchSetTimeout() {
 return {
     addMockEnvironment: addMockEnvironment,
     fieldsViewGet: fieldsViewGet,
-    addMockEnvironmentOwl: addMockEnvironmentOwl,
+    addMockEnvironmentTwl: addMockEnvironmentTwl,
     intercept: intercept,
     patchDate: legacyPatchDate,
     patch: patch,

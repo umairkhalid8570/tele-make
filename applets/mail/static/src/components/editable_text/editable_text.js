@@ -3,7 +3,7 @@
 import { registerMessagingComponent } from '@mail/utils/messaging_component';
 import { markEventHandled } from '@mail/utils/utils';
 
-const { Component } = owl;
+const { Component } = twl;
 
 export class EditableText extends Component {
 

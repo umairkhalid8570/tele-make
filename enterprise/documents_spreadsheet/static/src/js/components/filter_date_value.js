@@ -37,7 +37,7 @@ tele.define("documents_spreadsheet.DateFilterValue", function (require) {
         }
     }
 
-    class DateFilterValue extends owl.Component {
+    class DateFilterValue extends twl.Component {
         dateOptions(type) {
             return type ? dateOptions(type) : [];
         }

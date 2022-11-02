@@ -13,7 +13,7 @@ tele.define('point_of_sale.test_env', async function (require) {
     const models = require('point_of_sale.models');
     const Registries = require('point_of_sale.Registries');
 
-    Registries.Component.add(owl.misc.Portal);
+    Registries.Component.add(twl.misc.Portal);
 
     await env.session.is_bound;
     const pos = new models.PosModel({

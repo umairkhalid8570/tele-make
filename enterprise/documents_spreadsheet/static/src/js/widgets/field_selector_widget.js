@@ -1,7 +1,7 @@
 tele.define("documents_spreadsheet.field_selector_widget", function (require) {
     const config = require("web.config");
     const FieldSelectorWidget = require("web.ModelFieldSelector");
-    const { ComponentAdapter } = require("web.OwlCompatibility");
+    const { ComponentAdapter } = require("web.TwlCompatibility");
 
     const filters = {
         text: ["many2one", "text", "char"],
@@ -17,7 +17,7 @@ tele.define("documents_spreadsheet.field_selector_widget", function (require) {
     class FieldSelectorAdapter extends ComponentAdapter {
 
         setup() {
-            this.env = owl.Component.env;
+            this.env = twl.Component.env;
         }
         /**
          * Only display the relevant fields

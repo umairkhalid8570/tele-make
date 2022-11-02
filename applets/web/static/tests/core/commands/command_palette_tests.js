@@ -19,7 +19,7 @@ import {
 } from "../../helpers/utils";
 import { editSearchBar } from "./command_service_tests";
 
-const { Component, mount, tags } = owl;
+const { Component, mount, tags } = twl;
 const { xml } = tags;
 
 let env;

@@ -7,7 +7,7 @@ import { KeepLast } from "@web/core/utils/concurrency";
 import { useAutofocus, useBus, useService } from "@web/core/utils/hooks";
 import { fuzzyTest } from "@web/core/utils/search";
 
-const { Component, hooks } = owl;
+const { Component, hooks } = twl;
 const { useExternalListener, useRef, useState } = hooks;
 const parsers = registry.category("parsers");
 

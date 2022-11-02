@@ -2,11 +2,11 @@ tele.define('web.CalendarPopover', function (require) {
 "use strict";
 
 var fieldRegistry = require('web.field_registry');
-const fieldRegistryOwl = require('web.field_registry_owl');
+const fieldRegistryTwl = require('web.field_registry_twl');
 const FieldWrapper = require('web.FieldWrapper');
 var StandaloneFieldManagerMixin = require('web.StandaloneFieldManagerMixin');
 var Widget = require('web.Widget');
-const { WidgetAdapterMixin } = require('web.OwlCompatibility');
+const { WidgetAdapterMixin } = require('web.TwlCompatibility');
 
 var CalendarPopover = Widget.extend(WidgetAdapterMixin, StandaloneFieldManagerMixin, {
     template: 'CalendarView.event.popover',
@@ -183,7 +183,7 @@ var CalendarPopover = Widget.extend(WidgetAdapterMixin, StandaloneFieldManagerMi
                 if (field.invisible) return;
                 let isLegacy = true;
                 let fieldWidget;
-                let FieldClass = fieldRegistryOwl.getAny([field.widget, field.type]);
+                let FieldClass = fieldRegistryTwl.getAny([field.widget, field.type]);
                 if (FieldClass) {
                     isLegacy = false;
                     fieldWidget = new FieldWrapper(this, FieldClass, {

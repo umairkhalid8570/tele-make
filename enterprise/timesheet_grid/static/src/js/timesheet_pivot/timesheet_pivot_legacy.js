@@ -5,7 +5,7 @@ tele.define('timesheet_grid.timesheet_pivot_view', function (require) {
     const PivotRenderer = require('web.PivotRenderer');
     const TimesheetConfigQRCodeMixin = require('timesheet_grid.TimesheetConfigQRCodeMixin');
     const viewRegistry = require('web.view_registry');
-    const { onMounted, onPatched } = owl.hooks;
+    const { onMounted, onPatched } = twl.hooks;
 
     class TimesheetGridRenderer extends PivotRenderer {
         constructor() {

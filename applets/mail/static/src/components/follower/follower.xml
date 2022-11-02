@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <templates xml:space="preserve">
 
-    <t t-name="mail.Follower" owl="1">
+    <t t-name="mail.Follower" twl="1">
         <div class="o_Follower">
             <t t-if="follower">
                 <a class="o_Follower_details d-flex" t-att-class="{ 'o-inactive': !follower.isActive }" href="#" role="menuitem" t-on-click="_onClickDetails">

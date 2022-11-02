@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <templates xml:space="preserve">
 
-    <t t-name="mail.MessageReactionGroup" owl="1">
+    <t t-name="mail.MessageReactionGroup" twl="1">
         <div class="o_MessageReactionGroup d-flex" t-att-class="{'o-hasUserReacted': messageReactionGroup and messageReactionGroup.hasUserReacted}" t-att-title="messageReactionGroup and messageReactionGroup.summary" t-on-click="messageReactionGroup and messageReactionGroup.onClick">
             <t t-if="messageReactionGroup">
                 <span class="o_MessageReactionGroup_content mx-1">

@@ -20,5 +20,5 @@ tele.define("web.widgetRegistry", function (require) {
 
     const Registry = require("web.Registry");
 
-    return new Registry(null, (value) => value.prototype instanceof owl.Component);
+    return new Registry(null, (value) => value.prototype instanceof twl.Component);
 });

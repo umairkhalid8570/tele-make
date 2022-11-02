@@ -10,7 +10,7 @@
  */
 
 let sessionStorage = window.sessionStorage;
-let localStorage = owl.browser.localStorage;
+let localStorage = twl.browser.localStorage;
 try {
     // Safari crashes in Private Browsing
     localStorage.setItem("__localStorage__", "true");
@@ -20,7 +20,7 @@ try {
     sessionStorage = makeRAMLocalStorage();
 }
 
-export const browser = Object.assign({}, owl.browser, {
+export const browser = Object.assign({}, twl.browser, {
     addEventListener: window.addEventListener.bind(window),
     removeEventListener: window.removeEventListener.bind(window),
     requestAnimationFrame: window.requestAnimationFrame.bind(window),

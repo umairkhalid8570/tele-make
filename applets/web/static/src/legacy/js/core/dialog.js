@@ -4,7 +4,7 @@ tele.define('web.Dialog', function (require) {
 var core = require('web.core');
 var dom = require('web.dom');
 var Widget = require('web.Widget');
-const OwlDialog = require('web.OwlDialog');
+const TwlDialog = require('web.TwlDialog');
 
 var QWeb = core.qweb;
 var _t = core._t;
@@ -214,8 +214,8 @@ var Dialog = Widget.extend({
                 self._onFocusControlButton();
             }
 
-            // Notifies OwlDialog to adjust focus/active properties on owl dialogs
-            OwlDialog.display(self);
+            // Notifies TwlDialog to adjust focus/active properties on twl dialogs
+            TwlDialog.display(self);
 
             // Notifies new webclient to adjust UI active element
             core.bus.trigger("legacy_dialog_opened", self);
@@ -250,10 +250,10 @@ var Dialog = Widget.extend({
             return;
         }
 
-        // Notifies OwlDialog to adjust focus/active properties on owl dialogs.
+        // Notifies TwlDialog to adjust focus/active properties on twl dialogs.
         // Only has to be done if the dialog has been opened (has an el).
         if (this.el) {
-            OwlDialog.hide(this);
+            TwlDialog.hide(this);
 
             // Notifies new webclient to adjust UI active element
             core.bus.trigger("legacy_dialog_destroyed", this);

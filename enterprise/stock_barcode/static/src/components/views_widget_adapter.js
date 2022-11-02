@@ -1,12 +1,12 @@
 /** @tele-module **/
 
-import { ComponentAdapter } from 'web.OwlCompatibility';
+import { ComponentAdapter } from 'web.TwlCompatibility';
 
 export default class ViewsWidgetAdapter extends ComponentAdapter {
     setup() {
         super.setup(...arguments);
-        // Overwrite the OWL/legacy env with the WOWL's one.
-        this.env = owl.Component.env;
+        // Overwrite the TWL/legacy env with the WOWL's one.
+        this.env = twl.Component.env;
     }
 
     get widgetArgs() {

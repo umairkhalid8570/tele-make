@@ -31,7 +31,7 @@ function factory(dependencies) {
         _created() {
             this._attachmentsLoaderTimeout = undefined;
             this._isPreparingAttachmentsLoading = undefined;
-            // Bind necessary until OWL supports arrow function in handlers: https://github.com/tele-studio/owl/issues/876
+            // Bind necessary until TWL supports arrow function in handlers: https://github.com/tele-studio/twl/issues/876
             this.onClickActivityBoxTitle = this.onClickActivityBoxTitle.bind(this);
             this.onClickButtonAttachments = this.onClickButtonAttachments.bind(this);
             this.onClickChatterTopbarClose = this.onClickChatterTopbarClose.bind(this);
@@ -323,7 +323,7 @@ function factory(dependencies) {
         }),
         component: attr(),
         /**
-         * States the OWL component of this chatter top bar.
+         * States the TWL component of this chatter top bar.
          */
         componentChatterTopbar: attr(),
         /**
@@ -420,7 +420,7 @@ function factory(dependencies) {
          */
         threadModel: attr(),
         /**
-         * States the OWL ref of the "thread" (ThreadView) of this chatter.
+         * States the TWL ref of the "thread" (ThreadView) of this chatter.
          */
         threadRef: attr(),
         /**

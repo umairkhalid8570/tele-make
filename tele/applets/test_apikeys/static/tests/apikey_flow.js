@@ -88,7 +88,7 @@ tour.register('apikeys_tour_teardown', {
     run: 'click',
 }, {
     content: "Input password for security mode again",
-    trigger: '[name=password]',
+    trigger: '[name=password]'
     run: 'text demo', // FIXME: better way to do this?
 }, {
     content: "And confirm",

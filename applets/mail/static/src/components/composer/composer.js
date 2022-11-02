@@ -7,8 +7,8 @@ import {
     markEventHandled,
 } from '@mail/utils/utils';
 
-const { Component } = owl;
-const { useRef } = owl.hooks;
+const { Component } = twl;
+const { useRef } = twl.hooks;
 
 export class Composer extends Component {
 

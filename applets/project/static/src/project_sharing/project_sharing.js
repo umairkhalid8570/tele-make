@@ -7,7 +7,7 @@ import { useOwnDebugContext } from "@web/core/debug/debug_context";
 import { ErrorHandler, NotUpdatable } from "@web/core/utils/components";
 import { session } from '@web/session';
 
-const { Component } = owl;
+const { Component } = twl;
 
 export class ProjectSharingWebClient extends Component {
     setup() {
@@ -36,7 +36,7 @@ export class ProjectSharingWebClient extends Component {
         this.Components.splice(this.Components.indexOf(C), 1);
         /**
          * we rethrow the error to notify the user something bad happened.
-         * We do it after a tick to make sure owl can properly finish its
+         * We do it after a tick to make sure twl can properly finish its
          * rendering
          */
         Promise.resolve().then(() => {

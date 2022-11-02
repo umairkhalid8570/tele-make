@@ -3,7 +3,7 @@
 import { hasTouch } from '@web/core/browser/feature_detection';
 import { ProjectSharingWebClient } from '@project/project_sharing/project_sharing';
 
-const { hooks } = owl;
+const { hooks } = twl;
 
 export class ProjectSharingWebClientEnterprise extends ProjectSharingWebClient {
     setup() {

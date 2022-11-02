@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <templates>
 
-<t t-name="tele_studio.StudioClientAction" owl="1">
+<t t-name="tele_studio.StudioClientAction" twl="1">
   <div class="o_studio">
       <StudioNavbar/>
 

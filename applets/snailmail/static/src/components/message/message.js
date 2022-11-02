@@ -4,7 +4,7 @@ import { Message } from '@mail/components/message/message';
 
 import { patch } from 'web.utils';
 
-const { useState } = owl;
+const { useState } = twl;
 
 patch(Message.prototype, 'snailmail/static/src/components/message/message.js', {
     /**

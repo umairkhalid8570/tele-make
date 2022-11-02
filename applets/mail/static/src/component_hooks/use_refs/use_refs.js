@@ -1,6 +1,6 @@
 /** @tele-module **/
 
-const { Component } = owl;
+const { Component } = twl;
 
 /**
  * This hook provides support for dynamic-refs.
@@ -11,6 +11,6 @@ const { Component } = owl;
 export function useRefs() {
     const component = Component.current;
     return function () {
-        return component.__owl__.refs || {};
+        return component.__twl__.refs || {};
     };
 }

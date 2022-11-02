@@ -82,7 +82,7 @@ export function decodeObjectForTemplate(str) {
  * Example: myString = `Some weird language quote (") `;
  *     should become in the template:
  *      <Component label="&quot;Some weird language quote (\\&quot;)&quot; " />
- *     which should be interpreted by owl as a JS expression being a string:
+ *     which should be interpreted by twl as a JS expression being a string:
  *      `Some weird language quote (") `
  *
  * @param  {string} str The initial value: a pure string to be interpreted as such
@@ -174,7 +174,7 @@ function getInvisible(node) {
 
 /**
  * An object containing various information about the current
- * compilation from an Arch to a owl template.
+ * compilation from an Arch to a twl template.
  * @typedef {Object} CompilationContext
  */
 

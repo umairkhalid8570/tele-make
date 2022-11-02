@@ -2,7 +2,7 @@
 
 import { formatFloat, formatPercentage } from "@web/fields/formatters";
 
-const { Component } = owl;
+const { Component } = twl;
 
 export class CohortRenderer extends Component {
     setup() {

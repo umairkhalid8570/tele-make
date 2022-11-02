@@ -2,10 +2,10 @@
 
 import { registerMessagingComponent } from '@mail/utils/messaging_component';
 
-import Dialog from 'web.OwlDialog';
+import Dialog from 'web.TwlDialog';
 
-const { Component } = owl;
-const { useRef } = owl.hooks;
+const { Component } = twl;
+const { useRef } = twl.hooks;
 
 export class AttachmentDeleteConfirmDialog extends Component {
 
@@ -35,7 +35,7 @@ export class AttachmentDeleteConfirmDialog extends Component {
     getBody() {
         return _.str.sprintf(
             this.env._t(`Do you really want to delete "%s"?`),
-            owl.utils.escape(this.attachment.displayName)
+            twl.utils.escape(this.attachment.displayName)
         );
     }
 

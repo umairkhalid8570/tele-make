@@ -6,7 +6,7 @@ import { getMessagingComponent } from "@mail/utils/messaging_component";
 
 import AbstractAction from 'web.AbstractAction';
 
-const { Component } = owl;
+const { Component } = twl;
 
 export const DiscussWidget = AbstractAction.extend({
     template: 'mail.widgets.Discuss',

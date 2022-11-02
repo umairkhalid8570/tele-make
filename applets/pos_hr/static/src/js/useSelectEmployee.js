@@ -2,7 +2,7 @@
 tele.define('pos_hr.useSelectEmployee', function (require) {
     'use strict';
 
-    const { Component } = owl;
+    const { Component } = twl;
 
     function useSelectEmployee() {
         const current = Component.current;

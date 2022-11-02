@@ -14,7 +14,7 @@ import { View } from "@web/views/view";
 import { ActionDialog } from "./action_dialog";
 import { CallbackRecorder } from "./action_hook";
 
-const { Component, hooks, tags } = owl;
+const { Component, hooks, tags } = twl;
 const { useRef, useSubEnv } = hooks;
 
 const actionHandlersRegistry = registry.category("action_handlers");
@@ -444,7 +444,7 @@ function makeActionManager(env) {
             viewProps.resId = action.res_id;
         }
 
-        // LEGACY CODE COMPATIBILITY: remove when all views will be written in owl
+        // LEGACY CODE COMPATIBILITY: remove when all views will be written in twl
         if (view.isLegacy) {
             const legacyActionInfo = { ...action, ...viewProps.action };
             Object.assign(viewProps, {
@@ -619,7 +619,7 @@ function makeActionManager(env) {
                         }
                     };
 
-                    // LEGACY CODE COMPATIBILITY: remove when controllers will be written in owl
+                    // LEGACY CODE COMPATIBILITY: remove when controllers will be written in twl
                     // we determine here which actions no longer occur in the nextStack,
                     // and we manually destroy all their controller's widgets
                     const nextStackActionIds = nextStack.map((c) => c.action.jsId);
@@ -1002,7 +1002,7 @@ function makeActionManager(env) {
         const controller = {
             jsId: `controller_${++id}`,
             // for historical reasons, the report Component is a client action,
-            // but there's no need to keep this when it will be converted to owl.
+            // but there's no need to keep this when it will be converted to twl.
             Component: actionRegistry.get("report.client_action"),
             action,
             ..._getActionInfo(action, props),
@@ -1254,7 +1254,7 @@ function makeActionManager(env) {
             view,
         };
 
-        // LEGACY CODE COMPATIBILITY: remove when controllers will be written in owl
+        // LEGACY CODE COMPATIBILITY: remove when controllers will be written in twl
         if (view.isLegacy && newController.jsId === controller.jsId) {
             // case where a legacy view is reloaded via the view switcher
             const { __legacy_widget__ } = controller.getLocalState();

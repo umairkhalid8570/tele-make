@@ -6,7 +6,7 @@
      * - emit events
      * - add/remove listeners.
      *
-     * This is a useful pattern of communication in many cases.  For OWL, each
+     * This is a useful pattern of communication in many cases.  For TWL, each
      * components and stores are event buses.
      */
     //------------------------------------------------------------------------------
@@ -67,9 +67,9 @@
     }
 
     /**
-     * Owl Observer
+     * Twl Observer
      *
-     * This code contains the logic that allows Owl to observe and react to state
+     * This code contains the logic that allows Twl to observe and react to state
      * changes.
      *
      * This is a Observer class that can observe any JS values.  The way it works
@@ -156,9 +156,9 @@
     }
 
     /**
-     * Owl QWeb Expression Parser
+     * Twl QWeb Expression Parser
      *
-     * Owl needs in various contexts to be able to understand the structure of a
+     * Twl needs in various contexts to be able to understand the structure of a
      * string representing a javascript expression.  The usual goal is to be able
      * to rewrite some variables.  For example, if a template has
      *
@@ -507,7 +507,7 @@
                 this.code.unshift("    let scope = Object.create(context);");
             }
             if (this.shouldDefineRefs) {
-                this.code.unshift("    context.__owl__.refs = context.__owl__.refs || {};");
+                this.code.unshift("    context.__twl__.refs = context.__twl__.refs || {};");
             }
             if (this.shouldDefineParent) {
                 if (this.hasParentWidget) {
@@ -870,7 +870,7 @@
     const classModule = { create: updateClass, update: updateClass };
 
     /**
-     * Owl VDOM
+     * Twl VDOM
      *
      * This file contains an implementation of a virtual DOM, which is a system that
      * can generate in-memory representations of a DOM tree, compare them, and
@@ -1322,7 +1322,7 @@
     };
 
     /**
-     * Owl Utils
+     * Twl Utils
      *
      * We have here a small collection of utility functions:
      *
@@ -1441,7 +1441,7 @@
         destroy: "()",
     };
     function isComponent(obj) {
-        return obj && obj.hasOwnProperty("__owl__");
+        return obj && obj.hasOwnProperty("__twl__");
     }
     class VDomArray extends Array {
         toString() {
@@ -2228,7 +2228,7 @@
     }
 
     /**
-     * Owl QWeb Directives
+     * Twl QWeb Directives
      *
      * This file contains the implementation of most standard QWeb directives:
      * - t-esc
@@ -2589,10 +2589,10 @@
     });
 
     /**
-     * Owl QWeb Extensions
+     * Twl QWeb Extensions
      *
      * This file contains the implementation of non standard QWeb directives, added
-     * by Owl and that will only work on Owl projects:
+     * by Twl and that will only work on Twl projects:
      *
      * - t-on
      * - t-ref
@@ -2650,7 +2650,7 @@
             code = `const res = (() => { return ${code} })(); if (typeof res === 'function') { res(e) }`;
         }
         const modCode = mods.map((mod) => modcodes[mod]).join("");
-        let handler = `function (e) {if (context.__owl__.status === ${5 /* DESTROYED */}){return}${modCode}${code}}`;
+        let handler = `function (e) {if (context.__twl__.status === ${5 /* DESTROYED */}){return}${modCode}${code}}`;
         if (putInCache) {
             const key = ctx.generateTemplateKey(event);
             ctx.addLine(`extra.handlers[${key}] = extra.handlers[${key}] || ${handler};`);
@@ -2676,8 +2676,8 @@
             ctx.rootContext.shouldDefineRefs = true;
             const refKey = `ref${ctx.generateID()}`;
             ctx.addLine(`const ${refKey} = ${ctx.interpolate(value)};`);
-            addNodeHook("create", `context.__owl__.refs[${refKey}] = n.elm;`);
-            addNodeHook("destroy", `delete context.__owl__.refs[${refKey}];`);
+            addNodeHook("create", `context.__twl__.refs[${refKey}] = n.elm;`);
+            addNodeHook("destroy", `delete context.__twl__.refs[${refKey}];`);
         },
     });
     //------------------------------------------------------------------------------
@@ -2690,7 +2690,7 @@
         const elm = vn.elm;
         // remove potential duplicated vnode that is currently being removed, to
         // prevent from having twice the same node in the DOM during an animation
-        const dup = elm.parentElement && elm.parentElement.querySelector(`*[data-owl-key='${vn.key}']`);
+        const dup = elm.parentElement && elm.parentElement.querySelector(`*[data-twl-key='${vn.key}']`);
         if (dup) {
             dup.remove();
         }
@@ -2710,7 +2710,7 @@
     };
     QWeb.utils.transitionRemove = function (vn, name, rm) {
         const elm = vn.elm;
-        elm.setAttribute("data-owl-key", vn.key);
+        elm.setAttribute("data-twl-key", vn.key);
         elm.classList.add(name + "-leave");
         elm.classList.add(name + "-leave-active");
         const finalize = () => {
@@ -2796,7 +2796,7 @@
         atNodeEncounter({ ctx, value, node, qweb }) {
             const slotKey = ctx.generateID();
             const valueExpr = value.match(INTERP_REGEXP) ? ctx.interpolate(value) : `'${value}'`;
-            ctx.addLine(`const slot${slotKey} = this.constructor.slots[context.__owl__.slotId + '_' + ${valueExpr}];`);
+            ctx.addLine(`const slot${slotKey} = this.constructor.slots[context.__twl__.slotId + '_' + ${valueExpr}];`);
             ctx.addIf(`slot${slotKey}`);
             let parentNode = `c${ctx.parentNode}`;
             if (!ctx.parentNode) {
@@ -2806,7 +2806,7 @@
                 ctx.addLine(`let ${parentNode}= []`);
                 ctx.addLine(`result = {}`);
             }
-            ctx.addLine(`slot${slotKey}.call(this, context.__owl__.scope, Object.assign({}, extra, {parentNode: ${parentNode}, parent: extra.parent || context}));`);
+            ctx.addLine(`slot${slotKey}.call(this, context.__twl__.scope, Object.assign({}, extra, {parentNode: ${parentNode}, parent: extra.parent || context}));`);
             if (!ctx.parentNode) {
                 ctx.addLine(`utils.defineProxy(result, ${parentNode}[0]);`);
             }
@@ -2936,10 +2936,10 @@
         set(mode) {
             QWeb.dev = mode === "dev";
             if (QWeb.dev) {
-                console.info(`Owl is running in 'dev' mode.
+                console.info(`Twl is running in 'dev' mode.
 
 This is not suitable for production use.
-See https://github.com/tele-studio/owl/blob/master/doc/reference/config.md#mode for more information.`);
+See https://github.com/tele-studio/twl/blob/master/doc/reference/config.md#mode for more information.`);
             }
         },
     });
@@ -2953,11 +2953,11 @@ See https://github.com/tele-studio/owl/blob/master/doc/reference/config.md#mode 
     });
 
     /**
-     * We define here OwlEvent, a subclass of CustomEvent, with an additional
+     * We define here TwlEvent, a subclass of CustomEvent, with an additional
      * attribute:
      *  - originalComponent: the component that triggered the event
      */
-    class OwlEvent extends CustomEvent {
+    class TwlEvent extends CustomEvent {
         constructor(component, eventType, options) {
             super(eventType, options);
             this.originalComponent = component;
@@ -3041,8 +3041,8 @@ See https://github.com/tele-studio/owl/blob/master/doc/reference/config.md#mode 
      * // and, then, if there is an id, we look into the children list to get the
      * // instance
      * let w4 =
-     *   key5 in context.__owl__.cmap
-     *   ? context.__owl__.children[context.__owl__.cmap[key5]]
+     *   key5 in context.__twl__.cmap
+     *   ? context.__twl__.children[context.__twl__.cmap[key5]]
      *   : false;
      *
      * // We keep the index of the position of the component in the closure.  We push
@@ -3059,11 +3059,11 @@ See https://github.com/tele-studio/owl/blob/master/doc/reference/config.md#mode 
      *
      * // If we have a component, currently rendering, but not ready yet, we do not want
      * // to wait for it to be ready if we can avoid it
-     * if (w4 && w4.__owl__.renderPromise && !w4.__owl__.vnode) {
+     * if (w4 && w4.__twl__.renderPromise && !w4.__twl__.vnode) {
      *   // we check if the props are the same.  In that case, we can simply reuse
      *   // the previous rendering and skip all useless work
-     *   if (utils.shallowEqual(props4, w4.__owl__.renderProps)) {
-     *     def3 = w4.__owl__.renderPromise;
+     *   if (utils.shallowEqual(props4, w4.__twl__.renderProps)) {
+     *     def3 = w4.__twl__.renderPromise;
      *   } else {
      *     // if the props are not the same, we destroy the component and starts anew.
      *     // this will be faster than waiting for its rendering, then updating it
@@ -3088,7 +3088,7 @@ See https://github.com/tele-studio/owl/blob/master/doc/reference/config.md#mode 
      *   // the parent cmap (children map).  Note that the 'template' key is
      *   // used here, since this is what identify the component from the template
      *   // perspective.
-     *   context.__owl__.cmap[key5] = w4.__owl__.id;
+     *   context.__twl__.cmap[key5] = w4.__twl__.id;
      *
      *   // __prepare is called, to basically call willStart, then render the
      *   // component
@@ -3134,7 +3134,7 @@ See https://github.com/tele-studio/owl/blob/master/doc/reference/config.md#mode 
      *
      *     // we keep here a reference to the parent vnode (representing the
      *     // component, so we can reuse it later whenever we update the component
-     *     w4.__owl__.pvnode = pvnode;
+     *     w4.__twl__.pvnode = pvnode;
      *   });
      * } else {
      *   // this is the 'update' path of the directive.
@@ -3147,12 +3147,12 @@ See https://github.com/tele-studio/owl/blob/master/doc/reference/config.md#mode 
      *     // means that the parent's element children list will have a null in
      *     // the component's position, which will cause the pvnode to be removed
      *     // when it is patched.
-     *     if (w4.__owl__.isDestroyed) {
+     *     if (w4.__twl__.isDestroyed) {
      *       return;
      *     }
      *     // like above, we register the pvnode to the children list, so it
      *     // will not be patched out of the dom.
-     *     let pvnode = w4.__owl__.pvnode;
+     *     let pvnode = w4.__twl__.pvnode;
      *     c1[_2_index] = pvnode;
      *   });
      * }
@@ -3227,17 +3227,17 @@ See https://github.com/tele-studio/owl/blob/master/doc/reference/config.md#mode 
                 ctx.rootContext.shouldDefineRefs = true;
                 refKey = `ref${ctx.generateID()}`;
                 ctx.addLine(`const ${refKey} = ${ctx.interpolate(ref)};`);
-                refExpr = `context.__owl__.refs[${refKey}] = w${componentID};`;
+                refExpr = `context.__twl__.refs[${refKey}] = w${componentID};`;
             }
             let finalizeComponentCode = `w${componentID}.destroy();`;
             if (ref) {
-                finalizeComponentCode += `delete context.__owl__.refs[${refKey}];`;
+                finalizeComponentCode += `delete context.__twl__.refs[${refKey}];`;
             }
             if (transition) {
                 finalizeComponentCode = `let finalize = () => {
           ${finalizeComponentCode}
         };
-        delete w${componentID}.__owl__.transitionInserted;
+        delete w${componentID}.__twl__.transitionInserted;
         utils.transitionRemove(vn, '${transition}', finalize);`;
             }
             let createHook = "";
@@ -3289,7 +3289,7 @@ See https://github.com/tele-studio/owl/blob/master/doc/reference/config.md#mode 
                 const styleCode = styleExpr ? `vn.elm.style = ${styleExpr};` : "";
                 createHook = `utils.assignHooks(vnode.data, {create(_, vn){${styleCode}${eventsCode}}});`;
             }
-            ctx.addLine(`let w${componentID} = ${templateKey} in parent.__owl__.cmap ? parent.__owl__.children[parent.__owl__.cmap[${templateKey}]] : false;`);
+            ctx.addLine(`let w${componentID} = ${templateKey} in parent.__twl__.cmap ? parent.__twl__.children[parent.__twl__.cmap[${templateKey}]] : false;`);
             let shouldProxy = !ctx.parentNode;
             if (shouldProxy) {
                 let id = ctx.generateID();
@@ -3306,7 +3306,7 @@ See https://github.com/tele-studio/owl/blob/master/doc/reference/config.md#mode 
             else {
                 ctx.addLine(`let props${componentID} = {${propStr}};`);
             }
-            ctx.addIf(`w${componentID} && w${componentID}.__owl__.currentFiber && !w${componentID}.__owl__.vnode`);
+            ctx.addIf(`w${componentID} && w${componentID}.__twl__.currentFiber && !w${componentID}.__twl__.vnode`);
             ctx.addLine(`w${componentID}.destroy();`);
             ctx.addLine(`w${componentID} = false;`);
             ctx.closeIf();
@@ -3321,10 +3321,10 @@ See https://github.com/tele-studio/owl/blob/master/doc/reference/config.md#mode 
             // need to update component
             let styleCode = "";
             if (tattStyle) {
-                styleCode = `.then(()=>{if (w${componentID}.__owl__.status === ${5 /* DESTROYED */}) {return};w${componentID}.el.style=${tattStyle};});`;
+                styleCode = `.then(()=>{if (w${componentID}.__twl__.status === ${5 /* DESTROYED */}) {return};w${componentID}.el.style=${tattStyle};});`;
             }
             ctx.addLine(`w${componentID}.__updateProps(props${componentID}, extra.fiber, ${scope})${styleCode};`);
-            ctx.addLine(`let pvnode = w${componentID}.__owl__.pvnode;`);
+            ctx.addLine(`let pvnode = w${componentID}.__twl__.pvnode;`);
             if (registerCode) {
                 ctx.addLine(registerCode);
             }
@@ -3348,16 +3348,16 @@ See https://github.com/tele-studio/owl/blob/master/doc/reference/config.md#mode 
             ctx.addLine(`w${componentID} = new W${componentID}(parent, props${componentID});`);
             if (transition) {
                 ctx.addLine(`const __patch${componentID} = w${componentID}.__patch;`);
-                ctx.addLine(`w${componentID}.__patch = (t, vn) => {__patch${componentID}.call(w${componentID}, t, vn); if(!w${componentID}.__owl__.transitionInserted){w${componentID}.__owl__.transitionInserted = true;utils.transitionInsert(w${componentID}.__owl__.vnode, '${transition}');}};`);
+                ctx.addLine(`w${componentID}.__patch = (t, vn) => {__patch${componentID}.call(w${componentID}, t, vn); if(!w${componentID}.__twl__.transitionInserted){w${componentID}.__twl__.transitionInserted = true;utils.transitionInsert(w${componentID}.__twl__.vnode, '${transition}');}};`);
             }
-            ctx.addLine(`parent.__owl__.cmap[${templateKey}] = w${componentID}.__owl__.id;`);
+            ctx.addLine(`parent.__twl__.cmap[${templateKey}] = w${componentID}.__twl__.id;`);
             if (hasSlots) {
                 const clone = node.cloneNode(true);
                 // The next code is a fallback for compatibility reason. It accepts t-set
                 // elements that are direct children with a non empty body as nodes defining
                 // the content of a slot.
                 //
-                // This is wrong, but is necessary to prevent breaking all existing Owl
+                // This is wrong, but is necessary to prevent breaking all existing Twl
                 // code using slots. This will be removed in v2.0 someday. Meanwhile,
                 // please use t-set-slot everywhere you need to set the content of a
                 // slot.
@@ -3370,7 +3370,7 @@ See https://github.com/tele-studio/owl/blob/master/doc/reference/config.md#mode 
                 const slotNodes = Array.from(clone.querySelectorAll("[t-set-slot]"));
                 const slotNames = new Set();
                 const slotId = QWeb.nextSlotId++;
-                ctx.addLine(`w${componentID}.__owl__.slotId = ${slotId};`);
+                ctx.addLine(`w${componentID}.__twl__.slotId = ${slotId};`);
                 if (slotNodes.length) {
                     for (let i = 0, length = slotNodes.length; i < length; i++) {
                         const slotNode = slotNodes[i];
@@ -3424,12 +3424,12 @@ See https://github.com/tele-studio/owl/blob/master/doc/reference/config.md#mode 
             if (ctx.parentNode) {
                 ctx.addLine(`c${ctx.parentNode}.push(pvnode);`);
             }
-            ctx.addLine(`w${componentID}.__owl__.pvnode = pvnode;`);
+            ctx.addLine(`w${componentID}.__twl__.pvnode = pvnode;`);
             ctx.closeIf();
             if (classObj) {
-                ctx.addLine(`w${componentID}.__owl__.classObj=${classObj};`);
+                ctx.addLine(`w${componentID}.__twl__.classObj=${classObj};`);
             }
-            ctx.addLine(`w${componentID}.__owl__.parentLastFiberId = extra.fiber.id;`);
+            ctx.addLine(`w${componentID}.__twl__.parentLastFiberId = extra.fiber.id;`);
             return true;
         },
     });
@@ -3522,14 +3522,14 @@ See https://github.com/tele-studio/owl/blob/master/doc/reference/config.md#mode 
     const scheduler = new Scheduler(browser.requestAnimationFrame);
 
     /**
-     * Owl Fiber Class
+     * Twl Fiber Class
      *
      * Fibers are small abstractions designed to contain all the internal state
      * associated with a "rendering work unit", relative to a specific component.
      *
      * A rendering will cause the creation of a fiber for each impacted components.
      *
-     * Fibers capture all that necessary information, which is critical to owl
+     * Fibers capture all that necessary information, which is critical to twl
      * asynchronous rendering pipeline. Fibers can be cancelled, can be in different
      * states and in general determine the state of the rendering.
      */
@@ -3564,11 +3564,11 @@ See https://github.com/tele-studio/owl/blob/master/doc/reference/config.md#mode 
             this.force = force;
             this.target = target;
             this.position = position;
-            const __owl__ = component.__owl__;
-            this.scope = __owl__.scope;
+            const __twl__ = component.__twl__;
+            this.scope = __twl__.scope;
             this.root = parent ? parent.root : this;
             this.parent = parent;
-            let oldFiber = __owl__.currentFiber;
+            let oldFiber = __twl__.currentFiber;
             if (oldFiber && !oldFiber.isCompleted) {
                 this.force = true;
                 if (oldFiber.root === oldFiber && !parent) {
@@ -3581,7 +3581,7 @@ See https://github.com/tele-studio/owl/blob/master/doc/reference/config.md#mode 
                 }
             }
             this.root.counter++;
-            __owl__.currentFiber = this;
+            __twl__.currentFiber = this;
         }
         /**
          * When the oldFiber is not completed yet, and both oldFiber and this fiber
@@ -3674,14 +3674,14 @@ See https://github.com/tele-studio/owl/blob/master/doc/reference/config.md#mode 
         complete() {
             let component = this.component;
             this.isCompleted = true;
-            const status = component.__owl__.status;
+            const status = component.__twl__.status;
             if (status === 5 /* DESTROYED */) {
                 return;
             }
             // build patchQueue
             const patchQueue = [];
             const doWork = function (f) {
-                f.component.__owl__.currentFiber = null;
+                f.component.__twl__.currentFiber = null;
                 patchQueue.push(f);
                 return f.child;
             };
@@ -3693,8 +3693,8 @@ See https://github.com/tele-studio/owl/blob/master/doc/reference/config.md#mode 
                     const fiber = patchQueue[i];
                     if (fiber.shouldPatch) {
                         component = fiber.component;
-                        if (component.__owl__.willPatchCB) {
-                            component.__owl__.willPatchCB();
+                        if (component.__twl__.willPatchCB) {
+                            component.__twl__.willPatchCB();
                         }
                         component.willPatch();
                     }
@@ -3719,24 +3719,24 @@ See https://github.com/tele-studio/owl/blob/master/doc/reference/config.md#mode 
                         target = selfVnode;
                     }
                     else {
-                        target = component.__owl__.vnode || document.createElement(fiber.vnode.sel);
+                        target = component.__twl__.vnode || document.createElement(fiber.vnode.sel);
                     }
                     component.__patch(target, fiber.vnode);
                 }
                 else {
-                    const vnode = component.__owl__.vnode;
+                    const vnode = component.__twl__.vnode;
                     if (fiber.shouldPatch && vnode) {
                         component.__patch(vnode, fiber.vnode);
                         // When updating a Component's props (in directive),
                         // the component has a pvnode AND should be patched.
                         // However, its pvnode.elm may have changed if it is a High Order Component
-                        if (component.__owl__.pvnode) {
-                            component.__owl__.pvnode.elm = component.__owl__.vnode.elm;
+                        if (component.__twl__.pvnode) {
+                            component.__twl__.pvnode.elm = component.__twl__.vnode.elm;
                         }
                     }
                     else {
                         component.__patch(document.createElement(fiber.vnode.sel), fiber.vnode);
-                        component.__owl__.pvnode.elm = component.__owl__.vnode.elm;
+                        component.__twl__.pvnode.elm = component.__twl__.vnode.elm;
                     }
                 }
             }
@@ -3761,8 +3761,8 @@ See https://github.com/tele-studio/owl/blob/master/doc/reference/config.md#mode 
                     component = fiber.component;
                     if (fiber.shouldPatch && !this.target) {
                         component.patched();
-                        if (component.__owl__.patchedCB) {
-                            component.__owl__.patchedCB();
+                        if (component.__twl__.patchedCB) {
+                            component.__twl__.patchedCB();
                         }
                     }
                     else {
@@ -3774,7 +3774,7 @@ See https://github.com/tele-studio/owl/blob/master/doc/reference/config.md#mode 
                 for (let i = patchLen - 1; i >= 0; i--) {
                     const fiber = patchQueue[i];
                     component = fiber.component;
-                    component.__owl__.status = 4 /* UNMOUNTED */;
+                    component.__twl__.status = 4 /* UNMOUNTED */;
                 }
             }
         }
@@ -3791,7 +3791,7 @@ See https://github.com/tele-studio/owl/blob/master/doc/reference/config.md#mode 
             });
         }
         /**
-         * This is the global error handler for errors occurring in Owl main lifecycle
+         * This is the global error handler for errors occurring in Twl main lifecycle
          * methods.  Caught errors are triggered on the QWeb instance, and are
          * potentially given to some parent component which implements `catchError`.
          *
@@ -3800,7 +3800,7 @@ See https://github.com/tele-studio/owl/blob/master/doc/reference/config.md#mode 
          */
         handleError(error) {
             let component = this.component;
-            this.vnode = component.__owl__.vnode || h("div");
+            this.vnode = component.__twl__.vnode || h("div");
             const qweb = component.env.qweb;
             let root = component;
             function handle(error) {
@@ -3808,7 +3808,7 @@ See https://github.com/tele-studio/owl/blob/master/doc/reference/config.md#mode 
                 qweb.trigger("error", error);
                 while (component && !(canCatch = !!component.catchError)) {
                     root = component;
-                    component = component.__owl__.parent;
+                    component = component.__twl__.parent;
                 }
                 if (canCatch) {
                     try {
@@ -3816,7 +3816,7 @@ See https://github.com/tele-studio/owl/blob/master/doc/reference/config.md#mode 
                     }
                     catch (e) {
                         root = component;
-                        component = component.__owl__.parent;
+                        component = component.__twl__.parent;
                         return handle(e);
                     }
                     return true;
@@ -3960,9 +3960,9 @@ See https://github.com/tele-studio/owl/blob/master/doc/reference/config.md#mode 
     }
 
     /**
-     * Owl Style System
+     * Twl Style System
      *
-     * This files contains the Owl code related to processing (extended) css strings
+     * This files contains the Twl code related to processing (extended) css strings
      * and creating/adding <style> tags to the document head.
      */
     const STYLESHEETS = {};
@@ -4067,9 +4067,9 @@ See https://github.com/tele-studio/owl/blob/master/doc/reference/config.md#mode 
             let depth;
             if (parent) {
                 this.env = parent.env;
-                const __powl__ = parent.__owl__;
-                __powl__.children[id] = this;
-                depth = __powl__.depth + 1;
+                const __ptwl__ = parent.__twl__;
+                __ptwl__.children[id] = this;
+                depth = __ptwl__.depth + 1;
             }
             else {
                 // we are the root component
@@ -4077,12 +4077,12 @@ See https://github.com/tele-studio/owl/blob/master/doc/reference/config.md#mode 
                 if (!this.env.qweb) {
                     this.env.qweb = new QWeb();
                 }
-                // TODO: remove this in owl 2.0
+                // TODO: remove this in twl 2.0
                 if (!this.env.browser) {
                     this.env.browser = browser;
                 }
                 this.env.qweb.on("update", this, () => {
-                    switch (this.__owl__.status) {
+                    switch (this.__twl__.status) {
                         case 3 /* MOUNTED */:
                             this.render(true);
                             break;
@@ -4100,7 +4100,7 @@ See https://github.com/tele-studio/owl/blob/master/doc/reference/config.md#mode 
             }
             const qweb = this.env.qweb;
             const template = constr.template || this.__getTemplate(qweb);
-            this.__owl__ = {
+            this.__twl__ = {
                 id: id,
                 depth: depth,
                 vnode: null,
@@ -4134,7 +4134,7 @@ See https://github.com/tele-studio/owl/blob/master/doc/reference/config.md#mode 
          * this is the case if the component is not mounted yet, or is destroyed.
          */
         get el() {
-            return this.__owl__.vnode ? this.__owl__.vnode.elm : null;
+            return this.__twl__.vnode ? this.__twl__.vnode.elm : null;
         }
         /**
          * setup is run just after the component is constructed. This is the standard
@@ -4219,20 +4219,20 @@ See https://github.com/tele-studio/owl/blob/master/doc/reference/config.md#mode 
          * Mount the component to a target element.
          *
          * This should only be done if the component was created manually. Components
-         * created declaratively in templates are managed by the Owl system.
+         * created declaratively in templates are managed by the Twl system.
          *
          * Note that a component can be mounted an unmounted several times
          */
         async mount(target, options = {}) {
             if (!(target instanceof HTMLElement || target instanceof DocumentFragment)) {
                 let message = `Component '${this.constructor.name}' cannot be mounted: the target is not a valid DOM node.`;
-                message += `\nMaybe the DOM is not ready yet? (in that case, you can use owl.utils.whenReady)`;
+                message += `\nMaybe the DOM is not ready yet? (in that case, you can use twl.utils.whenReady)`;
                 throw new Error(message);
             }
             const position = options.position || "last-child";
-            const __owl__ = this.__owl__;
-            const currentFiber = __owl__.currentFiber;
-            switch (__owl__.status) {
+            const __twl__ = this.__twl__;
+            const currentFiber = __twl__.currentFiber;
+            switch (__twl__.status) {
                 case 0 /* CREATED */: {
                     const fiber = new Fiber(null, this, true, target, position);
                     fiber.shouldPatch = false;
@@ -4270,7 +4270,7 @@ See https://github.com/tele-studio/owl/blob/master/doc/reference/config.md#mode 
          * to call willUnmount calls and remove the component from the DOM.
          */
         unmount() {
-            if (this.__owl__.status === 3 /* MOUNTED */) {
+            if (this.__twl__.status === 3 /* MOUNTED */) {
                 this.__callWillUnmount();
                 this.el.remove();
             }
@@ -4285,9 +4285,9 @@ See https://github.com/tele-studio/owl/blob/master/doc/reference/config.md#mode 
          * its props.
          */
         async render(force = false) {
-            const __owl__ = this.__owl__;
-            const currentFiber = __owl__.currentFiber;
-            if (!__owl__.vnode && !currentFiber) {
+            const __twl__ = this.__twl__;
+            const currentFiber = __twl__.currentFiber;
+            if (!__twl__.vnode && !currentFiber) {
                 return;
             }
             if (currentFiber && !currentFiber.isRendered && !currentFiber.isCompleted) {
@@ -4296,10 +4296,10 @@ See https://github.com/tele-studio/owl/blob/master/doc/reference/config.md#mode 
             // if we aren't mounted at this point, it implies that there is a
             // currentFiber that is already rendered (isRendered is true), so we are
             // about to be mounted
-            const status = __owl__.status;
+            const status = __twl__.status;
             const fiber = new Fiber(null, this, force, null, null);
             Promise.resolve().then(() => {
-                if (__owl__.status === 3 /* MOUNTED */ || status !== 3 /* MOUNTED */) {
+                if (__twl__.status === 3 /* MOUNTED */ || status !== 3 /* MOUNTED */) {
                     if (fiber.isCompleted || fiber.isRendered) {
                         return;
                     }
@@ -4310,7 +4310,7 @@ See https://github.com/tele-studio/owl/blob/master/doc/reference/config.md#mode 
                     // were actually about to be unmounted ; we can thus forget about this
                     // fiber
                     fiber.isCompleted = true;
-                    __owl__.currentFiber = null;
+                    __twl__.currentFiber = null;
                 }
             });
             return scheduler.addFiber(fiber);
@@ -4325,10 +4325,10 @@ See https://github.com/tele-studio/owl/blob/master/doc/reference/config.md#mode 
          * components will be automatically destroyed.
          */
         destroy() {
-            const __owl__ = this.__owl__;
-            if (__owl__.status !== 5 /* DESTROYED */) {
+            const __twl__ = this.__twl__;
+            if (__twl__.status !== 5 /* DESTROYED */) {
                 const el = this.el;
-                this.__destroy(__owl__.parent);
+                this.__destroy(__twl__.parent);
                 if (el) {
                     el.remove();
                 }
@@ -4355,7 +4355,7 @@ See https://github.com/tele-studio/owl/blob/master/doc/reference/config.md#mode 
         // Private
         //--------------------------------------------------------------------------
         /**
-         * Private helper to perform a full destroy, from the point of view of an Owl
+         * Private helper to perform a full destroy, from the point of view of an Twl
          * component. It does not remove the el (this is done only once on the top
          * level destroyed component, for performance reasons).
          *
@@ -4366,52 +4366,52 @@ See https://github.com/tele-studio/owl/blob/master/doc/reference/config.md#mode 
          * all children many times.
          */
         __destroy(parent) {
-            const __owl__ = this.__owl__;
-            if (__owl__.status === 3 /* MOUNTED */) {
-                if (__owl__.willUnmountCB) {
-                    __owl__.willUnmountCB();
+            const __twl__ = this.__twl__;
+            if (__twl__.status === 3 /* MOUNTED */) {
+                if (__twl__.willUnmountCB) {
+                    __twl__.willUnmountCB();
                 }
                 this.willUnmount();
-                __owl__.status = 4 /* UNMOUNTED */;
+                __twl__.status = 4 /* UNMOUNTED */;
             }
-            const children = __owl__.children;
+            const children = __twl__.children;
             for (let key in children) {
                 children[key].__destroy(this);
             }
             if (parent) {
-                let id = __owl__.id;
-                delete parent.__owl__.children[id];
-                __owl__.parent = null;
+                let id = __twl__.id;
+                delete parent.__twl__.children[id];
+                __twl__.parent = null;
             }
-            __owl__.status = 5 /* DESTROYED */;
-            delete __owl__.vnode;
-            if (__owl__.currentFiber) {
-                __owl__.currentFiber.isCompleted = true;
+            __twl__.status = 5 /* DESTROYED */;
+            delete __twl__.vnode;
+            if (__twl__.currentFiber) {
+                __twl__.currentFiber.isCompleted = true;
             }
         }
         __callMounted() {
-            const __owl__ = this.__owl__;
-            __owl__.status = 3 /* MOUNTED */;
+            const __twl__ = this.__twl__;
+            __twl__.status = 3 /* MOUNTED */;
             this.mounted();
-            if (__owl__.mountedCB) {
-                __owl__.mountedCB();
+            if (__twl__.mountedCB) {
+                __twl__.mountedCB();
             }
         }
         __callWillUnmount() {
-            const __owl__ = this.__owl__;
-            if (__owl__.willUnmountCB) {
-                __owl__.willUnmountCB();
+            const __twl__ = this.__twl__;
+            if (__twl__.willUnmountCB) {
+                __twl__.willUnmountCB();
             }
             this.willUnmount();
-            __owl__.status = 4 /* UNMOUNTED */;
-            if (__owl__.currentFiber) {
-                __owl__.currentFiber.isCompleted = true;
-                __owl__.currentFiber.root.counter = 0;
+            __twl__.status = 4 /* UNMOUNTED */;
+            if (__twl__.currentFiber) {
+                __twl__.currentFiber.isCompleted = true;
+                __twl__.currentFiber.root.counter = 0;
             }
-            const children = __owl__.children;
+            const children = __twl__.children;
             for (let id in children) {
                 const comp = children[id];
-                if (comp.__owl__.status === 3 /* MOUNTED */) {
+                if (comp.__twl__.status === 3 /* MOUNTED */) {
                     comp.__callWillUnmount();
                 }
             }
@@ -4422,7 +4422,7 @@ See https://github.com/tele-studio/owl/blob/master/doc/reference/config.md#mode 
          */
         __trigger(component, eventType, payload) {
             if (this.el) {
-                const ev = new OwlEvent(component, eventType, {
+                const ev = new TwlEvent(component, eventType, {
                     bubbles: true,
                     cancelable: true,
                     detail: payload,
@@ -4439,10 +4439,10 @@ See https://github.com/tele-studio/owl/blob/master/doc/reference/config.md#mode 
          * it updates a component (so, when the parent template is rerendered).
          */
         async __updateProps(nextProps, parentFiber, scope) {
-            this.__owl__.scope = scope;
+            this.__twl__.scope = scope;
             const shouldUpdate = parentFiber.force || this.shouldUpdate(nextProps);
             if (shouldUpdate) {
-                const __owl__ = this.__owl__;
+                const __twl__ = this.__twl__;
                 const fiber = new Fiber(parentFiber, this, parentFiber.force, null, null);
                 if (!parentFiber.child) {
                     parentFiber.child = fiber;
@@ -4460,7 +4460,7 @@ See https://github.com/tele-studio/owl/blob/master/doc/reference/config.md#mode 
                 }
                 await Promise.all([
                     this.willUpdateProps(nextProps),
-                    __owl__.willUpdatePropsCB && __owl__.willUpdatePropsCB(nextProps),
+                    __twl__.willUpdatePropsCB && __twl__.willUpdatePropsCB(nextProps),
                 ]);
                 if (fiber.isCompleted) {
                     return;
@@ -4474,7 +4474,7 @@ See https://github.com/tele-studio/owl/blob/master/doc/reference/config.md#mode 
          * a virtual dom vnode into some actual dom.
          */
         __patch(target, vnode) {
-            this.__owl__.vnode = patch(target, vnode);
+            this.__twl__.vnode = patch(target, vnode);
         }
         /**
          * The __prepare method is only called by the t-component directive, when a
@@ -4482,7 +4482,7 @@ See https://github.com/tele-studio/owl/blob/master/doc/reference/config.md#mode 
          * parent template.
          */
         __prepare(parentFiber, scope, cb) {
-            this.__owl__.scope = scope;
+            this.__twl__.scope = scope;
             const fiber = new Fiber(parentFiber, this, parentFiber.force, null, null);
             fiber.shouldPatch = false;
             if (!parentFiber.child) {
@@ -4533,11 +4533,11 @@ See https://github.com/tele-studio/owl/blob/master/doc/reference/config.md#mode 
             try {
                 const proms = Promise.all([
                     this.willStart(),
-                    this.__owl__.willStartCB && this.__owl__.willStartCB(),
+                    this.__twl__.willStartCB && this.__twl__.willStartCB(),
                 ]);
-                this.__owl__.status = 1 /* WILLSTARTED */;
+                this.__twl__.status = 1 /* WILLSTARTED */;
                 await proms;
-                if (this.__owl__.status === 5 /* DESTROYED */) {
+                if (this.__twl__.status === 5 /* DESTROYED */) {
                     return Promise.resolve();
                 }
             }
@@ -4547,29 +4547,29 @@ See https://github.com/tele-studio/owl/blob/master/doc/reference/config.md#mode 
             }
             if (!fiber.isCompleted) {
                 this.__render(fiber);
-                this.__owl__.status = 2 /* RENDERED */;
+                this.__twl__.status = 2 /* RENDERED */;
                 cb();
             }
         }
         __render(fiber) {
-            const __owl__ = this.__owl__;
-            if (__owl__.observer) {
-                __owl__.observer.allowMutations = false;
+            const __twl__ = this.__twl__;
+            if (__twl__.observer) {
+                __twl__.observer.allowMutations = false;
             }
             let error;
             try {
-                let vnode = __owl__.renderFn(this, {
-                    handlers: __owl__.boundHandlers,
+                let vnode = __twl__.renderFn(this, {
+                    handlers: __twl__.boundHandlers,
                     fiber: fiber,
                 });
                 // we iterate over the children to detect those that no longer belong to the
                 // current rendering: those ones, if not mounted yet, can (and have to) be
                 // destroyed right now, because they are not in the DOM, and thus we won't
                 // be notified later on (when patching), that they are removed from the DOM
-                for (let childKey in __owl__.children) {
-                    const child = __owl__.children[childKey];
-                    const childOwl = child.__owl__;
-                    if (childOwl.status !== 3 /* MOUNTED */ && childOwl.parentLastFiberId < fiber.id) {
+                for (let childKey in __twl__.children) {
+                    const child = __twl__.children[childKey];
+                    const childTwl = child.__twl__;
+                    if (childTwl.status !== 3 /* MOUNTED */ && childTwl.parentLastFiberId < fiber.id) {
                         // we only do here a "soft" destroy, meaning that we leave the child
                         // dom node alone, without removing it.  Most of the time, it does not
                         // matter, because the child component is already unmounted.  However,
@@ -4577,17 +4577,17 @@ See https://github.com/tele-studio/owl/blob/master/doc/reference/config.md#mode 
                         // still be attached to its parent, and this may be important if we
                         // want to remount the parent, because the vdom need to match the
                         // actual DOM
-                        child.__destroy(childOwl.parent);
-                        if (childOwl.pvnode) {
+                        child.__destroy(childTwl.parent);
+                        if (childTwl.pvnode) {
                             // we remove the key here to make sure that the patching algorithm
                             // is able to make the difference between this pvnode and an eventual
                             // other instance of the same component
-                            delete childOwl.pvnode.key;
+                            delete childTwl.pvnode.key;
                             // Since the component has been unmounted, we do not want to actually
                             // call a remove hook.  This is pretty important, since the t-component
                             // directive actually disabled it, so the vdom algorithm will just
                             // not remove the child elm if we don't remove the hook.
-                            delete childOwl.pvnode.data.hook.remove;
+                            delete childTwl.pvnode.data.hook.remove;
                         }
                     }
                 }
@@ -4598,16 +4598,16 @@ See https://github.com/tele-studio/owl/blob/master/doc/reference/config.md#mode 
                 // we apply here the class information described on the component by the
                 // template (so, something like <MyComponent class="..."/>) to the actual
                 // root vnode
-                if (__owl__.classObj) {
+                if (__twl__.classObj) {
                     const data = vnode.data;
-                    data.class = Object.assign(data.class || {}, __owl__.classObj);
+                    data.class = Object.assign(data.class || {}, __twl__.classObj);
                 }
             }
             catch (e) {
                 error = e;
             }
-            if (__owl__.observer) {
-                __owl__.observer.allowMutations = true;
+            if (__twl__.observer) {
+                __twl__.observer.allowMutations = true;
             }
             fiber.root.counter--;
             fiber.isRendered = true;
@@ -4724,7 +4724,7 @@ See https://github.com/tele-studio/owl/blob/master/doc/reference/config.md#mode 
         async __notifyComponents() {
             const rev = ++this.rev;
             const subscriptions = this.subscriptions.update;
-            const groups = partitionBy(subscriptions, (s) => (s.owner ? s.owner.__owl__.depth : -1));
+            const groups = partitionBy(subscriptions, (s) => (s.owner ? s.owner.__twl__.depth : -1));
             for (let group of groups) {
                 const proms = group.map((sub) => sub.callback.call(sub.owner, rev));
                 // at this point, each component in the current group has registered a
@@ -4748,19 +4748,19 @@ See https://github.com/tele-studio/owl/blob/master/doc/reference/config.md#mode 
         return useContextWithCB(ctx, component, component.render.bind(component));
     }
     function useContextWithCB(ctx, component, method) {
-        const __owl__ = component.__owl__;
-        const id = __owl__.id;
+        const __twl__ = component.__twl__;
+        const id = __twl__.id;
         const mapping = ctx.mapping;
         if (id in mapping) {
             return ctx.state;
         }
-        if (!__owl__.observer) {
-            __owl__.observer = new Observer();
-            __owl__.observer.notifyCB = component.render.bind(component);
+        if (!__twl__.observer) {
+            __twl__.observer = new Observer();
+            __twl__.observer.notifyCB = component.render.bind(component);
         }
         mapping[id] = 0;
-        const renderFn = __owl__.renderFn;
-        __owl__.renderFn = function (comp, params) {
+        const renderFn = __twl__.renderFn;
+        __twl__.renderFn = function (comp, params) {
             mapping[id] = ctx.rev;
             return renderFn(comp, params);
         };
@@ -4780,7 +4780,7 @@ See https://github.com/tele-studio/owl/blob/master/doc/reference/config.md#mode 
     }
 
     /**
-     * Owl Hook System
+     * Twl Hook System
      *
      * This file introduces the concept of hooks, similar to React or Vue hooks.
      * We have currently an implementation of:
@@ -4799,12 +4799,12 @@ See https://github.com/tele-studio/owl/blob/master/doc/reference/config.md#mode 
      */
     function useState$1(state) {
         const component = Component.current;
-        const __owl__ = component.__owl__;
-        if (!__owl__.observer) {
-            __owl__.observer = new Observer();
-            __owl__.observer.notifyCB = component.render.bind(component);
+        const __twl__ = component.__twl__;
+        if (!__twl__.observer) {
+            __twl__.observer = new Observer();
+            __twl__.observer.notifyCB = component.render.bind(component);
         }
-        return __owl__.observer.observe(state);
+        return __twl__.observer.observe(state);
     }
     // -----------------------------------------------------------------------------
     // Life cycle hooks
@@ -4813,30 +4813,30 @@ See https://github.com/tele-studio/owl/blob/master/doc/reference/config.md#mode 
         if (reverse) {
             return function (cb) {
                 const component = Component.current;
-                if (component.__owl__[method]) {
-                    const current = component.__owl__[method];
-                    component.__owl__[method] = function () {
+                if (component.__twl__[method]) {
+                    const current = component.__twl__[method];
+                    component.__twl__[method] = function () {
                         current.call(component);
                         cb.call(component);
                     };
                 }
                 else {
-                    component.__owl__[method] = cb;
+                    component.__twl__[method] = cb;
                 }
             };
         }
         else {
             return function (cb) {
                 const component = Component.current;
-                if (component.__owl__[method]) {
-                    const current = component.__owl__[method];
-                    component.__owl__[method] = function () {
+                if (component.__twl__[method]) {
+                    const current = component.__twl__[method];
+                    component.__twl__[method] = function () {
                         cb.call(component);
                         current.call(component);
                     };
                 }
                 else {
-                    component.__owl__[method] = cb;
+                    component.__twl__[method] = cb;
                 }
             };
         }
@@ -4844,14 +4844,14 @@ See https://github.com/tele-studio/owl/blob/master/doc/reference/config.md#mode 
     function makeAsyncHook(method) {
         return function (cb) {
             const component = Component.current;
-            if (component.__owl__[method]) {
-                const current = component.__owl__[method];
-                component.__owl__[method] = function (...args) {
+            if (component.__twl__[method]) {
+                const current = component.__twl__[method];
+                component.__twl__[method] = function (...args) {
                     return Promise.all([current.call(component, ...args), cb.call(component, ...args)]);
                 };
             }
             else {
-                component.__owl__[method] = cb;
+                component.__twl__[method] = cb;
             }
         };
     }
@@ -4862,10 +4862,10 @@ See https://github.com/tele-studio/owl/blob/master/doc/reference/config.md#mode 
     const onWillStart = makeAsyncHook("willStartCB");
     const onWillUpdateProps = makeAsyncHook("willUpdatePropsCB");
     function useRef(name) {
-        const __owl__ = Component.current.__owl__;
+        const __twl__ = Component.current.__twl__;
         return {
             get el() {
-                const val = __owl__.refs && __owl__.refs[name];
+                const val = __twl__.refs && __twl__.refs[name];
                 if (val instanceof HTMLElement) {
                     return val;
                 }
@@ -4875,7 +4875,7 @@ See https://github.com/tele-studio/owl/blob/master/doc/reference/config.md#mode 
                 return null;
             },
             get comp() {
-                const val = __owl__.refs && __owl__.refs[name];
+                const val = __twl__.refs && __twl__.refs[name];
                 return val instanceof Component ? val : null;
             },
         };
@@ -4922,7 +4922,7 @@ See https://github.com/tele-studio/owl/blob/master/doc/reference/config.md#mode 
      *  a menu needs to listen to the click on window to be closed automatically
      *
      * Usage:
-     *  in the constructor of the OWL component that needs to be notified,
+     *  in the constructor of the TWL component that needs to be notified,
      *  `useExternalListener(window, 'click', this._doSomething);`
      * */
     function useExternalListener(target, eventName, handler, eventParams) {
@@ -4984,7 +4984,7 @@ See https://github.com/tele-studio/owl/blob/master/doc/reference/config.md#mode 
     const isStrictEqual = (a, b) => a === b;
     function useStore(selector, options = {}) {
         const component = Component.current;
-        const componentId = component.__owl__.id;
+        const componentId = component.__twl__.id;
         const store = options.store || component.env.store;
         if (!(store instanceof Store$1)) {
             throw new Error(`No store found when connecting '${component.constructor.name}'`);
@@ -5060,7 +5060,7 @@ See https://github.com/tele-studio/owl/blob/master/doc/reference/config.md#mode 
     }
 
     /**
-     * Owl Tags
+     * Twl Tags
      *
      * We have here a (very) small collection of tag functions:
      *
@@ -5108,7 +5108,7 @@ See https://github.com/tele-studio/owl/blob/master/doc/reference/config.md#mode 
     /**
      * AsyncRoot
      *
-     * Owl is by default asynchronous, and the user interface will wait for all its
+     * Twl is by default asynchronous, and the user interface will wait for all its
      * subcomponents to be rendered before updating the DOM. This is most of the
      * time what we want, but in some cases, it makes sense to "detach" a component
      * from this coordination.  This is the goal of the AsyncRoot component.
@@ -5529,7 +5529,7 @@ See https://github.com/tele-studio/owl/blob/master/doc/reference/config.md#mode 
 
     /**
      * This file is the main file packaged by rollup (see rollup.config.js).  From
-     * this file, we export all public owl elements.
+     * this file, we export all public twl elements.
      *
      * Note that dynamic values, such as a date or a commit hash are added by rollup
      */
@@ -5571,7 +5571,7 @@ See https://github.com/tele-studio/owl/blob/master/doc/reference/config.md#mode 
     __info__.version = '1.4.10';
     __info__.date = '2022-04-27T09:54:49.146Z';
     __info__.hash = 'c060490';
-    __info__.url = 'https://github.com/tele-studio/owl';
+    __info__.url = 'https://github.com/tele-studio/twl';
 
 
-})(this.owl = this.owl || {});
+})(this.twl = this.twl || {});

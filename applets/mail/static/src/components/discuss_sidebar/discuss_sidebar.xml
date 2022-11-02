@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <templates xml:space="preserve">
 
-    <t t-name="mail.DiscussSidebar" owl="1">
+    <t t-name="mail.DiscussSidebar" twl="1">
         <div name="root" class="o_DiscussSidebar">
             <div class="d-flex justify-content-center">
                 <button class="o_DiscussSidebar_startAMeetingButton btn btn-primary rounded-sm rounded" title="Start a meeting" t-on-click="discuss.onClickStartAMeetingButton" t-ref="startAMeetingButton">

@@ -17,7 +17,7 @@ import { registerCleanup } from "@web/../tests/helpers/cleanup";
 import Bus from 'web.Bus';
 import { date_to_str } from 'web.time';
 
-const { Component, tags: { xml } } = owl;
+const { Component, tags: { xml } } = twl;
 
 QUnit.module('mail', {}, function () {
 QUnit.module('components', {}, function () {

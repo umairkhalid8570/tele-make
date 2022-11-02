@@ -80,7 +80,7 @@ function factory(dependencies) {
 
     RtcOptionList.fields = {
         /**
-         * States the OWL component of this option list.
+         * States the TWL component of this option list.
          */
         component: attr(),
         rtcController: one2one('mail.rtc_controller', {

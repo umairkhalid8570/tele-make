@@ -56,7 +56,7 @@ tele.define('account_reports/static/tests/account_reports_tests', function (requ
         }
     }, () => {
         QUnit.test("mounted is called once when returning on 'Account Reports' from breadcrumb", async function(assert) {
-            // This test can be removed as soon as we don't mix legacy and owl layers anymore.
+            // This test can be removed as soon as we don't mix legacy and twl layers anymore.
             assert.expect(7);
 
             let mountCount = 0;

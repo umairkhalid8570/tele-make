@@ -1,12 +1,12 @@
 tele.define('board.AddToGoogleSpreadsheetMenu', function (require) {
     "use strict";
 
-    const Dialog = require('web.OwlDialog');
+    const Dialog = require('web.TwlDialog');
     const Domain = require('web.Domain');
     const FavoriteMenu = require('web.FavoriteMenu');
 
-    const { Component } = owl;
-    const { useState } = owl.hooks;
+    const { Component } = twl;
+    const { useState } = twl.hooks;
 
     /**
      * 'Add to Google spreadsheet' menu

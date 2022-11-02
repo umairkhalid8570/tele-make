@@ -12,7 +12,7 @@ function factory(dependencies) {
          * @override
          */
         _created() {
-            // Bind necessary until OWL supports arrow function in handlers: https://github.com/tele-studio/owl/issues/876
+            // Bind necessary until TWL supports arrow function in handlers: https://github.com/tele-studio/twl/issues/876
             this.onClickHideMemberList = this.onClickHideMemberList.bind(this);
             this.onClickInboxMarkAllAsRead = this.onClickInboxMarkAllAsRead.bind(this);
             this.onClickInviteButton = this.onClickInviteButton.bind(this);
@@ -168,7 +168,7 @@ function factory(dependencies) {
         }
 
         /**
-         * Handles OWL update on this top bar component.
+         * Handles TWL update on this top bar component.
          */
         onComponentUpdate() {
             if (this.doFocusOnGuestNameInput) {
@@ -625,7 +625,7 @@ function factory(dependencies) {
          */
         doSetSelectionStartOnThreadDescriptionInput: attr(),
         /**
-         * States the OWL ref of the "guest name" input of this top bar.
+         * States the TWL ref of the "guest name" input of this top bar.
          * Useful to focus it, or to know when a click is done outside of it.
          */
         guestNameInputRef: attr(),
@@ -652,7 +652,7 @@ function factory(dependencies) {
             default: false,
         }),
         /**
-         * States the OWL ref of the invite button.
+         * States the TWL ref of the invite button.
          * Useful to provide anchor for the invite popover positioning.
          */
         inviteButtonRef: attr(),
@@ -737,12 +737,12 @@ function factory(dependencies) {
             related: 'threadView.thread',
         }),
         /**
-         * States the OWL ref of the "thread name" input of this top bar.
+         * States the TWL ref of the "thread name" input of this top bar.
          * Useful to focus it, or to know when a click is done outside of it.
          */
         threadNameInputRef: attr(),
         /**
-         * States the OWL ref of the thread description input of this top bar.
+         * States the TWL ref of the thread description input of this top bar.
          * Useful to focus it, or to know when a click is done outside of it.
          */
         threadDescriptionInputRef: attr(),

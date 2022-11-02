@@ -10,7 +10,7 @@ import TaskGanttConnectorController from "@project_enterprise/js/task_gantt_conn
 
 /**
  * As the rendering of the connectors is made after the gantt rendering is injected in the dom and as the connectors
- * are an owl component that needs to be mounted (async), we have no control on when they will actually be generated.
+ * are an twl component that needs to be mounted (async), we have no control on when they will actually be generated.
  * For that reason we had to create the testPromise and extend both TaskGanttConnectorRenderer and TaskGanttConnectorView.
 * */
 let testPromise = testUtils.makeTestPromise();

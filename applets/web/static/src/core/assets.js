@@ -1,6 +1,6 @@
 /** @tele-module **/
 
-const { useEnv, onWillStart } = owl.hooks;
+const { useEnv, onWillStart } = twl.hooks;
 import { memoize } from "./utils/functions";
 import { browser } from "./browser/browser";
 
@@ -28,7 +28,7 @@ class AssetsLoadingError extends Error {}
 /**
  * An object describing a loaded bundle
  * @typedef {Object} LoadedBundle
- * @property {XMLDocument} templates an XML document containing the owl
+ * @property {XMLDocument} templates an XML document containing the twl
  *      templates defined in that bundle
  */
 
@@ -97,7 +97,7 @@ const loadCSS = memoize(function loadCSS(url) {
  *
  * @param {string} name the name of the bundle as declared in the manifest.
  * @returns {Promise<XMLDocument>} A Promise of an XML document containing the
- *      owl templates.
+ *      twl templates.
  */
 export const loadBundleTemplates = memoize(async function loadBundleTemplates(name) {
     // TODO: quid of the "unique" in the URL? We can"t have one cache_hash
@@ -137,22 +137,22 @@ async function loadBundle(name, options) {
 //------------------------------------------------------------------------------
 
 /**
- * Process the qweb templates to obtain only the owl templates. This function
- * does NOT register the templates into Owl.
+ * Process the qweb templates to obtain only the twl templates. This function
+ * does NOT register the templates into Twl.
  *
  * @param {string} templates An xml string describing templates
- * @returns {XMLDocument} An xml document containing only the owl templates
+ * @returns {XMLDocument} An xml document containing only the twl templates
  */
 export function processTemplates(templates) {
     const doc = new DOMParser().parseFromString(templates, "text/xml");
-    // as we currently have two qweb engines (owl and legacy), owl templates are
-    // flagged with attribute `owl="1"`. The following lines removes the "owl"
+    // as we currently have two qweb engines (twl and legacy), twl templates are
+    // flagged with attribute `twl="1"`. The following lines removes the "twl"
     // attribute from the templates, so that it doesn't appear in the DOM. We
-    // also remove the non-owl templates, as those shouldn't be loaded in the
-    // owl environment's QWeb, and will be loaded separately.
+    // also remove the non-twl templates, as those shouldn't be loaded in the
+    // twl environment's QWeb, and will be loaded separately.
     for (const template of [...doc.querySelector("templates").children]) {
-        if (template.hasAttribute("owl")) {
-            template.removeAttribute("owl");
+        if (template.hasAttribute("twl")) {
+            template.removeAttribute("twl");
         } else {
             template.remove();
         }
@@ -191,7 +191,7 @@ export const loadPublicAsset = memoize(async function loadPublicAsset(xmlid, orm
  * @param {string[]} [assets.cssLibs] urls of the css libraries to load
  * @returns {Promise<{[bundles: LoadedBundle[]]}>} An object describing the loaded
  *      assets. The js and css libs are loaded globally and will be loaded when
- *      this promise is resolved, the owl xml templates will be loaded in the
+ *      this promise is resolved, the twl xml templates will be loaded in the
  *      `templates` key of each LoadedBundle object.
  */
 export async function loadAssets(assets) {
@@ -216,7 +216,7 @@ export async function loadAssets(assets) {
     return loadedAssets;
 }
 /**
- * Loads the given assets, and adds the loaded owl templates into the current
+ * Loads the given assets, and adds the loaded twl templates into the current
  * environment's qweb instance.
  *
  * @param {Object} assets

@@ -118,7 +118,7 @@ var sale_subscription_dashboard_abstract = AbstractAction.extend(StandaloneField
             options.pushState = false;
         }
         return this.do_action(view_xmlid, doActionOptions).then(function() {
-            // ARJ: When the subscriptions dashboard will be rewritten in OWL, the current behavior have to be improved:
+            // ARJ: When the subscriptions dashboard will be rewritten in TWL, the current behavior have to be improved:
             // * keep the current graph when user refresh the page.
             // * Allows to use back and forward buttons.
 

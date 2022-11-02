@@ -10,7 +10,7 @@
    import { localization } from "@web/core/l10n/localization";
    import { useTooltip } from "@web/core/tooltip/tooltip_hook";
    
-   const { Component, hooks } = owl;
+   const { Component, hooks } = twl;
    const { useExternalListener } = hooks;
    const rpc = require('web.rpc');
    var count = 0;

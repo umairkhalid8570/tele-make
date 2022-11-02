@@ -74,7 +74,7 @@ tele.define('web_mobile.hooks', function (require) {
 
 const { backButtonManager } = require('web_mobile.core');
 
-const { Component, hooks } = owl;
+const { Component, hooks } = twl;
 const { onWillUnmount, onMounted, onPatched } = hooks;
 
 /**

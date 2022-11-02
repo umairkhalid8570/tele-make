@@ -3,7 +3,7 @@
 import { useEffect } from "@web/core/utils/hooks";
 import { throttleForAnimation } from "../utils/timing";
 
-const { onWillUnmount } = owl.hooks;
+const { onWillUnmount } = twl.hooks;
 
 /**
  * @typedef {{
@@ -55,7 +55,7 @@ const { onWillUnmount } = owl.hooks;
  * @typedef {{ className: string, top: number, left: number }} PositioningSolution
  */
 
-const { hooks } = owl;
+const { hooks } = twl;
 const { useComponent, useExternalListener, useRef } = hooks;
 
 const POPPER_CLASS = "o-popper-position";

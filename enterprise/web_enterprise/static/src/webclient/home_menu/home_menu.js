@@ -5,7 +5,7 @@ import { useService } from "@web/core/utils/hooks";
 import { isIosApp } from "@web/core/browser/feature_detection";
 import { fuzzyLookup } from "@web/core/utils/search";
 
-const { Component, hooks } = owl;
+const { Component, hooks } = twl;
 const { useExternalListener, useState, useRef } = hooks;
 
 /**

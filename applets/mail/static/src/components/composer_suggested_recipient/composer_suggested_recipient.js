@@ -4,11 +4,11 @@ import { registerMessagingComponent } from '@mail/utils/messaging_component';
 import { useUpdate } from '@mail/component_hooks/use_update/use_update';
 
 import { FormViewDialog } from 'web.view_dialogs';
-import { ComponentAdapter } from 'web.OwlCompatibility';
+import { ComponentAdapter } from 'web.TwlCompatibility';
 import session from 'web.session';
 
-const { Component } = owl;
-const { useRef } = owl.hooks;
+const { Component } = twl;
+const { useRef } = twl.hooks;
 
 class FormViewDialogComponentAdapter extends ComponentAdapter {
 

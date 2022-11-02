@@ -11,7 +11,7 @@ import { click, getFixture, makeDeferred, patchWithCleanup } from "../helpers/ut
 import { uiService } from "@web/core/ui/ui_service";
 import { session } from "@web/session";
 
-const { mount } = owl;
+const { mount } = twl;
 const serviceRegistry = registry.category("services");
 
 async function createSwitchCompanyMenu(routerParams = {}, toggleDelay = 0) {

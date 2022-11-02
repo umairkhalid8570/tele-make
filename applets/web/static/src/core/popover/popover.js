@@ -2,7 +2,7 @@
 
 import { usePosition } from "../position/position_hook";
 
-const { Component } = owl;
+const { Component } = twl;
 
 export class Popover extends Component {
     setup() {

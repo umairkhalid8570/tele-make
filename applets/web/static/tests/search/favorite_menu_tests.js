@@ -127,7 +127,7 @@ QUnit.module("Search", (hooks) => {
     QUnit.test("delete an active favorite", async function (assert) {
         assert.expect(11);
 
-        class ToyView extends owl.Component {
+        class ToyView extends twl.Component {
             setup() {
                 assert.deepEqual(this.props.domain, [["foo", "=", "qsdf"]]);
             }
@@ -136,7 +136,7 @@ QUnit.module("Search", (hooks) => {
             }
         }
         ToyView.components = { FavoriteMenu, SearchBar };
-        ToyView.template = owl.tags.xml`
+        ToyView.template = twl.tags.xml`
                 <div>
                     <SearchBar/>
                     <FavoriteMenu/>

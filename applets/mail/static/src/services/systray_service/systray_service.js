@@ -16,7 +16,7 @@ export const SystrayService = AbstractService.extend({
      * @override {web.AbstractService}
      */
     async start() {
-        await owl.Component.env.services.messaging.modelManager.messagingCreatedPromise;
+        await twl.Component.env.services.messaging.modelManager.messagingCreatedPromise;
         systrayRegistry.add('mail.MessagingMenu', {
             Component: getMessagingComponent('MessagingMenu'),
         });

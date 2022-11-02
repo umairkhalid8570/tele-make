@@ -1,36 +1,36 @@
-tele.define('web.OwlCompatibility', function () {
+tele.define('web.TwlCompatibility', function () {
     "use strict";
 
     /**
      * This file defines the necessary tools for the transition phase where Tele
-     * legacy widgets and Owl components will coexist. There are two possible
+     * legacy widgets and Twl components will coexist. There are two possible
      * scenarios:
-     *  1) An Owl component has to instantiate legacy widgets
-     *  2) A legacy widget has to instantiate Owl components
+     *  1) An Twl component has to instantiate legacy widgets
+     *  2) A legacy widget has to instantiate Twl components
      */
 
-    const { Component, hooks, tags } = owl;
+    const { Component, hooks, tags } = twl;
     const { useRef, useSubEnv } = hooks;
     const { xml } = tags;
 
     const widgetSymbol = tele.widgetSymbol;
-    const children = new WeakMap(); // associates legacy widgets with their Owl children
+    const children = new WeakMap(); // associates legacy widgets with their Twl children
 
     const templateForLegacy = tags.xml`<div/>`;
-    const templateForOwl = tags.xml`<t t-component="props.Component" t-props="childProps" />`;
+    const templateForTwl = tags.xml`<t t-component="props.Component" t-props="childProps" />`;
     /**
-     * Case 1) An Owl component has to instantiate legacy widgets
+     * Case 1) An Twl component has to instantiate legacy widgets
      * ----------------------------------------------------------
      *
-     * The ComponentAdapter is an Owl component meant to be used as universal
-     * adapter for Owl components that embed Tele legacy widgets (or dynamically
-     * both Owl components and Tele legacy widgets), e.g.:
+     * The ComponentAdapter is an Twl component meant to be used as universal
+     * adapter for Twl components that embed Tele legacy widgets (or dynamically
+     * both Twl components and Tele legacy widgets), e.g.:
      *
-     *                           Owl Component
+     *                           Twl Component
      *                                 |
-     *                         ComponentAdapter (Owl component)
+     *                         ComponentAdapter (Twl component)
      *                                 |
-     *                       Legacy Widget(s) (or Owl component(s))
+     *                       Legacy Widget(s) (or Twl component(s))
      *
      *
      * The adapter takes the component/widget class as 'Component' prop, and the
@@ -77,7 +77,7 @@ tele.define('web.OwlCompatibility', function () {
     class ComponentAdapter extends Component {
         /**
          * Creates the template on-the-fly, depending on the type of Component
-         * (legacy widget or Owl component).
+         * (legacy widget or Twl component).
          *
          * @override
          */
@@ -89,7 +89,7 @@ tele.define('web.OwlCompatibility', function () {
             if (!(props.Component.prototype instanceof Component)) {
                 template = templateForLegacy;
             } else {
-                template = templateForOwl;
+                template = templateForTwl;
             }
             ComponentAdapter.template = template;
             super(...arguments);
@@ -141,14 +141,14 @@ tele.define('web.OwlCompatibility', function () {
          */
         __patch(target, vnode) {
             if (this.widget) {
-                if (this.__owl__.vnode) { // not at first rendering
+                if (this.__twl__.vnode) { // not at first rendering
                     this.renderWidget();
                 }
                 vnode.elm = this.widget.el;
             }
             const result = super.__patch(...arguments);
             if (this.widget && this.el !== this.widget.el) {
-                this.__owl__.vnode.elm = this.widget.el;
+                this.__twl__.vnode.elm = this.widget.el;
             }
             return result;
         }
@@ -228,7 +228,7 @@ tele.define('web.OwlCompatibility', function () {
         }
 
         /**
-         * Mocks _trigger_up to redirect Tele legacy events to OWL events.
+         * Mocks _trigger_up to redirect Tele legacy events to TWL events.
          *
          * @private
          * @param {TeleEvent} ev
@@ -243,13 +243,13 @@ tele.define('web.OwlCompatibility', function () {
                     args = args.concat(ev.target);
                 }
                 const service = this.env.services[payload.service];
-                //If the service doesn't exist it means that it was translated to Owl
+                //If the service doesn't exist it means that it was translated to Twl
                 if (service) {
                     const result = service[payload.method].apply(service, args);
                     payload.callback(result);
                 } else {
                     throw new Error(
-                        `The service "${payload.service}" is not present in the legacy owl environment.
+                        `The service "${payload.service}" is not present in the legacy twl environment.
                          You should probably create a mapper in @web/legacy/utils`
                     );
                 }
@@ -279,32 +279,32 @@ tele.define('web.OwlCompatibility', function () {
 
 
     /**
-     * Case 2) A legacy widget has to instantiate Owl components
+     * Case 2) A legacy widget has to instantiate Twl components
      * ---------------------------------------------------------
      *
      * The WidgetAdapterMixin and the ComponentWrapper are meant to be used
-     * together when an Tele legacy widget needs to instantiate Owl components.
+     * together when an Tele legacy widget needs to instantiate Twl components.
      * In this case, the widgets/components hierarchy would look like:
      *
      *             Legacy Widget + WidgetAdapterMixin
      *                          |
-     *                 ComponentWrapper (Owl component)
+     *                 ComponentWrapper (Twl component)
      *                          |
-     *                    Owl Component
+     *                    Twl Component
      *
      * In this case, the parent legacy widget must use the WidgetAdapterMixin,
-     * which ensures that Owl hooks (mounted, willUnmount, destroy...) are
+     * which ensures that Twl hooks (mounted, willUnmount, destroy...) are
      * properly called on the sub components. Moreover, it must instantiate a
-     * ComponentWrapper, and provide it the Owl component class to use alongside
-     * its props. This wrapper will ensure that the Owl component will be
+     * ComponentWrapper, and provide it the Twl component class to use alongside
+     * its props. This wrapper will ensure that the Twl component will be
      * correctly updated (with willUpdateProps) like it would be if it was embed
-     * in an Owl hierarchy. Moreover, this wrapper automatically redirects all
-     * events triggered by the Owl component (or its descendants) to legacy
+     * in an Twl hierarchy. Moreover, this wrapper automatically redirects all
+     * events triggered by the Twl component (or its descendants) to legacy
      * custom events (trigger_up) on the parent legacy widget.
 
      * For example:
      *      class MyComponent extends Component {}
-     *      MyComponent.template = xml`<div>Owl component with value <t t-esc="props.value"/></div>`;
+     *      MyComponent.template = xml`<div>Twl component with value <t t-esc="props.value"/></div>`;
      *      const MyWidget = Widget.extend(WidgetAdapterMixin, {
      *          start() {
      *              this.component = new ComponentWrapper(this, MyComponent, {value: 44});
@@ -354,7 +354,7 @@ tele.define('web.OwlCompatibility', function () {
          * Stores the reference of the instance in the parent (in __components).
          * Also creates a sub environment with a function that will be called
          * just before events are triggered (see component_extension.js). This
-         * allows to add DOM event listeners on-the-fly, to redirect those Owl
+         * allows to add DOM event listeners on-the-fly, to redirect those Twl
          * custom (yet DOM) events to legacy custom events (trigger_up).
          *
          * @override
@@ -377,7 +377,7 @@ tele.define('web.OwlCompatibility', function () {
             this.parentWidget = parent;
             this.Component = Component;
             this.props = props || {};
-            this._handledEvents = new Set(); // Owl events we are redirecting
+            this._handledEvents = new Set(); // Twl events we are redirecting
 
             this.componentRef = useRef("component");
         }
@@ -388,7 +388,7 @@ tele.define('web.OwlCompatibility', function () {
          */
         on_attach_callback() {
             function recursiveCallMounted(component) {
-                const { status, currentFiber } = component.__owl__;
+                const { status, currentFiber } = component.__twl__;
 
                 if (status === 2 && currentFiber && !currentFiber.isCompleted) {
                     // the component is rendered but another rendering is being done
@@ -406,8 +406,8 @@ tele.define('web.OwlCompatibility', function () {
                     // component being mounted.
                     return;
                 }
-                for (const key in component.__owl__.children) {
-                    recursiveCallMounted(component.__owl__.children[key]);
+                for (const key in component.__twl__.children) {
+                    recursiveCallMounted(component.__twl__.children[key]);
                 }
                 component.__callMounted();
             }
@@ -445,7 +445,7 @@ tele.define('web.OwlCompatibility', function () {
          * We have at least one usecase for this: in views, the renderer is
          * instantiated without parent, then a controller is instantiated with
          * the renderer as argument, and finally, setParent is called to set the
-         * controller as parent of the renderer. This implies that Owl renderers
+         * controller as parent of the renderer. This implies that Twl renderers
          * can't trigger events in their constructor.
          *
          * @param {Widget} parent
@@ -470,20 +470,20 @@ tele.define('web.OwlCompatibility', function () {
          * @return {Promise}
          */
         async update(props = {}) {
-            if (this.__owl__.status === 5 /* destroyed */) {
+            if (this.__twl__.status === 5 /* destroyed */) {
                 return new Promise(() => {});
             }
 
             Object.assign(this.props, props);
 
             let prom;
-            if (this.__owl__.status === 3 /* mounted */) {
+            if (this.__twl__.status === 3 /* mounted */) {
                 prom = this.render();
             } else {
                 // we may not be in the DOM, but actually want to be redrawn
                 // (e.g. we were detached from the DOM, and now we're going to
                 // be re-attached, but we need to be reloaded first). In this
-                // case, we have to call 'mount' as Owl would skip the rendering
+                // case, we have to call 'mount' as Twl would skip the rendering
                 // if we simply call render.
                 prom = this.mount(...this._mountArgs);
             }
@@ -491,7 +491,7 @@ tele.define('web.OwlCompatibility', function () {
         }
 
         /**
-         * Adds an event handler that will redirect the given Owl event to an
+         * Adds an event handler that will redirect the given Twl event to an
          * Tele legacy event. This function is called just before the event is
          * actually triggered.
          *

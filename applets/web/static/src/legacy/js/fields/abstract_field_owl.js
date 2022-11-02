@@ -1,4 +1,4 @@
-tele.define('web.AbstractFieldOwl', function (require) {
+tele.define('web.AbstractFieldTwl', function (require) {
     "use strict";
 
     const field_utils = require('web.field_utils');
@@ -6,8 +6,8 @@ tele.define('web.AbstractFieldOwl', function (require) {
     const { useEffect } = require("@web/core/utils/hooks");
 
     /**
-     * This file defines the Owl version of the AbstractField. Specific fields
-     * written in Owl should override this component.
+     * This file defines the Twl version of the AbstractField. Specific fields
+     * written in Twl should override this component.
      *
      * =========================================================================
      *
@@ -42,9 +42,9 @@ tele.define('web.AbstractFieldOwl', function (require) {
      * the component in the registry prefixed by the view type and a dot. So, for example,
      * a form specific many2one component should be registered as 'form.many2one'.
      *
-     * @module web.AbstractFieldOwl
+     * @module web.AbstractFieldTwl
      */
-    class AbstractField extends owl.Component {
+    class AbstractField extends twl.Component {
         /**
          * Abstract field class
          *
@@ -401,7 +401,7 @@ tele.define('web.AbstractFieldOwl', function (require) {
         /**
          * Remove the invalid class on a field
          *
-         * This function should be removed when BasicRenderer will be rewritten in owl
+         * This function should be removed when BasicRenderer will be rewritten in twl
          */
         removeInvalidClass() {
             this.el.classList.remove('o_field_invalid');
@@ -411,7 +411,7 @@ tele.define('web.AbstractFieldOwl', function (require) {
          * Sets the given id on the focusable element of the field and as 'for'
          * attribute of potential internal labels.
          *
-         * This function should be removed when BasicRenderer will be rewritten in owl
+         * This function should be removed when BasicRenderer will be rewritten in twl
          *
          * @param {string} id
          */
@@ -423,7 +423,7 @@ tele.define('web.AbstractFieldOwl', function (require) {
         /**
          * add the invalid class on a field
          *
-         * This function should be removed when BasicRenderer will be rewritten in owl
+         * This function should be removed when BasicRenderer will be rewritten in twl
          */
         setInvalidClass() {
             this.el.classList.add('o_field_invalid');
@@ -438,7 +438,7 @@ tele.define('web.AbstractFieldOwl', function (require) {
          * Apply field decorations (only if field-specific decorations have been
          * defined in an attribute).
          *
-         * This function should be removed when BasicRenderer will be rewritten in owl
+         * This function should be removed when BasicRenderer will be rewritten in twl
          *
          * @private
          */

@@ -6,7 +6,7 @@ import { useService } from "@web/core/utils/hooks";
 import { makeTestEnv } from "../helpers/mock_env";
 import { getFixture } from "../helpers/utils";
 
-const { Component, mount, tags } = owl;
+const { Component, mount, tags } = twl;
 const { xml } = tags;
 const serviceRegistry = registry.category("services");
 

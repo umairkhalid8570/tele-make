@@ -29335,7 +29335,7 @@
 	   */
 
 
-	  Mocha.prototype.isGrowlCapable = growl.isCapable;
+	  Mocha.prototype.isGrowlCapable = grtwl.isCapable;
 	  /**
 	   * Implements desktop notifications using a pseudo-reporter.
 	   *
@@ -29345,7 +29345,7 @@
 	   * @param {Runner} runner - Runner instance.
 	   */
 
-	  Mocha.prototype._growl = growl.notify;
+	  Mocha.prototype._growl = grtwl.notify;
 	  /**
 	   * Specifies whitelist of variable names to be expected in global scope.
 	   *

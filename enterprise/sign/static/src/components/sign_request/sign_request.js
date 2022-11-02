@@ -2,7 +2,7 @@
 
 import { registerMessagingComponent } from '@mail/utils/messaging_component';
 
-const { Component } = owl;
+const { Component } = twl;
 
 class SignRequest extends Component {
 

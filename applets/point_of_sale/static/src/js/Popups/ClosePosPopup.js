@@ -1,7 +1,7 @@
 tele.define('point_of_sale.ClosePosPopup', function(require) {
     'use strict';
 
-    const { useState, useRef } = owl.hooks;
+    const { useState, useRef } = twl.hooks;
     const AbstractAwaitablePopup = require('point_of_sale.AbstractAwaitablePopup');
     const Registries = require('point_of_sale.Registries');
     const { identifyError } = require('point_of_sale.utils');

@@ -1,13 +1,13 @@
 tele.define('web_grid.GridRenderer', function (require) {
     "use strict";
 
-    const AbstractRenderer = require('web.AbstractRendererOwl');
+    const AbstractRenderer = require('web.AbstractRendererTwl');
     const fieldUtils = require('web.field_utils');
     const utils = require('web.utils');
 
     const gridComponentRegistry = require('web_grid.component_registry');
     const { useListener } = require('web.custom_hooks');
-    const {useRef, useState} = owl.hooks;
+    const {useRef, useState} = twl.hooks;
 
     class GridRenderer extends AbstractRenderer {
         constructor(parent, props) {
@@ -248,7 +248,7 @@ tele.define('web_grid.GridRenderer', function (require) {
 
         /**
          * @private
-         * @param {OwlEvent} ev
+         * @param {TwlEvent} ev
          */
         _onClickCreateInline(ev) {
             this.trigger('create-inline');
@@ -265,7 +265,7 @@ tele.define('web_grid.GridRenderer', function (require) {
         }
         /**
          * @private
-         * @param {OwlEvent} ev
+         * @param {TwlEvent} ev
          */
         _onFocusComponent(ev) {
             this.state.editMode = true;

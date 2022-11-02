@@ -4,7 +4,7 @@ tele.define('web.DropdownMenu', function (require) {
     const { _t } = require('web.core');
     const DropdownMenuItem = require('web.DropdownMenuItem');
 
-    const { Component, hooks } = owl;
+    const { Component, hooks } = twl;
     const { useExternalListener, useRef, useState } = hooks;
 
     /**
@@ -129,7 +129,7 @@ tele.define('web.DropdownMenu', function (require) {
 
         /**
          * @private
-         * @param {OwlEvent} ev
+         * @param {TwlEvent} ev
          */
         _onItemSelected(/* ev */) {
             if (this.props.closeOnSelected) {

@@ -1,7 +1,7 @@
 tele.define('point_of_sale.PopupControllerMixin', function(require) {
     'use strict';
 
-    const { useState } = owl;
+    const { useState } = twl;
     const { useListener } = require('web.custom_hooks');
 
     /**

@@ -1,17 +1,17 @@
 tele.define('account.ShowResequenceRenderer', function (require) {
 "use strict";
 
-const { Component } = owl;
-const { useState } = owl.hooks;
-const AbstractFieldOwl = require('web.AbstractFieldOwl');
-const field_registry = require('web.field_registry_owl');
+const { Component } = twl;
+const { useState } = twl.hooks;
+const AbstractFieldTwl = require('web.AbstractFieldTwl');
+const field_registry = require('web.field_registry_twl');
 
 class ChangeLine extends Component { }
 ChangeLine.template = 'account.ResequenceChangeLine';
 ChangeLine.props = ["changeLine", 'ordering'];
 
 
-class ShowResequenceRenderer extends AbstractFieldOwl {
+class ShowResequenceRenderer extends AbstractFieldTwl {
     constructor(...args) {
         super(...args);
         this.data = this.value ? JSON.parse(this.value) : {

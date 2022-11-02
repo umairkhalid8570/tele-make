@@ -7,7 +7,7 @@ import { makeTestEnv } from "../helpers/mock_env";
 import { makeFakeLocalizationService } from "../helpers/mock_services";
 import { getFixture, patchWithCleanup } from "../helpers/utils";
 
-const { Component, mount, tags } = owl;
+const { Component, mount, tags } = twl;
 const { xml } = tags;
 const serviceRegistry = registry.category("services");
 

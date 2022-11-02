@@ -45,7 +45,7 @@ var FollowupFormRenderer = FormRenderer.extend({
      * Remove the mail alert above the report.
      */
     removeMailAlert: function () {
-        owl.Component.env.services.messaging.get().then(messaging => {
+        twl.Component.env.services.messaging.get().then(messaging => {
             const thread = messaging.models['mail.thread'].findFromIdentifyingData({
                 id: this.state.res_id,
                 model: this.state.model,

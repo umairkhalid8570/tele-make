@@ -11,7 +11,7 @@ tele.define('web.ControlPanel', function (require) {
     const SearchBar = require('web.SearchBar');
     const { useModel } = require('web.Model');
 
-    const { Component, hooks } = owl;
+    const { Component, hooks } = twl;
     const { useRef, useSubEnv } = hooks;
 
     /**

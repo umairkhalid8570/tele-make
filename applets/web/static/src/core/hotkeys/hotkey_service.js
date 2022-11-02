@@ -332,7 +332,7 @@ export const hotkeyService = {
             };
             registrations.set(token, registration);
 
-            // Due to the way elements are mounted in the DOM by Owl (bottom-to-top),
+            // Due to the way elements are mounted in the DOM by Twl (bottom-to-top),
             // we need to wait the next micro task tick to set the context owner of the registration.
             Promise.resolve().then(() => {
                 registration.activeElement = ui.activeElement;

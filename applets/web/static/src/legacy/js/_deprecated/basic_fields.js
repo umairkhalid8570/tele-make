@@ -2,7 +2,7 @@
 // /!\ DEPRECATED
 // 
 // Legacy Field Widgets are added in this file when they are converted into
-// Owl Component.
+// Twl Component.
 ////////////////////////////////////////////////////////////////////////////////
 
 tele.define('web.basic_fields.deprecated', function (require) {

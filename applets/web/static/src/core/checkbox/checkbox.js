@@ -1,6 +1,6 @@
 /** @tele-module **/
 
-const { Component, QWeb } = owl;
+const { Component, QWeb } = twl;
 
 /**
  * Custom checkbox

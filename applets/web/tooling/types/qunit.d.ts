@@ -55,7 +55,7 @@ interface Assert {
      * - is unique
      * - has the given attribute with the proper value
      *
-     * @param {Widget|jQuery|HTMLElement|owl.Component} target
+     * @param {Widget|jQuery|HTMLElement|twl.Component} target
      */
     hasAttrValue(target: HTMLElement, attr: string, value: string, msg?: string): void;
   

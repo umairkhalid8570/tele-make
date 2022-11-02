@@ -1586,7 +1586,7 @@ QUnit.module("ActionManager", (hooks) => {
     );
 
     QUnit.test("pivot view with default favorite and context.active_id", async function (assert) {
-        // note: we use a pivot view because we need a owl view
+        // note: we use a pivot view because we need a twl view
         assert.expect(4);
 
         serverData.views["partner,false,pivot"] = "<pivot/>";
@@ -2382,7 +2382,7 @@ QUnit.module("ActionManager", (hooks) => {
         class WarningDialogWait extends WarningDialog {
             setup() {
                 super.setup();
-                owl.hooks.onMounted(() => warningOpened.resolve());
+                twl.hooks.onMounted(() => warningOpened.resolve());
             }
         }
 

@@ -5,7 +5,7 @@ tele.define('web.action_menus_tests', function (require) {
     const Registry = require('web.Registry');
     const testUtils = require('web.test_utils');
 
-    const { Component } = owl;
+    const { Component } = twl;
     const { createComponent } = testUtils;
 
     QUnit.module('Components', {

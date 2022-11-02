@@ -21,8 +21,8 @@ const { makeLegacyDialogMappingTestEnv } = require('@web/../tests/helpers/legacy
 const cpHelpers = require('@web/../tests/search/helpers');
 var createView = testUtils.createView;
 const { FieldOne2Many } = relationalFields;
-const AbstractFieldOwl = require('web.AbstractFieldOwl');
-const fieldRegistryOwl = require('web.field_registry_owl');
+const AbstractFieldTwl = require('web.AbstractFieldTwl');
+const fieldRegistryTwl = require('web.field_registry_twl');
 
 QUnit.module('fields', {}, function () {
 
@@ -4644,11 +4644,11 @@ QUnit.module('fields', {}, function () {
             await testUtils.form.clickEdit(form);
             await testUtils.dom.click(form.$('tbody td.o_field_x2many_list_row_add a'));
             // use of owlCompatibilityExtraNextTick because we have an x2many field with a boolean field
-            // (written in owl), so when we add a line, we sequentially render the list itself
+            // (written in twl), so when we add a line, we sequentially render the list itself
             // (including the boolean field), so we have to wait for the next animation frame, and
-            // then we render the control panel (also in owl), so we have to wait again for the
+            // then we render the control panel (also in twl), so we have to wait again for the
             // next animation frame
-            await testUtils.owlCompatibilityExtraNextTick();
+            await testUtils.twlCompatibilityExtraNextTick();
             form.destroy();
         });
 
@@ -4729,11 +4729,11 @@ QUnit.module('fields', {}, function () {
             });
             await testUtils.dom.click(form.$('tbody td.o_field_x2many_list_row_add a'));
             // use of owlCompatibilityExtraNextTick because we have an x2many field with a boolean field
-            // (written in owl), so when we add a line, we sequentially render the list itself
+            // (written in twl), so when we add a line, we sequentially render the list itself
             // (including the boolean field), so we have to wait for the next animation frame, and
-            // then we render the control panel (also in owl), so we have to wait again for the
+            // then we render the control panel (also in twl), so we have to wait again for the
             // next animation frame
-            await testUtils.owlCompatibilityExtraNextTick();
+            await testUtils.twlCompatibilityExtraNextTick();
             assert.verifySteps(['onchange', 'onchange']);
             form.destroy();
         });
@@ -6229,7 +6229,7 @@ QUnit.module('fields', {}, function () {
 
             // add a new row (which is invalid at first)
             await testUtils.dom.click(form.$('.o_field_x2many_list_row_add a'));
-            await testUtils.owlCompatibilityExtraNextTick();
+            await testUtils.twlCompatibilityExtraNextTick();
             assert.strictEqual(form.$('.o_field_widget[name="int_field"]').val(), "0",
                 "int_field should still be 0 (no onchange should have been done yet)");
             assert.verifySteps(['load_views', 'read', 'onchange']);
@@ -7122,11 +7122,11 @@ QUnit.module('fields', {}, function () {
             });
 
             await testUtils.dom.click(form.$('.o_field_x2many_list_row_add a'));
-            // use of owlCompatibilityExtraNextTick because we have a boolean field (owl) inside the
+            // use of owlCompatibilityExtraNextTick because we have a boolean field (twl) inside the
             // x2many, so an update of the x2many requires to wait for 2 animation frames: one
             // for the list to be re-rendered (with the boolean field) and one for the control
             // panel.
-            await testUtils.owlCompatibilityExtraNextTick();
+            await testUtils.twlCompatibilityExtraNextTick();
             await testUtils.dom.click(form.$('.o_field_widget[name=bar] input'));
             assert.notOk(form.$('.o_field_widget[name=bar] input').prop('checked'),
                 "the checkbox should be unticked");
@@ -8713,16 +8713,16 @@ QUnit.module('fields', {}, function () {
             await testUtils.form.clickEdit(form);
             await testUtils.dom.click(form.$('.o_field_many2one[name="product_id"] input'));
             await testUtils.dom.click($('li.ui-menu-item a:contains(xpad)').trigger('mouseenter'));
-            await testUtils.owlCompatibilityExtraNextTick();
+            await testUtils.twlCompatibilityExtraNextTick();
             assert.containsOnce(form, 'th:not(.o_list_record_remove_header)',
                 "should be 1 column when the product_id is set");
             await testUtils.fields.editAndTrigger(form.$('.o_field_many2one[name="product_id"] input'),
                 '', 'keyup');
-            await testUtils.owlCompatibilityExtraNextTick();
+            await testUtils.twlCompatibilityExtraNextTick();
             assert.containsN(form, 'th:not(.o_list_record_remove_header)', 2,
                 "should be 2 columns in the one2many when product_id is not set");
             await testUtils.dom.click(form.$('.o_field_boolean[name="bar"] input'));
-            await testUtils.owlCompatibilityExtraNextTick();
+            await testUtils.twlCompatibilityExtraNextTick();
             assert.containsOnce(form, 'th:not(.o_list_record_remove_header)',
                 "should be 1 column after the value change");
             form.destroy();
@@ -8897,16 +8897,16 @@ QUnit.module('fields', {}, function () {
             await testUtils.form.clickEdit(form);
             await testUtils.dom.click(form.$('.o_field_many2one[name="product_id"] input'));
             await testUtils.dom.click($('li.ui-menu-item a:contains(xpad)').trigger('mouseenter'));
-            await testUtils.owlCompatibilityExtraNextTick();
+            await testUtils.twlCompatibilityExtraNextTick();
             assert.containsOnce(form, 'th:not(.o_list_record_remove_header)',
                 "should be 1 column when the product_id is set");
             await testUtils.fields.editAndTrigger(form.$('.o_field_many2one[name="product_id"] input'),
                 '', 'keyup');
-            await testUtils.owlCompatibilityExtraNextTick();
+            await testUtils.twlCompatibilityExtraNextTick();
             assert.containsN(form, 'th:not(.o_list_record_remove_header)', 2,
                 "should be 2 columns in the one2many when product_id is not set");
             await testUtils.dom.click(form.$('.o_field_boolean[name="bar"] input'));
-            await testUtils.owlCompatibilityExtraNextTick();
+            await testUtils.twlCompatibilityExtraNextTick();
             assert.containsOnce(form, 'th:not(.o_list_record_remove_header)',
                 "should be 1 column after the value change");
             form.destroy();
@@ -9402,10 +9402,10 @@ QUnit.module('fields', {}, function () {
             await testUtils.nextTick();
             // use of owlCompatibilityExtraNextTick because we have two sequential updates of the
             // fieldX2Many: one because of the onchange, and one because of the click on add a line.
-            // As an update requires an update of the ControlPanel, which is an Owl Component, and
+            // As an update requires an update of the ControlPanel, which is an Twl Component, and
             // waits for it, we need to wait for two animation frames before seeing the new line in
             // the DOM
-            await testUtils.owlCompatibilityExtraNextTick();
+            await testUtils.twlCompatibilityExtraNextTick();
             assert.containsOnce(form, '.o_data_row');
             assert.hasClass(form.$('.o_data_row'), 'o_selected_row');
 
@@ -9629,7 +9629,7 @@ QUnit.module('fields', {}, function () {
         });
 
         QUnit.test('mounted is called only once for x2many control panel', async function (assert) {
-            // This test could be removed as soon as the field widgets will be converted in owl.
+            // This test could be removed as soon as the field widgets will be converted in twl.
             // It comes with a fix for a bug that occurred because in some circonstances, 'mounted'
             // is called twice for the x2many control panel.
             // Specifically, this occurs when there is 'pad' widget in the form view, because this
@@ -9650,10 +9650,10 @@ QUnit.module('fields', {}, function () {
             patch(ControlPanel.prototype, 'cp_patch_mock', {
                 setup() {
                     this._super(...arguments);
-                    owl.hooks.onMounted(() => {
+                    twl.hooks.onMounted(() => {
                         assert.step('mounted');
                     });
-                    owl.hooks.onWillUnmount(() => {
+                    twl.hooks.onWillUnmount(() => {
                         assert.step('willUnmount');
                     });
                 },
@@ -9797,11 +9797,11 @@ QUnit.module('fields', {}, function () {
             step = 2;
             await testUtils.dom.click(form.$('.o_field_x2many_list .o_field_x2many_list_row_add a'));
             // use of owlCompatibilityExtraNextTick because we have an x2many field with a boolean field
-            // (written in owl), so when we add a line, we sequentially render the list itself
+            // (written in twl), so when we add a line, we sequentially render the list itself
             // (including the boolean field), so we have to wait for the next animation frame, and
-            // then we render the control panel (also in owl), so we have to wait again for the
+            // then we render the control panel (also in twl), so we have to wait again for the
             // next animation frame
-            await testUtils.owlCompatibilityExtraNextTick();
+            await testUtils.twlCompatibilityExtraNextTick();
             step = 3;
             await testUtils.dom.click(form.$('.o_data_row .o_field_boolean input'));
 
@@ -9880,7 +9880,7 @@ QUnit.module('fields', {}, function () {
         });
 
         QUnit.test("Editable list's field widgets call on_attach_callback on row update", async function (assert) {
-            // We use here a badge widget (owl component, does have a on_attach_callback method) and check its decoration
+            // We use here a badge widget (twl component, does have a on_attach_callback method) and check its decoration
             // is properly managed in this scenario.       
             assert.expect(3);
 
@@ -9905,9 +9905,9 @@ QUnit.module('fields', {}, function () {
             assert.hasClass(form.$('.o_data_row:nth(1) .o_field_badge'), 'bg-warning-light');
 
             await testUtils.dom.click(form.$('.o_data_row .o_data_cell:first'));
-            await testUtils.owlCompatibilityExtraNextTick();
+            await testUtils.twlCompatibilityExtraNextTick();
             await testUtils.fields.editInput(form.$('.o_selected_row .o_field_integer'), '44');
-            await testUtils.owlCompatibilityExtraNextTick();
+            await testUtils.twlCompatibilityExtraNextTick();
 
             assert.hasClass(form.$('.o_data_row:nth(1) .o_field_badge'), 'bg-warning-light');
 
@@ -10028,19 +10028,19 @@ QUnit.module('fields', {}, function () {
             form.destroy();
         });
 
-        QUnit.test("add_record in an o2m with an OWL field: wait mounted before success", async function (assert) {
+        QUnit.test("add_record in an o2m with an TWL field: wait mounted before success", async function (assert) {
             assert.expect(7);
 
             let testInst = 0;
-            class TestField extends AbstractFieldOwl {
+            class TestField extends AbstractFieldTwl {
                 setup() {
                     super.setup();
                     const ID = testInst++;
-                    owl.hooks.onMounted(() => {
+                    twl.hooks.onMounted(() => {
                         assert.step(`mounted ${ID}`);
                     });
 
-                    owl.hooks.onWillUnmount(() => {
+                    twl.hooks.onWillUnmount(() => {
                         assert.step(`willUnmount ${ID}`);
                     });
                 }
@@ -10049,8 +10049,8 @@ QUnit.module('fields', {}, function () {
                 }
             }
 
-            TestField.template = owl.tags.xml`<span>test</span>`;
-            fieldRegistryOwl.add('test_field', TestField);
+            TestField.template = twl.tags.xml`<span>test</span>`;
+            fieldRegistryTwl.add('test_field', TestField);
 
             const def = testUtils.makeTestPromise();
             const form = await createView({

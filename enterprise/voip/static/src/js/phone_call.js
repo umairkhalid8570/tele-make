@@ -3,7 +3,7 @@ tele.define('voip.PhoneCall', function (require) {
 
 const Widget = require('web.Widget');
 
-const { Component } = owl;
+const { Component } = twl;
 
 const PhoneCall = Widget.extend({
     template: 'voip.PhoneCall',

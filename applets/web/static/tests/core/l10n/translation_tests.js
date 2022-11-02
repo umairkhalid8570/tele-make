@@ -11,12 +11,12 @@ import { registry } from "@web/core/registry";
 import { patch, unpatch } from "@web/core/utils/patch";
 import { session } from "@web/session";
 
-const { mount } = owl;
+const { mount } = twl;
 const { DateTime, Settings } = luxon;
 
 const terms = { Hello: "Bonjour" };
 const serviceRegistry = registry.category("services");
-class TestComponent extends owl.Component {}
+class TestComponent extends twl.Component {}
 
 /**
  * Patches the 'lang' of the user session and context.
@@ -56,7 +56,7 @@ QUnit.module("Translations");
 
 QUnit.test("can translate a text node", async (assert) => {
     assert.expect(1);
-    TestComponent.template = owl.tags.xml`<div>Hello</div>`;
+    TestComponent.template = twl.tags.xml`<div>Hello</div>`;
     serviceRegistry.add("localization", makeFakeLocalizationService());
     const env = await makeTestEnv();
     patch(translatedTerms, "add translations", terms);
@@ -69,7 +69,7 @@ QUnit.test("can translate a text node", async (assert) => {
 QUnit.test("can lazy translate", async (assert) => {
     assert.expect(3);
 
-    TestComponent.template = owl.tags.xml`<div><t t-esc="constructor.someLazyText" /></div>`;
+    TestComponent.template = twl.tags.xml`<div><t t-esc="constructor.someLazyText" /></div>`;
     TestComponent.someLazyText = _lt("Hello");
     assert.strictEqual(TestComponent.someLazyText.toString(), "Hello");
     assert.strictEqual(TestComponent.someLazyText.valueOf(), "Hello");
@@ -85,7 +85,7 @@ QUnit.test("can lazy translate", async (assert) => {
 
 QUnit.test("_t is in env", async (assert) => {
     assert.expect(1);
-    TestComponent.template = owl.tags.xml`<div><t t-esc="env._t('Hello')"/></div>`;
+    TestComponent.template = twl.tags.xml`<div><t t-esc="env._t('Hello')"/></div>`;
     serviceRegistry.add("localization", makeFakeLocalizationService());
     const env = await makeTestEnv();
     patch(translatedTerms, "add translations", terms);

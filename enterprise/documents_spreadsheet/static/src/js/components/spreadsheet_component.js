@@ -1,7 +1,7 @@
 /** @tele-module alias=documents_spreadsheet.SpreadsheetComponent */
 
 import { _t } from "web.core";
-import Dialog from "web.OwlDialog";
+import Dialog from "web.TwlDialog";
 import { useSetupAction } from "@web/webclient/actions/action_hook";
 
 import PivotDialog from "documents_spreadsheet.PivotDialog";
@@ -15,9 +15,9 @@ import { legacyRPC } from "../o_spreadsheet/helpers/helpers";
 const uuidGenerator = new spreadsheet.helpers.UuidGenerator();
 
 const { Spreadsheet, Model } = spreadsheet;
-const { useState, useRef, useSubEnv, useExternalListener } = owl.hooks;
+const { useState, useRef, useSubEnv, useExternalListener } = twl.hooks;
 
-export default class SpreadsheetComponent extends owl.Component {
+export default class SpreadsheetComponent extends twl.Component {
     constructor(parent, props) {
         super(...arguments);
         this.orm = useService("orm");

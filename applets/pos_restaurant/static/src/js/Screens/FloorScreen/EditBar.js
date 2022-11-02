@@ -3,7 +3,7 @@ tele.define('pos_restaurant.EditBar', function(require) {
 
     const PosComponent = require('point_of_sale.PosComponent');
     const Registries = require('point_of_sale.Registries');
-    const { useState } = owl.hooks;
+    const { useState } = twl.hooks;
 
     class EditBar extends PosComponent {
         constructor() {

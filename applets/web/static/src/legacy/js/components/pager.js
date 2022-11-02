@@ -3,7 +3,7 @@ tele.define('web.Pager', function (require) {
 
     const { useAutofocus } = require('web.custom_hooks');
 
-    const { Component, hooks } = owl;
+    const { Component, hooks } = twl;
     const { useState } = hooks;
 
     /**

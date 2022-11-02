@@ -5,7 +5,7 @@ import DomainSelector from "web.DomainSelector";
 import { time_to_str } from "web.time";
 import DomainComponentAdapter from "../domain_component_adapter";
 
-export class PivotDetailsSidePanel extends owl.Component {
+export class PivotDetailsSidePanel extends twl.Component {
     constructor() {
         super(...arguments);
         this.getters = this.env.getters;

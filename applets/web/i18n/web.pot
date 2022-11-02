@@ -824,7 +824,7 @@ msgstr ""
 
 #. module: web
 #. tele-web
-#: code:applets/web/static/src/legacy/js/fields/basic_fields_owl.js:0
+#: code:applets/web/static/src/legacy/js/fields/basic_fields_twl.js:0
 #, python-format
 msgid "Badge"
 msgstr ""
@@ -998,7 +998,7 @@ msgstr ""
 #. module: web
 #. tele-web
 #: code:applets/web/static/src/legacy/js/_deprecated/basic_fields.js:0
-#: code:applets/web/static/src/legacy/js/fields/basic_fields_owl.js:0
+#: code:applets/web/static/src/legacy/js/fields/basic_fields_twl.js:0
 #, python-format
 msgid "Checkbox"
 msgstr ""

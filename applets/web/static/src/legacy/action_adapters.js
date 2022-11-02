@@ -2,7 +2,7 @@
 
 import Context from "web.Context";
 import core from "web.core";
-import { ComponentAdapter } from "web.OwlCompatibility";
+import { ComponentAdapter } from "web.TwlCompatibility";
 import { objectToQuery } from "../core/browser/router_service";
 import { useDebugCategory } from "../core/debug/debug_context";
 import { Dialog } from "../core/dialog/dialog";
@@ -11,7 +11,7 @@ import { ViewNotFoundError } from "../webclient/actions/action_service";
 import { cleanDomFromBootstrap, wrapSuccessOrFail } from "./utils";
 import { mapDoActionOptionAPI } from "./backend_utils";
 
-const { Component, tags, hooks } = owl;
+const { Component, tags, hooks } = twl;
 
 const warningDialogBodyTemplate = tags.xml`<p style="white-space:pre-wrap" t-esc="props.message"/>`;
 
@@ -168,7 +168,7 @@ export class ClientActionAdapter extends ActionAdapter {
     setup() {
         super.setup();
         useDebugCategory("action", { action: this.props.widgetArgs[0] });
-        owl.hooks.onMounted(() => {
+        twl.hooks.onMounted(() => {
             const action = this.props.widgetArgs[0];
             if ("params" in action) {
                 const newState = {};
@@ -289,9 +289,9 @@ export class ViewAdapter extends ActionAdapter {
         } else {
             const view = new this.props.View(this.props.viewInfo, this.props.viewParams);
             this.widget = await view.getController(this);
-            if (this.__owl__.status === 5 /* DESTROYED */) {
+            if (this.__twl__.status === 5 /* DESTROYED */) {
                 // the component might have been destroyed meanwhile, but if so, `this.widget` wasn't
-                // destroyed by OwlCompatibility layer as it wasn't set yet, so destroy it now
+                // destroyed by TwlCompatibility layer as it wasn't set yet, so destroy it now
                 if (!this.actionService.__legacy__isActionInStack(this.actionId)) {
                     this.widget.destroy();
                 }

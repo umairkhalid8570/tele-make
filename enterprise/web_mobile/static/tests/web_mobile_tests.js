@@ -4,7 +4,7 @@ tele.define("web_mobile.tests", function (require) {
     const Dialog = require("web.Dialog");
     const dom = require("web.dom");
     const FormView = require("web.FormView");
-    const OwlDialog = require("web.OwlDialog");
+    const TwlDialog = require("web.TwlDialog");
     const Popover = require("web.Popover");
     const session = require("web.session");
     const makeTestEnvironment = require("web.test_env");
@@ -22,7 +22,7 @@ tele.define("web_mobile.tests", function (require) {
 
     const { createWebClient, doAction } = require('@web/../tests/webclient/helpers');
 
-    const { Component, tags, useState } = owl;
+    const { Component, tags, useState } = twl;
     const { xml } = tags;
 
     const { createParent, createView, mock } = testUtils;
@@ -500,7 +500,7 @@ tele.define("web_mobile.tests", function (require) {
                 mobile.methods.overrideBackButton = __overrideBackButton;
             });
 
-            QUnit.module("OwlDialog");
+            QUnit.module("TwlDialog");
 
             QUnit.test("dialog is closable with backbutton event", async function (assert) {
                 assert.expect(7);
@@ -522,15 +522,15 @@ tele.define("web_mobile.tests", function (require) {
                     }
                 }
 
-                Parent.components = { OwlDialog };
+                Parent.components = { TwlDialog };
                 Parent.env = makeTestEnvironment();
                 Parent.template = xml`
             <div>
-                <OwlDialog
+                <TwlDialog
                     t-if="state.display"
                     t-on-dialog-closed="_onDialogClosed">
                     Some content
-                </OwlDialog>
+                </TwlDialog>
             </div>`;
 
                 const parent = new Parent();

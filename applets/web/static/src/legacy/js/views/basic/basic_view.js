@@ -15,11 +15,11 @@ var BasicController = require('web.BasicController');
 var BasicModel = require('web.BasicModel');
 var config = require('web.config');
 var fieldRegistry = require('web.field_registry');
-var fieldRegistryOwl = require('web.field_registry_owl');
+var fieldRegistryTwl = require('web.field_registry_twl');
 var pyUtils = require('web.py_utils');
 var utils = require('web.utils');
 const widgetRegistry = require('web.widget_registry');
-const widgetRegistryOwl = require('web.widgetRegistry');
+const widgetRegistryTwl = require('web.widgetRegistry');
 
 var BasicView = AbstractView.extend({
     config: _.extend({}, AbstractView.prototype.config, {
@@ -85,7 +85,7 @@ var BasicView = AbstractView.extend({
             FieldWidget = fieldRegistry.getAny([viewType + ".boolean", "boolean"]);
         } else if (attrs.widget) {
             FieldWidget = fieldRegistry.getAny([viewType + "." + attrs.widget, attrs.widget]) ||
-                fieldRegistryOwl.getAny([viewType + "." + attrs.widget, attrs.widget]);
+                fieldRegistryTwl.getAny([viewType + "." + attrs.widget, attrs.widget]);
             if (!FieldWidget) {
                 console.warn("Missing widget: ", attrs.widget, " for field", attrs.name, "of type", field.type);
             }
@@ -95,7 +95,7 @@ var BasicView = AbstractView.extend({
             FieldWidget = fieldRegistry.get('kanban.many2many_tags');
         }
         return FieldWidget ||
-            fieldRegistryOwl.getAny([viewType + "." + field.type, field.type, "abstract"]) ||
+            fieldRegistryTwl.getAny([viewType + "." + field.type, field.type, "abstract"]) ||
             fieldRegistry.getAny([viewType + "." + field.type, field.type, "abstract"]);
     },
     /**
@@ -420,8 +420,8 @@ var BasicView = AbstractView.extend({
         }
         // custom widget may have fieldDependencies so add it to fields of fields_view
         if (node.tag === 'widget') {
-            const Widget = widgetRegistryOwl.get(node.attrs.name) || widgetRegistry.get(node.attrs.name);
-            const legacy = !(Widget.prototype instanceof owl.Component);
+            const Widget = widgetRegistryTwl.get(node.attrs.name) || widgetRegistry.get(node.attrs.name);
+            const legacy = !(Widget.prototype instanceof twl.Component);
             let deps;
             if (legacy && Widget.prototype.fieldDependencies) {
                 deps = Widget.prototype.fieldDependencies;

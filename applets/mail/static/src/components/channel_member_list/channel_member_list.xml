@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <templates xml:space="preserve">
 
-    <t t-name="mail.ChannelMemberList" owl="1">
+    <t t-name="mail.ChannelMemberList" twl="1">
         <div class="o_ChannelMemberList d-flex flex-column overflow- bg-light">
             <t t-if="channel.orderedOnlineMembers.length > 0">
                 <t t-call="mail.ChannelMemberList_memberList">
@@ -29,7 +29,7 @@
         </div>
     </t>
 
-    <t t-name="mail.ChannelMemberList_memberList" owl="1">
+    <t t-name="mail.ChannelMemberList_memberList" twl="1">
         <h6 class="m-2"><t t-esc="title"/> - <t t-esc="members.length"/></h6>
         <t t-foreach="members" t-as="member" t-key="member.localId">
             <div class="o_ChannelMemberList_member d-flex align-items-center mx-3 my-1">

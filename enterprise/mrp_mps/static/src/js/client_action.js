@@ -1,7 +1,7 @@
 tele.define('mrp_mps.ClientAction', function (require) {
 'use strict';
 
-const { ComponentWrapper } = require('web.OwlCompatibility');
+const { ComponentWrapper } = require('web.TwlCompatibility');
 
 var concurrency = require('web.concurrency');
 var core = require('web.core');

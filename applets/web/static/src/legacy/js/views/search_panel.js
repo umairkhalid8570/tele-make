@@ -2,7 +2,7 @@
 
     import { Model, useModel } from "web.Model";
 
-    const { Component, hooks } = owl;
+    const { Component, hooks } = twl;
     const { useState, useSubEnv } = hooks;
 
     /**

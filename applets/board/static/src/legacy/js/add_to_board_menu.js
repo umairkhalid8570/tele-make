@@ -7,7 +7,7 @@ tele.define('board.AddToBoardMenu', function (require) {
     const { sprintf } = require('web.utils');
     const { useAutofocus } = require('web.custom_hooks');
 
-    const { Component, useState } = owl;
+    const { Component, useState } = twl;
 
     /**
      * 'Add to board' menu

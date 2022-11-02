@@ -3,7 +3,7 @@ tele.define('web.CustomGroupByItem', function (require) {
 
     const { useModel } = require('web.Model');
 
-    const { Component, hooks } = owl;
+    const { Component, hooks } = twl;
     const { useState } = hooks;
 
     class CustomGroupByItem extends Component {

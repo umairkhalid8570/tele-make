@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <templates xml:space="preserve">
 
-    <t t-name="web.Dialog" owl="1">
+    <t t-name="web.Dialog" twl="1">
         <div class="o_dialog">
             <div role="dialog" class="modal"
                 tabindex="-1"
@@ -28,7 +28,7 @@
         </div>
     </t>
 
-    <t t-name="web.DialogFooterDefault" owl="1">
+    <t t-name="web.DialogFooterDefault" twl="1">
         <button class="btn btn-primary rounded-sm" t-on-click="close">
             <t>Ok</t>
         </button>

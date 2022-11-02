@@ -2,8 +2,8 @@
 
 import Connector from "./connector";
 import { deepMerge } from "./connector_utils";
-const { Component } = owl;
-const { css } = owl.tags;
+const { Component } = twl;
+const { css } = twl.tags;
 
 
 const STYLE = css`
@@ -229,7 +229,7 @@ class ConnectorContainer extends Component {
     /**
      * Handler for the connector remove-button-click event.
      *
-     * @param {OwlEvent} ev
+     * @param {TwlEvent} ev
      * @private
      */
     _onConnectorRemoveButtonClick(ev) {
@@ -343,7 +343,7 @@ class ConnectorContainer extends Component {
      * It has been implemented here in order to manage it globally instead of in each connector (and thus limiting
      * the number of listeners).
      *
-     * @param {OwlEvent} ev
+     * @param {TwlEvent} ev
      * @private
      */
     _onMouseOut(ev) {
@@ -372,7 +372,7 @@ class ConnectorContainer extends Component {
      * It has been implemented here in order to manage it globally instead of in each connector (and thus limiting
      * the number of listeners).
      *
-     * @param {OwlEvent} ev
+     * @param {TwlEvent} ev
      * @private
      */
     _onMouseOver(ev) {

@@ -1,7 +1,7 @@
 /** @tele-module alias=web.RendererWrapper **/
 
 
-    import { ComponentWrapper } from 'web.OwlCompatibility';
+    import { ComponentWrapper } from 'web.TwlCompatibility';
 
     class RendererWrapper extends ComponentWrapper {
         getLocalState() { }

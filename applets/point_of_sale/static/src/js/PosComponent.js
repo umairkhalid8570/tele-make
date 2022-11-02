@@ -1,7 +1,7 @@
 tele.define('point_of_sale.PosComponent', function (require) {
     'use strict';
 
-    const { Component } = owl;
+    const { Component } = twl;
 
     class PosComponent extends Component {
         /**

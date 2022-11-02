@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <templates xml:space="preserve">
 
-<t t-name="mail.RtcCallViewer" owl="1">
+<t t-name="mail.RtcCallViewer" twl="1">
     <div class="o_RtcCallViewer" t-att-class="{ 'o-fullScreen': rtcCallViewer and rtcCallViewer.isFullScreen, 'o-isMinimized': rtcCallViewer and rtcCallViewer.isMinimized }">
         <t t-if="rtcCallViewer">
 

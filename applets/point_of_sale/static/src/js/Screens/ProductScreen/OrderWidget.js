@@ -1,7 +1,7 @@
 tele.define('point_of_sale.OrderWidget', function(require) {
     'use strict';
 
-    const { useState, useRef, onPatched } = owl.hooks;
+    const { useState, useRef, onPatched } = twl.hooks;
     const { useListener } = require('web.custom_hooks');
     const { onChangeOrder } = require('point_of_sale.custom_hooks');
     const PosComponent = require('point_of_sale.PosComponent');

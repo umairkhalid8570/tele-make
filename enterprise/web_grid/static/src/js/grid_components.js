@@ -4,11 +4,11 @@ tele.define('web_grid.components', function (require) {
     const fieldUtils = require('web.field_utils');
     const utils = require('web.utils');
 
-    const { useRef, useState } = owl.hooks;
-    const { debounce } = owl.utils;
+    const { useRef, useState } = twl.hooks;
+    const { debounce } = twl.utils;
 
 
-    class BaseGridComponent extends owl.Component {
+    class BaseGridComponent extends twl.Component {
         constructor() {
             super(...arguments);
             this.currentInput = useRef("currentInput");

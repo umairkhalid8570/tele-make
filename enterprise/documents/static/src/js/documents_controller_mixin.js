@@ -14,7 +14,7 @@ const config = require('web.config');
 const { Markup } = require('web.utils');
 const fileUploadMixin = require('web.fileUploadMixin');
 const session = require('web.session');
-const { ComponentWrapper } = require('web.OwlCompatibility');
+const { ComponentWrapper } = require('web.TwlCompatibility');
 const Dialog = require('web.Dialog');
 
 class ChatterContainerWrapperComponent extends ComponentWrapper {}
@@ -45,7 +45,7 @@ const DocumentsControllerMixin = Object.assign({}, fileUploadMixin, {
         history_item_restore: '_onHistoryItemRestore',
         kanban_image_clicked: '_onKanbanImageClicked',
         lock_attachment: '_onLockAttachment',
-        // relates to owl custom event o-close-chatter
+        // relates to twl custom event o-close-chatter
         o_close_chatter: '_onDocumentsCloseChatter',
         open_chatter: '_onOpenChatter',
         open_record: '_onOpenRecord',

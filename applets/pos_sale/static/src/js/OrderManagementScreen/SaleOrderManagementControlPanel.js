@@ -1,7 +1,7 @@
 tele.define('pos_sale.SaleOrderManagementControlPanel', function (require) {
     'use strict';
 
-    const { useContext } = owl.hooks;
+    const { useContext } = twl.hooks;
     const { useAutofocus, useListener } = require('web.custom_hooks');
     const PosComponent = require('point_of_sale.PosComponent');
     const Registries = require('point_of_sale.Registries');

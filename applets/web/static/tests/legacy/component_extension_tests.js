@@ -4,7 +4,7 @@ tele.define('web.component_extension_tests', function (require) {
     const makeTestEnvironment = require("web.test_env");
     const testUtils = require("web.test_utils");
 
-    const { Component, tags } = owl;
+    const { Component, tags } = twl;
     const { xml } = tags;
     const { useListener } = require('web.custom_hooks');
 

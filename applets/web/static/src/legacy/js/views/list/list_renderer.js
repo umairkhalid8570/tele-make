@@ -1,7 +1,7 @@
 /** @tele-module alias=web.ListRenderer **/
 
 import BasicRenderer from 'web.BasicRenderer';
-import { ComponentWrapper } from 'web.OwlCompatibility';
+import { ComponentWrapper } from 'web.TwlCompatibility';
 import config from 'web.config';
 import core from 'web.core';
 import dom from 'web.dom';
@@ -1406,7 +1406,7 @@ var ListRenderer = BasicRenderer.extend({
     },
     /**
      * @private
-     * @param {OwlEvent} ev
+     * @param {TwlEvent} ev
      * @param {Object} group
      */
     _onPagerChanged: async function (ev, group) {

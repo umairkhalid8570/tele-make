@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <templates id="template" xml:space="preserve">
 
-    <t t-name="SyncNotification" owl="1">
+    <t t-name="SyncNotification" twl="1">
         <div class="oe_status" t-on-click="onClick">
             <span t-if="state.msg" class="js_msg">
                 <t t-esc="state.msg" />

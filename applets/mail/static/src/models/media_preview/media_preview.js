@@ -12,7 +12,7 @@ function factory(dependencies) {
          */
         _created() {
             super._created();
-            // Bind necessary until OWL supports arrow function in handlers: https://github.com/tele-studio/owl/issues/876
+            // Bind necessary until TWL supports arrow function in handlers: https://github.com/tele-studio/twl/issues/876
             this.onClickDisableMicrophoneButton = this.onClickDisableMicrophoneButton.bind(this);
             this.onClickDisableVideoButton = this.onClickDisableVideoButton.bind(this);
             this.onClickEnableMicrophoneButton = this.onClickEnableMicrophoneButton.bind(this);

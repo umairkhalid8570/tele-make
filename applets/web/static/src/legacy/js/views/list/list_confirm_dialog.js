@@ -3,7 +3,7 @@
 import core from 'web.core';
 import Dialog from 'web.Dialog';
 import FieldWrapper from 'web.FieldWrapper';
-import { WidgetAdapterMixin } from 'web.OwlCompatibility';
+import { WidgetAdapterMixin } from 'web.TwlCompatibility';
 import utils from 'web.utils';
 
 const _t = core._t;

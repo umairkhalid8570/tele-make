@@ -1,7 +1,7 @@
 tele.define("web/static/src/js/views/graph/graph_renderer", function (require) {
     "use strict";
 
-    const AbstractRenderer = require("web.AbstractRendererOwl");
+    const AbstractRenderer = require("web.AbstractRendererTwl");
     const { DateClasses } = require("web.dataComparisonUtils");
     const fieldUtils = require("web.field_utils");
     const { sortBy } = require("web.utils");
@@ -17,7 +17,7 @@ tele.define("web/static/src/js/views/graph/graph_renderer", function (require) {
         shortenLabel,
     } = require("web/static/src/js/views/graph/graph_utils");
 
-    const { useRef } = owl.hooks;
+    const { useRef } = twl.hooks;
     class GraphRenderer extends AbstractRenderer {
         constructor() {
             super(...arguments);

@@ -7,7 +7,7 @@ import { registry } from "../registry";
 import { useService } from "@web/core/utils/hooks";
 import { capitalize } from "../utils/strings";
 
-const { hooks } = owl;
+const { hooks } = twl;
 const { useState } = hooks;
 
 export const teleExceptionTitleMap = new Map(

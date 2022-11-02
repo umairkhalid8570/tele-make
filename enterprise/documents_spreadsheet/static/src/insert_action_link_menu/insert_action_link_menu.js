@@ -4,7 +4,7 @@ import { registry } from "@web/core/registry";
 import { useService } from "@web/core/utils/hooks";
 import SpreadsheetSelectorDialog from "documents_spreadsheet.SpreadsheetSelectorDialog";
 
-const { Component } = owl;
+const { Component } = twl;
 const favoriteMenuRegistry = registry.category("favoriteMenu");
 
 /**

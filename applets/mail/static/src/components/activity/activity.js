@@ -8,8 +8,8 @@ import {
     getLangDatetimeFormat,
 } from 'web.time';
 
-const { Component, useState } = owl;
-const { useRef } = owl.hooks;
+const { Component, useState } = twl;
+const { useRef } = twl.hooks;
 
 export class Activity extends Component {
 

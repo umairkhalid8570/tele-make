@@ -7,7 +7,7 @@ import { _t } from 'web.core';
 import { useService } from "@web/core/utils/hooks";
 import { sprintf } from '@web/core/utils/strings';
 
-export default class BarcodeModel extends owl.core.EventBus {
+export default class BarcodeModel extends twl.core.EventBus {
     constructor(params) {
         super();
         this.params = params;

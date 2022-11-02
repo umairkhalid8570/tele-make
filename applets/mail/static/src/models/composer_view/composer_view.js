@@ -672,7 +672,7 @@ function factory(dependencies) {
             const mentions = [];
             for (const partner of this.composer.mentionedPartners) {
                 const placeholder = `@-mention-partner-${partner.id}`;
-                const text = `@${owl.utils.escape(partner.name)}`;
+                const text = `@${twl.utils.escape(partner.name)}`;
                 mentions.push({
                     class: 'o_mail_redirect',
                     id: partner.id,
@@ -684,7 +684,7 @@ function factory(dependencies) {
             }
             for (const channel of this.composer.mentionedChannels) {
                 const placeholder = `#-mention-channel-${channel.id}`;
-                const text = `#${owl.utils.escape(channel.name)}`;
+                const text = `#${twl.utils.escape(channel.name)}`;
                 mentions.push({
                     class: 'o_channel_redirect',
                     id: channel.id,

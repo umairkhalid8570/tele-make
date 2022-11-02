@@ -38,7 +38,7 @@ import { makeDeferred } from '@mail/utils/deferred/deferred';
 class Timer {
 
     /**
-     * @param {Object} env the OWL env
+     * @param {Object} env the TWL env
      * @param {function} onTimeout
      * @param {integer} duration
      * @param {Object} [param3={}]

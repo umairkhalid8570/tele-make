@@ -21,7 +21,7 @@ import {
 } from "../../helpers/mock_services";
 import { makeDeferred, nextTick, patchWithCleanup } from "../../helpers/utils";
 
-const { Component, tags } = owl;
+const { Component, tags } = twl;
 const errorDialogRegistry = registry.category("error_dialogs");
 const errorHandlerRegistry = registry.category("error_handlers");
 const serviceRegistry = registry.category("services");

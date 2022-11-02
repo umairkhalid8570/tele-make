@@ -4,7 +4,7 @@
 import '@mail/components/notification_alert/notification_alert';
 import { getMessagingComponent } from "@mail/utils/messaging_component";
 
-import { ComponentWrapper, WidgetAdapterMixin } from 'web.OwlCompatibility';
+import { ComponentWrapper, WidgetAdapterMixin } from 'web.TwlCompatibility';
 import Widget from 'web.Widget';
 import widgetRegistry from 'web.widget_registry';
 

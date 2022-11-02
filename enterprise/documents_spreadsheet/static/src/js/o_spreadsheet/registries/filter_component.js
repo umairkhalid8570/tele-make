@@ -2,7 +2,7 @@
 
 import spreadsheet from "../o_spreadsheet_loader";
 
-const { Component } = owl;
+const { Component } = twl;
 const { Menu } = spreadsheet;
 const { topbarComponentRegistry } = spreadsheet.registries;
 

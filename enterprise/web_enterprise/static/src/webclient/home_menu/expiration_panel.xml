@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <templates xml:space="preserve">
 
-<t t-name="DatabaseExpirationPanel" owl="1">
+<t t-name="DatabaseExpirationPanel" twl="1">
     <div t-if="state.display" role="alert"
         class="database_expiration_panel alert o-hidden-ios"
         t-attf-class="alert-{{state.alertType}}"

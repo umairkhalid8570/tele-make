@@ -1,8 +1,8 @@
 /** @tele-module **/
 
 import { deepMerge } from "./connector_utils";
-const { Component } = owl;
-const { css } = owl.tags;
+const { Component } = twl;
+const { css } = twl.tags;
 
 
 const STYLE = css`
@@ -241,7 +241,7 @@ class Connector extends Component {
     /**
      * Handler for connector_stroke_buttons remove click event.
      *
-     * @param {OwlEvent} ev
+     * @param {TwlEvent} ev
      */
     _onRemoveButtonClick(ev) {
         const payload = {
@@ -253,7 +253,7 @@ class Connector extends Component {
     /**
      * Handler for connector_stroke_buttons reschedule sooner click event.
      *
-     * @param {OwlEvent} ev
+     * @param {TwlEvent} ev
      */
     _onRescheduleSoonerClick(ev) {
         const payload = {
@@ -265,7 +265,7 @@ class Connector extends Component {
     /**
      * Handler for connector_stroke_buttons reschedule later click event.
      *
-     * @param {OwlEvent} ev
+     * @param {TwlEvent} ev
      */
     _onRescheduleLaterClick(ev) {
         const payload = {

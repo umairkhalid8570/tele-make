@@ -15,7 +15,7 @@ import { click, getFixture, mouseEnter, triggerEvent } from "../helpers/utils";
 const serviceRegistry = registry.category("services");
 const favoriteMenuRegistry = registry.category("favoriteMenu");
 
-const { Component, mount } = owl;
+const { Component, mount } = twl;
 
 export const setupControlPanelServiceRegistry = () => {
     serviceRegistry.add("action", actionService);
@@ -51,7 +51,7 @@ export const makeWithSearch = async (params) => {
 
     registerCleanup(() => withSearch.destroy());
 
-    const component = Object.values(withSearch.__owl__.children)[0];
+    const component = Object.values(withSearch.__twl__.children)[0];
 
     return component;
 };

@@ -21,9 +21,9 @@ tele.define('web.test_utils_create', function (require) {
     const testUtilsMock = require('web.test_utils_mock');
     const Widget = require('web.Widget');
 
-    const { Component } = owl;
-    const { useRef, useState } = owl.hooks;
-    const { xml } = owl.tags;
+    const { Component } = twl;
+    const { useRef, useState } = twl.hooks;
+    const { xml } = twl.tags;
 
     /**
      * Similar as createView, but specific for calendar views. Some calendar
@@ -79,9 +79,9 @@ tele.define('web.test_utils_create', function (require) {
             throw new Error(`Missing argument "constructor".`);
         }
         if (!(constructor.prototype instanceof Component)) {
-            throw new Error(`Argument "constructor" must be an Owl Component.`);
+            throw new Error(`Argument "constructor" must be an Twl Component.`);
         }
-        const cleanUp = await testUtilsMock.addMockEnvironmentOwl(Component, params);
+        const cleanUp = await testUtilsMock.addMockEnvironmentTwl(Component, params);
         class Parent extends Component {
             constructor() {
                 super(...arguments);

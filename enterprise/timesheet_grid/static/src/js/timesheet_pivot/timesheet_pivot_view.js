@@ -3,7 +3,7 @@
 import { PivotView } from "@web/views/pivot/pivot_view";
 import { registry } from "@web/core/registry";
 
-const { onMounted, onPatched } = owl.hooks;
+const { onMounted, onPatched } = twl.hooks;
 
 const viewRegistry = registry.category("views");
 

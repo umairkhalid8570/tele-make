@@ -4,7 +4,7 @@ import { Popover } from "@web/core/popover/popover";
 import { registerCleanup } from "../../helpers/cleanup";
 import { getFixture } from "../../helpers/utils";
 
-const { mount } = owl;
+const { mount } = twl;
 
 let fixture;
 let popoverTarget;

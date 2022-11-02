@@ -14,9 +14,9 @@ var dom = require('web.dom');
 const session = require('web.session');
 const utils = require('web.utils');
 const widgetRegistry = require('web.widget_registry');
-const widgetRegistryOwl = require("web.widgetRegistry");
+const widgetRegistryTwl = require("web.widgetRegistry");
 
-const { WidgetAdapterMixin } = require('web.OwlCompatibility');
+const { WidgetAdapterMixin } = require('web.TwlCompatibility');
 const FieldWrapper = require('web.FieldWrapper');
 const WidgetWrapper = require("web.WidgetWrapper");
 
@@ -732,7 +732,7 @@ var BasicRenderer = AbstractRenderer.extend(WidgetAdapterMixin, {
         // Initialize and register the widget
         // Readonly status is known as the modifiers have just been registered
         var Widget = record.fieldsInfo[this.viewType][fieldName].Widget;
-        const legacy = !(Widget.prototype instanceof owl.Component);
+        const legacy = !(Widget.prototype instanceof twl.Component);
         const widgetOptions = {
             // Distinct readonly from renderer and readonly from modifier,
             // renderer can be readonly while modifier not.
@@ -810,8 +810,8 @@ var BasicRenderer = AbstractRenderer.extend(WidgetAdapterMixin, {
      */
     _renderWidget: function (record, node) {
         const name = node.attrs.name;
-        const Widget = widgetRegistryOwl.get(name) || widgetRegistry.get(name);
-        const legacy = !(Widget.prototype instanceof owl.Component);
+        const Widget = widgetRegistryTwl.get(name) || widgetRegistry.get(name);
+        const legacy = !(Widget.prototype instanceof twl.Component);
         let widget;
         if (legacy) {
             widget = new Widget(this, record, node, { mode: this.mode });
@@ -872,7 +872,7 @@ var BasicRenderer = AbstractRenderer.extend(WidgetAdapterMixin, {
             var oldIndex = this._destroyFieldWidget(record.id, widget);
             recordWidgets.splice(oldIndex, 0, newWidget);
 
-            // Mount new widget if necessary (mainly for Owl components)
+            // Mount new widget if necessary (mainly for Twl components)
             if (this._isInDom && newWidget.on_attach_callback) {
                 newWidget.on_attach_callback();
             }

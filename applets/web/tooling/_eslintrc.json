@@ -15,7 +15,7 @@
   },
   "globals": {
     "tele": "writable",
-    "owl": "readonly",
+    "twl": "readonly",
     "luxon": "readonly"
   }
 }

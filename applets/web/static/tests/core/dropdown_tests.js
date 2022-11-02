@@ -18,7 +18,7 @@ import {
     triggerHotkey,
 } from "../helpers/utils";
 
-const { mount } = owl;
+const { mount } = twl;
 const serviceRegistry = registry.category("services");
 
 let env;
@@ -40,8 +40,8 @@ QUnit.module("Components", ({ beforeEach }) => {
     QUnit.module("Dropdown");
 
     QUnit.test("can be rendered", async (assert) => {
-        class Parent extends owl.Component {}
-        Parent.template = owl.tags.xml`<Dropdown/>`;
+        class Parent extends twl.Component {}
+        Parent.template = twl.tags.xml`<Dropdown/>`;
         env = await makeTestEnv();
         parent = await mount(Parent, { env, target });
         assert.strictEqual(
@@ -53,16 +53,16 @@ QUnit.module("Components", ({ beforeEach }) => {
     });
 
     QUnit.test("DropdownItem can be rendered as <span/>", async (assert) => {
-        class Parent extends owl.Component {}
-        Parent.template = owl.tags.xml`<DropdownItem>coucou</DropdownItem>`;
+        class Parent extends twl.Component {}
+        Parent.template = twl.tags.xml`<DropdownItem>coucou</DropdownItem>`;
         env = await makeTestEnv();
         parent = await mount(Parent, { env, target });
         assert.strictEqual(parent.el.outerHTML, '<span class="dropdown-item">coucou</span>');
     });
 
     QUnit.test("DropdownItem (with href prop) can be rendered as <a/>", async (assert) => {
-        class Parent extends owl.Component {}
-        Parent.template = owl.tags.xml`<DropdownItem href="'#'">coucou</DropdownItem>`;
+        class Parent extends twl.Component {}
+        Parent.template = twl.tags.xml`<DropdownItem href="'#'">coucou</DropdownItem>`;
         env = await makeTestEnv();
         parent = await mount(Parent, { env, target });
         assert.strictEqual(parent.el.outerHTML, '<a href="#" class="dropdown-item">coucou</a>');
@@ -81,8 +81,8 @@ QUnit.module("Components", ({ beforeEach }) => {
                 assert.ok(href !== null ? ev.defaultPrevented : !ev.defaultPrevented);
             },
         });
-        class Parent extends owl.Component {}
-        Parent.template = owl.tags.xml`
+        class Parent extends twl.Component {}
+        Parent.template = twl.tags.xml`
             <Dropdown>
                 <DropdownItem class="link" href="'#'"/>
                 <DropdownItem class="nolink" />
@@ -100,8 +100,8 @@ QUnit.module("Components", ({ beforeEach }) => {
     });
 
     QUnit.test("can be styled", async (assert) => {
-        class Parent extends owl.Component {}
-        Parent.template = owl.tags.xml`
+        class Parent extends twl.Component {}
+        Parent.template = twl.tags.xml`
         <Dropdown class="one" togglerClass="'two'" menuClass="'three'">
             <DropdownItem class="four" />
         </Dropdown>
@@ -121,7 +121,7 @@ QUnit.module("Components", ({ beforeEach }) => {
     QUnit.test("menu can be toggled", async (assert) => {
         assert.expect(5);
         const beforeOpenProm = makeDeferred();
-        class Parent extends owl.Component {
+        class Parent extends twl.Component {
             constructor() {
                 super(...arguments);
                 this.beforeOpen = () => {
@@ -130,7 +130,7 @@ QUnit.module("Components", ({ beforeEach }) => {
                 };
             }
         }
-        Parent.template = owl.tags.xml`<Dropdown beforeOpen="beforeOpen"/>`;
+        Parent.template = twl.tags.xml`<Dropdown beforeOpen="beforeOpen"/>`;
         env = await makeTestEnv();
         parent = await mount(Parent, { env, target });
         await click(parent.el, "button.dropdown-toggle");
@@ -145,7 +145,7 @@ QUnit.module("Components", ({ beforeEach }) => {
 
     QUnit.test("initial open state can be true", async (assert) => {
         assert.expect(3);
-        class Parent extends owl.Component {
+        class Parent extends twl.Component {
             constructor() {
                 super(...arguments);
                 this.beforeOpen = () => {
@@ -153,7 +153,7 @@ QUnit.module("Components", ({ beforeEach }) => {
                 };
             }
         }
-        Parent.template = owl.tags.xml`<Dropdown startOpen="true" beforeOpen="beforeOpen"/>`;
+        Parent.template = twl.tags.xml`<Dropdown startOpen="true" beforeOpen="beforeOpen"/>`;
         env = await makeTestEnv();
         parent = await mount(Parent, { env, target });
         assert.verifySteps(["beforeOpen"]);
@@ -161,8 +161,8 @@ QUnit.module("Components", ({ beforeEach }) => {
     });
 
     QUnit.test("close on outside click", async (assert) => {
-        class Parent extends owl.Component {}
-        Parent.template = owl.tags.xml`
+        class Parent extends twl.Component {}
+        Parent.template = twl.tags.xml`
         <div>
           <div class="outside">outside</div>
           <Dropdown/>
@@ -177,8 +177,8 @@ QUnit.module("Components", ({ beforeEach }) => {
     });
 
     QUnit.test("close on item selection", async (assert) => {
-        class Parent extends owl.Component {}
-        Parent.template = owl.tags.xml`
+        class Parent extends twl.Component {}
+        Parent.template = twl.tags.xml`
         <Dropdown>
             <DropdownItem/>
         </Dropdown>
@@ -191,12 +191,12 @@ QUnit.module("Components", ({ beforeEach }) => {
     });
 
     QUnit.test("payload received on item selection", async (assert) => {
-        class Parent extends owl.Component {
+        class Parent extends twl.Component {
             onItemSelected(ev) {
                 assert.deepEqual(ev.detail.payload, { answer: 42 });
             }
         }
-        Parent.template = owl.tags.xml`
+        Parent.template = twl.tags.xml`
         <Dropdown t-on-dropdown-item-selected="onItemSelected">
             <DropdownItem payload="{ answer: 42 }"/>
         </Dropdown>
@@ -208,8 +208,8 @@ QUnit.module("Components", ({ beforeEach }) => {
     });
 
     QUnit.test("multi-level dropdown: can be rendered and toggled", async (assert) => {
-        class Parent extends owl.Component {}
-        Parent.template = owl.tags.xml`
+        class Parent extends twl.Component {}
+        Parent.template = twl.tags.xml`
         <Dropdown>
             <Dropdown>
                 <Dropdown/>
@@ -225,8 +225,8 @@ QUnit.module("Components", ({ beforeEach }) => {
     });
 
     QUnit.test("multi-level dropdown: initial open state can be true", async (assert) => {
-        class Parent extends owl.Component {}
-        Parent.template = owl.tags.xml`
+        class Parent extends twl.Component {}
+        Parent.template = twl.tags.xml`
         <Dropdown startOpen="true">
             <Dropdown startOpen="true">
                 <Dropdown startOpen="true"/>
@@ -239,8 +239,8 @@ QUnit.module("Components", ({ beforeEach }) => {
     });
 
     QUnit.test("multi-level dropdown: close on outside click", async (assert) => {
-        class Parent extends owl.Component {}
-        Parent.template = owl.tags.xml`
+        class Parent extends twl.Component {}
+        Parent.template = twl.tags.xml`
         <div>
           <div class="outside">outside</div>
           <Dropdown>
@@ -261,8 +261,8 @@ QUnit.module("Components", ({ beforeEach }) => {
     });
 
     QUnit.test("multi-level dropdown: close on item selection", async (assert) => {
-        class Parent extends owl.Component {}
-        Parent.template = owl.tags.xml`
+        class Parent extends twl.Component {}
+        Parent.template = twl.tags.xml`
         <Dropdown>
             <Dropdown>
                 <DropdownItem/>
@@ -285,8 +285,8 @@ QUnit.module("Components", ({ beforeEach }) => {
     });
 
     QUnit.test("multi-level dropdown: parent closing modes on item selection", async (assert) => {
-        class Parent extends owl.Component {}
-        Parent.template = owl.tags.xml`
+        class Parent extends twl.Component {}
+        Parent.template = twl.tags.xml`
         <Dropdown>
             <Dropdown>
                 <DropdownItem class="item1" parentClosingMode="'none'" />
@@ -325,12 +325,12 @@ QUnit.module("Components", ({ beforeEach }) => {
 
     QUnit.test("multi-level dropdown: payload bubbles on item selection", async (assert) => {
         assert.expect(2);
-        class Parent extends owl.Component {
+        class Parent extends twl.Component {
             onItemSelected(ev) {
                 assert.deepEqual(ev.detail.payload, { answer: 42 });
             }
         }
-        Parent.template = owl.tags.xml`
+        Parent.template = twl.tags.xml`
         <Dropdown t-on-dropdown-item-selected="onItemSelected">
             <Dropdown t-on-dropdown-item-selected="onItemSelected">
                 <DropdownItem payload="{ answer: 42 }" />
@@ -366,7 +366,7 @@ QUnit.module("Components", ({ beforeEach }) => {
             </t>
         </Dropdown>
     `;
-        class Parent extends owl.Component {
+        class Parent extends twl.Component {
             constructor() {
                 super(...arguments);
                 this.name = "foo";
@@ -429,7 +429,7 @@ QUnit.module("Components", ({ beforeEach }) => {
         async (assert) => {
             assert.expect(13);
             const beforeOpenProm = makeDeferred();
-            class Parent extends owl.Component {
+            class Parent extends twl.Component {
                 constructor() {
                     super(...arguments);
                     this.beforeOpen = () => {
@@ -438,7 +438,7 @@ QUnit.module("Components", ({ beforeEach }) => {
                     };
                 }
             }
-            Parent.template = owl.tags.xml`
+            Parent.template = twl.tags.xml`
         <div>
           <Dropdown class="one" />
           <Dropdown class="two" beforeOpen="beforeOpen"/>
@@ -486,8 +486,8 @@ QUnit.module("Components", ({ beforeEach }) => {
     QUnit.test(
         "siblings dropdowns: when non-sibling is open, other must not be toggled on mouse-enter",
         async (assert) => {
-            class Parent extends owl.Component {}
-            Parent.template = owl.tags.xml`
+            class Parent extends twl.Component {}
+            Parent.template = twl.tags.xml`
         <div>
           <div><Dropdown class="foo" /></div>
           <Dropdown class="bar1" />
@@ -511,8 +511,8 @@ QUnit.module("Components", ({ beforeEach }) => {
     QUnit.test(
         "siblings dropdowns: when one is open, then non-sibling toggled, siblings must not be toggled on mouse-enter",
         async (assert) => {
-            class Parent extends owl.Component {}
-            Parent.template = owl.tags.xml`
+            class Parent extends twl.Component {}
+            Parent.template = twl.tags.xml`
         <div>
           <div><Dropdown class="foo" /></div>
           <Dropdown class="bar1" />
@@ -538,8 +538,8 @@ QUnit.module("Components", ({ beforeEach }) => {
 
     QUnit.test("siblings dropdowns with manualOnly props", async (assert) => {
         assert.expect(7);
-        class Parent extends owl.Component {}
-        Parent.template = owl.tags.xml`
+        class Parent extends twl.Component {}
+        Parent.template = twl.tags.xml`
         <div>
           <Dropdown class="one" manualOnly="true"/>
           <Dropdown class="two" manualOnly="true"/>
@@ -571,13 +571,13 @@ QUnit.module("Components", ({ beforeEach }) => {
 
     QUnit.test("dropdowns keynav", async (assert) => {
         assert.expect(26);
-        class Parent extends owl.Component {
+        class Parent extends twl.Component {
             onItemSelected(ev) {
                 const { payload } = ev.detail;
                 assert.step(payload.val.toString());
             }
         }
-        Parent.template = owl.tags.xml`
+        Parent.template = twl.tags.xml`
         <Dropdown hotkey="'m'" t-on-dropdown-item-selected="onItemSelected">
             <DropdownItem class="item1" payload="{val:1}">item1</DropdownItem>
             <DropdownItem class="item2" hotkey="'2'" payload="{val:2}">item2</DropdownItem>
@@ -664,8 +664,8 @@ QUnit.module("Components", ({ beforeEach }) => {
     });
 
     QUnit.test("dropdowns keynav is not impacted by bootstrap", async (assert) => {
-        class Parent extends owl.Component {}
-        Parent.template = owl.tags.xml`
+        class Parent extends twl.Component {}
+        Parent.template = twl.tags.xml`
             <Dropdown startOpen="true">
                 <select><option>foo</option></select>
             </Dropdown>
@@ -694,8 +694,8 @@ QUnit.module("Components", ({ beforeEach }) => {
     });
 
     QUnit.test("props toggler='parent'", async (assert) => {
-        class Parent extends owl.Component {}
-        Parent.template = owl.tags.xml`
+        class Parent extends twl.Component {}
+        Parent.template = twl.tags.xml`
             <div>
                 <div class="my_custom_toggler">
                     Click Me
@@ -718,13 +718,13 @@ QUnit.module("Components", ({ beforeEach }) => {
 
     QUnit.test("multi-level dropdown: keynav", async (assert) => {
         assert.expect(125);
-        class Parent extends owl.Component {
+        class Parent extends twl.Component {
             onItemSelected(ev) {
                 const { payload } = ev.detail;
                 assert.step(payload.val);
             }
         }
-        Parent.template = owl.tags.xml`
+        Parent.template = twl.tags.xml`
             <Dropdown class="first" hotkey="'1'" t-on-dropdown-item-selected="onItemSelected">
                 <DropdownItem class="first-first" payload="{val:'first-first'}">O</DropdownItem>
                 <Dropdown class="second">
@@ -818,8 +818,8 @@ QUnit.module("Components", ({ beforeEach }) => {
 
     QUnit.test("multi-level dropdown: keynav when rtl direction", async (assert) => {
         assert.expect(10);
-        class Parent extends owl.Component {}
-        Parent.template = owl.tags.xml`
+        class Parent extends twl.Component {}
+        Parent.template = twl.tags.xml`
             <Dropdown class="first" hotkey="'1'">
                 <DropdownItem class="first-first">O</DropdownItem>
                 <Dropdown class="second">
@@ -864,8 +864,8 @@ QUnit.module("Components", ({ beforeEach }) => {
         "multi-level dropdown: mouseentering a dropdown item should close any subdropdown",
         async (assert) => {
             assert.expect(4);
-            class Parent extends owl.Component {}
-            Parent.template = owl.tags.xml`
+            class Parent extends twl.Component {}
+            Parent.template = twl.tags.xml`
                 <Dropdown togglerClass="'main'">
                     <Dropdown togglerClass="'sub'" />
                     <DropdownItem class="item" />
@@ -891,8 +891,8 @@ QUnit.module("Components", ({ beforeEach }) => {
 
     QUnit.test("multi-level dropdown: unsubscribe all keynav when root close", async (assert) => {
         assert.expect(14);
-        class Parent extends owl.Component {}
-        Parent.template = owl.tags.xml`
+        class Parent extends twl.Component {}
+        Parent.template = twl.tags.xml`
             <Dropdown togglerClass="'first'">
                 <Dropdown togglerClass="'second'">
                     <Dropdown togglerClass="'third'"/>

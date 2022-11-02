@@ -12,7 +12,7 @@ import { actionService } from "@web/webclient/actions/action_service";
 
 import mobile from "web_mobile.core";
 
-const { mount } = owl;
+const { mount } = twl;
 const serviceRegistry = registry.category("services");
 const userMenuRegistry = registry.category("user_menuitems");
 const MY_IMAGE =

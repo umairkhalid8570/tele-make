@@ -9,8 +9,8 @@ import { _lt } from 'web.core';
 import { format } from 'web.field_utils';
 import { getLangDatetimeFormat } from 'web.time';
 
-const { Component, useState } = owl;
-const { useRef } = owl.hooks;
+const { Component, useState } = twl;
+const { useRef } = twl.hooks;
 
 const READ_MORE = _lt("read more");
 const READ_LESS = _lt("read less");
@@ -469,7 +469,7 @@ export class Message extends Component {
         }
         // Remove all readmore before if any before reinsert them with _insertReadMoreLess.
         // This is needed because _insertReadMoreLess is working with direct DOM mutations
-        // which are not sync with Owl.
+        // which are not sync with Twl.
         if (this._contentRef.el) {
             for (const el of [...this._contentRef.el.querySelectorAll(':scope .o_Message_readMoreLess')]) {
                 el.remove();

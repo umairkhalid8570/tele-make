@@ -7,7 +7,7 @@ import { computeAppsAndMenuItems } from "@web/webclient/menus/menu_helpers";
 import { ControllerNotFoundError } from "@web/webclient/actions/action_service";
 import { HomeMenu } from "./home_menu";
 
-const { Component, tags } = owl;
+const { Component, tags } = twl;
 
 export const homeMenuService = {
     dependencies: ["action", "router"],

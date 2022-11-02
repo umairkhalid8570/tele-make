@@ -3,10 +3,10 @@
 tele.define('web_map.MapRenderer', function (require) {
     "use strict";
 
-    const AbstractRendererOwl = require('web.AbstractRendererOwl');
+    const AbstractRendererTwl = require('web.AbstractRendererTwl');
     const { format } = require("web.field_utils");
 
-    const { useRef, useState } = owl.hooks;
+    const { useRef, useState } = twl.hooks;
 
     const apiTilesRouteWithToken =
         'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}';
@@ -34,7 +34,7 @@ tele.define('web_map.MapRenderer', function (require) {
             </a>
         </strong>`;
 
-    class MapRenderer extends AbstractRendererOwl {
+    class MapRenderer extends AbstractRendererTwl {
         /**
          * @constructor
          */

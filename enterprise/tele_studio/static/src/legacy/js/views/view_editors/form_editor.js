@@ -15,7 +15,7 @@ var FormEditorHook = require('tele_studio.FormEditorHook');
 
 var _t = core._t;
 
-const { ComponentWrapper } = require('web.OwlCompatibility');
+const { ComponentWrapper } = require('web.TwlCompatibility');
 
 // ensure `.include()` on `mail_enterprise` is applied before `tele_studio`
 require('@mail_enterprise/widgets/form_renderer/form_renderer');

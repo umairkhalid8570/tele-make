@@ -1,7 +1,7 @@
 tele.define('web.WidgetWrapper', function (require) {
     "use strict";
 
-    const { ComponentWrapper } = require('web.OwlCompatibility');
+    const { ComponentWrapper } = require('web.TwlCompatibility');
 
     class WidgetWrapper extends ComponentWrapper {
 

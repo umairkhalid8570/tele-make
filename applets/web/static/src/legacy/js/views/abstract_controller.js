@@ -14,7 +14,7 @@
 import ActionMixin from 'web.ActionMixin';
 import ajax from 'web.ajax';
 import concurrency from 'web.concurrency';
-import { ComponentWrapper } from 'web.OwlCompatibility';
+import { ComponentWrapper } from 'web.TwlCompatibility';
 import mvc from 'web.mvc';
 import session from 'web.session';
 
@@ -121,7 +121,7 @@ var AbstractController = mvc.Controller.extend(ActionMixin, {
         if (this.withControlPanel) {
             this.searchModel.on('get-controller-query-params', this, this._onGetOwnedQueryParams);
         }
-        if (!(this.renderer instanceof owl.Component)) {
+        if (!(this.renderer instanceof twl.Component)) {
             this.renderer.on_attach_callback();
         }
     },
@@ -134,7 +134,7 @@ var AbstractController = mvc.Controller.extend(ActionMixin, {
         if (this.withControlPanel) {
             this.searchModel.off('get-controller-query-params', this);
         }
-        if (!(this.renderer instanceof owl.Component)) {
+        if (!(this.renderer instanceof twl.Component)) {
             this.renderer.on_detach_callback();
         }
     },
@@ -361,7 +361,7 @@ var AbstractController = mvc.Controller.extend(ActionMixin, {
      * @private
      */
     _startRenderer: function () {
-        if (this.renderer instanceof owl.Component) {
+        if (this.renderer instanceof twl.Component) {
             return this.renderer.mount(this.$('.o_content')[0]);
         }
         return this.renderer.appendTo(this.$('.o_content'));
@@ -448,7 +448,7 @@ var AbstractController = mvc.Controller.extend(ActionMixin, {
      * @return {Promise}
      */
     _updateRendererState(state, params = {}) {
-        if (this.renderer instanceof owl.Component) {
+        if (this.renderer instanceof twl.Component) {
             return this.renderer.update(state);
         }
         return this.renderer.updateState(state, params);

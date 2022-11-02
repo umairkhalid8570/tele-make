@@ -1,11 +1,11 @@
 /** @tele-module **/
 
 /**
- * This file can be removed as soon as voip code will be converted to owl.
+ * This file can be removed as soon as voip code will be converted to twl.
  */
 
 import { browser } from "@web/core/browser/browser";
-import { ComponentAdapter } from "web.OwlCompatibility";
+import { ComponentAdapter } from "web.TwlCompatibility";
 import core from "web.core";
 import { registry } from "@web/core/registry";
 import { sprintf } from "@web/core/utils/strings";
@@ -13,8 +13,8 @@ import { useService } from "@web/core/utils/hooks";
 
 const serviceRegistry = registry.category("services");
 
-const { Component } = owl;
-const { EventBus } = owl.core;
+const { Component } = twl;
+const { EventBus } = twl.core;
 
 /**
  * Specialization of a ComponentAdapter for the DialingPanel. Uses the voip

@@ -4,8 +4,8 @@ import * as mailUtils from '@mail/js/utils';
 
 import { registerMessagingComponent } from '@mail/utils/messaging_component';
 
-const { Component } = owl;
-const { useRef } = owl.hooks;
+const { Component } = twl;
+const { useRef } = twl.hooks;
 
 export class ThreadNeedactionPreview extends Component {
 

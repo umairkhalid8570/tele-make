@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <templates xml:space="preserve">
 
-    <t t-name="mail.RtcActivityNotice" owl="1">
+    <t t-name="mail.RtcActivityNotice" twl="1">
         <div class="o_RtcActivityNotice dropdown">
             <t t-if="messaging">
                 <RtcInvitations/>

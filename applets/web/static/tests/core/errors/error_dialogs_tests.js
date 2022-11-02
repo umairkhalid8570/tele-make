@@ -16,7 +16,7 @@ import { makeTestEnv } from "../../helpers/mock_env";
 import { makeFakeDialogService, makeFakeLocalizationService } from "../../helpers/mock_services";
 import { click, getFixture, nextTick, patchWithCleanup } from "../../helpers/utils";
 
-const { Component, mount, tags } = owl;
+const { Component, mount, tags } = twl;
 let target;
 let env;
 let parent;

@@ -4,7 +4,7 @@ import { registry } from "../registry";
 import { EffectContainer } from "./effect_container";
 import { RainbowMan } from "./rainbow_man";
 
-const { EventBus } = owl.core;
+const { EventBus } = twl.core;
 
 const effectRegistry = registry.category("effects");
 
@@ -32,7 +32,7 @@ const effectRegistry = registry.category("effects");
  *    'fast' will make rainbowman dissapear quickly
  *    'medium' and 'slow' will wait little longer before disappearing (can be used when options.message is longer)
  *    'no' will keep rainbowman on screen until user clicks anywhere outside rainbowman
- * @param {owl.Component} [params.Component=RainbowMan]
+ * @param {twl.Component} [params.Component=RainbowMan]
  *    Component class to instantiate (if effects aren't disabled)
  * @param {Object} [params.props]
  *    If params.Component is given, its props can be passed with this argument

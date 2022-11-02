@@ -1,7 +1,7 @@
-tele.define('web.OwlDialog', function (require) {
+tele.define('web.TwlDialog', function (require) {
     "use strict";
 
-    const { Component, hooks, misc } = owl;
+    const { Component, hooks, misc } = twl;
     const { Portal } = misc;
     const { useRef } = hooks;
     const SIZE_CLASSES = {
@@ -11,7 +11,7 @@ tele.define('web.OwlDialog', function (require) {
     };
 
     /**
-     * Dialog (owl version)
+     * Dialog (twl version)
      *
      * Represents a bootstrap-styled dialog handled with pure JS. Its implementation
      * is roughly the same as the legacy dialog, the only exception being the buttons.
@@ -71,12 +71,12 @@ tele.define('web.OwlDialog', function (require) {
             this._removeTooltips();
 
             // Notifies new webclient to adjust UI active element
-            this.env.bus.trigger("owl_dialog_mounted", this);
+            this.env.bus.trigger("twl_dialog_mounted", this);
         }
 
         willUnmount() {
             // Notifies new webclient to adjust UI active element
-            this.env.bus.trigger("owl_dialog_willunmount", this);
+            this.env.bus.trigger("twl_dialog_willunmount", this);
 
             this.env.bus.off('close_dialogs', this, this._close);
 
@@ -187,14 +187,14 @@ tele.define('web.OwlDialog', function (require) {
         /**
          * Push the given dialog at the end of the displayed list then set it as
          * active and all the others as passive.
-         * @param {(LegacyDialog|OwlDialog|LegacyAdaptedDialog)} dialog
+         * @param {(LegacyDialog|TwlDialog|LegacyAdaptedDialog)} dialog
          */
         static display(dialog) {
             const activeDialog = this.displayed[this.displayed.length - 1];
             if (activeDialog) {
                 // Deactivate previous dialog
                 const activeDialogEl = activeDialog.modalRef ?
-                    // Owl dialog | LegacyAdaptedDialog
+                    // Twl dialog | LegacyAdaptedDialog
                     activeDialog.modalRef.el :
                     // Legacy dialog
                     activeDialog.$modal[0];
@@ -210,7 +210,7 @@ tele.define('web.OwlDialog', function (require) {
         /**
          * Set the given displayed dialog as passive and the last added displayed dialog
          * as active, then remove it from the displayed list.
-         * @param {(LegacyDialog|OwlDialog|LegacyAdaptedDialog)} dialog
+         * @param {(LegacyDialog|TwlDialog|LegacyAdaptedDialog)} dialog
          */
         static hide(dialog) {
             // Remove given dialog from the list
@@ -220,7 +220,7 @@ tele.define('web.OwlDialog', function (require) {
             if (lastDialog) {
                 lastDialog.el.focus();
                 const modalEl = lastDialog.modalRef ?
-                    // Owl dialog | LegacyAdaptedDialog
+                    // Twl dialog | LegacyAdaptedDialog
                     lastDialog.modalRef.el :
                     // Legacy dialog
                     lastDialog.$modal[0];
@@ -256,7 +256,7 @@ tele.define('web.OwlDialog', function (require) {
         technical: Boolean,
         title: String,
     };
-    Dialog.template = 'web.OwlDialog';
+    Dialog.template = 'web.TwlDialog';
 
     return Dialog;
 });

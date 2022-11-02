@@ -3,8 +3,8 @@
 import { registerMessagingComponent } from '@mail/utils/messaging_component';
 import { isEventHandled } from '@mail/utils/utils';
 
-const { Component } = owl;
-const { useRef, useState } = owl.hooks;
+const { Component } = twl;
+const { useRef, useState } = twl.hooks;
 
 export class FollowerListMenu extends Component {
     /**

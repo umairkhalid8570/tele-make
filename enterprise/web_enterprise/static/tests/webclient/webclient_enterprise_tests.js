@@ -263,7 +263,7 @@ QUnit.module("WebClient Enterprise", (hooks) => {
 
             let doVeryFastClick = false;
 
-            class DelayedClientAction extends owl.Component {
+            class DelayedClientAction extends twl.Component {
                 mounted() {
                     if (doVeryFastClick) {
                         doVeryFastClick = false;
@@ -271,7 +271,7 @@ QUnit.module("WebClient Enterprise", (hooks) => {
                     }
                 }
             }
-            DelayedClientAction.template = owl.tags.xml`<div class='delayed_client_action'>
+            DelayedClientAction.template = twl.tags.xml`<div class='delayed_client_action'>
                 <button t-on-click="resolve">RESOLVE</button>
             </div>`;
 

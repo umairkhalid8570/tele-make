@@ -1,4 +1,4 @@
-tele.define('web.OwlCompatibilityTests', function (require) {
+tele.define('web.TwlCompatibilityTests', function (require) {
     "use strict";
 
     const AbstractField = require('web.AbstractField');
@@ -6,18 +6,18 @@ tele.define('web.OwlCompatibilityTests', function (require) {
     const widgetRegistry = require('web.widgetRegistry');
     const FormView = require('web.FormView');
 
-    const { ComponentAdapter, ComponentWrapper, WidgetAdapterMixin } = require('web.OwlCompatibility');
+    const { ComponentAdapter, ComponentWrapper, WidgetAdapterMixin } = require('web.TwlCompatibility');
     const testUtils = require('web.test_utils');
     const Widget = require('web.Widget');
 
     const makeTestPromise = testUtils.makeTestPromise;
     const nextTick = testUtils.nextTick;
-    const addMockEnvironmentOwl = testUtils.mock.addMockEnvironmentOwl;
+    const addMockEnvironmentTwl = testUtils.mock.addMockEnvironmentTwl;
 
-    const { Component, tags, useState } = owl;
+    const { Component, tags, useState } = twl;
     const { xml } = tags;
 
-    // from Owl internal status enum
+    // from Twl internal status enum
     const ISMOUNTED = 3; 
     const ISDESTROYED = 5;
 
@@ -28,7 +28,7 @@ tele.define('web.OwlCompatibilityTests', function (require) {
         },
     });
 
-    QUnit.module("Owl Compatibility", function () {
+    QUnit.module("Twl Compatibility", function () {
         QUnit.module("ComponentAdapter");
 
         QUnit.test("sub widget with no argument", async function (assert) {
@@ -461,7 +461,7 @@ tele.define('web.OwlCompatibilityTests', function (require) {
                     <ComponentAdapter Component="MyWidget"/>
                 </div>`;
             Parent.components = { ComponentAdapter };
-            const cleanUp = await addMockEnvironmentOwl(Parent, {
+            const cleanUp = await addMockEnvironmentTwl(Parent, {
                 mockRPC: function (route, args) {
                     assert.step(`${route} ${args.val}`);
                     return Promise.resolve();
@@ -537,7 +537,7 @@ tele.define('web.OwlCompatibilityTests', function (require) {
                     <ComponentAdapter Component="MyWidget"/>
                 </div>`;
             Parent.components = { ComponentAdapter };
-            const cleanUp = await addMockEnvironmentOwl(Parent, {
+            const cleanUp = await addMockEnvironmentTwl(Parent, {
                 session: { key: 'value' },
             });
 
@@ -568,7 +568,7 @@ tele.define('web.OwlCompatibilityTests', function (require) {
                     <ComponentAdapter Component="MyWidget"/>
                 </div>`;
             Parent.components = { ComponentAdapter };
-            const cleanUp = await addMockEnvironmentOwl(Parent, {
+            const cleanUp = await addMockEnvironmentTwl(Parent, {
                 mockRPC: function (route, args) {
                     assert.strictEqual(route, '/web/dataset/call_kw/some_model');
                     assert.deepEqual(args.kwargs.context, { x: 2 });
@@ -891,19 +891,19 @@ tele.define('web.OwlCompatibilityTests', function (require) {
             await widget.appendTo(target);
 
             assert.verifySteps(['init', 'willStart', 'mounted']);
-            assert.ok(component.__owl__.status === ISMOUNTED);
+            assert.ok(component.__twl__.status === ISMOUNTED);
 
             widget.$el.detach();
             widget.on_detach_callback();
 
             assert.verifySteps(['willUnmount']);
-            assert.ok(component.__owl__.status !== ISMOUNTED);
+            assert.ok(component.__twl__.status !== ISMOUNTED);
 
             widget.$el.appendTo(target);
             widget.on_attach_callback();
 
             assert.verifySteps(['mounted']);
-            assert.ok(component.__owl__.status === ISMOUNTED);
+            assert.ok(component.__twl__.status === ISMOUNTED);
 
             widget.destroy();
 
@@ -930,25 +930,25 @@ tele.define('web.OwlCompatibilityTests', function (require) {
             await widget.appendTo(target);
 
             assert.strictEqual(widget.el.innerHTML, '<div>Component 1</div><div>Component 2</div>');
-            assert.ok(c1.__owl__.status === ISMOUNTED);
-            assert.ok(c2.__owl__.status === ISMOUNTED);
+            assert.ok(c1.__twl__.status === ISMOUNTED);
+            assert.ok(c2.__twl__.status === ISMOUNTED);
 
             widget.$el.detach();
             widget.on_detach_callback();
 
-            assert.ok(c1.__owl__.status !== ISMOUNTED);
-            assert.ok(c2.__owl__.status !== ISMOUNTED);
+            assert.ok(c1.__twl__.status !== ISMOUNTED);
+            assert.ok(c2.__twl__.status !== ISMOUNTED);
 
             widget.$el.appendTo(target);
             widget.on_attach_callback();
 
-            assert.ok(c1.__owl__.status === ISMOUNTED);
-            assert.ok(c2.__owl__.status === ISMOUNTED);
+            assert.ok(c1.__twl__.status === ISMOUNTED);
+            assert.ok(c2.__twl__.status === ISMOUNTED);
 
             widget.destroy();
 
-            assert.ok(c1.__owl__.status === ISDESTROYED);
-            assert.ok(c2.__owl__.status === ISDESTROYED);
+            assert.ok(c1.__twl__.status === ISDESTROYED);
+            assert.ok(c2.__twl__.status === ISDESTROYED);
         });
 
         QUnit.test("isMounted with several levels of sub components", async function (assert) {
@@ -977,21 +977,21 @@ tele.define('web.OwlCompatibilityTests', function (require) {
             await widget.appendTo(target);
 
             assert.strictEqual(widget.el.innerHTML, '<div><div>child</div></div>');
-            assert.ok(child.__owl__.status === ISMOUNTED);
+            assert.ok(child.__twl__.status === ISMOUNTED);
 
             widget.$el.detach();
             widget.on_detach_callback();
 
-            assert.ok(child.__owl__.status !== ISMOUNTED);
+            assert.ok(child.__twl__.status !== ISMOUNTED);
 
             widget.$el.appendTo(target);
             widget.on_attach_callback();
 
-            assert.ok(child.__owl__.status === ISMOUNTED);
+            assert.ok(child.__twl__.status === ISMOUNTED);
 
             widget.destroy();
 
-            assert.ok(child.__owl__.status === ISDESTROYED);
+            assert.ok(child.__twl__.status === ISDESTROYED);
         });
 
         QUnit.test("sub component can be updated (in DOM)", async function (assert) {
@@ -1046,14 +1046,14 @@ tele.define('web.OwlCompatibilityTests', function (require) {
             widget.$el.detach();
             widget.on_detach_callback();
 
-            assert.ok(widget.component.__owl__.status !== ISMOUNTED);
+            assert.ok(widget.component.__twl__.status !== ISMOUNTED);
 
             await widget.update();
 
             widget.$el.appendTo(target);
             widget.on_attach_callback();
 
-            assert.ok(widget.component.__owl__.status === ISMOUNTED);
+            assert.ok(widget.component.__twl__.status === ISMOUNTED);
             assert.strictEqual(widget.el.innerHTML, '<div>Component 2</div>');
 
             widget.destroy();
@@ -1174,9 +1174,9 @@ tele.define('web.OwlCompatibilityTests', function (require) {
             parent.destroy();
         });
 
-        QUnit.module('Several layers of legacy widgets and Owl components');
+        QUnit.module('Several layers of legacy widgets and Twl components');
 
-        QUnit.test("Owl over legacy over Owl", async function (assert) {
+        QUnit.test("Twl over legacy over Twl", async function (assert) {
             assert.expect(7);
 
             let leafComponent;
@@ -1240,7 +1240,7 @@ tele.define('web.OwlCompatibilityTests', function (require) {
             parent.destroy();
         });
 
-        QUnit.test("Legacy over Owl over legacy", async function (assert) {
+        QUnit.test("Legacy over Twl over legacy", async function (assert) {
             assert.expect(7);
 
             let leafWidget;

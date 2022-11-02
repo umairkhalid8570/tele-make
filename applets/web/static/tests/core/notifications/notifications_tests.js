@@ -6,7 +6,7 @@ import { registry } from "@web/core/registry";
 import { makeTestEnv } from "../../helpers/mock_env";
 import { click, getFixture, nextTick, patchWithCleanup } from "../../helpers/utils";
 
-const { mount } = owl;
+const { mount } = twl;
 
 let target;
 const serviceRegistry = registry.category("services");

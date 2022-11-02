@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <templates xml:space="preserve">
 
-    <t t-name="web_enterprise.SearchPanel" owl="1">
+    <t t-name="web_enterprise.SearchPanel" twl="1">
         <!-- Device is not small => no override -->
         <t t-if="!env.isSmall">
             <t t-call="web.SearchPanel" />

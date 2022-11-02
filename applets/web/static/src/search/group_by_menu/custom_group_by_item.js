@@ -1,6 +1,6 @@
 /** @tele-module **/
 
-const { Component, hooks } = owl;
+const { Component, hooks } = twl;
 const { useState } = hooks;
 
 export class CustomGroupByItem extends Component {

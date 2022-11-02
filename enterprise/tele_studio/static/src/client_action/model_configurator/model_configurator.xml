@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <templates>
 
-<t t-name="tele_studio.ModelConfigurator" owl="1">
+<t t-name="tele_studio.ModelConfigurator" twl="1">
     <div class="container o_tele_studio_model_configurator" t-att-class="{ embed: props.embed }">
         <div class="row" t-if="!props.embed">
             <h1>Suggested features for your new model</h1>
@@ -37,7 +37,7 @@
     </div>
 </t>
 
-<t t-name="tele_studio.ModelConfiguratorOption" owl="1">
+<t t-name="tele_studio.ModelConfiguratorOption" twl="1">
     <div class="col-6">
         <div class="custom-control custom-checkbox o_tele_studio_model_configurator_option">
             <input type="checkbox" class="custom-control-input" t-att-id="props.name" t-att-name="props.name" t-model="props.option.value"/>

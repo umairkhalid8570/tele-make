@@ -6,7 +6,7 @@ tele.define('point_of_sale.test_popups', function(require) {
     const PosComponent = require('point_of_sale.PosComponent');
     const PopupControllerMixin = require('point_of_sale.PopupControllerMixin');
     const makePosTestEnv = require('point_of_sale.test_env');
-    const { xml } = owl.tags;
+    const { xml } = twl.tags;
 
     QUnit.module('unit tests for Popups', {
         before() {

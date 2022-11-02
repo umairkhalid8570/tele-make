@@ -3,7 +3,7 @@ tele.define('point_of_sale.ReceiptScreen', function (require) {
 
     const { Printer } = require('point_of_sale.Printer');
     const { is_email } = require('web.utils');
-    const { useRef, useContext } = owl.hooks;
+    const { useRef, useContext } = twl.hooks;
     const { useErrorHandlers, onChangeOrder } = require('point_of_sale.custom_hooks');
     const Registries = require('point_of_sale.Registries');
     const AbstractReceiptScreen = require('point_of_sale.AbstractReceiptScreen');

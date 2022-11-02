@@ -6,7 +6,7 @@ import testUtils from "web.test_utils";
 import { makeTestEnv } from "../helpers/mock_env";
 import { getFixture } from "../helpers/utils";
 
-const { mount } = owl;
+const { mount } = twl;
 const serviceRegistry = registry.category("services");
 
 // -----------------------------------------------------------------------------

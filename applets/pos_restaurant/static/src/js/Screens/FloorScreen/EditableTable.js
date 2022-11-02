@@ -1,7 +1,7 @@
 tele.define('pos_restaurant.EditableTable', function(require) {
     'use strict';
 
-    const { onPatched, onMounted } = owl.hooks;
+    const { onPatched, onMounted } = twl.hooks;
     const { useListener } = require('web.custom_hooks');
     const PosComponent = require('point_of_sale.PosComponent');
     const Registries = require('point_of_sale.Registries');

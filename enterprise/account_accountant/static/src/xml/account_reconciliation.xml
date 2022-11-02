@@ -63,7 +63,7 @@
     </t>
 </t>
 
-<div t-name="reconciliation.done" class="done_message" owl="1">
+<div t-name="reconciliation.done" class="done_message" twl="1">
     <h2>Congrats, you're all done!</h2>
     <p>You reconciled <strong><t t-esc="props.number"/></strong> transactions in <strong><t t-esc="props.duration"/></strong>.
         <t t-if="props.number > 1">

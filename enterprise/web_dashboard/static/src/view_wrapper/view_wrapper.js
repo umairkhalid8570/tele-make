@@ -3,7 +3,7 @@
 import { useEffect } from "@web/core/utils/hooks";
 import { View } from "@web/views/view";
 
-const { Component, hooks } = owl;
+const { Component, hooks } = twl;
 const { useSubEnv } = hooks;
 
 /**

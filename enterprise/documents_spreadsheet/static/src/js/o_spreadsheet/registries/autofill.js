@@ -13,7 +13,7 @@ const RIGHT = 3;
 //--------------------------------------------------------------------------
 // Autofill Component
 //--------------------------------------------------------------------------
-class AutofillTooltip extends owl.Component {}
+class AutofillTooltip extends twl.Component {}
 AutofillTooltip.template = "documents_spreadsheet.AutofillTooltip";
 
 //--------------------------------------------------------------------------

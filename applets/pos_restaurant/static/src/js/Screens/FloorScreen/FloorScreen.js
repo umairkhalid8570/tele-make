@@ -1,9 +1,9 @@
 tele.define('pos_restaurant.FloorScreen', function (require) {
     'use strict';
 
-    const { debounce } = owl.utils;
+    const { debounce } = twl.utils;
     const PosComponent = require('point_of_sale.PosComponent');
-    const { useState, useRef } = owl.hooks;
+    const { useState, useRef } = twl.hooks;
     const { useListener } = require('web.custom_hooks');
     const Registries = require('point_of_sale.Registries');
     const { posbus } = require('point_of_sale.utils');

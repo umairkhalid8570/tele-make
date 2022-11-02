@@ -1,17 +1,17 @@
 /** @tele-module */
 
 import NewModel from "tele_studio.NewModel";
-import { ComponentAdapter } from "web.OwlCompatibility";
+import { ComponentAdapter } from "web.TwlCompatibility";
 import { useService } from "@web/core/utils/hooks";
 
-export class NewModelItem extends owl.Component {
+export class NewModelItem extends twl.Component {
     setup() {
         this.NewModel = NewModel;
         this.menus = useService("menu");
         this.studio = useService("studio");
         this.action = useService("action");
         this.localId = 0;
-        owl.hooks.onWillUpdateProps(() => this.localId++);
+        twl.hooks.onWillUpdateProps(() => this.localId++);
     }
 
     async editNewModel(ev) {
@@ -20,7 +20,7 @@ export class NewModelItem extends owl.Component {
         this.studio.setParams({ action, viewType: (options && options.viewType) || "form" });
     }
 }
-NewModelItem.template = owl.tags.xml`
+NewModelItem.template = twl.tags.xml`
   <t>
     <t t-set="currentApp" t-value="menus.getCurrentApp()" />
     <t t-if="currentApp"
@@ -36,6 +36,6 @@ NewModelItem.template = owl.tags.xml`
 NewModelItem.components.ComponentAdapter = class extends ComponentAdapter {
     setup() {
         super.setup();
-        this.env = owl.Component.env;
+        this.env = twl.Component.env;
     }
 };

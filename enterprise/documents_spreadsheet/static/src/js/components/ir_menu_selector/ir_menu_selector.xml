@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <templates>
-    <t t-name="documents_spreadsheet.IrMenuSelectorFooter" owl="1">
+    <t t-name="documents_spreadsheet.IrMenuSelectorFooter" twl="1">
       <button class="btn btn-primary rounded-sm o-confirm" t-on-click.stop="_onConfirm" t-att-disabled="!selectedMenu.id">
         Confirm
       </button>

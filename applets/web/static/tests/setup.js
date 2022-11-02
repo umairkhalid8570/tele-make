@@ -11,10 +11,10 @@ import { prepareRegistriesWithCleanup } from "./helpers/mock_env";
 import { session as sessionInfo } from "@web/session";
 import { prepareLegacyRegistriesWithCleanup } from "./helpers/legacy_env_utils";
 
-const { whenReady, loadFile } = owl.utils;
+const { whenReady, loadFile } = twl.utils;
 
-owl.config.enableTransitions = false;
-owl.QWeb.dev = true;
+twl.config.enableTransitions = false;
+twl.QWeb.dev = true;
 
 function stringifyObjectValues(obj, properties) {
     let res = "";
@@ -171,7 +171,7 @@ function patchSessionInfo() {
             uid: 7,
             tz: "taht",
         },
-        qweb: "owl",
+        qweb: "twl",
         uid: 7,
         name: "Mitchell",
         username: "The wise",
@@ -230,11 +230,11 @@ export async function setupTests() {
     const templatesUrl = `/web/webclient/qweb/${new Date().getTime()}?bundle=web.assets_qweb`;
     // TODO replace by `processTemplates` when the legacy system is removed
     let templates = await loadFile(templatesUrl);
-    // as we currently have two qweb engines (owl and legacy), owl templates are
-    // flagged with attribute `owl="1"`. The following lines removes the 'owl'
+    // as we currently have two qweb engines (twl and legacy), twl templates are
+    // flagged with attribute `twl="1"`. The following lines removes the 'twl'
     // attribute from the templates, so that it doesn't appear in the DOM. For now,
-    // we make the assumption that 'templates' only contains owl templates. We
-    // might need at some point to handle the case where we have both owl and
+    // we make the assumption that 'templates' only contains twl templates. We
+    // might need at some point to handle the case where we have both twl and
     // legacy templates. At the end, we'll get rid of all this.
     const doc = new DOMParser().parseFromString(templates, "text/xml");
     // alt attribute causes issues with scroll tests. Indeed, alt is
@@ -244,12 +244,12 @@ export async function setupTests() {
     // server.
     removeUnwantedAttrsFromTemplates(doc, ['alt', 'src']);
     const owlTemplates = [];
-    for (let child of doc.querySelectorAll("templates > [owl]")) {
-        child.removeAttribute("owl");
+    for (let child of doc.querySelectorAll("templates > [twl]")) {
+        child.removeAttribute("twl");
         owlTemplates.push(child.outerHTML);
     }
     templates = `<templates> ${owlTemplates.join("\n")} </templates>`;
     window.__TELE_TEMPLATES__ = templates;
-    session.owlTemplates = templates;
+    session.twlTemplates = templates;
     await Promise.all([whenReady(), legacyProm]);
 }

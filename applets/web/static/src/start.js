@@ -6,7 +6,7 @@ import { mapLegacyEnvToWowlEnv } from "./legacy/utils";
 import { processTemplates } from "./core/assets";
 import { session } from "@web/session";
 
-const { mount, utils } = owl;
+const { mount, utils } = twl;
 const { whenReady } = utils;
 
 /**
@@ -15,7 +15,7 @@ const { whenReady } = utils;
  * It's meant to be webclient flexible so we can have a subclass of
  * webclient in enterprise with added features.
  *
- * @param {owl.Component} Webclient
+ * @param {twl.Component} Webclient
  */
 export async function startWebClient(Webclient) {
     tele.info = {

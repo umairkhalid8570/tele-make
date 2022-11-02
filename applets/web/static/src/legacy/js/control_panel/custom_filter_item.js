@@ -1,13 +1,13 @@
 tele.define('web.CustomFilterItem', function (require) {
     "use strict";
 
-    const { DatePicker, DateTimePicker } = require('web.DatePickerOwl');
+    const { DatePicker, DateTimePicker } = require('web.DatePickerTwl');
     const Domain = require('web.Domain');
     const { FIELD_OPERATORS, FIELD_TYPES } = require('web.searchUtils');
     const field_utils = require('web.field_utils');
     const { useModel } = require('web.Model');
 
-    const { Component, hooks } = owl;
+    const { Component, hooks } = twl;
     const { useState } = hooks;
 
     /**
@@ -210,7 +210,7 @@ tele.define('web.CustomFilterItem', function (require) {
          * @private
          * @param {Object} condition
          * @param {number} valueIndex
-         * @param {OwlEvent} ev
+         * @param {TwlEvent} ev
          */
         onDateChanged(condition, valueIndex, ev) {
             condition.value[valueIndex] = ev.detail.date;

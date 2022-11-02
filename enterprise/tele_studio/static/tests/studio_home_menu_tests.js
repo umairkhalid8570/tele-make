@@ -18,7 +18,7 @@ import testUtils from "web.test_utils";
 import { dialogService } from "@web/core/dialog/dialog_service";
 import { makeFakeRPCService } from "@web/../tests/helpers/mock_services";
 
-const { Component, core, hooks, mount, tags } = owl;
+const { Component, core, hooks, mount, tags } = twl;
 const { EventBus } = core;
 const serviceRegistry = registry.category("services");
 

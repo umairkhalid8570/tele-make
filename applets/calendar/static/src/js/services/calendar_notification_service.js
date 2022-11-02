@@ -13,7 +13,7 @@ export const calendarNotificationService = {
         const displayedNotifications = new Set();
 
         env.bus.on("WEB_CLIENT_READY", null, async () => {
-            const legacyEnv = owl.Component.env;
+            const legacyEnv = twl.Component.env;
             legacyEnv.services.bus_service.onNotification(this, (notifications) => {
                 for (const { payload, type } of notifications) {
                     if (type === "calendar.alarm") {

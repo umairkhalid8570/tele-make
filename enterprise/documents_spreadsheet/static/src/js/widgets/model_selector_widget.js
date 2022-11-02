@@ -1,9 +1,9 @@
 tele.define("documents_spreadsheet.model_selector_widget", function (require) {
-    const { ComponentAdapter } = require("web.OwlCompatibility");
+    const { ComponentAdapter } = require("web.TwlCompatibility");
 
     class ModelSelectorWidgetAdapter extends ComponentAdapter {
         setup() {
-            this.env = owl.Component.env;
+            this.env = twl.Component.env;
         }
         /**
          * @override

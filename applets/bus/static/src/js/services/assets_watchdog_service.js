@@ -12,7 +12,7 @@ export const assetsWatchdogService = {
         let bundleNotifTimerID = null;
 
         env.bus.on("WEB_CLIENT_READY", null, async () => {
-            const legacyEnv = owl.Component.env;
+            const legacyEnv = twl.Component.env;
             legacyEnv.services.bus_service.onNotification(this, onNotification);
             legacyEnv.services.bus_service.startPolling();
         });

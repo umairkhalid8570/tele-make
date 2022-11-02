@@ -5,7 +5,7 @@ import { registry } from "@web/core/registry";
 import { useAutofocus } from "@web/core/utils/hooks";
 import { isIOS } from "@web/core/browser/feature_detection";
 
-const { Component, hooks } = owl;
+const { Component, hooks } = twl;
 const { DateTime } = luxon;
 const { useExternalListener, useRef, useState } = hooks;
 

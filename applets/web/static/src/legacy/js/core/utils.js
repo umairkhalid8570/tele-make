@@ -581,12 +581,12 @@ var utils = Object.assign({
         return (/^\d+(\.\d*)? [^0-9]+$/).test(v);
     },
     /**
-     * Checks if a class is an extension of owl.Component.
+     * Checks if a class is an extension of twl.Component.
      *
      * @param {any} value A class reference
      */
     isComponent: function (value) {
-        return value.prototype instanceof owl.Component;
+        return value.prototype instanceof twl.Component;
     },
     /**
      * Checks if a keyboard event concerns

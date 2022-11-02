@@ -30,7 +30,7 @@ export function registerMessagingComponent(ComponentClass, { propsCompareDepth =
             super.setup(...args);
             // useModels must be defined after useRenderedValues, indeed records and
             // fields accessed during useRenderedValues should be observed by
-            // useModels as if they were part of the OWL rendering itself.
+            // useModels as if they were part of the TWL rendering itself.
             useModels();
             useShouldUpdateBasedOnProps({ propsCompareDepth });
         }

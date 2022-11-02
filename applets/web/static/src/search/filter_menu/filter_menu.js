@@ -4,7 +4,7 @@ import { CustomFilterItem } from "./custom_filter_item";
 import { FACET_ICONS } from "../utils/misc";
 import { useBus } from "@web/core/utils/hooks";
 
-const { Component } = owl;
+const { Component } = twl;
 
 export class FilterMenu extends Component {
     setup() {

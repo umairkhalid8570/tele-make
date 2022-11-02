@@ -14,7 +14,7 @@ function factory(dependencies) {
          */
         _created() {
             super._created();
-            // Bind necessary until OWL supports arrow function in handlers: https://github.com/tele-studio/owl/issues/876
+            // Bind necessary until TWL supports arrow function in handlers: https://github.com/tele-studio/twl/issues/876
             this.onClickHideInviteForm = this.onClickHideInviteForm.bind(this);
             this.onClickHideMemberList = this.onClickHideMemberList.bind(this);
             this.onClickShowInviteForm = this.onClickShowInviteForm.bind(this);

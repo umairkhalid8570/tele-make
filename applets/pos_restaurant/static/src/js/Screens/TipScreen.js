@@ -4,7 +4,7 @@ tele.define('pos_restaurant.TipScreen', function (require) {
     const Registries = require('point_of_sale.Registries');
     const PosComponent = require('point_of_sale.PosComponent');
     const { parse } = require('web.field_utils');
-    const { useContext } = owl.hooks;
+    const { useContext } = twl.hooks;
 
     class TipScreen extends PosComponent {
         constructor() {

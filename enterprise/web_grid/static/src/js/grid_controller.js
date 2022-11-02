@@ -260,7 +260,7 @@ var GridController = AbstractController.extend({
     },
     /**
      * @private
-     * @param {OwlEvent} ev
+     * @param {TwlEvent} ev
      */
     _onOpenCellInformation: function (ev) {
         var self = this;

@@ -4,8 +4,8 @@ tele.define('web.basic_view_tests', function (require) {
     const BasicView = require('web.BasicView');
     const BasicRenderer = require("web.BasicRenderer");
     const testUtils = require('web.test_utils');
-    const widgetRegistryOwl = require('web.widgetRegistry');
-    const { xml } = owl.tags;
+    const widgetRegistryTwl = require('web.widgetRegistry');
+    const { xml } = twl.tags;
 
     const createView = testUtils.createView;
 
@@ -42,7 +42,7 @@ tele.define('web.basic_view_tests', function (require) {
                 })
             });
 
-            class MyWidget extends owl.Component {}
+            class MyWidget extends twl.Component {}
             MyWidget.fieldDependencies = {
                 foo: { type: 'char' },
                 bar: { type: 'boolean' },
@@ -50,7 +50,7 @@ tele.define('web.basic_view_tests', function (require) {
             MyWidget.template = xml/* xml */`
             <div class="custom-widget">Hello World!</div>
             `;
-            widgetRegistryOwl.add('testWidget', MyWidget);
+            widgetRegistryTwl.add('testWidget', MyWidget);
 
             const view = await createView({
                 View: basicView,
@@ -71,7 +71,7 @@ tele.define('web.basic_view_tests', function (require) {
             });
 
             view.destroy();
-            delete widgetRegistryOwl.map.testWidget;
+            delete widgetRegistryTwl.map.testWidget;
         });
 
     });

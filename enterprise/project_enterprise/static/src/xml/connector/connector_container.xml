@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <templates xml:space="preserve">
-    <t t-name="connector_container" owl="1">
+    <t t-name="connector_container" twl="1">
         <div class="o_connector_container"
              t-on-mouseover.stop="_onMouseOver"
              t-on-mouseout.stop="_onMouseOut">

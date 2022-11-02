@@ -3,7 +3,7 @@ tele.define('pos_adyen.PaymentScreen', function(require) {
 
     const PaymentScreen = require('point_of_sale.PaymentScreen');
     const Registries = require('point_of_sale.Registries');
-    const { onMounted } = owl.hooks;
+    const { onMounted } = twl.hooks;
 
     const PosAdyenPaymentScreen = PaymentScreen => class extends PaymentScreen {
         constructor() {

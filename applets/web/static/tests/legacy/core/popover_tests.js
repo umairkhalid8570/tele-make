@@ -5,7 +5,7 @@ tele.define('web.popover_tests', function (require) {
     const Popover = require('web.Popover');
     const testUtils = require('web.test_utils');
 
-    const { Component, tags, hooks } = owl;
+    const { Component, tags, hooks } = twl;
     const { useRef, useState } = hooks;
     const { xml } = tags;
 

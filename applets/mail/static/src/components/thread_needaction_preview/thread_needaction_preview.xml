@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <templates xml:space="preserve">
 
-    <t t-name="mail.ThreadNeedactionPreview" owl="1">
+    <t t-name="mail.ThreadNeedactionPreview" twl="1">
         <!--
             The preview template is used by the discuss in mobile, and by the systray
             menu in order to show preview of threads.

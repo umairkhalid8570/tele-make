@@ -1,4 +1,4 @@
-tele.define('web.DatePickerOwl', function (require) {
+tele.define('web.DatePickerTwl', function (require) {
     "use strict";
 
     const config = require('web.config');
@@ -6,7 +6,7 @@ tele.define('web.DatePickerOwl', function (require) {
     const time = require('web.time');
     const { useAutofocus } = require('web.custom_hooks');
 
-    const { Component, hooks } = owl;
+    const { Component, hooks } = twl;
     const { useExternalListener, useRef, useState } = hooks;
 
     let datePickerId = 0;

@@ -1,14 +1,14 @@
 tele.define('web.FieldWrapper', function (require) {
     "use strict";
 
-    const { ComponentWrapper } = require('web.OwlCompatibility');
+    const { ComponentWrapper } = require('web.TwlCompatibility');
     const field_utils = require('web.field_utils');
 
     /**
      * This file defines the FieldWrapper component, an extension of ComponentWrapper,
-     * needed to instanciate Owl fields inside legacy widgets. This component
+     * needed to instanciate Twl fields inside legacy widgets. This component
      * will be no longer necessary as soon as all legacy widgets using fields will
-     * be rewritten in Owl.
+     * be rewritten in Twl.
      */
     class FieldWrapper extends ComponentWrapper {
         constructor() {
@@ -62,7 +62,7 @@ tele.define('web.FieldWrapper', function (require) {
          * Renderers set the '__node' attribute on fields they instantiate. It
          * is used for instance to evaluate modifiers on multi-edition. In this
          * case, the controller reads this property on the target of the event.
-         * However, with Owl field Components, it is set on the FieldWrapper,
+         * However, with Twl field Components, it is set on the FieldWrapper,
          * not the real field Component, which triggers the 'field-changed'
          * event. This function writes the attribute on that field Component.
          */

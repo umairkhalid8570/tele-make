@@ -20,7 +20,7 @@ import {
     mapLegacyEnvToWowlEnv,
     makeLegacyRainbowManService,
 } from "../../utils";
-import { ComponentAdapter } from "web.OwlCompatibility";
+import { ComponentAdapter } from "web.TwlCompatibility";
 
 import { loadBundleTemplates } from "@web/core/assets";
 import { makeEnv, startServices } from "@web/env";
@@ -355,13 +355,13 @@ export const PublicRoot = publicWidget.RootWidget.extend({
     },
 });
 
-const { Component, mount } = owl;
+const { Component, mount } = twl;
 
 /**
- * Configure Owl with the public env
+ * Configure Twl with the public env
  */
-owl.config.mode = legacyEnv.isDebug() ? "dev" : "prod";
-owl.Component.env = legacyEnv;
+twl.config.mode = legacyEnv.isDebug() ? "dev" : "prod";
+twl.Component.env = legacyEnv;
 
 /**
  * This widget is important, because the tour manager needs a root widget in
@@ -379,7 +379,7 @@ export async function createPublicRoot(RootWidget) {
     serviceRegistry.add("legacy_notification", makeLegacyNotificationService(legacyEnv));
     serviceRegistry.add("legacy_dialog_mapping", makeLegacyDialogMappingService(legacyEnv));
     serviceRegistry.add("legacy_rainbowman_service", makeLegacyRainbowManService(legacyEnv));
-    await Promise.all([owl.utils.whenReady(), session.is_bound]);
+    await Promise.all([twl.utils.whenReady(), session.is_bound]);
 
     // Patch browser.fetch and the rpc service to use the correct base url when
     // embeded in an external page

@@ -3,7 +3,7 @@
      Copyright 2021 Tecnativa - Víctor Martínez
      License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
 <templates>
-    <t t-inherit="mail.AttachmentBox" t-inherit-mode="extension" owl="1">
+    <t t-inherit="mail.AttachmentBox" t-inherit-mode="extension" twl="1">
         <xpath
             expr="//button[hasclass('o_AttachmentBox_buttonAdd')]"
             position="replace"
@@ -29,7 +29,7 @@
         </xpath>
     </t>
 
-    <t t-inherit="mail.AttachmentCard" t-inherit-mode="extension" owl="1">
+    <t t-inherit="mail.AttachmentCard" t-inherit-mode="extension" twl="1">
         <xpath
             expr="//div[hasclass('o_AttachmentCard_details')]/t/div"
             position="replace"

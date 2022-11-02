@@ -1,7 +1,7 @@
 tele.define('point_of_sale.PosContext', function (require) {
     'use strict';
 
-    const { Context } = owl;
+    const { Context } = twl;
 
     // Create global context objects
     // e.g. component.env.device = new Context({ isMobile: false });

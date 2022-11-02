@@ -6,7 +6,7 @@ import { OnChange } from '@mail/model/model_onchange';
 import { insertAndReplace, link, unlink } from '@mail/model/model_field_command';
 import { makeDeferred } from '@mail/utils/deferred/deferred';
 
-const { EventBus } = owl.core;
+const { EventBus } = twl.core;
 
 function factory(dependencies) {
 
@@ -198,7 +198,7 @@ function factory(dependencies) {
 
         /**
          * @private
-         * @returns {owl.EventBus}
+         * @returns {twl.EventBus}
          */
         _computeMessagingBus() {
             if (this.messagingBus) {

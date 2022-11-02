@@ -1,14 +1,14 @@
 tele.define('web.list_tests', function (require) {
 "use strict";
 
-var AbstractFieldOwl = require('web.AbstractFieldOwl');
+var AbstractFieldTwl = require('web.AbstractFieldTwl');
 var AbstractStorageService = require('web.AbstractStorageService');
 var BasicModel = require('web.BasicModel');
 var core = require('web.core');
 const Domain = require('web.Domain')
 var basicFields = require('web.basic_fields');
 var fieldRegistry = require('web.field_registry');
-var fieldRegistryOwl = require('web.field_registry_owl');
+var fieldRegistryTwl = require('web.field_registry_twl');
 var FormView = require('web.FormView');
 var ListRenderer = require('web.ListRenderer');
 var ListView = require('web.ListView');
@@ -17,7 +17,7 @@ var RamStorage = require('web.RamStorage');
 var testUtils = require('web.test_utils');
 const { patch, unpatch } = require('web.utils');
 var widgetRegistry = require('web.widget_registry');
-const widgetRegistryOwl = require('web.widgetRegistry');
+const widgetRegistryTwl = require('web.widgetRegistry');
 var Widget = require('web.Widget');
 
 
@@ -685,7 +685,7 @@ QUnit.module('Views', {
                         active_model: 'foo',
                         plouf: 'plif',
                     });
-                    // The current environment (not owl's, but the current action's)
+                    // The current environment (not twl's, but the current action's)
                     assert.deepEqual(env, {
                         context: {},
                         model: 'foo',
@@ -736,7 +736,7 @@ QUnit.module('Views', {
                         active_ids: [1, 2, 3, 4],
                         active_model: 'foo',
                     });
-                    // The current environment (not owl's, but the current action's)
+                    // The current environment (not twl's, but the current action's)
                     assert.deepEqual(env, {
                         context: {},
                         model: 'foo',
@@ -6714,7 +6714,7 @@ QUnit.module('Views', {
         // Press 'Tab' -> should get out of the one to many and go to the next field of the form
         await testUtils.fields.triggerKeydown(form.$('.o_field_widget[name=o2m] .o_selected_row input'), 'tab');
         // use of owlCompatibilityExtraNextTick because the x2many control panel is updated twice
-        await testUtils.owlCompatibilityExtraNextTick();
+        await testUtils.twlCompatibilityExtraNextTick();
         assert.strictEqual(document.activeElement, form.$('input[name="foo"]')[0],
             "the next field should be selected");
 
@@ -9373,7 +9373,7 @@ QUnit.module('Views', {
 
     QUnit.test('basic support for widgets', async function (assert) {
         // This test could be removed as soon as we drop the support of legacy widgets (see test
-        // below, which is a duplicate of this one, but with an Owl Component instead).
+        // below, which is a duplicate of this one, but with an Twl Component instead).
         assert.expect(1);
 
         var MyWidget = Widget.extend({
@@ -9400,16 +9400,16 @@ QUnit.module('Views', {
         delete widgetRegistry.map.test;
     });
 
-    QUnit.test('basic support for widgets (being Owl Components)', async function (assert) {
+    QUnit.test('basic support for widgets (being Twl Components)', async function (assert) {
         assert.expect(1);
 
-        class MyComponent extends owl.Component {
+        class MyComponent extends twl.Component {
             get value() {
                 return JSON.stringify(this.props.record.data);
             }
         }
-        MyComponent.template = owl.tags.xml`<div t-esc="value"/>`;
-        widgetRegistryOwl.add('test', MyComponent);
+        MyComponent.template = twl.tags.xml`<div t-esc="value"/>`;
+        widgetRegistryTwl.add('test', MyComponent);
 
         const list = await createView({
             View: ListView,
@@ -9421,7 +9421,7 @@ QUnit.module('Views', {
         assert.strictEqual(list.$('.o_widget').first().text(), '{"foo":"yop","int_field":10,"id":1}');
 
         list.destroy();
-        delete widgetRegistryOwl.map.test;
+        delete widgetRegistryTwl.map.test;
     });
 
     QUnit.test('use the limit attribute in arch', async function (assert) {
@@ -12216,12 +12216,12 @@ QUnit.module('Views', {
     });
 
     QUnit.test('list view with field component: mounted and willUnmount calls', async function (assert) {
-        // this test could be removed as soon as the list view will be written in Owl
+        // this test could be removed as soon as the list view will be written in Twl
         assert.expect(7);
 
         let mountedCalls = 0;
         let willUnmountCalls = 0;
-        class MyField extends AbstractFieldOwl {
+        class MyField extends AbstractFieldTwl {
             mounted() {
                 mountedCalls++;
             }
@@ -12229,14 +12229,14 @@ QUnit.module('Views', {
                 willUnmountCalls++;
             }
         }
-        MyField.template = owl.tags.xml`<span>Hello World</span>`;
-        fieldRegistryOwl.add('my_owl_field', MyField);
+        MyField.template = twl.tags.xml`<span>Hello World</span>`;
+        fieldRegistryTwl.add('my_twl_field', MyField);
 
         const list = await createView({
             View: ListView,
             model: 'foo',
             data: this.data,
-            arch: '<tree><field name="foo" widget="my_owl_field"/></tree>',
+            arch: '<tree><field name="foo" widget="my_twl_field"/></tree>',
         });
 
         assert.containsN(list, '.o_data_row', 4);
@@ -12252,8 +12252,8 @@ QUnit.module('Views', {
         assert.strictEqual(willUnmountCalls, 8);
     });
 
-    QUnit.test('editable list view: multi edition of owl field component', async function (assert) {
-        // this test could be removed as soon as all field widgets will be written in owl
+    QUnit.test('editable list view: multi edition of twl field component', async function (assert) {
+        // this test could be removed as soon as all field widgets will be written in twl
         assert.expect(5);
 
         const list = await createView({

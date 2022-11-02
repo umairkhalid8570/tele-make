@@ -5,7 +5,7 @@ import { registerMessagingComponent } from '@mail/utils/messaging_component';
 
 import { usePosition } from '@web/core/position/position_hook';
 
-const { Component } = owl;
+const { Component } = twl;
 
 export class PopoverView extends Component {
 

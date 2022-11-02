@@ -4,7 +4,7 @@ import { FileInput } from "@web/core/file_input/file_input";
 import CustomFileInput from "web.CustomFileInput";
 import { useService } from "@web/core/utils/hooks";
 
-const { Component, hooks } = owl;
+const { Component, hooks } = twl;
 const { useRef, useState, onWillUpdateProps } = hooks;
 
 const DEFAULT_ICON = {
@@ -104,7 +104,7 @@ export class IconCreator extends Component {
 
     /**
      * @private
-     * @param {OwlEvent} ev
+     * @param {TwlEvent} ev
      */
     async _onFileUploaded(ev) {
         if (!ev.detail.files.length) {

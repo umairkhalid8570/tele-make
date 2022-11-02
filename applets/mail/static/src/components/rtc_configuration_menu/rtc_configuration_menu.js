@@ -4,8 +4,8 @@ import { registerMessagingComponent } from '@mail/utils/messaging_component';
 
 import { browser } from "@web/core/browser/browser";
 
-const { Component } = owl;
-const { useState } = owl.hooks;
+const { Component } = twl;
+const { useState } = twl.hooks;
 
 export class RtcConfigurationMenu extends Component {
 

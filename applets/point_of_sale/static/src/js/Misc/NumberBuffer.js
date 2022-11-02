@@ -1,9 +1,9 @@
 tele.define('point_of_sale.NumberBuffer', function(require) {
     'use strict';
 
-    const { Component } = owl;
-    const { EventBus } = owl.core;
-    const { onMounted, onWillUnmount, useExternalListener } = owl.hooks;
+    const { Component } = twl;
+    const { EventBus } = twl.core;
+    const { onMounted, onWillUnmount, useExternalListener } = twl.hooks;
     const { useListener } = require('web.custom_hooks');
     const { parse } = require('web.field_utils');
     const { BarcodeEvents } = require('barcodes.BarcodeEvents');

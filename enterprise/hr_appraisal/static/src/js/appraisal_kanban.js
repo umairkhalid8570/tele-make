@@ -7,7 +7,7 @@ const KanbanView = require('web.KanbanView');
 const KanbanRenderer = require('web.KanbanRenderer');
 const KanbanRecord = require('web.KanbanRecord');
 
-const { Component } = owl;
+const { Component } = twl;
 
 const AppraisalKanbanRecord = KanbanRecord.extend({
     _render: async function () {

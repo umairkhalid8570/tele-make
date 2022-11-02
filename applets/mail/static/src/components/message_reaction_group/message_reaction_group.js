@@ -1,6 +1,6 @@
 /** @tele-module **/
 
-const { Component } = owl;
+const { Component } = twl;
 import { registerMessagingComponent } from '@mail/utils/messaging_component';
 
 export class MessageReactionGroup extends Component {

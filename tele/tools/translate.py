@@ -885,14 +885,14 @@ def _extract_translatable_qweb_terms(element, callback):
                 and el.get("t-translation", '').strip() != "off"):
 
             _push(callback, el.text, el.sourceline)
-            # Do not export terms contained on the Component directive of OWL
+            # Do not export terms contained on the Component directive of TWL
             # attributes in this context are most of the time variables,
             # not real HTML attributes.
-            # Node tags starting with a capital letter are considered OWL Components
+            # Node tags starting with a capital letter are considered TWL Components
             # and a widespread convention and good practice for DOM tags is to write
             # them all lower case.
             # https://www.w3schools.com/html/html5_syntax.asp
-            # https://github.com/tele-studio/owl/blob/master/doc/reference/component.md#composition
+            # https://github.com/tele-studio/twl/blob/master/doc/reference/component.md#composition
             if not el.tag[0].isupper() and 't-component' not in el.attrib:
                 for att in ('title', 'alt', 'label', 'placeholder', 'aria-label'):
                     if att in el.attrib:

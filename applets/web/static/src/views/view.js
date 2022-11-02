@@ -11,7 +11,7 @@ import { extractLayoutComponents } from "@web/views/layout";
 
 const viewRegistry = registry.category("views");
 
-const { Component, hooks } = owl;
+const { Component, hooks } = twl;
 const { useSubEnv } = hooks;
 
 /** @typedef {Object} ViewProps

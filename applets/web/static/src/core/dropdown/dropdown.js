@@ -6,7 +6,7 @@ import { useDropdownNavigation } from "./dropdown_navigation_hook";
 import { ParentClosingMode } from "./dropdown_item";
 import { localization } from "../l10n/localization";
 
-const { Component, core, hooks, useState, QWeb } = owl;
+const { Component, core, hooks, useState, QWeb } = twl;
 const { EventBus } = core;
 const { onWillStart, useExternalListener, useRef, useSubEnv } = hooks;
 

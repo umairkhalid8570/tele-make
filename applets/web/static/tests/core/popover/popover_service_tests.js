@@ -6,8 +6,8 @@ import { registerCleanup } from "../../helpers/cleanup";
 import { clearRegistryWithCleanup, makeTestEnv } from "../../helpers/mock_env";
 import { click, getFixture, nextTick } from "../../helpers/utils";
 
-const { Component, mount } = owl;
-const { xml } = owl.tags;
+const { Component, mount } = twl;
+const { xml } = twl.tags;
 
 let env;
 let fixture;

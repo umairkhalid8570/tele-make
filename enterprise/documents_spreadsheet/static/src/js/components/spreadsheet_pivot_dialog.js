@@ -4,7 +4,7 @@ tele.define("documents_spreadsheet.PivotDialog", function (require) {
     const spreadsheet = require("documents_spreadsheet.spreadsheet_extended");
     const PivotDialogTable = require("documents_spreadsheet.PivotDialogTable");
     const _t = core._t;
-    const { useState } = owl.hooks;
+    const { useState } = twl.hooks;
     const formatDecimal = spreadsheet.helpers.formatDecimal;
 
     /**
@@ -34,7 +34,7 @@ tele.define("documents_spreadsheet.PivotDialog", function (require) {
      * @property {boolean} isMissing True if the value is missing from the sheet
      */
 
-    class PivotDialog extends owl.Component {
+    class PivotDialog extends twl.Component {
         constructor() {
             super(...arguments);
             this.state = useState({

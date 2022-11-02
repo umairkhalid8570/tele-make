@@ -1,10 +1,10 @@
 /** @tele-module  **/
 
-import { ComponentAdapter } from "web.OwlCompatibility";
+import { ComponentAdapter } from "web.TwlCompatibility";
 import * as legacySystrayMenu from "web.SystrayMenu";
 import { registry } from "../core/registry";
 
-const { Component, tags } = owl;
+const { Component, tags } = twl;
 const systrayRegistry = registry.category("systray");
 
 class SystrayItemAdapter extends ComponentAdapter {
@@ -15,7 +15,7 @@ class SystrayItemAdapter extends ComponentAdapter {
 }
 
 // registers the legacy systray menu items from the legacy systray registry
-// to the wowl one, but wrapped into Owl components
+// to the wowl one, but wrapped into Twl components
 const legacySystrayMenuItems = legacySystrayMenu.Items;
 const convertedItems = [];
 let id = 1;

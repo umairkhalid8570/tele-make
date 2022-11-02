@@ -16,7 +16,7 @@ import {
 
 /**
  * An object containing various information about the current
- * compilation from an Arch to a owl template.
+ * compilation from an Arch to a twl template.
  * @typedef {Object} CompilationContext
  */
 

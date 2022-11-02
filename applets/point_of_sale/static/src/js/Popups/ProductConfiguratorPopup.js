@@ -1,7 +1,7 @@
 tele.define('point_of_sale.ProductConfiguratorPopup', function(require) {
     'use strict';
 
-    const { useState, useSubEnv } = owl.hooks;
+    const { useState, useSubEnv } = twl.hooks;
     const PosComponent = require('point_of_sale.PosComponent');
     const AbstractAwaitablePopup = require('point_of_sale.AbstractAwaitablePopup');
     const Registries = require('point_of_sale.Registries');

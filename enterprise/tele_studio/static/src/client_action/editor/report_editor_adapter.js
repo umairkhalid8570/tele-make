@@ -1,5 +1,5 @@
 /** @tele-module **/
-import { ComponentAdapter } from "web.OwlCompatibility";
+import { ComponentAdapter } from "web.TwlCompatibility";
 import ReportEditorManager from "tele_studio.ReportEditorManager";
 import { useService } from "@web/core/utils/hooks";
 import { registry } from "@web/core/registry";
@@ -14,7 +14,7 @@ class ReportEditorAdapter extends ComponentAdapter {
         this.orm = useService("orm");
         this.studio = useService("studio");
         this.reportEnv = {};
-        this.env = owl.Component.env;
+        this.env = twl.Component.env;
     }
 
     get handle() {
@@ -190,8 +190,8 @@ class ReportEditorAdapter extends ComponentAdapter {
 
 // We need this to wrap in a div
 // ViewEditor doesn't need this because it extends AbstractEditor, and defines a template
-export class ReportEditor extends owl.Component {}
-ReportEditor.template = owl.tags
+export class ReportEditor extends twl.Component {}
+ReportEditor.template = twl.tags
     .xml`<div class="o_tele_studio_client_action"><ReportEditorAdapter /></div>`;
 ReportEditor.components = { ReportEditorAdapter };
 registry.category("actions").add("tele_studio.report_editor", ReportEditor);

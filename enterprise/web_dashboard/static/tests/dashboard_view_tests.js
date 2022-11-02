@@ -4252,7 +4252,7 @@ QUnit.module("Views", (hooks) => {
     QUnit.test("dashboard statistic support wowl field", async (assert) => {
         assert.expect(5);
 
-        class CustomField extends owl.Component {
+        class CustomField extends twl.Component {
             setup() {
                 assert.ok(this.props.model instanceof DashboardModel);
                 assert.ok("record" in this.props);
@@ -4261,7 +4261,7 @@ QUnit.module("Views", (hooks) => {
                 assert.strictEqual(this.props.record.data[this.props.name], 8);
             }
         }
-        CustomField.template = owl.tags.xml`<div />`;
+        CustomField.template = twl.tags.xml`<div />`;
 
         registry.category("fields").add("custom", CustomField);
 
@@ -4280,7 +4280,7 @@ QUnit.module("Views", (hooks) => {
         assert.expect(31);
 
         const expectedFieldValues = [8, 16, 4];
-        class CustomField extends owl.Component {
+        class CustomField extends twl.Component {
             setup() {
                 assert.ok(this.props.model instanceof DashboardModel);
                 assert.ok("record" in this.props);
@@ -4292,7 +4292,7 @@ QUnit.module("Views", (hooks) => {
                 );
             }
         }
-        CustomField.template = owl.tags
+        CustomField.template = twl.tags
             .xml`<div>The value is <t t-esc="props.record.data[props.name]"/></div>`;
 
         registry.category("fields").add("custom", CustomField);

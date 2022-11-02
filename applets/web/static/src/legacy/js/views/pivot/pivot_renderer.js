@@ -1,11 +1,11 @@
 /** @tele-module alias=web.PivotRenderer **/
 
     import { useEffect } from "@web/core/utils/hooks";
-    import OwlAbstractRenderer from '../abstract_renderer_owl';
+    import TwlAbstractRenderer from '../abstract_renderer_twl';
     import field_utils from 'web.field_utils';
     import { DEFAULT_INTERVAL, INTERVAL_OPTIONS, getIntervalOptions } from 'web.searchUtils';
 
-    const { Component, hooks } = owl;
+    const { Component, hooks } = twl;
     const { useExternalListener, useState } = hooks;
 
     class PivotCustomGroupByItem extends Component {
@@ -121,7 +121,7 @@
      *
      */
 
-    class PivotRenderer extends OwlAbstractRenderer {
+    class PivotRenderer extends TwlAbstractRenderer {
         /**
          * @override
          * @param {boolean} props.disableLinking Disallow opening records by clicking on a cell
@@ -228,7 +228,7 @@
 
         /**
          * @private
-         * @param {OwlEvent} ev
+         * @param {TwlEvent} ev
          */
         _onGroupByMenuSelection(ev) {
             if (this.hasSearchArchGroupBys) {

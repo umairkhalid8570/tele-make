@@ -2,7 +2,7 @@
 
 import { Notification } from "./notification";
 
-const { Component, tags } = owl;
+const { Component, tags } = twl;
 
 export class NotificationContainer extends Component {
     setup() {

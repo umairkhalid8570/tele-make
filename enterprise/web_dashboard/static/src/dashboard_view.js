@@ -16,7 +16,7 @@ import { DashboardStatistic } from "./dashboard_statistic/dashboard_statistic";
 import { ViewWidget } from "./view_widget";
 import { ViewWrapper } from "./view_wrapper/view_wrapper";
 
-const { Component } = owl;
+const { Component } = twl;
 
 const viewRegistry = registry.category("views");
 

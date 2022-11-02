@@ -1,6 +1,6 @@
 /** @tele-module **/
 
-const { Component, hooks } = owl;
+const { Component, hooks } = twl;
 
 export class Notification extends Component {
     setup() {

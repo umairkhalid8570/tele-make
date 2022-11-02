@@ -2,7 +2,7 @@ tele.define("documents_spreadsheet.tag_selector_widget", function (require) {
     "use strict";
 
     const core = require("web.core");
-    const { ComponentAdapter } = require("web.OwlCompatibility");
+    const { ComponentAdapter } = require("web.TwlCompatibility");
     const { FieldMany2ManyTags } = require("web.relational_fields");
     const StandaloneFieldManagerMixin = require("web.StandaloneFieldManagerMixin");
     const Widget = require("web.Widget");
@@ -102,7 +102,7 @@ tele.define("documents_spreadsheet.tag_selector_widget", function (require) {
 
     class TagSelectorWidgetAdapter extends ComponentAdapter {
         setup() {
-            this.env = owl.Component.env;
+            this.env = twl.Component.env;
         }
         /**
          * @override

@@ -5,7 +5,7 @@ import { useBus, useService } from "@web/core/utils/hooks";
 import { buildSampleORM } from "@web/views/helpers/sample_server";
 import { useSetupView } from "@web/views/helpers/view_hook";
 
-const { core, hooks } = owl;
+const { core, hooks } = twl;
 const { EventBus } = core;
 const { onWillStart, onWillUpdateProps, useComponent } = hooks;
 

@@ -3,7 +3,7 @@ import { registry } from "@web/core/registry";
 import { browser } from "@web/core/browser/browser";
 
 import dialogs from "web.view_dialogs";
-import { ComponentAdapter } from "web.OwlCompatibility";
+import { ComponentAdapter } from "web.TwlCompatibility";
 
 function runJSTestsItem({ env }) {
     const runTestsURL = browser.location.origin + "/web/tests?mod=*";
@@ -53,7 +53,7 @@ export function openViewItem({ env }) {
         type: "item",
         description: env._t("Open View"),
         callback: () => {
-            const adapterParent = new ComponentAdapter(null, { Component: owl.Component });
+            const adapterParent = new ComponentAdapter(null, { Component: twl.Component });
             const selectCreateDialog = new dialogs.SelectCreateDialog(adapterParent, {
                 res_model: "ir.ui.view",
                 title: env._t("Select a view"),

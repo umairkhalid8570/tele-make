@@ -1,7 +1,7 @@
 tele.define('point_of_sale.SyncNotification', function(require) {
     'use strict';
 
-    const { useState } = owl;
+    const { useState } = twl;
     const PosComponent = require('point_of_sale.PosComponent');
     const Registries = require('point_of_sale.Registries');
 

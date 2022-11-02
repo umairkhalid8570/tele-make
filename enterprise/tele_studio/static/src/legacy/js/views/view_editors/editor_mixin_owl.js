@@ -1,4 +1,4 @@
-tele.define('tele_studio.EditorMixinOwl', function (require) {
+tele.define('tele_studio.EditorMixinTwl', function (require) {
     "use strict";
 
     return Editor => class extends Editor {

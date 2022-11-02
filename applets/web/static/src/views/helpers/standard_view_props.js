@@ -20,7 +20,7 @@ export const standardViewProps = {
     resModel: String,
     arch: { type: String },
     comparison: { validate: () => true }, // fix problem with validation with type: [Object, null]
-    // Issue OWL: https://github.com/tele-studio/owl/issues/910
+    // Issue TWL: https://github.com/tele-studio/twl/issues/910
     context: { type: Object },
     domain: { type: Array },
     fields: { type: Object, elements: Object },

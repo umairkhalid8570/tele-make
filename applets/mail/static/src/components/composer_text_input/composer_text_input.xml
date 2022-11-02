@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <templates xml:space="preserve">
 
-    <t t-name="mail.ComposerTextInput" owl="1">
+    <t t-name="mail.ComposerTextInput" twl="1">
         <div class="o_ComposerTextInput">
             <t t-if="composerView">
                 <t t-if="composerView.hasSuggestions">

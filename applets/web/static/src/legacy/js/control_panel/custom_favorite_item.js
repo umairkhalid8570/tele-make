@@ -5,7 +5,7 @@ tele.define('web.CustomFavoriteItem', function (require) {
     const { useAutofocus } = require('web.custom_hooks');
     const { useModel } = require('web.Model');
 
-    const { Component, hooks, useState } = owl;
+    const { Component, hooks, useState } = twl;
     const { useRef } = hooks;
 
     let favoriteId = 0;

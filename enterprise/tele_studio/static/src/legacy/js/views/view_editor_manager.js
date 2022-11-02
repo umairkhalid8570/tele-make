@@ -1,7 +1,7 @@
 tele.define('tele_studio.ViewEditorManager', function (require) {
 "use strict";
 
-const { ComponentWrapper } = require('web.OwlCompatibility');
+const { ComponentWrapper } = require('web.TwlCompatibility');
 var core = require('web.core');
 var data_manager = require('web.data_manager');
 var Dialog = require('web.Dialog');
@@ -13,7 +13,7 @@ var view_registry = require('web.view_registry');
 var AbstractEditorManager = require('tele_studio.AbstractEditorManager');
 var bus = require('tele_studio.bus');
 var EditorMixin = require('tele_studio.EditorMixin');
-var EditorMixinOwl = require('tele_studio.EditorMixinOwl');
+var EditorMixinTwl = require('tele_studio.EditorMixinTwl');
 
 var CalendarEditor = require('tele_studio.CalendarEditor');
 var FormEditor = require('tele_studio.FormEditor');
@@ -176,7 +176,7 @@ var ViewEditorManager = AbstractEditorManager.extend({
         return this._instantiateEditor(options).then(function (editor) {
             var fragment = document.createDocumentFragment();
             let prom = undefined;
-            if (editor instanceof owl.Component) {
+            if (editor instanceof twl.Component) {
                 prom = editor.mount(fragment);
             } else {
                 prom = editor.appendTo(fragment);
@@ -1089,7 +1089,7 @@ var ViewEditorManager = AbstractEditorManager.extend({
                 if (!Editor) {
                     // generate the Editor on the fly if it doesn't exist
                     if (isComponent(View.prototype.config.Renderer)) {
-                        const Renderer = class extends EditorMixinOwl(View.prototype.config.Renderer) { };
+                        const Renderer = class extends EditorMixinTwl(View.prototype.config.Renderer) { };
                         const propsValidation = View.prototype.config.Renderer.props;
                         if (propsValidation) {
                             const optString = { type: String, optional: 1 };

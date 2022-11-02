@@ -24,14 +24,14 @@ tele.define("web_mobile.Dialog", function (require) {
     );
 });
 
-tele.define("web_mobile.OwlDialog", function (require) {
+tele.define("web_mobile.TwlDialog", function (require) {
     "use strict";
 
-    const OwlDialog = require("web.OwlDialog");
+    const TwlDialog = require("web.TwlDialog");
     const { useBackButton } = require("web_mobile.hooks");
     const { patch } = require("web.utils");
 
-    patch(OwlDialog.prototype, "web_mobile", {
+    patch(TwlDialog.prototype, "web_mobile", {
         setup() {
             this._super(...arguments);
             useBackButton(this._onBackButton.bind(this));

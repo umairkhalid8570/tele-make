@@ -14,7 +14,7 @@ tour.register('mail_enterprise/static/tests/tours/mail_channel_expand_test_tour.
     content: "Click on chat window header expand button to open channel in Discuss",
     trigger: '.o_ChatWindow:has(.o_ChatWindowHeader_name:contains("test-mail-channel-expand-tour")) .o_ChatWindowHeader_commandExpand',
 }, {
-    content: "Check that first message of #test-mail-channel-expand-tour is shown in Discuss app",
+    content: "Check that first message of #test-mail-channel-expand-tour is shown in Connect app",
     trigger: '.o_Discuss .o_Message_content:contains("test-message-mail-channel-expand-tour")',
     run: () => {},
 }]);

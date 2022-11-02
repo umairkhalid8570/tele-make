@@ -5,7 +5,7 @@ import { useService } from "@web/core/utils/hooks";
 import { EnterpriseNavBar } from "./navbar/navbar";
 import { hasTouch } from "@web/core/browser/feature_detection";
 
-const { hooks } = owl;
+const { hooks } = twl;
 
 export class WebClientEnterprise extends WebClient {
     setup() {

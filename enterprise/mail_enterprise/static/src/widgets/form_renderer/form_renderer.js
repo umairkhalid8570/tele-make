@@ -42,7 +42,7 @@ FormRenderer.include({
          *
          * Note that attachment viewer only requires attachments, but attachment
          * viewer is not that well designed to update its content solely based
-         * on provided list attachments (until rewritten using OWL).
+         * on provided list attachments (until rewritten using TWL).
          *
          * In the meantime, it updates its content on change of thread and on
          * change of amount of attachments. This doesn't cover some corner cases

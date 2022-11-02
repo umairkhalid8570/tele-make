@@ -5,8 +5,8 @@ tele.define('web_enterprise.ControlPanel', function (require) {
     const { device } = require('web.config');
     const { patch } = require('web.utils');
 
-    const { Portal } = owl.misc;
-    const { useState } = owl.hooks;
+    const { Portal } = twl.misc;
+    const { useState } = twl.hooks;
     const STICKY_CLASS = 'o_mobile_sticky';
 
     if (!device.isMobile) {

@@ -9,7 +9,7 @@ tele.define("web.SearchPanelMobile", function (require) {
         return;
     }
 
-    const { Portal } = owl.misc;
+    const { Portal } = twl.misc;
 
     //-------------------------------------------------------------------------
     // Helpers

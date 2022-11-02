@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <templates id="template" xml:space="preserve">
 
-<!-- Owl Templates -->
+<!-- Twl Templates -->
 
-<div t-name="web_enterprise.BurgerMenu" owl="1">
+<div t-name="web_enterprise.BurgerMenu" twl="1">
     <a type="button"
         class="o_mobile_menu_toggle dropdown-toggle o-no-caret"
         title="Toggle menu" aria-label="Toggle menu"
@@ -48,7 +48,7 @@
     </Portal>
 </div>
 
-<t t-name="web_enterprise.BurgerSection" owl="1">
+<t t-name="web_enterprise.BurgerSection" twl="1">
     <div t-if="section.childrenTree.length" t-key="section.id" class="dropdown o_burger_menu_section show">
         <button class="dropdown-toggle" t-att-data-menu-xmlid="section.xmlid">
             <span t-esc="section.name"/>

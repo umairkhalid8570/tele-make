@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <templates>
 
-    <t t-name="web_dashboard.DashboardView" owl="1">
+    <t t-name="web_dashboard.DashboardView" twl="1">
         <Layout viewType="'dashboard'" useSampleModel="model.useSampleModel">
             <t t-set="displayNoContent" t-value="props.info.noContentHelp !== false and (model.useSampleModel)" />
             <t t-if="displayNoContent">

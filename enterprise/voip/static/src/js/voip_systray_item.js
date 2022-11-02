@@ -1,6 +1,6 @@
 /** @tele-module **/
 
-const { Component } = owl;
+const { Component } = twl;
 
 /**
  * Systray item allowing to toggle the voip DialingPanel.

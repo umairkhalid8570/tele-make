@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <templates xml:space="preserve">
 
-    <t t-name="web.DebugMenu.ProfilingItem" owl="1">
+    <t t-name="web.DebugMenu.ProfilingItem" twl="1">
         <DropdownItem payload="{}">
             <div class="o_debug_profiling_item">
                 <span class="o_profiling_switch">

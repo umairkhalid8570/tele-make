@@ -15,7 +15,7 @@ import { OnboardingBanner } from "@web/views/onboarding_banner";
 import { View } from "@web/views/view";
 import { actionService } from "@web/webclient/actions/action_service";
 
-const { Component, mount, hooks, tags } = owl;
+const { Component, mount, hooks, tags } = twl;
 const { useState } = hooks;
 const { xml } = tags;
 

@@ -1298,8 +1298,8 @@ var FormRenderer = BasicRenderer.extend({
         }
         var index;
         let target = ev.data.target || ev.target;
-        if (target.__owl__) {
-            target = target.__owl__.parent; // Owl fields are wrapped by the FieldWrapper
+        if (target.__twl__) {
+            target = target.__twl__.parent; // Twl fields are wrapped by the FieldWrapper
         }
         if (ev.data.direction === "next") {
             index = this.allFieldWidgets[this.state.id].indexOf(target);

@@ -6,7 +6,7 @@ import SystrayMenu from 'web.SystrayMenu';
 import Widget from 'web.Widget';
 import Time from 'web.time';
 
-const { Component } = owl;
+const { Component } = twl;
 
 /**
  * Menu item appended in the systray part of the navbar, redirects to the next

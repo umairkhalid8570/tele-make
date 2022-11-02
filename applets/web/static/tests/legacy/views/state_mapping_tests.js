@@ -75,13 +75,13 @@ QUnit.module("Views", (hooks) => {
         setupControlPanelServiceRegistry();
         serviceRegistry.add("dialog", dialogService);
 
-        class ToyView extends owl.Component {}
+        class ToyView extends twl.Component {}
         ToyView.components = { ControlPanel };
         ToyView.display_name = _lt("Toy view");
         ToyView.icon = "fab fa-android";
         ToyView.multiRecord = true;
         ToyView.searchMenuTypes = ["filter", "groupBy", "comparison", "favorite"];
-        ToyView.template = owl.tags.xml`
+        ToyView.template = twl.tags.xml`
             <div class="o_toy_view">
                 <ControlPanel />
             </div>

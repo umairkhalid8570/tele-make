@@ -4,7 +4,7 @@
 import { registry } from "@web/core/registry";
 
 const actionRegistry = registry.category('actions');
-const { loadJS } = owl.utils;
+const { loadJS } = twl.utils;
 /* global TeleFin */
 
 function TeleFinConnector(parent, action) {

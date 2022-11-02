@@ -4,7 +4,7 @@ import { registerMessagingComponent } from '@mail/utils/messaging_component';
 import { useUpdate } from '@mail/component_hooks/use_update/use_update';
 import { link } from '@mail/model/model_field_command';
 
-const { Component } = owl;
+const { Component } = twl;
 
 export class ComposerSuggestion extends Component {
 

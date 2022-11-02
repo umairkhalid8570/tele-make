@@ -4,7 +4,7 @@ tele.define("web.ComparisonMenu", function (require) {
     const { FACET_ICONS } = require("web.searchUtils");
     const { useModel } = require("web.Model");
 
-    const { Component } = owl;
+    const { Component } = twl;
 
     class ComparisonMenu extends Component {
         constructor() {
@@ -22,7 +22,7 @@ tele.define("web.ComparisonMenu", function (require) {
 
         /**
          * @private
-         * @param {OwlEvent} ev
+         * @param {TwlEvent} ev
          */
         onComparisonSelected(ev) {
             const { itemId } = ev.detail.payload;

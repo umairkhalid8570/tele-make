@@ -27,7 +27,7 @@ function factory(dependencies) {
 
         /**
          * @private
-         * @returns {owl.Ref}
+         * @returns {twl.Ref}
          */
         _computeAnchorRef() {
             if (this.threadViewTopbarOwner) {
@@ -86,7 +86,7 @@ function factory(dependencies) {
             required: true,
         }),
         /**
-         * States the OWL component of this popover view.
+         * States the TWL component of this popover view.
          */
         component: attr(),
         /**

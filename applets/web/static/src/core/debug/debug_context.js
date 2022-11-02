@@ -4,7 +4,7 @@ import { registry } from "../registry";
 import { memoize } from "../utils/functions";
 import { useEffect } from "@web/core/utils/hooks";
 
-const { useEnv, useSubEnv } = owl.hooks;
+const { useEnv, useSubEnv } = twl.hooks;
 const debugRegistry = registry.category("debug");
 
 const getAccessRights = memoize(async function getAccessRights(orm) {

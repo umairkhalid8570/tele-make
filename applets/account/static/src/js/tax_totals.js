@@ -1,12 +1,12 @@
-/** @tele-module alias=account.tax_group_owl **/
+/** @tele-module alias=account.tax_group_twl **/
 "use strict";
 
-const { Component } = owl;
-const { useState, useRef } = owl.hooks;
+const { Component } = twl;
+const { useState, useRef } = twl.hooks;
 import session from 'web.session';
-import AbstractFieldOwl from 'web.AbstractFieldOwl';
+import AbstractFieldTwl from 'web.AbstractFieldTwl';
 import fieldUtils from 'web.field_utils';
-import field_registry from 'web.field_registry_owl';
+import field_registry from 'web.field_registry_twl';
 
 /**
     A line of some TaxTotalsComponent, giving the values of a tax group.
@@ -17,7 +17,7 @@ class TaxGroupComponent extends Component {
         super(parent, props);
         this.inputTax = useRef('taxValueInput');
         this.state = useState({value: 'readonly'});
-        this.allowTaxEdition = this.__owl__.parent.mode === 'edit' ? props.allowTaxEdition : false;
+        this.allowTaxEdition = this.__twl__.parent.mode === 'edit' ? props.allowTaxEdition : false;
     }
 
     //--------------------------------------------------------------------------
@@ -109,7 +109,7 @@ TaxGroupComponent.template = 'account.TaxGroupComponent';
     Note that this widget requires the object it is used on to have a
     currency_id field.
 **/
-class TaxTotalsComponent extends AbstractFieldOwl {
+class TaxTotalsComponent extends AbstractFieldTwl {
     constructor(...args) {
         super(...args);
         this.totals = useState({value: this.value ? JSON.parse(this.value) : null});

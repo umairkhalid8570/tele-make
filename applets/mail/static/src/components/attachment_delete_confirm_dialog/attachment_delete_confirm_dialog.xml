@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <templates xml:space="preserve">
-    <t t-name="mail.AttachmentDeleteConfirmDialog" owl="1">
+    <t t-name="mail.AttachmentDeleteConfirmDialog" twl="1">
         <Dialog contentClass="'o_AttachmentDeleteConfirmDialog'" title="getTitle()" size="'medium'" t-ref="dialog">
             <p class="o_AttachmentDeleteConfirmDialog_mainText" t-esc="getBody()"/>
             <t t-set-slot="buttons">

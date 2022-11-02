@@ -1,6 +1,6 @@
 /** @tele-module **/
 import { useAutofocus } from "@web/core/utils/hooks";
-import { ComponentAdapter, ComponentWrapper, WidgetAdapterMixin } from "web.OwlCompatibility";
+import { ComponentAdapter, ComponentWrapper, WidgetAdapterMixin } from "web.TwlCompatibility";
 import Widget from "web.Widget";
 import { COLORS, BG_COLORS, ICONS } from "@tele_studio/utils";
 import { FieldMany2One } from "web.relational_fields";
@@ -8,7 +8,7 @@ import StandaloneFieldManagerMixin from "web.StandaloneFieldManagerMixin";
 import { ModelConfigurator } from "tele_studio.ModelConfigurator";
 import { IconCreator } from "../icon_creator/icon_creator";
 
-const { Component, hooks, useState } = owl;
+const { Component, hooks, useState } = twl;
 const { useExternalListener } = hooks;
 
 class ModelSelector extends ComponentAdapter {
@@ -23,7 +23,7 @@ class ModelSelector extends ComponentAdapter {
 export const AppCreatorWrapper = Widget.extend(StandaloneFieldManagerMixin, WidgetAdapterMixin, {
     target: "fullscreen",
     /**
-     * This widget is directly bound to its inner owl component and its sole purpose
+     * This widget is directly bound to its inner twl component and its sole purpose
      * is to instanciate it with the adequate properties: it will manually
      * mount the component when attached to the dom, will dismount it when detached
      * and destroy it when destroyed itself.
@@ -74,7 +74,7 @@ export const AppCreatorWrapper = Widget.extend(StandaloneFieldManagerMixin, Widg
  * model to an existing one.
  *
  * TODO: this component is bound to an action adapter since the action manager
- * cannot yet handle owl component. This file must be reviewed as soon as
+ * cannot yet handle twl component. This file must be reviewed as soon as
  * the action manager is updated.
  * @extends Component
  */
@@ -217,7 +217,7 @@ class AppCreator extends Component {
 
     /**
      * @private
-     * @param {OwlEvent} ev
+     * @param {TwlEvent} ev
      */
     _onModelIdChanged(ev) {
         if (this.state.modelChoice === "existing") {
@@ -231,7 +231,7 @@ class AppCreator extends Component {
 
     /**
      * @private
-     * @param {OwlEvent} ev
+     * @param {TwlEvent} ev
      */
     _onIconChanged(ev) {
         for (const key in this.state.iconData) {
@@ -271,7 +271,7 @@ class AppCreator extends Component {
 
     /**
      * Handle the confirmation of options in the modelconfigurator
-     * @param {OwlEvent} ev
+     * @param {TwlEvent} ev
      */
     _onConfirmOptions(ev) {
         const options = ev.detail;

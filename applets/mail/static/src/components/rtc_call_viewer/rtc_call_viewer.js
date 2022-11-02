@@ -3,10 +3,10 @@
 import { useUpdate } from '@mail/component_hooks/use_update/use_update';
 import { registerMessagingComponent } from '@mail/utils/messaging_component';
 
-import Dialog from 'web.OwlDialog';
+import Dialog from 'web.TwlDialog';
 
-const { Component, useState } = owl;
-const { useRef } = owl.hooks;
+const { Component, useState } = twl;
+const { useRef } = twl.hooks;
 
 const components = {
     Dialog,

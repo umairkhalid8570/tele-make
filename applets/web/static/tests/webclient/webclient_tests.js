@@ -15,7 +15,7 @@ import { fakeTitleService } from "../helpers/mock_services";
 import { getFixture, patchWithCleanup, triggerEvent } from "../helpers/utils";
 import { session } from "@web/session";
 
-const { Component, tags, mount } = owl;
+const { Component, tags, mount } = twl;
 const { xml } = tags;
 const mainComponentRegistry = registry.category("main_components");
 const serviceRegistry = registry.category("services");

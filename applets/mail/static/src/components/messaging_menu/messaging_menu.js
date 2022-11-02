@@ -2,7 +2,7 @@
 
 import { registerMessagingComponent } from '@mail/utils/messaging_component';
 
-const { Component } = owl;
+const { Component } = twl;
 
 export class MessagingMenu extends Component {
 
@@ -36,7 +36,7 @@ export class MessagingMenu extends Component {
     setup() {
         // for now, the legacy env is needed for internal functions such as
         // `useModels` to work
-        this.env = owl.Component.env;
+        this.env = twl.Component.env;
         super.setup();
     }
 

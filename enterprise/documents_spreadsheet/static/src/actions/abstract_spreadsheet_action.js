@@ -3,9 +3,9 @@ import { useService } from "@web/core/utils/hooks";
 import { loadAssets } from "@web/core/assets";
 import { UNTITLED_SPREADSHEET_NAME } from "../constants";
 
-const { useState } = owl.hooks;
+const { useState } = twl.hooks;
 
-export class AbstractSpreadsheetAction extends owl.Component {
+export class AbstractSpreadsheetAction extends twl.Component {
     setup() {
         const params = this.props.action.params;
         this.resId = params.spreadsheet_id || params.active_id; // backward compatibility. spreadsheet_id used to be active_id

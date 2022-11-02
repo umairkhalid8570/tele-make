@@ -5,8 +5,8 @@ import { useUpdate } from '@mail/component_hooks/use_update/use_update';
 import { useComponentToModel } from '@mail/component_hooks/use_component_to_model/use_component_to_model';
 import { useRefToModel } from '@mail/component_hooks/use_ref_to_model/use_ref_to_model';
 
-const { Component } = owl;
-const { useRef } = owl.hooks;
+const { Component } = twl;
+const { useRef } = twl.hooks;
 
 export class Chatter extends Component {
 

@@ -1,6 +1,6 @@
 /** @tele-module **/
 
-import { ComponentAdapter } from "web.OwlCompatibility";
+import { ComponentAdapter } from "web.TwlCompatibility";
 import { useService } from "@web/core/utils/hooks";
 import { registry } from "@web/core/registry";
 
@@ -11,7 +11,7 @@ export class FormManagerAdapter extends ComponentAdapter {
         props.Component = FormManager;
         super(...arguments);
         this.studio = useService("studio");
-        this.env = owl.Component.env;
+        this.env = twl.Component.env;
     }
 
     get widgetArgs() {

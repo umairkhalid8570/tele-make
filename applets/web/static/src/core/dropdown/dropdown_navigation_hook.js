@@ -18,7 +18,7 @@ import { scrollTo } from "../utils/scrolling";
  * }} MenuElement
  */
 
-const { hooks } = owl;
+const { hooks } = twl;
 const { useComponent, useRef } = hooks;
 
 const ACTIVE_MENU_ELEMENT_CLASS = "focus";
