@@ -18,8 +18,8 @@
                     </group>
                     <footer>
                         <div states="init">
-                            <button name="update_module" string="Update" type="object" class="btn-primary"/>
-                            <button special="cancel" data-hotkey="z" string="Cancel" class="btn-secondary"/>
+                            <button name="update_module" string="Update" type="object" class="btn-primary rounded-sm"/>
+                            <button special="cancel" data-hotkey="z" string="Cancel" class="btn-secondary rounded-sm"/>
                         </div>
                         <div states="done">
                             <button name="action_module_open" string="Open Apps" type="object" class="btn-primary" data-hotkey="q"/>
