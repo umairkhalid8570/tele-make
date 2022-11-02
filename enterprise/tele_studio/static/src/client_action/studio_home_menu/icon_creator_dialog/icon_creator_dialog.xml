@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<templates>
+
+<t t-name="tele_studio.IconCreatorDialogBody" owl="1">
+    <IconCreator editable="true" t-props="props.editedAppData" t-on-icon-changed.stop="onIconChanged"/>
+</t>
+
+<t t-name="tele_studio.IconCreatorDialogFooter" owl="1">
+    <button class="btn btn-primary rounded-sm" t-on-click="saveIcon">Confirm</button>
+    <button class="btn btn-secondary rounded-sm" t-on-click="close">Cancel</button>
+</t>
+
+</templates>

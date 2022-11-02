@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl).
+-->
+<tele>
+    <record id="medical_workflow.medical_workflow" model="workflow.type">
+        <field name="model_ids" eval="[(4, ref('model_medical_procedure_request'))]" />
+    </record>
+</tele>

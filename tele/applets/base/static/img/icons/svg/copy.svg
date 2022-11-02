@@ -1,0 +1,26 @@
+<svg width="150" height="150" viewBox="0 0 150 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="copy">
+<rect x="2.5" y="2.5" width="145" height="145" rx="7.5" fill="white"/>
+<rect x="2.5" y="2.5" width="145" height="145" rx="7.5" fill="url(#paint0_linear_14_9477)" fill-opacity="0.2"/>
+<g id="Group">
+<path id="Vector" d="M105 57.5V120C105 122.763 102.763 125 100 125H40C37.2375 125 35 122.763 35 120V40C35 37.2375 37.2375 35 40 35H82.5L105 57.5Z" fill="#199BE2"/>
+<path id="Vector_2" opacity="0.05" d="M40 35H105V120H49.2025C44.12 120 40 115.88 40 110.798V35Z" fill="black"/>
+<path id="Vector_3" opacity="0.07" d="M42.5 35H92.3525C99.3375 35 105 40.6625 105 47.6475V117.5H49.5975C45.6775 117.5 42.5 114.322 42.5 110.402V35Z" fill="black"/>
+<path id="Vector_4" d="M115 50V110C115 112.763 112.763 115 110 115H50C47.2375 115 45 112.763 45 110V30C45 27.2375 47.2375 25 50 25H90L115 50Z" fill="#50E6FF"/>
+<path id="Vector_5" d="M90 25V45C90 47.7625 92.2375 50 95 50H115L90 25Z" fill="url(#paint1_linear_14_9477)"/>
+</g>
+<rect x="2.5" y="2.5" width="145" height="145" rx="7.5" stroke="#D5EAF6" stroke-width="5"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_14_9477" x1="75" y1="5" x2="75" y2="145" gradientUnits="userSpaceOnUse">
+<stop stop-color="#199AE0"/>
+<stop offset="0.472222" stop-color="#0D5176" stop-opacity="0.527778"/>
+<stop offset="0.940972" stop-color="#12A6F7" stop-opacity="0.465278"/>
+<stop offset="1" stop-opacity="0"/>
+</linearGradient>
+<linearGradient id="paint1_linear_14_9477" x1="91.335" y1="48.665" x2="102.725" y2="37.275" gradientUnits="userSpaceOnUse">
+<stop stop-color="#3079D6"/>
+<stop offset="1" stop-color="#297CD2"/>
+</linearGradient>
+</defs>
+</svg>

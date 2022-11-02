@@ -1,0 +1,5 @@
+/var/log/tele/*.log {
+    copytruncate
+    missingok
+    notifempty
+}

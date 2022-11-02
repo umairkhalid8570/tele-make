@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+    License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl.html).
+-->
+<tele>
+    <menuitem
+        id="menu_medical_encounter_root"
+        name="Encounters"
+        sequence="40"
+        parent="medical_base.medical_root_administration"
+        groups="medical_administration_encounter.group_medical_encounter_list"
+        action="medical_encounter_action"
+    />
+</tele>

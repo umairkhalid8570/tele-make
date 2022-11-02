@@ -1,0 +1,17 @@
+<svg width="170" height="170" viewBox="0 0 170 170" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="paper-plane">
+<rect x="7.5" y="7.5" width="155" height="155" rx="12.5" fill="white"/>
+<rect x="7.5" y="7.5" width="155" height="155" rx="12.5" fill="url(#paint0_linear_1_1277)" fill-opacity="0.2"/>
+<path id="Vector" d="M136.395 29.7529L31.6862 65.5725C29.5075 66.3163 28.8658 69.0871 30.4933 70.7146L99.2829 139.504C100.91 141.132 103.681 140.49 104.425 138.311L140.245 33.6029C141.064 31.22 138.78 28.9363 136.395 29.7529Z" fill="#35C1F1"/>
+<path id="Vector_2" d="M125.833 44.166L52.9167 93.1339V114.166C52.9167 115.776 54.2233 117.083 55.8333 117.083H76.8654L125.833 44.166Z" fill="#1B9DE2"/>
+<rect x="7.5" y="7.5" width="155" height="155" rx="12.5" stroke="#D5EAF6" stroke-width="15"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_1_1277" x1="85" y1="15" x2="85" y2="155" gradientUnits="userSpaceOnUse">
+<stop stop-color="#199AE0"/>
+<stop offset="0.472222" stop-color="#0D5176" stop-opacity="0.527778"/>
+<stop offset="0.940972" stop-color="#12A6F7" stop-opacity="0.465278"/>
+<stop offset="1" stop-opacity="0"/>
+</linearGradient>
+</defs>
+</svg>

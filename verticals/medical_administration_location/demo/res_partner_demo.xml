@@ -1,0 +1,20 @@
++ADw-?xml version+AD0AIg-1.0+ACI- encoding+AD0AIg-utf-8+ACI- ?+AD4-
++ADwAIQ---
+    Copyright 2017 Creu Blanca
+    Copyright 2017 Eficent Business and IT Consulting Services, S.L.
+    License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl.html).
+--+AD4-
++ADw-tele+AD4-
+    +ADw-record id+AD0AIg-partner+AF8-location+AF8-1+ACI- model+AD0AIg-res.partner+ACIAPg-
+        +ADw-field name+AD0AIg-name+ACIAPg-Test Center+ADw-/field+AD4-
+        +ADw-field name+AD0AIg-street+ACIAPg-123 Test St.+ADw-/field+AD4-
+        +ADw-field name+AD0AIg-street2+ACIAPg-Suite 1337+ADw-/field+AD4-
+        +ADw-field name+AD0AIg-city+ACIAPg-Las Vegas+ADw-/field+AD4-
+        +ADw-field name+AD0AIg-country+AF8-id+ACI- ref+AD0AIg-base.us+ACI- /+AD4-
+        +ADw-field name+AD0AIg-phone+ACIAPg-888-888-8888+ADw-/field+AD4-
+        +ADw-field name+AD0AIg-email+ACIAPg-email+AEA-example.com+ADw-/field+AD4-
+        +ADw-field name+AD0AIg-state+AF8-id+ACI- ref+AD0AIg-base.state+AF8-us+AF8-23+ACI- /+AD4-
+        +ADw-field name+AD0AIg-is+AF8-location+ACI- eval+AD0AIg-True+ACI- /+AD4-
+        +ADw-field name+AD0AIg-is+AF8-medical+ACI- eval+AD0AIg-True+ACI- /+AD4-
+    +ADw-/record+AD4-
++ADw-/tele+AD4-

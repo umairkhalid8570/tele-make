@@ -1,0 +1,21 @@
+// Font paths
+// -------------------------
+
+@font-face {
+  font-family: "tele";
+  src: url("../fonts/tele.eot");
+  src: url("../fonts/tele.eot?#iefix") format("embedded-opentype"),
+  url("../fonts/tele.woff2") format("woff2"),
+  url("../fonts/tele.woff") format("woff"),
+  url("../fonts/tele.ttf") format("truetype"),
+  url("../fonts/tele.svg#font") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "tele";
+    src: url("../fonts/tele.svg#tele") format("svg");
+  }
+}

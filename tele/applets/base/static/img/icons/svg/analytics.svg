@@ -1,0 +1,21 @@
+<svg width="151" height="150" viewBox="0 0 151 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="analytics">
+<rect x="2.58203" y="2.5" width="145" height="145" rx="7.5" fill="white"/>
+<rect x="2.58203" y="2.5" width="145" height="145" rx="7.5" fill="url(#paint0_linear_14_12178)" fill-opacity="0.2"/>
+<g id="Group">
+<path id="Vector" d="M107.767 69.1579V121.184H86.7148V69.1579C86.7148 67.7132 87.8938 66.5448 89.3464 66.5448H105.136C106.589 66.5448 107.767 67.7158 107.767 69.1579Z" fill="#35C1F1"/>
+<path id="Vector_2" d="M86.7206 32.558V121.184H65.668V32.558C65.668 31.1158 66.8469 29.9448 68.2995 29.9448H84.089C85.5417 29.9448 86.7206 31.1158 86.7206 32.558Z" fill="#199BE2"/>
+<path id="Vector_3" d="M65.6659 50.8579V121.184H44.6133V50.8579C44.6133 49.4131 45.7922 48.2447 47.2449 48.2447H63.0343C64.487 48.2447 65.6659 49.4158 65.6659 50.8579Z" fill="#0078D4"/>
+<path id="Vector_4" d="M122.45 124.671H27.7136C26.261 124.671 25.082 123.5 25.082 122.058V27.9421C25.082 26.5 26.261 25.3289 27.7136 25.3289C29.1662 25.3289 30.3452 26.5 30.3452 27.9421V119.442H122.45C123.903 119.442 125.082 120.613 125.082 122.055C125.082 123.497 123.903 124.671 122.45 124.671Z" fill="#ABB4BE"/>
+</g>
+<rect x="2.58203" y="2.5" width="145" height="145" rx="7.5" stroke="#D5EAF6" stroke-width="5"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_14_12178" x1="75.082" y1="5" x2="75.082" y2="145" gradientUnits="userSpaceOnUse">
+<stop stop-color="#199AE0"/>
+<stop offset="0.472222" stop-color="#0D5176" stop-opacity="0.527778"/>
+<stop offset="0.940972" stop-color="#12A6F7" stop-opacity="0.465278"/>
+<stop offset="1" stop-opacity="0"/>
+</linearGradient>
+</defs>
+</svg>

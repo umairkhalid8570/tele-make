@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2022-Present Tele INC.(<https://tele.studio/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<!-- License URL : <https://store.tele.studio/license.html/> -->
+
+<tele>
+    <data>
+        <menuitem name="Custom Plan" id="custom_plans" parent="tele_saas_kit.saas_root_menu"/>
+        <menuitem name="Tele Version" action="saas_kit_custom_plans.tele_version_action_view" id="tele_version_action_menu" sequence="5" parent="tele_saas_kit.saas_config_menu" />
+    </data>
+</tele>

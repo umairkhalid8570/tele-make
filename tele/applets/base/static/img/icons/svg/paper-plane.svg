@@ -1,0 +1,19 @@
+<svg width="151" height="150" viewBox="0 0 151 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="paper-plane">
+<rect x="2.58203" y="2.5" width="145" height="145" rx="7.5" fill="white"/>
+<rect x="2.58203" y="2.5" width="145" height="145" rx="7.5" fill="url(#paint0_linear_14_10652)" fill-opacity="0.2"/>
+<g id="Group">
+<path id="Vector" d="M121.455 25.1529L26.9817 57.4712C25.0159 58.1423 24.437 60.6422 25.9054 62.1107L87.9709 124.176C89.4393 125.645 91.9393 125.066 92.6104 123.1L124.929 28.6266C125.668 26.4766 123.608 24.4161 121.455 25.1529Z" fill="#35C1F1"/>
+<path id="Vector_2" d="M111.934 38.1582L46.1445 82.3396V101.316C46.1445 102.768 47.3235 103.947 48.7761 103.947H67.7523L111.934 38.1582Z" fill="#1B9DE2"/>
+</g>
+<rect x="2.58203" y="2.5" width="145" height="145" rx="7.5" stroke="#D5EAF6" stroke-width="5"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_14_10652" x1="75.082" y1="5" x2="75.082" y2="145" gradientUnits="userSpaceOnUse">
+<stop stop-color="#199AE0"/>
+<stop offset="0.472222" stop-color="#0D5176" stop-opacity="0.527778"/>
+<stop offset="0.940972" stop-color="#12A6F7" stop-opacity="0.465278"/>
+<stop offset="1" stop-opacity="0"/>
+</linearGradient>
+</defs>
+</svg>

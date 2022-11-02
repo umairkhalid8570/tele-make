@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tele>
+
+    <record id="action_tele_studio_app_creator" model="ir.actions.client">
+        <field name="name">Studio App Creator</field>
+        <field name="tag">action_tele_studio_app_creator</field>
+    </record>
+
+</tele>

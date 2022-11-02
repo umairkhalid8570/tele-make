@@ -1,0 +1,61 @@
+<svg width="82" height="60" viewBox="0 0 82 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g filter="url(#filter0_b_3_3961)">
+<g clip-path="url(#clip0_3_3961)">
+<rect width="82" height="60" rx="3" fill="url(#paint0_linear_3_3961)"/>
+<rect width="82" height="60" rx="3" fill="url(#paint1_radial_3_3961)" fill-opacity="0.2"/>
+<rect width="82" height="60" rx="3" fill="white" fill-opacity="0.2"/>
+<path opacity="0.4" d="M54 26H29C28.4477 26 28 26.4477 28 27V33C28 33.5523 28.4477 34 29 34H54C54.5523 34 55 33.5523 55 33V27C55 26.4477 54.5523 26 54 26Z" fill="url(#paint2_linear_3_3961)"/>
+<g filter="url(#filter1_i_3_3961)">
+<path d="M50 29H38V31H50V29Z" fill="black"/>
+</g>
+<path d="M50 29H38V31H50V29Z" fill="white" fill-opacity="0.95"/>
+<g filter="url(#filter2_i_3_3961)">
+<path d="M32 32C33.1046 32 34 31.1046 34 30C34 28.8954 33.1046 28 32 28C30.8954 28 30 28.8954 30 30C30 31.1046 30.8954 32 32 32Z" fill="black"/>
+</g>
+<path d="M32 32C33.1046 32 34 31.1046 34 30C34 28.8954 33.1046 28 32 28C30.8954 28 30 28.8954 30 30C30 31.1046 30.8954 32 32 32Z" fill="white" fill-opacity="0.95"/>
+</g>
+</g>
+<defs>
+<filter id="filter0_b_3_3961" x="-4" y="-4" width="90" height="68" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feGaussianBlur in="BackgroundImageFix" stdDeviation="2"/>
+<feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_3_3961"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_3_3961" result="shape"/>
+</filter>
+<filter id="filter1_i_3_3961" x="38" y="29" width="12" height="3" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="1"/>
+<feGaussianBlur stdDeviation="2"/>
+<feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+<feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.4 0"/>
+<feBlend mode="normal" in2="shape" result="effect1_innerShadow_3_3961"/>
+</filter>
+<filter id="filter2_i_3_3961" x="30" y="28" width="4" height="5" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="1"/>
+<feGaussianBlur stdDeviation="2"/>
+<feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+<feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.4 0"/>
+<feBlend mode="normal" in2="shape" result="effect1_innerShadow_3_3961"/>
+</filter>
+<linearGradient id="paint0_linear_3_3961" x1="41" y1="0" x2="41" y2="60" gradientUnits="userSpaceOnUse">
+<stop stop-color="#F2F2F2" stop-opacity="0.23"/>
+<stop offset="1" stop-color="white" stop-opacity="0"/>
+</linearGradient>
+<radialGradient id="paint1_radial_3_3961" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(41 30) rotate(90) scale(30 41)">
+<stop stop-color="#F2F2F2"/>
+<stop offset="1" stop-opacity="0.25"/>
+</radialGradient>
+<linearGradient id="paint2_linear_3_3961" x1="41.5" y1="26" x2="41.5" y2="34" gradientUnits="userSpaceOnUse">
+<stop stop-color="#00A09D"/>
+<stop offset="1" stop-color="#00E2FF"/>
+</linearGradient>
+<clipPath id="clip0_3_3961">
+<rect width="82" height="60" rx="3" fill="white"/>
+</clipPath>
+</defs>
+</svg>

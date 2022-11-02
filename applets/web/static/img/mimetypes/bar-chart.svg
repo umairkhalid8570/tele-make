@@ -1,0 +1,20 @@
+<svg width="170" height="170" viewBox="0 0 170 170" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="bar-chart">
+<rect x="7.5" y="7.5" width="155" height="155" rx="12.5" fill="white"/>
+<rect x="7.5" y="7.5" width="155" height="155" rx="12.5" fill="url(#paint0_linear_1_2761)" fill-opacity="0.2"/>
+<path id="Vector" d="M143.333 38.3346V134.585H120V38.3346C120 36.7246 121.307 35.418 122.917 35.418H140.417C142.027 35.418 143.333 36.7246 143.333 38.3346Z" fill="#50E6FF"/>
+<path id="Vector_2" d="M120 58.75V134.583H96.6667V58.75H120Z" fill="#35C1F1"/>
+<path id="Vector_3" d="M96.6667 52.9167V134.583H73.3333V52.9167C73.3333 51.3067 74.64 50 76.25 50H93.75C95.36 50 96.6667 51.3067 96.6667 52.9167Z" fill="#199BE2"/>
+<path id="Vector_4" d="M73.3333 73.332V134.582H50V73.332H73.3333Z" fill="#0078D4"/>
+<path id="Vector_5" d="M50 64.5846V134.585H26.6667V64.5846C26.6667 62.9746 27.9733 61.668 29.5833 61.668H47.0833C48.6933 61.668 50 62.9746 50 64.5846Z" fill="#0D62AB"/>
+<rect x="7.5" y="7.5" width="155" height="155" rx="12.5" stroke="#D5EAF6" stroke-width="15"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_1_2761" x1="85" y1="15" x2="85" y2="155" gradientUnits="userSpaceOnUse">
+<stop stop-color="#199AE0"/>
+<stop offset="0.472222" stop-color="#0D5176" stop-opacity="0.527778"/>
+<stop offset="0.940972" stop-color="#12A6F7" stop-opacity="0.465278"/>
+<stop offset="1" stop-opacity="0"/>
+</linearGradient>
+</defs>
+</svg>

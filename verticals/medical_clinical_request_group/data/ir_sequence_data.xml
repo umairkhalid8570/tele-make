@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl).
+-->
+<tele>
+    <record id="seq_medical_request_group" model="ir.sequence">
+        <field name="name">Request Group</field>
+        <field name="code">medical.request.group</field>
+        <field name="prefix">RG</field>
+        <field name="padding">6</field>
+    </record>
+</tele>

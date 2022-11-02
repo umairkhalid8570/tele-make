@@ -1,0 +1,7 @@
+<templates>
+
+<t t-name="tele_studio.PrintSection">
+    <button class="btn btn-primary rounded-sm o_tele_studio_report_print">Print</button>
+</t>
+
+</templates>

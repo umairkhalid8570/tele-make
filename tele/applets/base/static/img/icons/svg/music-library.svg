@@ -1,0 +1,36 @@
+<svg width="151" height="150" viewBox="0 0 151 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="music-library">
+<rect x="2.58203" y="2.5" width="145" height="145" rx="7.5" fill="white"/>
+<rect x="2.58203" y="2.5" width="145" height="145" rx="7.5" fill="url(#paint0_linear_14_10510)" fill-opacity="0.2"/>
+<g id="Group">
+<path id="Vector" d="M115.082 30H35.082C32.3195 30 30.082 32.2375 30.082 35V50H120.082V35C120.082 32.2375 117.845 30 115.082 30Z" fill="url(#paint1_linear_14_10510)"/>
+<path id="Vector_2" d="M117.582 40.0002H32.582C29.8195 40.0002 27.582 42.2377 27.582 45.0002V57.5002H122.582V45.0002C122.582 42.2377 120.345 40.0002 117.582 40.0002Z" fill="url(#paint2_linear_14_10510)"/>
+<path id="Vector_3" d="M120.082 50H30.082C27.3195 50 25.082 52.2375 25.082 55V115C25.082 117.763 27.3195 120 30.082 120H120.082C122.845 120 125.082 117.763 125.082 115V55C125.082 52.2375 122.845 50 120.082 50Z" fill="url(#paint3_linear_14_10510)"/>
+<path id="Vector_4" opacity="0.05" d="M88.832 62.5H77.582C74.8245 62.5 72.582 64.7425 72.582 67.5V82.76C71.762 82.5875 70.9295 82.5 70.082 82.5C63.1895 82.5 57.582 88.1075 57.582 95C57.582 101.893 63.1895 107.5 70.082 107.5C76.9745 107.5 82.582 101.893 82.582 95V75H88.832C90.8995 75 92.582 73.3175 92.582 71.25V66.25C92.582 64.1825 90.8995 62.5 88.832 62.5Z" fill="black"/>
+<path id="Vector_5" opacity="0.07" d="M88.832 63.75H77.582C75.5145 63.75 73.832 65.4325 73.832 67.5V84.42C72.622 83.975 71.367 83.75 70.082 83.75C63.8795 83.75 58.832 88.7975 58.832 95C58.832 101.203 63.8795 106.25 70.082 106.25C76.2845 106.25 81.332 101.203 81.332 95V73.75H88.832C90.212 73.75 91.332 72.63 91.332 71.25V66.25C91.332 64.87 90.212 63.75 88.832 63.75Z" fill="black"/>
+<path id="Vector_6" d="M70.0742 85C64.5517 85 60.0742 89.4775 60.0742 95C60.0742 100.523 64.5517 105 70.0742 105C75.5967 105 80.0742 100.523 80.0742 95C80.0742 89.4775 75.5967 85 70.0742 85Z" fill="white"/>
+<path id="Vector_7" d="M88.832 65H77.582C76.202 65 75.082 66.12 75.082 67.5V95H80.082V72.5H88.832C89.522 72.5 90.082 71.94 90.082 71.25V66.25C90.082 65.56 89.522 65 88.832 65Z" fill="white"/>
+</g>
+<rect x="2.58203" y="2.5" width="145" height="145" rx="7.5" stroke="#D5EAF6" stroke-width="5"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_14_10510" x1="75.082" y1="5" x2="75.082" y2="145" gradientUnits="userSpaceOnUse">
+<stop stop-color="#199AE0"/>
+<stop offset="0.472222" stop-color="#0D5176" stop-opacity="0.527778"/>
+<stop offset="0.940972" stop-color="#12A6F7" stop-opacity="0.465278"/>
+<stop offset="1" stop-opacity="0"/>
+</linearGradient>
+<linearGradient id="paint1_linear_14_10510" x1="75.082" y1="30.4625" x2="75.082" y2="49.445" gradientUnits="userSpaceOnUse">
+<stop stop-color="#0D61A9"/>
+<stop offset="1" stop-color="#16528C"/>
+</linearGradient>
+<linearGradient id="paint2_linear_14_10510" x1="75.082" y1="40.1652" x2="75.082" y2="57.8377" gradientUnits="userSpaceOnUse">
+<stop stop-color="#199AE0"/>
+<stop offset="1" stop-color="#0782D8"/>
+</linearGradient>
+<linearGradient id="paint3_linear_14_10510" x1="66.257" y1="48.8175" x2="83.217" y2="118.35" gradientUnits="userSpaceOnUse">
+<stop stop-color="#32BDEF"/>
+<stop offset="1" stop-color="#1EA2E4"/>
+</linearGradient>
+</defs>
+</svg>
