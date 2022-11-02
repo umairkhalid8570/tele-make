@@ -110,7 +110,7 @@
             <field name="name">ir.filters.admin.all.rights</field>
             <field name="model_id" ref="model_ir_filters"/>
             <field name="domain_force">[(1, '=', 1)]</field>
-            <field name="groups" eval="[Command.link(ref('base.group_erp_manager'))]"/>
+            <field name="groups" eval="[Command.link(ref('base.group_system_manager'))]"/>
             <field name="perm_read" eval="True"/>
             <field name="perm_write" eval="True"/>
             <field name="perm_create" eval="True"/>
@@ -164,11 +164,11 @@
             <field name="groups" eval="[Command.set([ref('base.group_public')])]"/>
             <field name="domain_force">[('id','in', company_ids)]</field>
         </record>
-        <record id="res_company_rule_erp_manager" model="ir.rule">
-            <field name="name">company rule erp manager</field>
+        <record id="res_company_rule_system_manager" model="ir.rule">
+            <field name="name">company rule system manager</field>
             <field name="model_id" ref="model_res_company"/>
             <field eval="False" name="global"/>
-            <field name="groups" eval="[Command.set([ref('base.group_erp_manager')])]"/>
+            <field name="groups" eval="[Command.set([ref('base.group_system_manager')])]"/>
             <field name="domain_force">[(1,'=',1)]</field>
         </record>
 

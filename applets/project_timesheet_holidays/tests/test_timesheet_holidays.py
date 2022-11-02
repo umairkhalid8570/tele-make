@@ -27,7 +27,7 @@ class TestTimesheetHolidaysCreate(common.TransactionCase):
     def test_company_create(self):
         main_company = self.env.ref('base.main_company')
         user = new_test_user(self.env, login='fru',
-                             groups='base.group_user,base.group_erp_manager,base.group_partner_manager',
+                             groups='base.group_user,base.group_system_manager,base.group_partner_manager',
                              company_id=main_company.id,
                              company_ids=[(6, 0, main_company.ids)])
         Company = self.env['res.company']

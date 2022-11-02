@@ -52,7 +52,7 @@
         dialog.
         ========================================================================
     -->
-    <t t-name="website.gallery.slideshow.lightbox">
+    <t t-name="website.gallery.slideshow.lightbox rounded-sm">
         <div role="dialog" class="modal o_technical_modal fade s_gallery_lightbox p-0" aria-labbelledby="Image Gallery Dialog">
             <div class="modal-dialog m-0" role="Picture Gallery"
                 t-attf-style="">

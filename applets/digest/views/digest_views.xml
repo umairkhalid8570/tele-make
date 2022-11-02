@@ -131,7 +131,7 @@
     <menuitem id="digest_menu"
         action="digest_digest_action"
         parent="base.menu_email"
-        groups="base.group_erp_manager"
+        groups="base.group_system_manager"
         sequence="80"/>
 
     <!-- DIGEST.TIP -->
@@ -182,7 +182,7 @@
     <menuitem id="digest_tip_menu"
         action="digest_tip_action"
         parent="base.menu_email"
-        groups="base.group_erp_manager"
+        groups="base.group_system_manager"
         sequence="81"/>
 
 </tele>

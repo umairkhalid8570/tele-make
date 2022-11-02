@@ -9,7 +9,7 @@ class TestNote(TransactionCaseWithUserDemo):
     def test_bug_lp_1156215(self):
         """ ensure any users can create new users """
         demo_user = self.user_demo
-        group_erp = self.env.ref('base.group_erp_manager')
+        group_erp = self.env.ref('base.group_system_manager')
 
         demo_user.write({
             'groups_id': [(4, group_erp.id)],

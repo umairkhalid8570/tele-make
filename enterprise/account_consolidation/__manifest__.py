@@ -5,7 +5,7 @@
     'sequence': 205,
     'summary': """All you need to make financial consolidation""",
     'description': """All you need to make financial consolidation""",
-    'author': "Tele S.A.",
+    'author': "Tele INC.",
     'depends': ['account_reports','web_grid'],
     'data': [
         'security/account_consolidation_security.xml',

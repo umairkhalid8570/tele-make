@@ -182,7 +182,7 @@ class User(models.Model):
         # in the dropdown menu.
         if toolbar and self.env.user != original_user:
             self = self.with_user(original_user.id)
-            if not self.user_has_groups("base.group_erp_manager"):
+            if not self.user_has_groups("base.group_system_manager"):
                 change_password_action = self.env.ref("base.change_password_wizard_action")
                 result['toolbar']['action'] = [act for act in result['toolbar']['action'] if act['id'] != change_password_action.id]
         return result

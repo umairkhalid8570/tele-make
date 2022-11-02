@@ -5,7 +5,7 @@
     "summary": """
             Bridge Sign functionalities with the Rental application
         """,
-    "author": "Tele S.A.",
+    "author": "Tele INC.",
     "website": "https://www.tele.studio",
     "category": "Sales/Sales",
     "version": "1.0",

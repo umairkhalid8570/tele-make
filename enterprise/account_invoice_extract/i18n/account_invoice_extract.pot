@@ -30,7 +30,7 @@ msgid ""
 "    <p>There are no more credits on your IAP Invoice OCR account.<br/>\n"
 "    You can charge your IAP Invoice OCR account in the Accounting settings page.</p>\n"
 "    <p>Best regards,<br/></p>\n"
-"    <p>Tele S.A.</p>\n"
+"    <p>Tele INC.</p>\n"
 "</div>"
 msgstr ""
 

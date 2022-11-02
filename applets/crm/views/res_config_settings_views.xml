@@ -68,7 +68,7 @@
                                     for the leads created as of the
                                     <b><field name="predictive_lead_scoring_start_date" class="oe_inline" readonly="1"/></b>.
                                  </div>
-                                <div class="mt16" groups="base.group_erp_manager">
+                                <div class="mt16" groups="base.group_system_manager">
                                     <button name="%(crm_lead_pls_update_action)d" type="action"
                                         string="Update Probabilities"
                                         class="btn-primary"/>

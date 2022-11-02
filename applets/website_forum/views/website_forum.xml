@@ -173,8 +173,8 @@
                             <a t-if="my != 'followed'" t-att-href="url_for('') + '?' + keep_query( 'search', 'sorting', 'filters', my='followed')" class="dropdown-item">I'm Following</a>
                             <a t-if="my != 'tagged'" t-att-href="url_for('') + '?' + keep_query( 'search', 'sorting', 'filters', my='tagged')" class="dropdown-item">Tags I Follow</a>
                         </t>
-                        <div groups="base.group_erp_manager" class="dropdown-divider"/>
-                        <a groups="base.group_erp_manager" t-attf-href="/web#id=#{forum.id}&amp;view_type=form&amp;model=forum.forum" class="dropdown-item">Edit Forum in Backend</a>
+                        <div groups="base.group_system_manager" class="dropdown-divider"/>
+                        <a groups="base.group_system_manager" t-attf-href="/web#id=#{forum.id}&amp;view_type=form&amp;model=forum.forum" class="dropdown-item">Edit Forum in Backend</a>
                     </div>
                 </li>
                 <t t-if="user.karma>=forum.karma_moderate">

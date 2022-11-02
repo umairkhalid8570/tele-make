@@ -91,7 +91,7 @@ class TestSelfAccessProfile(TestHrCommon):
         self.assertFalse(any(x['id'] == change_password_action.id for x in available_actions))
 
         """ An ERP manager should have the possibilities to see the 'Change Password' """
-        john = new_test_user(self.env, login='joh', groups='base.group_erp_manager', name='ERP Manager', email='joh@example.com')
+        john = new_test_user(self.env, login='joh', groups='base.group_system_manager', name='ERP Manager', email='joh@example.com')
         john = john.with_user(john)
         self.env['hr.employee'].create({
             'name': 'John',

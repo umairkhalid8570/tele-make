@@ -19,7 +19,7 @@
         <record id="goal_recognition_manager_visibility" model="ir.rule">
             <field name="name">Manager can see any goal</field>
             <field name="model_id" ref="model_recognition_goal"/>
-            <field name="groups" eval="[(4, ref('base.group_erp_manager'))]"/>
+            <field name="groups" eval="[(4, ref('base.group_system_manager'))]"/>
             <field name="perm_read" eval="True"/>
             <field name="perm_write" eval="True"/>
             <field name="perm_create" eval="False"/>

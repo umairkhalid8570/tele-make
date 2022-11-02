@@ -7,13 +7,13 @@
             Note that the field 'category_id' is set later in
             base/data/ir_module_category_data.xml
         -->
-        <record model="res.groups" id="group_erp_manager">
+        <record model="res.groups" id="group_system_manager">
             <field name="name">Access Rights</field>
         </record>
 
         <record model="res.groups" id="group_system">
             <field name="name">Settings</field>
-            <field name="implied_ids" eval="[Command.link(ref('group_erp_manager'))]"/>
+            <field name="implied_ids" eval="[Command.link(ref('group_system_manager'))]"/>
             <field name="users" eval="[Command.link(ref('base.user_root')), Command.link(ref('base.user_admin'))]"/>
         </record>
 

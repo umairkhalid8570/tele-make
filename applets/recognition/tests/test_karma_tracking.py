@@ -150,10 +150,10 @@ class TestKarmaTrackingCommon(common.TransactionCase):
         self.assertEqual(current_user_trackings[0].new_value, base_test_user_karma + 40)
         self.assertEqual(current_user_trackings[-1].old_value, base_test_user_karma)
 
-    def test_user_as_erp_manager(self):
+    def test_user_as_system_manager(self):
         self.test_user.write({'groups_id': [
             (4, self.env.ref('base.group_partner_manager').id),
-            (4, self.env.ref('base.group_erp_manager').id)
+            (4, self.env.ref('base.group_system_manager').id)
         ]})
         user = self.env['res.users'].with_user(self.test_user).create({
             'name': 'Test Ostérone', 'karma': '32',

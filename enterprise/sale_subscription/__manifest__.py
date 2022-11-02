@@ -16,7 +16,7 @@ Features:
     - Modify subscriptions with sales orders
     - Generate invoice automatically at fixed intervals
 """,
-    'author': 'Camptocamp / Tele',
+    'author': 'Tele INC',
     'website': 'https://www.tele.studio/app/subscriptions',
     'depends': [
         'sale_management',

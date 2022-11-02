@@ -31,7 +31,7 @@
         <field name="name">Website forum: All access for manager</field>
         <field name="model_id" ref="model_forum_forum"/>
         <field name="domain_force">[(1, '=', 1)]</field>
-        <field name="groups" eval="[(4, ref('base.group_erp_manager'))]"/>
+        <field name="groups" eval="[(4, ref('base.group_system_manager'))]"/>
     </record>
 
     <record id="website_forum_public_post" model="ir.rule">
@@ -50,7 +50,7 @@
         <field name="name">Website forum post : All access for manager</field>
         <field name="model_id" ref="model_forum_post"/>
         <field name="domain_force">[(1, '=', 1)]</field>
-        <field name="groups" eval="[(4, ref('base.group_erp_manager'))]"/>
+        <field name="groups" eval="[(4, ref('base.group_system_manager'))]"/>
     </record>
 
     <record id="website_forum_public_tag" model="ir.rule">
@@ -69,6 +69,6 @@
         <field name="name">Website forum tag : Manager user can access to all tags</field>
         <field name="model_id" ref="model_forum_tag"/>
         <field name="domain_force">[(1, '=', 1)]</field>
-        <field name="groups" eval="[(4, ref('base.group_erp_manager'))]"/>
+        <field name="groups" eval="[(4, ref('base.group_system_manager'))]"/>
     </record>
 </tele>

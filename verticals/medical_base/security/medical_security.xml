@@ -72,7 +72,7 @@
         <field
             name="implied_ids"
             eval="[(4, ref('group_medical_user')),
-                      (4, ref('base.group_erp_manager'))]"
+                      (4, ref('base.group_system_manager'))]"
         />
     </record>
 </tele>

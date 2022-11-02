@@ -137,7 +137,7 @@
         </record>
 
         <!-- add applications to base groups -->
-        <record model="res.groups" id="group_erp_manager">
+        <record model="res.groups" id="group_system_manager">
             <field name="category_id" ref="module_category_administration_administration"/>
         </record>
         <record model="res.groups" id="group_system">

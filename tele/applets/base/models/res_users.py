@@ -909,7 +909,7 @@ class Users(models.Model):
 
     def _is_admin(self):
         self.ensure_one()
-        return self._is_superuser() or self.has_group('base.group_erp_manager')
+        return self._is_superuser() or self.has_group('base.group_system_manager')
 
     def _is_superuser(self):
         self.ensure_one()

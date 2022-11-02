@@ -7406,7 +7406,7 @@ msgstr ""
 #: code:applets/base/models/res_users.py:0
 #: model:ir.actions.act_window,name:base.ir_access_act
 #: model:ir.ui.menu,name:base.menu_ir_access_act
-#: model:res.groups,name:base.group_erp_manager
+#: model:res.groups,name:base.group_system_manager
 #: model_terms:ir.ui.view,arch_db:base.edit_menu_access
 #: model_terms:ir.ui.view,arch_db:base.ir_access_view_form
 #: model_terms:ir.ui.view,arch_db:base.ir_access_view_search
@@ -19434,7 +19434,7 @@ msgid ""
 "------------------------------\n"
 "\n"
 "Connect with experts, follow what interests you, share documents and promote\n"
-"best practices with Tele <a href=\"https://www.tele.studio/app/discuss\">Enterprise Social Network</a>. Get work done with\n"
+"best practices with Tele <a href=\"https://www.tele.studio/app/connect\">Enterprise Social Network</a>. Get work done with\n"
 "effective collaboration across departments, geographies, documents and business\n"
 "applications. All of this while decreasing email overload.\n"
 "\n"

@@ -10,7 +10,7 @@
         Manage user and manager notifications
     """,
 
-    'author': "Tele S.A.",
+    'author': "Tele INC.",
     'website': "https://www.tele.studio",
 
     'category': 'Sales/Sales',

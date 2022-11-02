@@ -178,8 +178,6 @@ var db = {
             {id: 16, display_name: "Administrative"},
             {id: 7, display_name: "Agrolait - Agrolait"},
             {id: 8, display_name: "Asustek - ASUSTeK"},
-            {id: 15, display_name: "Camp to Camp - Camptocamp"},
-            {id: 6, display_name: "CampToCamp - Camptocamp"},
             {id: 17, display_name: "Commercial & Marketing"},
             {id: 23, display_name: "Data Import/Export Plugin - Delta PC"},
             {id: 9, display_name: "Delta PC - Delta PC"},

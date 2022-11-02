@@ -1,28 +1,28 @@
 id,name,model_id/id,group_id/id,perm_read,perm_write,perm_create,perm_unlink
 
 goal_employee,"Goal Employee",model_recognition_goal,base.group_user,1,1,0,0
-goal_manager,"Goal Manager",model_recognition_goal,base.group_erp_manager,1,1,1,1
+goal_manager,"Goal Manager",model_recognition_goal,base.group_system_manager,1,1,1,1
 goal_portal,"Goal Portal",recognition.model_recognition_goal,base.group_portal,1,1,0,0
 
 goal_definition_employee,"Goal Definition Employee",model_recognition_goal_definition,base.group_user,1,0,0,0
-goal_definition_manager,"Goal Definition Manager",model_recognition_goal_definition,base.group_erp_manager,1,1,1,1
+goal_definition_manager,"Goal Definition Manager",model_recognition_goal_definition,base.group_system_manager,1,1,1,1
 goal_definition_portal,"Goal Definition Portal",recognition.model_recognition_goal_definition,base.group_portal,1,0,0,0
 
 challenge_employee,"Goal Challenge Employee",model_recognition_challenge,base.group_user,1,0,0,0
-challenge_manager,"Goal Challenge Manager",model_recognition_challenge,base.group_erp_manager,1,1,1,1
+challenge_manager,"Goal Challenge Manager",model_recognition_challenge,base.group_system_manager,1,1,1,1
 challenge_portal,"Goal Challenge Portal",recognition.model_recognition_challenge,base.group_portal,1,0,0,0
 
 challenge_line_employee,"Challenge Line Employee",model_recognition_challenge_line,base.group_user,1,0,0,0
-challenge_line_manager,"Challenge Line Manager",model_recognition_challenge_line,base.group_erp_manager,1,1,1,1
+challenge_line_manager,"Challenge Line Manager",model_recognition_challenge_line,base.group_system_manager,1,1,1,1
 challenge_line_portal,"Challenge Line Portal",recognition.model_recognition_challenge_line,base.group_portal,1,0,0,0
 
 badge_employee,"Badge Employee",model_recognition_badge,base.group_user,1,0,0,0
-badge_manager,"Badge Manager",model_recognition_badge,base.group_erp_manager,1,1,1,1
+badge_manager,"Badge Manager",model_recognition_badge,base.group_system_manager,1,1,1,1
 badge_portal,"Badge Portal",recognition.model_recognition_badge,base.group_portal,1,0,0,0
 badge_public,"Badge Public",recognition.model_recognition_badge,base.group_public,1,0,0,0
 
 badge_user_employee,"Badge-user Employee",model_recognition_badge_user,base.group_user,1,1,1,0
-badge_user_manager,"Badge-user Manager",model_recognition_badge_user,base.group_erp_manager,1,1,1,1
+badge_user_manager,"Badge-user Manager",model_recognition_badge_user,base.group_system_manager,1,1,1,1
 badge_user_portal,"Badge-user Portal",recognition.model_recognition_badge_user,base.group_portal,1,1,1,0
 badge_user_public,"Badge-user Public",recognition.model_recognition_badge_user,base.group_public,1,0,0,0
 

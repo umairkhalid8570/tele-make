@@ -10,7 +10,7 @@ Allows use of stock application to manage rentals inventory
 
     """,
 
-    'author': "Tele S.A.",
+    'author': "Tele INC.",
     'website': "https://www.tele.studio",
 
     'category': 'Sales/Sales',
