@@ -1088,9 +1088,9 @@ msgstr ""
 #: model:ir.model.fields,field_description:portal.field_calendar_event__website_message_ids
 #: model:ir.model.fields,field_description:portal.field_crm_team__website_message_ids
 #: model:ir.model.fields,field_description:portal.field_crm_team_member__website_message_ids
-#: model:ir.model.fields,field_description:portal.field_fleet_vehicle__website_message_ids
-#: model:ir.model.fields,field_description:portal.field_fleet_vehicle_log_contract__website_message_ids
-#: model:ir.model.fields,field_description:portal.field_fleet_vehicle_log_services__website_message_ids
+#: model:ir.model.fields,field_description:portal.field_automotive_vehicle__website_message_ids
+#: model:ir.model.fields,field_description:portal.field_automotive_vehicle_log_contract__website_message_ids
+#: model:ir.model.fields,field_description:portal.field_automotive_vehicle_log_services__website_message_ids
 #: model:ir.model.fields,field_description:portal.field_recognition_badge__website_message_ids
 #: model:ir.model.fields,field_description:portal.field_recognition_challenge__website_message_ids
 #: model:ir.model.fields,field_description:portal.field_hr_contract__website_message_ids
@@ -1123,9 +1123,9 @@ msgstr ""
 #: model:ir.model.fields,help:portal.field_calendar_event__website_message_ids
 #: model:ir.model.fields,help:portal.field_crm_team__website_message_ids
 #: model:ir.model.fields,help:portal.field_crm_team_member__website_message_ids
-#: model:ir.model.fields,help:portal.field_fleet_vehicle__website_message_ids
-#: model:ir.model.fields,help:portal.field_fleet_vehicle_log_contract__website_message_ids
-#: model:ir.model.fields,help:portal.field_fleet_vehicle_log_services__website_message_ids
+#: model:ir.model.fields,help:portal.field_automotive_vehicle__website_message_ids
+#: model:ir.model.fields,help:portal.field_automotive_vehicle_log_contract__website_message_ids
+#: model:ir.model.fields,help:portal.field_automotive_vehicle_log_services__website_message_ids
 #: model:ir.model.fields,help:portal.field_recognition_badge__website_message_ids
 #: model:ir.model.fields,help:portal.field_recognition_challenge__website_message_ids
 #: model:ir.model.fields,help:portal.field_hr_contract__website_message_ids

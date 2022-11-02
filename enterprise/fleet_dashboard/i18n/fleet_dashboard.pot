@@ -1,6 +1,6 @@
 # Translation of Tele Server.
 # This file contains the translation of the following modules:
-# 	* fleet_dashboard
+# 	* automotive_dashboard
 #
 msgid ""
 msgstr ""
@@ -15,22 +15,22 @@ msgstr ""
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
 
-#. module: fleet_dashboard
-#: model_terms:ir.ui.view,arch_db:fleet_dashboard.fleet_costs_report_view_dashboard
+#. module: automotive_dashboard
+#: model_terms:ir.ui.view,arch_db:automotive_dashboard.automotive_costs_report_view_dashboard
 msgid "Cost Per Type"
 msgstr ""
 
-#. module: fleet_dashboard
-#: model_terms:ir.ui.view,arch_db:fleet_dashboard.fleet_costs_report_view_dashboard
+#. module: automotive_dashboard
+#: model_terms:ir.ui.view,arch_db:automotive_dashboard.automotive_costs_report_view_dashboard
 msgid "Total Contract Cost"
 msgstr ""
 
-#. module: fleet_dashboard
-#: model_terms:ir.ui.view,arch_db:fleet_dashboard.fleet_costs_report_view_dashboard
+#. module: automotive_dashboard
+#: model_terms:ir.ui.view,arch_db:automotive_dashboard.automotive_costs_report_view_dashboard
 msgid "Total Cost"
 msgstr ""
 
-#. module: fleet_dashboard
-#: model_terms:ir.ui.view,arch_db:fleet_dashboard.fleet_costs_report_view_dashboard
+#. module: automotive_dashboard
+#: model_terms:ir.ui.view,arch_db:automotive_dashboard.automotive_costs_report_view_dashboard
 msgid "Total Service Cost"
 msgstr ""

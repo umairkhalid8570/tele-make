@@ -4,8 +4,8 @@
 from tele import fields, models
 
 
-class FleetVehicleOdometer(models.Model):
-    _inherit = 'fleet.vehicle.odometer'
+class AutomotiveVehicleOdometer(models.Model):
+    _inherit = 'automotive.vehicle.odometer'
 
     driver_employee_id = fields.Many2one(
         related='vehicle_id.driver_employee_id', string='Driver (Employee)',

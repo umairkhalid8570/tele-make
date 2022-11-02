@@ -1789,10 +1789,10 @@ msgid ""
 msgstr ""
 
 #. module: base
-#: model:ir.module.module,description:base.module_documents_fleet
+#: model:ir.module.module,description:base.module_documents_automotive
 msgid ""
 "\n"
-"Adds fleet data to documents\n"
+"Adds automotive data to documents\n"
 msgstr ""
 
 #. module: base
@@ -6142,20 +6142,20 @@ msgid ""
 msgstr ""
 
 #. module: base
-#: model:ir.module.module,description:base.module_fleet
-#: model:ir.module.module,description:base.module_fleet_dashboard
+#: model:ir.module.module,description:base.module_automotive
+#: model:ir.module.module,description:base.module_automotive_dashboard
 msgid ""
 "\n"
 "Vehicle, leasing, insurances, cost\n"
 "==================================\n"
 "With this module, Tele helps you managing all your vehicles, the\n"
 "contracts associated to those vehicle as well as services, costs\n"
-"and many other features necessary to the management of your fleet\n"
+"and many other features necessary to the management of your automotive\n"
 "of vehicle(s)\n"
 "\n"
 "Main Features\n"
 "-------------\n"
-"* Add vehicles to your fleet\n"
+"* Add vehicles to your automotive\n"
 "* Manage contracts for vehicles\n"
 "* Reminder when a contract reach its expiration date\n"
 "* Add services, odometer values for all vehicles\n"
@@ -7646,8 +7646,8 @@ msgid ""
 msgstr ""
 
 #. module: base
-#: model:ir.module.module,shortdesc:base.module_account_fleet
-msgid "Accounting/Fleet bridge"
+#: model:ir.module.module,shortdesc:base.module_account_automotive
+msgid "Accounting/Automotive bridge"
 msgstr ""
 
 #. module: base
@@ -9487,8 +9487,8 @@ msgid "Belgium - Payroll - December Slip"
 msgstr ""
 
 #. module: base
-#: model:ir.module.module,shortdesc:base.module_l10n_be_hr_payroll_fleet
-msgid "Belgium - Payroll - Fleet"
+#: model:ir.module.module,shortdesc:base.module_l10n_be_hr_payroll_automotive
+msgid "Belgium - Payroll - Automotive"
 msgstr ""
 
 #. module: base
@@ -11786,8 +11786,8 @@ msgid "Dash"
 msgstr ""
 
 #. module: base
-#: model:ir.module.module,summary:base.module_fleet_dashboard
-msgid "Dashboard for fleet"
+#: model:ir.module.module,summary:base.module_automotive_dashboard
+msgid "Dashboard for automotive"
 msgstr ""
 
 #. module: base
@@ -12281,8 +12281,8 @@ msgid "Disallowed Expenses"
 msgstr ""
 
 #. module: base
-#: model:ir.module.module,shortdesc:base.module_account_disallowed_expenses_fleet
-msgid "Disallowed Expenses on Fleets"
+#: model:ir.module.module,shortdesc:base.module_account_disallowed_expenses_automotive
+msgid "Disallowed Expenses on Automotives"
 msgstr ""
 
 #. module: base
@@ -12541,8 +12541,8 @@ msgid "Documents - Contracts"
 msgstr ""
 
 #. module: base
-#: model:ir.module.module,shortdesc:base.module_documents_fleet
-msgid "Documents - Fleet"
+#: model:ir.module.module,shortdesc:base.module_documents_automotive
+msgid "Documents - Automotive"
 msgstr ""
 
 #. module: base
@@ -14039,24 +14039,24 @@ msgid "Flag Image Url"
 msgstr ""
 
 #. module: base
-#: model:ir.module.category,name:base.module_category_human_resources_fleet
-#: model:ir.module.module,shortdesc:base.module_fleet
-msgid "Fleet"
+#: model:ir.module.category,name:base.module_category_human_resources_automotive
+#: model:ir.module.module,shortdesc:base.module_automotive
+msgid "Automotive"
 msgstr ""
 
 #. module: base
-#: model:ir.module.module,shortdesc:base.module_fleet_dashboard
-msgid "Fleet Dashboard"
+#: model:ir.module.module,shortdesc:base.module_automotive_dashboard
+msgid "Automotive Dashboard"
 msgstr ""
 
 #. module: base
-#: model:ir.module.module,shortdesc:base.module_hr_fleet
-msgid "Fleet History"
+#: model:ir.module.module,shortdesc:base.module_hr_automotive
+msgid "Automotive History"
 msgstr ""
 
 #. module: base
-#: model:ir.module.module,summary:base.module_documents_fleet
-msgid "Fleet from documents"
+#: model:ir.module.module,summary:base.module_documents_automotive
+msgid "Automotive from documents"
 msgstr ""
 
 #. module: base
@@ -14575,7 +14575,7 @@ msgid ""
 msgstr ""
 
 #. module: base
-#: model:ir.module.module,summary:base.module_hr_fleet
+#: model:ir.module.module,summary:base.module_hr_automotive
 msgid "Get history of driven cars by employees"
 msgstr ""
 
@@ -17701,8 +17701,8 @@ msgid "Manage a forum with FAQ and Q&A"
 msgstr ""
 
 #. module: base
-#: model:ir.module.module,summary:base.module_account_fleet
-msgid "Manage accounting with fleets"
+#: model:ir.module.module,summary:base.module_account_automotive
+msgid "Manage accounting with automotives"
 msgstr ""
 
 #. module: base
@@ -17727,8 +17727,8 @@ msgid "Manage disallowed expenses"
 msgstr ""
 
 #. module: base
-#: model:ir.module.module,summary:base.module_account_disallowed_expenses_fleet
-msgid "Manage disallowed expenses with fleets"
+#: model:ir.module.module,summary:base.module_account_disallowed_expenses_automotive
+msgid "Manage disallowed expenses with automotives"
 msgstr ""
 
 #. module: base
@@ -17843,8 +17843,8 @@ msgid "Manage your employees' schedule"
 msgstr ""
 
 #. module: base
-#: model:ir.module.module,summary:base.module_fleet
-msgid "Manage your fleet and track car costs"
+#: model:ir.module.module,summary:base.module_automotive
+msgid "Manage your automotive and track car costs"
 msgstr ""
 
 #. module: base
@@ -18563,12 +18563,6 @@ msgstr ""
 #. module: base
 #: model:res.country,name:base.md
 msgid "Moldova"
-msgstr ""
-
-#. module: base
-#: model:ir.module.module,description:base.module_payment_mollie
-#: model:ir.module.module,shortdesc:base.module_payment_mollie
-msgid "Mollie Payment Acquirer"
 msgstr ""
 
 #. module: base
@@ -21306,21 +21300,6 @@ msgstr ""
 #. module: base
 #: model:ir.module.module,summary:base.module_payment_authorize
 msgid "Payment Acquirer: Authorize.net Implementation"
-msgstr ""
-
-#. module: base
-#: model:ir.module.module,summary:base.module_payment_buckaroo
-msgid "Payment Acquirer: Buckaroo Implementation"
-msgstr ""
-
-#. module: base
-#: model:ir.module.module,summary:base.module_payment_mollie
-msgid "Payment Acquirer: Mollie Implementation"
-msgstr ""
-
-#. module: base
-#: model:ir.module.module,summary:base.module_payment_ogone
-msgid "Payment Acquirer: Ogone Implementation"
 msgstr ""
 
 #. module: base

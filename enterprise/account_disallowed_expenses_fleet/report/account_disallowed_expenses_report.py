@@ -15,7 +15,7 @@ class AccountDisallowedExpensesReport(models.AbstractModel):
         options = super(AccountDisallowedExpensesReport, self)._get_options(previous_options)
         # check if there are multiple rates
         period_domain = [('date_from', '>=', options['date']['date_from']), ('date_from', '<=', options['date']['date_to'])]
-        rg = self.env['fleet.disallowed.expenses.rate'].read_group(period_domain, ['rate'], 'vehicle_id')
+        rg = self.env['automotive.disallowed.expenses.rate'].read_group(period_domain, ['rate'], 'vehicle_id')
         options['multi_rate_in_period'] = options['multi_rate_in_period'] or any(cat['vehicle_id_count'] > 1 for cat in rg)
         return options
 
@@ -23,14 +23,14 @@ class AccountDisallowedExpensesReport(models.AbstractModel):
         select, from_, where, group_by, order_by, order_by_rate, params = super()._get_query(options, line_id)
         current = self._parse_line_id(line_id)
         select += """,
-                COALESCE(MAX(fleet_rate.rate), 0) as fleet_rate,
+                COALESCE(MAX(automotive_rate.rate), 0) as automotive_rate,
                 vehicle.id as vehicle_id,
                 vehicle.name as vehicle_name"""
         from_ += """
-                LEFT JOIN fleet_vehicle vehicle ON aml.vehicle_id = vehicle.id
-                LEFT JOIN fleet_disallowed_expenses_rate fleet_rate ON fleet_rate.id = (
-                    SELECT r2.id FROm fleet_disallowed_expenses_rate r2
-                    JOIN fleet_vehicle v2 ON r2.vehicle_id = v2.id
+                LEFT JOIN automotive_vehicle vehicle ON aml.vehicle_id = vehicle.id
+                LEFT JOIN automotive_disallowed_expenses_rate automotive_rate ON automotive_rate.id = (
+                    SELECT r2.id FROm automotive_disallowed_expenses_rate r2
+                    JOIN automotive_vehicle v2 ON r2.vehicle_id = v2.id
                     WHERE r2.date_from <= aml.date
                       AND v2.id = vehicle.id
                     ORDER BY r2.date_from DESC LIMIT 1
@@ -41,10 +41,10 @@ class AccountDisallowedExpensesReport(models.AbstractModel):
         where += current.get('account') and not current.get('vehicle') and options.get('vehicle_split') and """
               AND vehicle.id IS NULL""" or ""
         group_by += ", vehicle.id, vehicle.name"
-        group_by += options['multi_rate_in_period'] and ", fleet_rate.rate" or ""
+        group_by += options['multi_rate_in_period'] and ", automotive_rate.rate" or ""
         order_by = """
             ORDER BY category_code, vehicle.name IS NOT NULL, vehicle.name, account_code"""
-        order_by_rate += ", fleet_rate"
+        order_by_rate += ", automotive_rate"
         return select, from_, where, group_by, order_by, order_by_rate, params
 
     def _parse_line_id(self, line_id):
@@ -73,7 +73,7 @@ class AccountDisallowedExpensesReport(models.AbstractModel):
 
     def _get_applicable_rate(self, values):
         # EXTENDS 'account_disallowed_expenses' in order to use the vehicle rate, if it has been defined.
-        return values['fleet_rate'] or super()._get_applicable_rate(values)
+        return values['automotive_rate'] or super()._get_applicable_rate(values)
 
     @api.model
     def _get_lines(self, options, line_id=None):

@@ -2,15 +2,15 @@
 # Part of Tele. See LICENSE file for full copyright and licensing details.
 
 {
-    'name': 'Documents - Fleet',
+    'name': 'Documents - Automotive',
     'version': '1.0',
     'category': 'Productivity/Documents',
-    'summary': 'Fleet from documents',
+    'summary': 'Automotive from documents',
     'description': """
-Adds fleet data to documents
+Adds automotive data to documents
 """,
     'website': ' ',
-    'depends': ['documents', 'fleet'],
+    'depends': ['documents', 'automotive'],
     'data': ['data/data.xml'],
     'installable': True,
     'auto_install': True,

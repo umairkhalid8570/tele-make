@@ -20,12 +20,12 @@ class TestSubscription(TestSubscriptionCommon):
 
         self.partner = self.env['res.partner'].create(
             {'name': 'Stevie Nicks',
-             'email': 'sti@fleetwood.mac',
+             'email': 'sti@automotivewood.mac',
              'company_id': self.company.id})
 
         self.partner2 = self.env['res.partner'].create(
             {'name': 'Partner 2',
-             'email': 'sti@fleetwood.mac',
+             'email': 'sti@automotivewood.mac',
              'company_id': self.company.id})
 
 
@@ -432,7 +432,7 @@ class TestSubscription(TestSubscriptionCommon):
         })
         self.partner = self.env['res.partner'].create(
             {'name': 'Stevie Nicks',
-             'email': 'sti@fleetwood.mac',
+             'email': 'sti@automotivewood.mac',
              'property_account_receivable_id': self.account_receivable.id,
              'property_account_payable_id': self.account_receivable.id,
              'company_id': self.env.company.id})

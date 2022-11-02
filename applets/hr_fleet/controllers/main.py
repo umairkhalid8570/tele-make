@@ -12,10 +12,10 @@ from tele.http import request, route, Controller
 
 
 
-class HrFleet(Controller):
-    @route(["/fleet/print_claim_report/<int:employee_id>"], type='http', auth='user')
+class HrAutomotive(Controller):
+    @route(["/automotive/print_claim_report/<int:employee_id>"], type='http', auth='user')
     def get_claim_report_user(self, employee_id, **post):
-        if not request.env.user.has_group('fleet.fleet_group_manager'):
+        if not request.env.user.has_group('automotive.automotive_group_manager'):
             return request.not_found()
 
         employee = request.env['hr.employee'].search([('id', '=', employee_id)], limit=1)
@@ -23,9 +23,9 @@ class HrFleet(Controller):
         if not employee or not partner_ids:
             return request.not_found()
 
-        car_assignation_logs = request.env['fleet.vehicle.assignation.log'].search([('driver_id', 'in', partner_ids)])
+        car_assignation_logs = request.env['automotive.vehicle.assignation.log'].search([('driver_id', 'in', partner_ids)])
         doc_list = request.env['ir.attachment'].search([
-            ('res_model', '=', 'fleet.vehicle.assignation.log'),
+            ('res_model', '=', 'automotive.vehicle.assignation.log'),
             ('res_id', 'in', car_assignation_logs.ids)], order='create_date')
 
         writer = PdfFileWriter()
@@ -34,7 +34,7 @@ class HrFleet(Controller):
         normal_font_size = 14
 
         for document in doc_list:
-            car_line_doc = request.env['fleet.vehicle.assignation.log'].browse(document.res_id)
+            car_line_doc = request.env['automotive.vehicle.assignation.log'].browse(document.res_id)
             try:
                 reader = PdfFileReader(io.BytesIO(base64.b64decode(document.datas)), strict=False, overwriteWarnings=False)
             except Exception:

@@ -3,18 +3,18 @@
 
 from tele import models, fields
 
-class FleetVehicle(models.Model):
-    _inherit = 'fleet.vehicle'
+class AutomotiveVehicle(models.Model):
+    _inherit = 'automotive.vehicle'
 
-    rate_ids = fields.One2many('fleet.disallowed.expenses.rate', 'vehicle_id', string='Disallowed Expenses Rate')
+    rate_ids = fields.One2many('automotive.disallowed.expenses.rate', 'vehicle_id', string='Disallowed Expenses Rate')
 
 
-class FleetDisallowedExpensesRate(models.Model):
-    _name = 'fleet.disallowed.expenses.rate'
+class AutomotiveDisallowedExpensesRate(models.Model):
+    _name = 'automotive.disallowed.expenses.rate'
     _description = 'Vehicle Disallowed Expenses Rate'
     _order = 'date_from desc'
 
     rate = fields.Float(string='%', required=True)
     date_from = fields.Date(string='Start Date', required=True)
-    vehicle_id = fields.Many2one('fleet.vehicle', string='Vehicle', required=True)
+    vehicle_id = fields.Many2one('automotive.vehicle', string='Vehicle', required=True)
     company_id = fields.Many2one('res.company', string='Company', related='vehicle_id.company_id', readonly=True)

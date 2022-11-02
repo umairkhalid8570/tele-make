@@ -1,6 +1,6 @@
 # Translation of Tele Server.
 # This file contains the translation of the following modules:
-# 	* account_disallowed_expenses_fleet
+# 	* account_disallowed_expenses_automotive
 #
 msgid ""
 msgstr ""
@@ -15,89 +15,89 @@ msgstr ""
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
 
-#. module: account_disallowed_expenses_fleet
-#: model:ir.model.fields,field_description:account_disallowed_expenses_fleet.field_account_disallowed_expenses_category__car_category
+#. module: account_disallowed_expenses_automotive
+#: model:ir.model.fields,field_description:account_disallowed_expenses_automotive.field_account_disallowed_expenses_category__car_category
 msgid "Car Category"
 msgstr ""
 
-#. module: account_disallowed_expenses_fleet
-#: model:ir.model.fields,field_description:account_disallowed_expenses_fleet.field_fleet_disallowed_expenses_rate__company_id
+#. module: account_disallowed_expenses_automotive
+#: model:ir.model.fields,field_description:account_disallowed_expenses_automotive.field_automotive_disallowed_expenses_rate__company_id
 msgid "Company"
 msgstr ""
 
-#. module: account_disallowed_expenses_fleet
-#: model:ir.model.fields,field_description:account_disallowed_expenses_fleet.field_fleet_disallowed_expenses_rate__create_uid
+#. module: account_disallowed_expenses_automotive
+#: model:ir.model.fields,field_description:account_disallowed_expenses_automotive.field_automotive_disallowed_expenses_rate__create_uid
 msgid "Created by"
 msgstr ""
 
-#. module: account_disallowed_expenses_fleet
-#: model:ir.model.fields,field_description:account_disallowed_expenses_fleet.field_fleet_disallowed_expenses_rate__create_date
+#. module: account_disallowed_expenses_automotive
+#: model:ir.model.fields,field_description:account_disallowed_expenses_automotive.field_automotive_disallowed_expenses_rate__create_date
 msgid "Created on"
 msgstr ""
 
-#. module: account_disallowed_expenses_fleet
-#: model:ir.model,name:account_disallowed_expenses_fleet.model_account_disallowed_expenses_category
+#. module: account_disallowed_expenses_automotive
+#: model:ir.model,name:account_disallowed_expenses_automotive.model_account_disallowed_expenses_category
 msgid "Disallowed Expenses Category"
 msgstr ""
 
-#. module: account_disallowed_expenses_fleet
-#: model:ir.model.fields,field_description:account_disallowed_expenses_fleet.field_fleet_vehicle__rate_ids
-#: model_terms:ir.ui.view,arch_db:account_disallowed_expenses_fleet.fleet_vehicle_view_form
+#. module: account_disallowed_expenses_automotive
+#: model:ir.model.fields,field_description:account_disallowed_expenses_automotive.field_automotive_vehicle__rate_ids
+#: model_terms:ir.ui.view,arch_db:account_disallowed_expenses_automotive.automotive_vehicle_view_form
 msgid "Disallowed Expenses Rate"
 msgstr ""
 
-#. module: account_disallowed_expenses_fleet
-#: model:ir.model,name:account_disallowed_expenses_fleet.model_account_disallowed_expenses_report
+#. module: account_disallowed_expenses_automotive
+#: model:ir.model,name:account_disallowed_expenses_automotive.model_account_disallowed_expenses_report
 msgid "Disallowed Expenses Report"
 msgstr ""
 
-#. module: account_disallowed_expenses_fleet
-#: model:ir.model.fields,field_description:account_disallowed_expenses_fleet.field_fleet_disallowed_expenses_rate__display_name
+#. module: account_disallowed_expenses_automotive
+#: model:ir.model.fields,field_description:account_disallowed_expenses_automotive.field_automotive_disallowed_expenses_rate__display_name
 msgid "Display Name"
 msgstr ""
 
-#. module: account_disallowed_expenses_fleet
-#: model:ir.model.fields,field_description:account_disallowed_expenses_fleet.field_fleet_disallowed_expenses_rate__id
+#. module: account_disallowed_expenses_automotive
+#: model:ir.model.fields,field_description:account_disallowed_expenses_automotive.field_automotive_disallowed_expenses_rate__id
 msgid "ID"
 msgstr ""
 
-#. module: account_disallowed_expenses_fleet
-#: model:ir.model,name:account_disallowed_expenses_fleet.model_account_move_line
+#. module: account_disallowed_expenses_automotive
+#: model:ir.model,name:account_disallowed_expenses_automotive.model_account_move_line
 msgid "Journal Item"
 msgstr ""
 
-#. module: account_disallowed_expenses_fleet
-#: model:ir.model.fields,field_description:account_disallowed_expenses_fleet.field_fleet_disallowed_expenses_rate____last_update
+#. module: account_disallowed_expenses_automotive
+#: model:ir.model.fields,field_description:account_disallowed_expenses_automotive.field_automotive_disallowed_expenses_rate____last_update
 msgid "Last Modified on"
 msgstr ""
 
-#. module: account_disallowed_expenses_fleet
-#: model:ir.model.fields,field_description:account_disallowed_expenses_fleet.field_fleet_disallowed_expenses_rate__write_uid
+#. module: account_disallowed_expenses_automotive
+#: model:ir.model.fields,field_description:account_disallowed_expenses_automotive.field_automotive_disallowed_expenses_rate__write_uid
 msgid "Last Updated by"
 msgstr ""
 
-#. module: account_disallowed_expenses_fleet
-#: model:ir.model.fields,field_description:account_disallowed_expenses_fleet.field_fleet_disallowed_expenses_rate__write_date
+#. module: account_disallowed_expenses_automotive
+#: model:ir.model.fields,field_description:account_disallowed_expenses_automotive.field_automotive_disallowed_expenses_rate__write_date
 msgid "Last Updated on"
 msgstr ""
 
-#. module: account_disallowed_expenses_fleet
-#: model:ir.model.fields,field_description:account_disallowed_expenses_fleet.field_fleet_disallowed_expenses_rate__date_from
+#. module: account_disallowed_expenses_automotive
+#: model:ir.model.fields,field_description:account_disallowed_expenses_automotive.field_automotive_disallowed_expenses_rate__date_from
 msgid "Start Date"
 msgstr ""
 
-#. module: account_disallowed_expenses_fleet
-#: model:ir.model.fields,help:account_disallowed_expenses_fleet.field_account_disallowed_expenses_category__car_category
+#. module: account_disallowed_expenses_automotive
+#: model:ir.model.fields,help:account_disallowed_expenses_automotive.field_account_disallowed_expenses_category__car_category
 msgid "This checkbox makes the vehicle mandatory while booking a vendor bill."
 msgstr ""
 
-#. module: account_disallowed_expenses_fleet
-#: model:ir.model,name:account_disallowed_expenses_fleet.model_fleet_vehicle
-#: model:ir.model.fields,field_description:account_disallowed_expenses_fleet.field_fleet_disallowed_expenses_rate__vehicle_id
+#. module: account_disallowed_expenses_automotive
+#: model:ir.model,name:account_disallowed_expenses_automotive.model_automotive_vehicle
+#: model:ir.model.fields,field_description:account_disallowed_expenses_automotive.field_automotive_disallowed_expenses_rate__vehicle_id
 msgid "Vehicle"
 msgstr ""
 
-#. module: account_disallowed_expenses_fleet
-#: model:ir.model,name:account_disallowed_expenses_fleet.model_fleet_disallowed_expenses_rate
+#. module: account_disallowed_expenses_automotive
+#: model:ir.model,name:account_disallowed_expenses_automotive.model_automotive_disallowed_expenses_rate
 msgid "Vehicle Disallowed Expenses Rate"
 msgstr ""

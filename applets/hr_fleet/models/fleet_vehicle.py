@@ -4,8 +4,8 @@
 from tele import _, api, fields, models
 from tele.exceptions import ValidationError
 
-class FleetVehicle(models.Model):
-    _inherit = 'fleet.vehicle'
+class AutomotiveVehicle(models.Model):
+    _inherit = 'automotive.vehicle'
 
     mobility_card = fields.Char(compute='_compute_mobility_card', store=True)
     driver_employee_id = fields.Many2one(

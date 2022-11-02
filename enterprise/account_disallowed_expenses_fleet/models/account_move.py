@@ -26,7 +26,7 @@ class AccountMoveLine(models.Model):
     _inherit = 'account.move.line'
 
     @api.onchange('vehicle_id')
-    def _onchange_mark_recompute_taxes_fleet(self):
+    def _onchange_mark_recompute_taxes_automotive(self):
         ''' Make sure changing 'vehicle_id' on invoice lines triggers the recomputation of taxes. '''
         self._onchange_mark_recompute_taxes()
 

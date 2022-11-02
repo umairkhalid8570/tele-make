@@ -8,7 +8,7 @@ from tele.exceptions import UserError
 class AccountAsset(models.Model):
     _inherit = 'account.asset'
 
-    vehicle_id = fields.Many2one('fleet.vehicle', compute='_compute_vehicle_id')
+    vehicle_id = fields.Many2one('automotive.vehicle', compute='_compute_vehicle_id')
 
     @api.onchange('original_move_line_ids')
     def _compute_vehicle_id(self):
@@ -21,7 +21,7 @@ class AccountAsset(models.Model):
         self.ensure_one()
         return {
             'type': 'ir.actions.act_window',
-            'res_model': 'fleet.vehicle',
+            'res_model': 'automotive.vehicle',
             'res_id': self.vehicle_id.id,
             'view_ids': [(False, 'form')],
             'view_mode': 'form',

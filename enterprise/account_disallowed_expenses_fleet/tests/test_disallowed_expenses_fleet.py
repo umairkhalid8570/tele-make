@@ -9,7 +9,7 @@ from tele.tests import tagged
 
 @freeze_time('2022-07-15')
 @tagged('post_install', '-at_install')
-class TestAccountDisallowedExpensesFleetReport(TestAccountReportsCommon):
+class TestAccountDisallowedExpensesAutomotiveReport(TestAccountReportsCommon):
 
     @classmethod
     def setUpClass(cls, chart_template_ref=None):
@@ -34,11 +34,11 @@ class TestAccountDisallowedExpensesFleetReport(TestAccountReportsCommon):
 
         cls.company_data['default_account_expense'].disallowed_expenses_category_id = cls.dna_category.id
 
-        batmobile, batpod = cls.env['fleet.vehicle'].create([
+        batmobile, batpod = cls.env['automotive.vehicle'].create([
             {
-                'model_id': cls.env['fleet.vehicle.model'].create({
+                'model_id': cls.env['automotive.vehicle.model'].create({
                     'name': name,
-                    'brand_id': cls.env['fleet.vehicle.model.brand'].create({
+                    'brand_id': cls.env['automotive.vehicle.model.brand'].create({
                         'name': 'Wayne Enterprises',
                     }).id,
                     'vehicle_type': vehicle_type,

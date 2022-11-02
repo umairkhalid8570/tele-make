@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <tele>
-    <record id="fleet_costs_report_view_dashboard" model="ir.ui.view">
-        <field name="name">fleet.vehicle.cost.view.dashboard</field>
-        <field name="model">fleet.vehicle.cost.report</field>
+    <record id="automotive_costs_report_view_dashboard" model="ir.ui.view">
+        <field name="name">automotive.vehicle.cost.view.dashboard</field>
+        <field name="model">automotive.vehicle.cost.report</field>
         <field name="mode">primary</field>
         <field name="arch" type="xml">
            <dashboard sample="1">
-                <view type="graph" ref="fleet.fleet_costs_report_view_graph"/>
+                <view type="graph" ref="automotive.automotive_costs_report_view_graph"/>
                 <group>
                     <group>
                         <group>
@@ -19,12 +19,12 @@
                         <widget name="pie_chart" title="Cost Per Type" attrs="{'groupby': 'cost_type', 'measure': 'cost'}" />
                     </group>
                 </group>
-                <view type="pivot" ref="fleet.fleet_costs_report_view_pivot"/>
+                <view type="pivot" ref="automotive.automotive_costs_report_view_pivot"/>
            </dashboard>
         </field>
     </record>
 
-    <record id="fleet.fleet_costs_reporting_action" model="ir.actions.act_window">
+    <record id="automotive.automotive_costs_reporting_action" model="ir.actions.act_window">
         <field name="view_mode">dashboard,graph,pivot</field>
     </record>
 </tele>
