@@ -189,7 +189,7 @@ class StudioApprovalRule(models.Model):
                            (the model comes from the rule itself)
         :param bool approved: whether the rule is approved or rejected
         :return: a new approval entry
-        :rtype: :class:`~tele.addons.tele_studio.models.StudioApprovalEntry`
+        :rtype: :class:`~tele.applets.tele_studio.models.StudioApprovalEntry`
         :raise: tele.exceptions.AccessError when the user does not have write
                 access to the underlying record
         :raise: tele.exceptions.UserError when any of the other checks failed

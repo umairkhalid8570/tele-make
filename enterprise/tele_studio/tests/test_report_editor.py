@@ -1,4 +1,4 @@
-from tele.addons.tele_studio.controllers.main import WebStudioController
+from tele.applets.tele_studio.controllers.main import WebStudioController
 from tele.http import _request_stack
 from tele.tests.common import TransactionCase
 from tele.tools import DotDict

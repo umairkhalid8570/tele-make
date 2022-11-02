@@ -3,7 +3,7 @@ import textwrap
 from tele.http import _request_stack
 from tele.tests.common import TransactionCase, tagged
 from tele.tools import DotDict
-from tele.addons.tele_studio.controllers.main import WebStudioController
+from tele.applets.tele_studio.controllers.main import WebStudioController
 
 
 @tagged('tele_studio_normalization')

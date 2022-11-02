@@ -5,7 +5,7 @@ import ast
 from lxml import etree
 from textwrap import dedent
 
-from tele.addons.base.models.qweb import QWeb
+from tele.applets.base.models.qweb import QWeb
 from tele import models
 from tele.tools.json import scriptsafe
 

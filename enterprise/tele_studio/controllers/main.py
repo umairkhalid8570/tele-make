@@ -11,7 +11,7 @@ import tele
 from tele import http, _
 from tele.http import content_disposition, request
 from tele.exceptions import UserError, AccessError, ValidationError
-from tele.addons.tele_studio.controllers import export
+from tele.applets.tele_studio.controllers import export
 from tele.osv import expression
 from tele.tools import ustr, sql
 

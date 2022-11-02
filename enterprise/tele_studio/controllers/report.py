@@ -6,7 +6,7 @@ import json
 from lxml import etree
 from tele import http, _
 from tele.http import request
-from tele.addons.tele_studio.controllers import main
+from tele.applets.tele_studio.controllers import main
 from tele.exceptions import ValidationError, UserError
 
 

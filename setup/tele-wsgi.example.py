@@ -23,7 +23,7 @@ tele.multi_process = True # Nah!
 tele.conf.server_wide_modules = ['base', 'web']
 conf = tele.tools.config
 
-# Path to the tele Addons repository (comma-separated for
+# Path to the tele Applets repository (comma-separated for
 # multiple locations)
 
 conf['applets_path'] = '../../applets/trunk,../../web/trunk/applets'

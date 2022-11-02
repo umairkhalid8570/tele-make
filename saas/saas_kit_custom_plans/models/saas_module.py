@@ -29,7 +29,7 @@ class SaasModule(models.Model):
     is_published = fields.Boolean(string="Publised", default=False)
     price = fields.Integer(string="Price")
     auto_install = fields.Boolean(string="Auto Install Module", default=True)
-    applets_path = fields.Char(string="Addons Path", compute="set_default_path", store=True, readonly=False)
+    applets_path = fields.Char(string="Applets Path", compute="set_default_path", store=True, readonly=False)
     order_line_id = fields.Many2one(comodel_name="sale.order.line")
     contract_id = fields.Many2one(comodel_name="saas.contract")
 

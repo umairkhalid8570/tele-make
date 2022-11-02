@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
 # Part of Tele. See LICENSE file for full copyright and licensing details.
 
-""" Addons module.
+""" Applets module.
 
 This module serves to contain all Tele applets, across all configured applets
 paths. For the code to manage those applets, see tele.modules.
 
-Addons are made available under `tele.applets` after
+Applets are made available under `tele.applets` after
 tele.tools.config.parse_config() is called (so that the applets paths are
 known).
 

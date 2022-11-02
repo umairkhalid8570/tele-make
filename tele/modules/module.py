@@ -34,7 +34,7 @@ def ad_paths():
 # Modules already loaded
 loaded = []
 
-class AddonsHook(object):
+class AppletsHook(object):
     """ Makes modules accessible through tele.applets.* """
 
     def find_module(self, name, path=None):
@@ -61,7 +61,7 @@ class TeleHook(object):
     """ Makes tele package available """
 
     def find_module(self, name, path=None):
-        # tele.applets.<identifier> should already be matched by AddonsHook,
+        # tele.applets.<identifier> should already be matched by AppletsHook,
         # only framework and subdirectories of modules should match
         if re.match(r'^telecms\b', name):
             warnings.warn(
@@ -154,7 +154,7 @@ def initialize_sys_path():
     if not getattr(initialize_sys_path, 'called', False): # only initialize once
         sys.meta_path.insert(0, UpgradeHook())
         sys.meta_path.insert(0, TeleHook())
-        sys.meta_path.insert(0, AddonsHook())
+        sys.meta_path.insert(0, AppletsHook())
         initialize_sys_path.called = True
 
 

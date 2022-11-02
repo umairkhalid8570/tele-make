@@ -62,7 +62,7 @@ class SaasClient(models.Model):
     container_name = fields.Char(string="Instance Name")
     container_id = fields.Char(string="Instance ID")
     data_directory_path = fields.Char(string="Data Directory Path")
-    applets_path = fields.Char(compute='_compute_applets_path', string="Extra Addons Path")
+    applets_path = fields.Char(compute='_compute_applets_path', string="Extra Applets Path")
     saas_module_ids = fields.One2many(comodel_name="saas.module.status", inverse_name="client_id", string="Related Modules")
     server_id = fields.Many2one(comodel_name="saas.server", string="SaaS Server")
     invitation_url = fields.Char("Invitation URL")

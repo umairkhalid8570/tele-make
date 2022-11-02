@@ -1,5 +1,5 @@
 from tele.tests.common import TransactionCase
-from tele.addons.tele_studio.models.ir_model import OPTIONS_WL
+from tele.applets.tele_studio.models.ir_model import OPTIONS_WL
 from tele.exceptions import ValidationError
 from tele import Command
 

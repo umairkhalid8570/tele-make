@@ -45,7 +45,7 @@ class SaasConfig(models.TransientModel):
     costing_nature = fields.Selection(selection=Nature, string="Select Nature of Apps Costing")
     user_cost = fields.Integer(string="Per User Cost")
     due_user_cost = fields.Integer(string="Due User Cost")
-    applets_path = fields.Char(string="Default Addons Path")
+    applets_path = fields.Char(string="Default Applets Path")
     recurring_rule_type = fields.Selection(selection=RECURRING_RULE, string="Default Recurring Type", default="monthly")
     is_multi_server = fields.Boolean(string="Provide Multi Server", default=False)
     reminder_period = fields.Integer(string="Reminder Starts")

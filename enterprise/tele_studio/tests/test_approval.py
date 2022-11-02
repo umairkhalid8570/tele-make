@@ -1,6 +1,6 @@
 from psycopg2 import IntegrityError
 
-from tele.addons.mail.tests.common import mail_new_test_user
+from tele.applets.mail.tests.common import mail_new_test_user
 from tele.exceptions import AccessError, UserError, ValidationError
 from tele.tests.common import TransactionCase
 from tele.tools import mute_logger
