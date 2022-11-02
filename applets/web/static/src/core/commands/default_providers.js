@@ -8,7 +8,7 @@ import { capitalize } from "@web/core/utils/strings";
 import { getVisibleElements } from "@web/core/utils/ui";
 import { DefaultCommandItem } from "./command_palette";
 
-const { Component } = twl;
+const { Component } = owl;
 
 export class HotkeyCommandItem extends Component {
     setup() {

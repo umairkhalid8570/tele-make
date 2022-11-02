@@ -6,11 +6,11 @@ var config = require('web.config');
 var core = require('web.core');
 var utils = require('web.utils');
 var fieldRegistry = require('web.field_registry');
-var fieldRegistryTwl = require('web.field_registry_twl');
+var fieldRegistryOwl = require('web.field_registry_owl');
 const FieldWrapper = require('web.FieldWrapper');
 var ModelFieldSelector = require('web.ModelFieldSelector');
 var StandaloneFieldManagerMixin = require('web.StandaloneFieldManagerMixin');
-const { WidgetAdapterMixin } = require('web.TwlCompatibility');
+const { WidgetAdapterMixin } = require('web.OwlCompatibility');
 
 const Wysiwyg = require('web_editor.wysiwyg');
 
@@ -137,7 +137,7 @@ var AbstractEditComponent = Abstract.extend(WidgetAdapterMixin, StandaloneFieldM
             quick_create: false, can_create: false}, options)}, options);
 
         var field = directiveRecord.fields[directiveKey];
-        var FieldClass = fieldRegistryTwl.getAny([options.Widget, field.type]);
+        var FieldClass = fieldRegistryOwl.getAny([options.Widget, field.type]);
         if (FieldClass) {
             this.fieldSelector[directiveKey] = new FieldWrapper(this, FieldClass, {
                 fieldName: directiveKey,
@@ -345,7 +345,7 @@ var AbstractEditComponent = Abstract.extend(WidgetAdapterMixin, StandaloneFieldM
             _.each(self.fieldSelector, function (fieldType, directiveKey) {
                 var directiveTarget = self.fieldSelector[directiveKey];
                 var target = e.target;
-                if (directiveTarget instanceof twl.Component) {
+                if (directiveTarget instanceof owl.Component) {
                     directiveTarget = directiveTarget.componentRef.comp;
                     target = e.data.__originalComponent
                 }
@@ -1439,7 +1439,7 @@ var TOptions = AbstractEditComponent.extend( {
         var defs = _.map(this.widget.options, function (option) {
             var $option = $options.find('.o_tele_studio_toption_option_' + self.widget.key + '_' + option.key);
             var field = self.fieldSelector[self.widget.key + ':' + option.key];
-            if (field instanceof twl.Component) {
+            if (field instanceof owl.Component) {
                 mountedComponents.push(field);
                 if (option.type === "boolean") {
                     return field.mount($option.find('label')[0], {position: 'first-child'});

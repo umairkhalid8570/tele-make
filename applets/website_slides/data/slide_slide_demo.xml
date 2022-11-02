@@ -70,7 +70,7 @@
     <record id="slide_slide_demo_0_4" model="slide.slide">
         <field name="name">Test your knowledge</field>
         <field name="sequence">5</field>
-        <field name="image_1920" type="base64" file="website_slides/static/src/img/slide_demo_twl.jpg"/>
+        <field name="image_1920" type="base64" file="website_slides/static/src/img/slide_demo_owl.jpg"/>
         <field name="slide_type">quiz</field>
         <field name="channel_id" ref="website_slides.slide_channel_demo_0_gard_0"/>
         <field name="is_published" eval="True"/>
@@ -785,7 +785,7 @@
     <record id="slide_slide_demo_5_3" model="slide.slide">
         <field name="name">Test your knowledge !</field>
         <field name="sequence">6</field>
-        <field name="image_1920" type="base64" file="website_slides/static/src/img/slide_demo_twl.jpg"/>
+        <field name="image_1920" type="base64" file="website_slides/static/src/img/slide_demo_owl.jpg"/>
         <field name="slide_type">quiz</field>
         <field name="channel_id" ref="website_slides.slide_channel_demo_5_furn2"/>
         <field name="is_published" eval="True"/>

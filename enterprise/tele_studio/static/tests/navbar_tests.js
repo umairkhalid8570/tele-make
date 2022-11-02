@@ -15,7 +15,7 @@ import { createEnterpriseWebClient } from "@web_enterprise/../tests/helpers";
 import { getActionManagerServerData, loadState } from "@web/../tests/webclient/helpers";
 import { companyService } from "@web/webclient/company_service";
 
-const { mount } = twl;
+const { mount } = owl;
 const serviceRegistry = registry.category("services");
 
 QUnit.module("Studio > Navbar", (hooks) => {

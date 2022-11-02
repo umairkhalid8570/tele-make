@@ -1,16 +1,16 @@
 # -*- coding: utf-8 -*-
 #################################################################################
 #
-#   Copyright (c) 2022-Present Tele INC.(<https://tele.studio/>)
+#   Copyright (c) 2016-Present Tele Software Pvt. Ltd. (<https://tele.com/>)
 #   See LICENSE file for full copyright and licensing details.
-#   License URL : <https://store.tele.studio/license.html/>
+#   License URL : <https://store.tele.com/license.html/>
 # 
 #################################################################################
 
 from tele import models, api, fields, _
-from tele.applets.auth_signup.models.res_partner import random_token as generate_token
+from tele.addons.auth_signup.models.res_partner import random_token as generate_token
 from tele.exceptions import UserError, Warning
-from tele.applets.tele_saas_kit.models.lib import query
+from tele.addons.tele_saas_kit.models.lib import query
 
 
 from dateutil.relativedelta import relativedelta

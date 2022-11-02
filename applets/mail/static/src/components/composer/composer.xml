@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <templates xml:space="preserve">
 
-    <t t-name="mail.Composer" twl="1">
+    <t t-name="mail.Composer" owl="1">
         <div class="o_Composer"
             t-att-class="{
                 'o-focused': composerView and composerView.hasFocus,
@@ -98,7 +98,7 @@
                             </t>
                             <div class="o_Composer_primaryToolButtons" t-att-class="{ 'o-composer-is-compact': props.isCompact }">
                                 <Popover position="'top'" t-on-o-emoji-selection="_onEmojiSelection">
-                                    <!-- TODO FIXME o-open and aria-expanded not possible to code due to https://github.com/tele-studio/twl/issues/693 -->
+                                    <!-- TODO FIXME o-open and aria-expanded not possible to code due to https://github.com/tele-studio/owl/issues/693 -->
                                     <button class="o_Composer_button o_Composer_buttonEmojis o_Composer_toolButton btn btn-light rounded-sm"
                                         t-att-class="{
                                             'o-open': false and state.displayed,
@@ -150,7 +150,7 @@
         </div>
     </t>
 
-    <t t-name="mail.Composer.actionButtons" twl="1">
+    <t t-name="mail.Composer.actionButtons" owl="1">
         <div class="o_Composer_actionButtons" t-att-class="{ 'o-composer-is-compact': props.isCompact }">
             <t t-if="props.hasSendButton">
                 <button class="o_Composer_actionButton o_Composer_button o_Composer_buttonSend btn btn-primary rounded-sm"

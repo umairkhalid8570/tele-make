@@ -5,7 +5,7 @@ import { useService } from "@web/core/utils/hooks";
 import { session } from "@web/session";
 import { Field } from "@web/fields/fields";
 
-export class DashboardStatistic extends twl.Component {
+export class DashboardStatistic extends owl.Component {
     setup() {
         let currencyId = this.props.currencyId;
         if (!currencyId) {

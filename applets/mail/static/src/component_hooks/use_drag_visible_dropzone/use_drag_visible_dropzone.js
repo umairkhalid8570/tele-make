@@ -1,6 +1,6 @@
 /** @tele-module **/
 
-const { useState, onMounted, onWillUnmount } = twl.hooks;
+const { useState, onMounted, onWillUnmount } = owl.hooks;
 
 /**
  * This hook handle the visibility of the dropzone based on drag & drop events.

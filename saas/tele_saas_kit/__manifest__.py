@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 #################################################################################
-# Author      : Tele INC. (<https://tele.studio/>)
-# Copyright(c): 2022-Present Tele INC.
+# Author      : Tele Software Pvt. Ltd. (<https://tele.com/>)
+# Copyright(c): 2015-Present Tele Software Pvt. Ltd.
 # All Rights Reserved.
 #
 #
@@ -11,19 +11,19 @@
 #
 #
 # You should have received a copy of the License along with this program.
-# If not, see <https://store.tele.studio/license.html/>
+# If not, see <https://store.tele.com/license.html/>
 #################################################################################
 {
-  "name"                 :  "Tele SaaS",
-  "summary"              :  """Tele As A SaaS business.""",
+  "name"                 :  "TELE SAAS KIT | ALL IN ONE",
+  "summary"              :  """Tele SaaS Kit allows you to run your Tele As A SaaS business. After installation and set uo you can sell Tele As A Saas to your client via subscription based model, saaskit""",
   "category"             :  "Extra Tools",
   "version"              :  "1.2.0",
   "sequence"             :  1,
-  "author"               :  "Tele INC.",
+  "author"               :  "Tele Software Pvt. Ltd.",
   "license"              :  "Other proprietary",
-  "website"              :  "https://store.tele.studio/",
-  "description"          :  """Provide Tele as a Service(Saas) on your servers with Tele Saas.""",
-  "live_test_url"        :  "http://teledemo.tele.studio/demo_feedback?module=tele_saas_kit",
+  "website"              :  "https://store.tele.com/",
+  "description"          :  """Provide Tele as a Service(Saas) on your servers with Tele saas Kit.""",
+  "live_test_url"        :  "http://teledemo.tele.com/demo_feedback?module=tele_saas_kit",
   "depends"              :  [
                              'sale_management',
                              'portal',

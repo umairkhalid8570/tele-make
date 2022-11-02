@@ -1,6 +1,6 @@
 /** @tele-module **/
 
-const { Component, tags } = twl;
+const { Component, tags } = owl;
 
 export class NotUpdatable extends Component {
     shouldUpdate() {

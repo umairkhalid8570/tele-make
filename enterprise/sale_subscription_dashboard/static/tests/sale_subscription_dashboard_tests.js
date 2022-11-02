@@ -380,7 +380,7 @@ tele.define('sale_subscription_dashboard.sale_subscription_tests', function (req
         });
 
         QUnit.test('can renderer the sale_subscription_salesman in a fragment', async function (assert) {
-            // With twl (and the compatibility layer), the client action is rendered in memory and
+            // With owl (and the compatibility layer), the client action is rendered in memory and
             // inserted in the DOM before the next animation frame. With this in mind, code using
             // Chart.js must ensure to be in the DOM before trying to use it to render a chart,
             // otherwise it crashes when the lib tries to compute positions in the DOM.

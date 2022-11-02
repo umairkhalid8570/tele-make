@@ -2,7 +2,7 @@
 import { registry } from "./registry";
 import { NotUpdatable, ErrorHandler } from "./utils/components";
 
-const { Component, tags } = twl;
+const { Component, tags } = owl;
 
 export class MainComponentsContainer extends Component {
     setup() {
@@ -15,7 +15,7 @@ export class MainComponentsContainer extends Component {
         this.render();
         /**
          * we rethrow the error to notify the user something bad happened.
-         * We do it after a tick to make sure twl can properly finish its
+         * We do it after a tick to make sure owl can properly finish its
          * rendering
          */
         Promise.resolve().then(() => {

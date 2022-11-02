@@ -5,7 +5,7 @@ import getpass
 
 PYTHON_ENV = "/usr/bin/python3"
 LOG_FILE_PATH = "/var/log/tele/backup_cron.log"
-BACKUP_SCRIPT_PATH = "/tele/tele_applets/tele_backup_restore/models/lib/saas_client_backup.py"
+BACKUP_SCRIPT_PATH = "/tele/tele_addons/tele_backup_restore/models/lib/saas_client_backup.py"
 
 _logger = logging.getLogger(__name__)
 
@@ -175,7 +175,7 @@ if __name__ == '__main__':
     master_pass = 'CnvvV46UGZb2=N'
     url = 'http://192.168.5.125/'
     main_db = 'postgres'
-    db_name = 'test_backup_crone.tele-saas.tele.studio'
+    db_name = 'test_backup_crone.tele-saas.tele.com'
     db_user = 'postgres'
     db_password = 'postgres'
     process_id = 1234

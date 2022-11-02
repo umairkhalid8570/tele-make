@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <templates xml:space="preserve">
 
-  <t t-name="tele_studio.HomeMenuCustomizer" twl="1">
+  <t t-name="tele_studio.HomeMenuCustomizer" owl="1">
     <div class="o_tele_studio_home_studio_menu">
       <Dropdown>
         <t t-set-slot="toggler">

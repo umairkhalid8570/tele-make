@@ -6,7 +6,7 @@ const core = require('web.core');
 const session = require('web.session');
 const Widget = require('web.Widget');
 
-const { Component } = twl;
+const { Component } = owl;
 
 const QWeb = core.qweb;
 const _t = core._t;

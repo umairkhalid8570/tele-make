@@ -4,10 +4,10 @@ import { registry } from "@web/core/registry";
 import { useService } from "@web/core/utils/hooks";
 import { Domain } from "@web/core/domain";
 
-import Dialog from 'web.TwlDialog';
+import Dialog from 'web.OwlDialog';
 
-const { Component } = twl;
-const { useState } = twl.hooks;
+const { Component } = owl;
+const { useState } = owl.hooks;
 const favoriteMenuRegistry = registry.category("favoriteMenu");
 
 /**

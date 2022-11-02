@@ -11,7 +11,7 @@ import { registry } from "@web/core/registry";
 import { DebugMenu } from "@web/core/debug/debug_menu";
 import { localization } from "@web/core/l10n/localization";
 
-const { Component, hooks } = twl;
+const { Component, hooks } = owl;
 const { useExternalListener } = hooks;
 
 export class WebClient extends Component {

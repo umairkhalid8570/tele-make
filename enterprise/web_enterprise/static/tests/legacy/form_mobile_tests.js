@@ -5,7 +5,7 @@ var FormView = require('web.FormView');
 var testUtils = require('web.test_utils');
 
 var createView = testUtils.createView;
-const { loadJS } = twl.utils;
+const { loadJS } = owl.utils;
 
 QUnit.module('web_enterprise', {
     beforeEach: function () {

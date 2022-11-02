@@ -17,7 +17,7 @@ tele.define("documents_spreadsheet.global_filters_side_panel", function (require
      * This is the side panel to define/edit a global filter.
      * It can be of 3 differents type: text, date and relation.
      */
-    class GlobalFiltersSidePanel extends twl.Component {
+    class GlobalFiltersSidePanel extends owl.Component {
         /**
          * @constructor
          */

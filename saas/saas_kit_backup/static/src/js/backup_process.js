@@ -1,6 +1,6 @@
-/* Copyright (c) 2022-Present Tele INC.(<https://tele.studio/>) */
+/* Copyright (c) 2016-Present Tele Software Pvt. Ltd. (<https://tele.com/>) */
 /* See LICENSE file for full copyright and licensing details. */
-/* License URL : <https://store.tele.studio/license.html/> */
+/* License URL : <https://store.tele.com/license.html/> */
 
 tele.define('tele_backup_restore.backup_process', function (require) {
     "use strict";

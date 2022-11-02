@@ -12,7 +12,7 @@ import { useService } from "@web/core/utils/hooks";
 
 const uuidGenerator = new helpers.UuidGenerator();
 
-const { hooks } = twl;
+const { hooks } = owl;
 const { onWillStart } = hooks;
 
 patch(PivotView.prototype, "pivot_spreadsheet", {

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <templates xml:space="preserve">
 
-    <t t-name="mail.ChatWindow" twl="1">
+    <t t-name="mail.ChatWindow" owl="1">
         <div class="o_ChatWindow bg-white" tabindex="0" t-att-data-visible-index="chatWindow ? chatWindow.visibleIndex : undefined"
             t-att-class="{
                 'o-focused': chatWindow and chatWindow.isFocused,

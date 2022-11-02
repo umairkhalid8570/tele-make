@@ -2,13 +2,13 @@
 
 import { SERVICES_METADATA } from "@web/env";
 
-const { onMounted, onWillPatch, onPatched, onWillUnmount, useComponent } = twl.hooks;
+const { onMounted, onWillPatch, onPatched, onWillUnmount, useComponent } = owl.hooks;
 
 /**
  * This file contains various custom hooks.
  * Their inner working is rather simple:
- * Each custom hook simply hooks itself to any number of twl lifecycle hooks.
- * You can then use them just like an twl hook in any Component
+ * Each custom hook simply hooks itself to any number of owl lifecycle hooks.
+ * You can then use them just like an owl hook in any Component
  * e.g.:
  * import { useBus } from "@web/core/utils/hooks";
  * ...
@@ -136,7 +136,7 @@ export function useEffect(effect, computeDependencies = () => [NaN]) {
 // -----------------------------------------------------------------------------
 
 /**
- * The useListener hook offers an alternative to Twl's classical event
+ * The useListener hook offers an alternative to Owl's classical event
  * registration mechanism (with attribute 't-on-eventName' in xml).
  *
  * It is especially useful for abstract components, meant to be extended by
@@ -146,8 +146,8 @@ export function useEffect(effect, computeDependencies = () => [NaN]) {
  * handlers would be lost by the template override. In this case, using this
  * hook instead is more convenient.
  *
- * Usage: like all Twl hooks, this function has to be called in the
- * constructor of an Twl component:
+ * Usage: like all Owl hooks, this function has to be called in the
+ * constructor of an Owl component:
  *
  *   useListener('click', () => { console.log('clicked'); });
  *
@@ -215,11 +215,11 @@ export function useListener(eventName, querySelector, handler, options = {}) {
 
 function _protectMethod(component, caller, fn) {
     return async (...args) => {
-        if (component.__twl__.status === 5 /* DESTROYED */) {
+        if (component.__owl__.status === 5 /* DESTROYED */) {
             throw new Error("Component is destroyed");
         }
         const result = await fn.call(caller, ...args);
-        return component.__twl__.status === 5 ? new Promise(() => {}) : result;
+        return component.__owl__.status === 5 ? new Promise(() => {}) : result;
     };
 }
 

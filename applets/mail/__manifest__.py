@@ -97,7 +97,7 @@
             'web/static/src/legacy/js/core/misc.js',
             'web/static/src/legacy/js/env.js',
             'web/static/src/legacy/js/fields/field_utils.js',
-            'web/static/src/legacy/js/twl_compatibility.js',
+            'web/static/src/legacy/js/owl_compatibility.js',
             'web/static/src/legacy/js/services/data_manager.js',
             'web/static/src/legacy/js/services/session.js',
             'web/static/src/legacy/js/widgets/date_picker.js',

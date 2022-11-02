@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 #################################################################################
 #
-#   Copyright (c) 2022-Present Tele INC.(<https://tele.studio/>)
+#   Copyright (c) 2016-Present Tele Software Pvt. Ltd. (<https://tele.com/>)
 #   See LICENSE file for full copyright and licensing details.
-#   License URL : <https://store.tele.studio/license.html/>
+#   License URL : <https://store.tele.com/license.html/>
 # 
 #################################################################################
 
@@ -11,7 +11,7 @@ from tele import http, _
 from tele.http import request
 from tele.exceptions import UserError
 
-from tele.applets.tele_saas_kit.controllers.main import MailController
+from tele.addons.tele_saas_kit.controllers.main import MailController
 
 import logging
 

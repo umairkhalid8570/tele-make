@@ -1,19 +1,19 @@
 # -*- coding: utf-8 -*-
 #################################################################################
 #
-#   Copyright (c) 2022-Present Tele INC.(<https://tele.studio/>)
+#   Copyright (c) 2016-Present Tele Software Pvt. Ltd. (<https://tele.com/>)
 #   See LICENSE file for full copyright and licensing details.
-#   License URL : <https://store.tele.studio/license.html/>
+#   License URL : <https://store.tele.com/license.html/>
 # 
 #################################################################################
 
 from tele import models, api, fields, _
-from tele.applets.auth_signup.models.res_partner import random_token as generate_token
+from tele.addons.auth_signup.models.res_partner import random_token as generate_token
 from tele.exceptions import UserError, Warning
 from tele.modules.module import get_module_resource
-from tele.applets.tele_saas_kit.models.lib import query
-from tele.applets.tele_saas_kit.models.lib import saas
-from tele.applets.tele_saas_kit.models.lib import client
+from tele.addons.tele_saas_kit.models.lib import query
+from tele.addons.tele_saas_kit.models.lib import saas
+from tele.addons.tele_saas_kit.models.lib import client
 
 
 import logging
@@ -65,7 +65,7 @@ class CustomSaasClient(models.Model):
                         container_port=obj.containter_port,
                         login=login,
                         password=password,
-                        version=obj.saas_contract_id.tele_version_id and obj.saas_contract_id.tele_version_id.code or '1.0')
+                        version=obj.saas_contract_id.tele_version_id and obj.saas_contract_id.tele_version_id.code or '15.0')
                     )
                     if response:
                         _logger.info("========== %r ======="%response)
@@ -106,7 +106,7 @@ class CustomSaasClient(models.Model):
                     obj.container_id = response.get("container_id", False)
                     obj.state = "started"
 
-                    obj.data_directory_path = response.get("extra-applets", False)
+                    obj.data_directory_path = response.get("extra-addons", False)
                     obj.install_modules()
 
                 else:

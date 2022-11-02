@@ -2,7 +2,7 @@ tele.define("documents_spreadsheet.DocumentsControllerMixin", function (require)
     "use strict";
 
     const TemplateDialog = require("documents_spreadsheet.TemplateDialog");
-    const { ComponentWrapper } = require("web.TwlCompatibility");
+    const { ComponentWrapper } = require("web.OwlCompatibility");
 
     const DocumentsSpreadsheetControllerMixin = {
         events: {

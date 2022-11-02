@@ -1,7 +1,7 @@
 tele.define("pos_gift_card.GiftCardPopup", function (require) {
   "use strict";
 
-  const { useState, useRef, onPatched, useComponent} = twl.hooks;
+  const { useState, useRef, onPatched, useComponent} = owl.hooks;
   const AbstractAwaitablePopup = require("point_of_sale.AbstractAwaitablePopup");
   const Registries = require("point_of_sale.Registries");
 

@@ -97,7 +97,7 @@ class _ThrottleFlushedError extends Error {
 class Throttle {
 
     /**
-     * @param {Object} env the TWL env
+     * @param {Object} env the OWL env
      * @param {function} func provided function for making throttled version.
      * @param {integer} duration duration of the 'cool down' phase, i.e.
      *   the minimum duration between the most recent function call that has
@@ -106,7 +106,7 @@ class Throttle {
      */
     constructor(env, func, duration) {
         /**
-         * Reference to the TWL envirionment. Useful to fine-tune control of
+         * Reference to the OWL envirionment. Useful to fine-tune control of
          * time flow in tests.
          * @see mail/static/src/utils/test_utils.js:start.hasTimeControl
          */
@@ -312,7 +312,7 @@ class Throttle {
  * - When a cooldown phase ends, any buffered function call will be performed
  *     and another cooldown phase will follow up.
  *
- * @param {Object} env the TWL env
+ * @param {Object} env the OWL env
  * @param {function} func the function to throttle.
  * @param {integer} duration duration, in milliseconds, of the cooling down
  *   phase of the throttling.

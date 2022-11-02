@@ -6,7 +6,7 @@ tele.define('web.GraphController', function (require) {
  *---------------------------------------------------------*/
 
 const AbstractController = require('web.AbstractController');
-const { ComponentWrapper } = require('web.TwlCompatibility');
+const { ComponentWrapper } = require('web.OwlCompatibility');
 const DropdownMenu = require('web.DropdownMenu');
 const { DEFAULT_INTERVAL, INTERVAL_OPTIONS } = require('web.searchUtils');
 const { qweb } = require('web.core');

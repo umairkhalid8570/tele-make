@@ -1,7 +1,7 @@
 tele.define('point_of_sale.CashOpeningPopup', function(require) {
     'use strict';
 
-    const { useState, useRef } = twl.hooks;
+    const { useState, useRef } = owl.hooks;
     const AbstractAwaitablePopup = require('point_of_sale.AbstractAwaitablePopup');
     const Registries = require('point_of_sale.Registries');
 

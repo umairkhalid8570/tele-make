@@ -4,7 +4,7 @@ import { registry } from "@web/core/registry";
 import { useService } from "@web/core/utils/hooks";
 import { sprintf } from "@web/core/utils/strings";
 
-const { utils, Component } = twl;
+const { utils, Component } = owl;
 const { escape } = utils;
 
 export const displayNotificationAction = (env, action) => {
@@ -39,6 +39,6 @@ class InvalidAction extends Component {
         this.notification.add(message, { type: "danger" });
     }
 }
-InvalidAction.template = twl.tags.xml`<div class="o_invalid_action"></div>`;
+InvalidAction.template = owl.tags.xml`<div class="o_invalid_action"></div>`;
 
 registry.category("actions").add("invalid_action", InvalidAction);

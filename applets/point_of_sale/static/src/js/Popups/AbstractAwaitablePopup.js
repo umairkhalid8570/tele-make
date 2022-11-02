@@ -1,7 +1,7 @@
 tele.define('point_of_sale.AbstractAwaitablePopup', function (require) {
     'use strict';
 
-    const { useExternalListener } = twl.hooks;
+    const { useExternalListener } = owl.hooks;
     const PosComponent = require('point_of_sale.PosComponent');
 
     /**
@@ -12,7 +12,7 @@ tele.define('point_of_sale.AbstractAwaitablePopup', function (require) {
      *     return 'result';
      *   }
      * }
-     * ConcretePopup.template = twl.tags.xml`
+     * ConcretePopup.template = owl.tags.xml`
      *   <div>
      *     <button t-on-click="confirm">Okay</button>
      *     <button t-on-click="cancel">Cancel</button>

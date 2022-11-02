@@ -316,7 +316,7 @@
         @param {boolean} [options.displayNotificationIcons]
         @param {boolean} [options.displayMarkAsRead]
         @param {boolean} [options.displayModerationCommands] when set, display the moderation commands on
-          the message. This includes the moderation checkboxes (needs a control panel such as in Connect app).
+          the message. This includes the moderation checkboxes (needs a control panel such as in Discuss app).
         @param {boolean} [options.displayReplyIcons]
         @param {boolean} [options.displayStars]
         @param {boolean} [options.displaySubjectsOnMessages]

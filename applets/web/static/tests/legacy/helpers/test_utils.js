@@ -89,7 +89,7 @@ tele.define('web.test_utils', async function (require) {
      * Returns a promise that will be resolved after the tick after the
      * nextAnimationFrame
      *
-     * This is usefull to guarantee that TWL has had the time to render
+     * This is usefull to guarantee that OWL has had the time to render
      *
      * @returns {Promise}
      */
@@ -98,7 +98,7 @@ tele.define('web.test_utils', async function (require) {
     }
 
     /**
-     * Awaits for an additionnal rendering frame initiated by the Twl
+     * Awaits for an additionnal rendering frame initiated by the Owl
      * compatibility layer processing.
      *
      * By default a simple "nextTick" will handle the rendering of any widget/
@@ -136,7 +136,7 @@ tele.define('web.test_utils', async function (require) {
     return {
         mock: {
             addMockEnvironment: testUtilsMock.addMockEnvironment,
-            addMockEnvironmentTwl: testUtilsMock.addMockEnvironmentTwl,
+            addMockEnvironmentOwl: testUtilsMock.addMockEnvironmentOwl,
             intercept: testUtilsMock.intercept,
             patch: testUtilsMock.patch,
             patchDate: testUtilsMock.patchDate,

@@ -712,7 +712,7 @@ function factory(dependencies) {
                 notificationTitle = this.env._t("New message");
             } else {
                 if (channel.channel_type === 'channel') {
-                    // hack: notification template does not support TWL components,
+                    // hack: notification template does not support OWL components,
                     // so we simply use their template to make HTML as if it comes
                     // from component
                     const channelIcon = this.env.qweb.renderToString('mail.ThreadIcon', {
@@ -730,7 +730,7 @@ function factory(dependencies) {
                     notificationTitle = author.nameOrDisplayName;
                 }
             }
-            const notificationContent = twl.utils.escape(
+            const notificationContent = owl.utils.escape(
                 htmlToTextContentInline(message.body).substr(0, PREVIEW_MSG_MAX_SIZE)
             );
             this.env.services['bus_service'].sendNotification({

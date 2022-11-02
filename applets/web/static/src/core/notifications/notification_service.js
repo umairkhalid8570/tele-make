@@ -4,7 +4,7 @@ import { browser } from "../browser/browser";
 import { registry } from "../registry";
 import { NotificationContainer } from "./notification_container";
 
-const { EventBus } = twl.core;
+const { EventBus } = owl.core;
 
 const AUTOCLOSE_DELAY = 4000;
 

@@ -15,7 +15,7 @@ import { SearchModel } from "@web/search/search_model";
 
 const viewRegistry = registry.category("views");
 
-const { Component } = twl;
+const { Component } = owl;
 
 export class GraphView extends Component {
     setup() {

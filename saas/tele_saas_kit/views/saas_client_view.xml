@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (c) 2022-Present Tele INC.(<https://tele.studio/>) -->
+<!-- Copyright (c) 2016-Present Tele Software Pvt. Ltd. (<https://tele.com/>) -->
 <!-- See LICENSE file for full copyright and licensing details. -->
-<!-- License URL : <https://store.tele.studio/license.html/> -->
+<!-- License URL : <https://store.tele.com/license.html/> -->
 
 <tele>
     <data>
@@ -68,7 +68,7 @@
                             <group name="group_main_right">
                                 <field name="client_url" attrs="{'readonly':[('state','!=','draft')]}"/>
                                 <field name="data_directory_path" attrs="{'readonly':[('state','!=','draft')]}"/>
-                                <field name="applets_path"/>
+                                <field name="addons_path"/>
                                 <field name="server_id" attrs="{'readonly':[('state','!=','draft')]}"/>
                             </group>
                         </group>
@@ -90,7 +90,7 @@
                                             <group>
                                                 <field name="status"/>
                                                 <div>
-                                                    <button string="Install" name="install_module" type="object" class="btn btn-primary rounded-sm" style="margin: 2px;" attrs="{'invisible': [('status', '!=', 'uninstalled')]}"/>
+                                                    <button string="Install" name="install_module" type="object" class="btn btn-primary" style="margin: 2px;" attrs="{'invisible': [('status', '!=', 'uninstalled')]}"/>
                                                 </div>
                                             </group>
                                         </group>

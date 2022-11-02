@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 #################################################################################
 #
-#   Copyright (c) 2022-Present Tele INC.(<https://tele.studio/>)
+#   Copyright (c) 2016-Present Tele Software Pvt. Ltd. (<https://tele.com/>)
 #   See LICENSE file for full copyright and licensing details.
-#   License URL : <https://store.tele.studio/license.html/>
+#   License URL : <https://store.tele.com/license.html/>
 # 
 #################################################################################
 
@@ -13,8 +13,8 @@ from tele import http, _
 from tele.exceptions import AccessError
 from tele.http import request
 from tele.tools import consteq
-from tele.applets.portal.controllers.mail import _message_post_helper
-from tele.applets.portal.controllers.portal import CustomerPortal, pager as portal_pager, get_records_pager
+from tele.addons.portal.controllers.mail import _message_post_helper
+from tele.addons.portal.controllers.portal import CustomerPortal, pager as portal_pager, get_records_pager
 import logging
 _logger = logging.getLogger(__name__)
 

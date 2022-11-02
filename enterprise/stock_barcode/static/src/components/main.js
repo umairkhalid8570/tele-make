@@ -15,8 +15,8 @@ import ViewsWidgetAdapter from '@stock_barcode/components/views_widget_adapter';
 import * as BarcodeScanner from '@web_enterprise/webclient/barcode/barcode_scanner';
 import { ConfirmationDialog } from "@web/core/confirmation_dialog/confirmation_dialog";
 
-const { Component } = twl;
-const { useSubEnv, useState } = twl.hooks;
+const { Component } = owl;
+const { useSubEnv, useState } = owl.hooks;
 
 /**
  * Main Component
@@ -398,7 +398,7 @@ class MainComponent extends Component {
     }
 
     /**
-     * Calls `validate` on the model and then triggers up the action because TWL
+     * Calls `validate` on the model and then triggers up the action because OWL
      * components don't seem able to manage wizard without doing custom things.
      *
      * @param {TeleEvent} ev

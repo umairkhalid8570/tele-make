@@ -18566,6 +18566,12 @@ msgid "Moldova"
 msgstr ""
 
 #. module: base
+#: model:ir.module.module,description:base.module_payment_mollie
+#: model:ir.module.module,shortdesc:base.module_payment_mollie
+msgid "Mollie Payment Acquirer"
+msgstr ""
+
+#. module: base
 #: model:res.country,name:base.mc
 msgid "Monaco"
 msgstr ""
@@ -21300,6 +21306,21 @@ msgstr ""
 #. module: base
 #: model:ir.module.module,summary:base.module_payment_authorize
 msgid "Payment Acquirer: Authorize.net Implementation"
+msgstr ""
+
+#. module: base
+#: model:ir.module.module,summary:base.module_payment_buckaroo
+msgid "Payment Acquirer: Buckaroo Implementation"
+msgstr ""
+
+#. module: base
+#: model:ir.module.module,summary:base.module_payment_mollie
+msgid "Payment Acquirer: Mollie Implementation"
+msgstr ""
+
+#. module: base
+#: model:ir.module.module,summary:base.module_payment_ogone
+msgid "Payment Acquirer: Ogone Implementation"
 msgstr ""
 
 #. module: base

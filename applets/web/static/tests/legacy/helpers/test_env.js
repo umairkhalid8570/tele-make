@@ -21,7 +21,7 @@ tele.define('web.test_env', async function (require) {
         if (!qweb) {
             // avoid parsing templates at every test because it takes a lot of
             // time and they never change
-            qweb = new twl.QWeb({ templates: session.twlTemplates });
+            qweb = new owl.QWeb({ templates: session.owlTemplates });
         }
         registerCleanup(() => {
             qweb.subscriptions = {};
@@ -98,10 +98,10 @@ tele.define('web.test_env', async function (require) {
     }
 
     /**
-     * Before each test, we want twl.Component.env to be a fresh test environment.
+     * Before each test, we want owl.Component.env to be a fresh test environment.
      */
     QUnit.on('TeleBeforeTestHook', function () {
-        twl.Component.env = makeTestEnvironment();
+        owl.Component.env = makeTestEnvironment();
     });
 
     return makeTestEnvironment;

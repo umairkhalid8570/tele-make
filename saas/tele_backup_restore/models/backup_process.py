@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 #################################################################################
 #
-#   Copyright (c) 2022-Present Tele INC.(<https://tele.studio/>)
+#   Copyright (c) 2016-Present Tele Software Pvt. Ltd. (<https://tele.com/>)
 #   See LICENSE file for full copyright and licensing details.
-#   License URL : <https://store.tele.studio/license.html/>
+#   License URL : <https://store.tele.com/license.html/>
 #
 #################################################################################
 
@@ -11,7 +11,7 @@ from tele import fields, api, models
 from tele.exceptions import UserError
 from tele.tools.config import config
 
-from tele.applets.tele_backup_restore.models.lib import manage_backup_crons
+from tele.addons.tele_backup_restore.models.lib import manage_backup_crons
 from datetime import datetime
 
 import logging

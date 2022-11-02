@@ -1,7 +1,7 @@
 tele.define('point_of_sale.ClientScreenButton', function(require) {
     'use strict';
 
-    const { useState } = twl;
+    const { useState } = owl;
     const PosComponent = require('point_of_sale.PosComponent');
     const Registries = require('point_of_sale.Registries');
 

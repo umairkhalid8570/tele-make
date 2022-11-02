@@ -18,7 +18,7 @@ function factory(dependencies) {
          */
         _created() {
             super._created();
-            // Bind necessary until TWL supports arrow function in handlers: https://github.com/tele-studio/twl/issues/876
+            // Bind necessary until OWL supports arrow function in handlers: https://github.com/tele-studio/owl/issues/876
             this.onClickJoinButton = this.onClickJoinButton.bind(this);
             this.onInputGuestNameInput = this.onInputGuestNameInput.bind(this);
             this.onKeydownGuestNameInput = this.onKeydownGuestNameInput.bind(this);
@@ -53,7 +53,7 @@ function factory(dependencies) {
         }
 
         /**
-         * Handles TWL update on this WelcomeView component.
+         * Handles OWL update on this WelcomeView component.
          */
         onComponentUpdate() {
             this._handleFocus();
@@ -173,7 +173,7 @@ function factory(dependencies) {
             required: true,
         }),
         /**
-         * States the TWL ref the to input element containing the
+         * States the OWL ref the to input element containing the
          * 'pendingGuestName'.
          */
         guestNameInputRef: attr(),

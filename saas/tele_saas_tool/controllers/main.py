@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 #################################################################################
-# Author      : Tele INC. (<https://tele.studio/>)
-# Copyright(c): 2022-Present Tele INC.
+# Author      : Tele Software Pvt. Ltd. (<https://tele.com/>)
+# Copyright(c): 2015-Present Tele Software Pvt. Ltd.
 # All Rights Reserved.
 #
 #
@@ -11,13 +11,13 @@
 #
 #
 # You should have received a copy of the License along with this program.
-# If not, see <https://store.tele.studio/license.html/>
+# If not, see <https://store.tele.com/license.html/>
 #################################################################################
 
 from werkzeug.exceptions import BadRequest
 from tele.http import request
 from tele import http
-from tele.applets.web.controllers.main import Home, ensure_db
+from tele.addons.web.controllers.main import Home, ensure_db
 import logging
 import base64
 

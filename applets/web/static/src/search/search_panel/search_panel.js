@@ -1,6 +1,6 @@
 /** @tele-module **/
 
-const { Component, hooks } = twl;
+const { Component, hooks } = owl;
 const { useState } = hooks;
 
 /**

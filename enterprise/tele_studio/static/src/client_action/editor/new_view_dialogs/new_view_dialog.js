@@ -89,7 +89,7 @@ export class NewViewDialog extends ConfirmationDialog {
     }
 }
 NewViewDialog.bodyTemplate = "tele_studio.NewViewFieldsSelector";
-NewViewDialog.footerTemplate = "tele_studio.TwlNewViewDialogFooter";
+NewViewDialog.footerTemplate = "tele_studio.OwlNewViewDialogFooter";
 NewViewDialog.GROUPABLE_TYPES = ["many2one", "char", "boolean", "selection", "date", "datetime"];
 NewViewDialog.MEASURABLE_TYPES = ["integer", "float"];
 NewViewDialog.size = "modal-md";

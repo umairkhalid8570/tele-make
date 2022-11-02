@@ -2,7 +2,7 @@
 
 import { Listener } from '@mail/model/model_listener';
 
-const { useComponent } = twl.hooks;
+const { useComponent } = owl.hooks;
 
 /**
  * This hook provides support for automatically re-rendering when used records

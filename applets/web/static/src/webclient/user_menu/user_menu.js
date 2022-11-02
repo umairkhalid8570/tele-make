@@ -5,7 +5,7 @@ import { DropdownItem } from "@web/core/dropdown/dropdown_item";
 import { registry } from "@web/core/registry";
 import { useEffect, useService } from "@web/core/utils/hooks";
 
-const { Component } = twl;
+const { Component } = owl;
 
 const userMenuRegistry = registry.category("user_menuitems");
 

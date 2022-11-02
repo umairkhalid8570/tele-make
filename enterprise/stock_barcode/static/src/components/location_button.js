@@ -1,6 +1,6 @@
 /** @tele-module **/
 
-export default class LocationButton extends twl.Component {
+export default class LocationButton extends owl.Component {
     select(source) {
         if (source) {
             this.env.model.changeSourceLocation(this.props.location.id, true);

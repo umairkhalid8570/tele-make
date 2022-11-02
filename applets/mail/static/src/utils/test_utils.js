@@ -33,8 +33,8 @@ const {
     patch: legacyPatch,
     unpatch: legacyUnpatch,
 } = mock;
-const { Component } = twl;
-const { EventBus } = twl.core;
+const { Component } = owl;
+const { EventBus } = owl.core;
 
 //------------------------------------------------------------------------------
 // Private
@@ -162,25 +162,25 @@ function _useDiscuss(callbacks) {
  * @returns {Promise}
  */
 function nextAnimationFrame() {
-    const requestAnimationFrame = twl.Component.scheduler.requestAnimationFrame;
+    const requestAnimationFrame = owl.Component.scheduler.requestAnimationFrame;
     return new Promise(function (resolve) {
         setTimeout(() => requestAnimationFrame(() => resolve()));
     });
 }
 
 /**
- * Returns a promise resolved the next time TWL stops rendering.
+ * Returns a promise resolved the next time OWL stops rendering.
  *
  * @param {function} func function which, when called, is
- *   expected to trigger TWL render(s).
+ *   expected to trigger OWL render(s).
  * @param {number} [timeoutDelay=5000] in ms
  * @returns {Promise}
  */
 const afterNextRender = (function () {
-    const stop = twl.Component.scheduler.stop;
+    const stop = owl.Component.scheduler.stop;
     const stopPromises = [];
 
-    twl.Component.scheduler.stop = function () {
+    owl.Component.scheduler.stop = function () {
         const wasRunning = this.isRunning;
         stop.call(this);
         if (wasRunning) {
@@ -200,7 +200,7 @@ const afterNextRender = (function () {
         const timeoutProm = new Promise((resolve, reject) => {
             timeoutNoRender = setTimeout(() => {
                 let error = startError;
-                if (twl.Component.scheduler.isRunning) {
+                if (owl.Component.scheduler.isRunning) {
                     error = stopError;
                 }
                 console.error(error);
@@ -221,7 +221,7 @@ const afterNextRender = (function () {
         await funcRes;
         // Wait one more frame to make sure no new render has been queued.
         await nextAnimationFrame();
-        if (twl.Component.scheduler.isRunning) {
+        if (owl.Component.scheduler.isRunning) {
             await afterNextRender(() => {}, timeoutDelay);
         }
     }
@@ -385,7 +385,7 @@ function getAfterEvent({ messagingBus }) {
  * @param {Object} param2
  * @param {Object} [param2.props={}] forwarded to component constructor
  * @param {DOM.Element} param2.target mount target for the component
- * @returns {twl.Component} the new component instance
+ * @returns {owl.Component} the new component instance
  */
 async function createRootMessagingComponent(self, componentName, { props = {}, target }) {
     const Component = getMessagingComponent(componentName);

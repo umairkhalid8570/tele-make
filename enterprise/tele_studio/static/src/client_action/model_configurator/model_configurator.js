@@ -3,9 +3,9 @@ tele.define("tele_studio.ModelConfigurator", function (require) {
 
     const config = require("web.config");
     const Dialog = require("web.Dialog");
-    const { WidgetAdapterMixin, ComponentWrapper } = require("web.TwlCompatibility");
+    const { WidgetAdapterMixin, ComponentWrapper } = require("web.OwlCompatibility");
 
-    const { Component, hooks } = twl;
+    const { Component, hooks } = owl;
     const { useState } = hooks;
 
     class ModelConfigurator extends Component {
@@ -173,7 +173,7 @@ tele.define("tele_studio.ModelConfigurator", function (require) {
         },
 
         /**
-         * Twl Wrapper override, as described in web.TwlCompatibility
+         * Owl Wrapper override, as described in web.OwlCompatibility
          * @override
          */
         async start() {

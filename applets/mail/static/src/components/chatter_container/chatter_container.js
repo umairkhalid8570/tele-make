@@ -3,7 +3,7 @@
 import { registerMessagingComponent } from '@mail/utils/messaging_component';
 import { clear } from '@mail/model/model_field_command';
 
-const { Component } = twl;
+const { Component } = owl;
 
 const getChatterNextTemporaryId = (function () {
     let tmpId = 0;
@@ -60,7 +60,7 @@ export class ChatterContainer extends Component {
      */
     async _insertFromProps(props) {
         const messaging = await this.env.services.messaging.get();
-        if (this.__twl__.status === 5 /* destroyed */) {
+        if (this.__owl__.status === 5 /* destroyed */) {
             return;
         }
         const values = { id: this.chatterId, ...props };

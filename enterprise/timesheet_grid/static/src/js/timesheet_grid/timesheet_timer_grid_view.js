@@ -7,7 +7,7 @@ tele.define('timesheet_grid.TimerGridView', function (require) {
     const TimerGridModel = require('timesheet_grid.TimerGridModel');
     const GridRenderer = require('timesheet_grid.TimerGridRenderer');
     const TimesheetConfigQRCodeMixin = require('timesheet_grid.TimesheetConfigQRCodeMixin');
-    const { onMounted, onPatched } = twl.hooks;
+    const { onMounted, onPatched } = owl.hooks;
 
     class TimerGridRenderer extends GridRenderer {
         constructor() {

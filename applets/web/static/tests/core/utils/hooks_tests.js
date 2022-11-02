@@ -7,7 +7,7 @@ import { makeTestEnv } from "../../helpers/mock_env";
 import { click, getFixture, nextTick } from "../../helpers/utils";
 import { registerCleanup } from "../../helpers/cleanup";
 
-const { Component, mount, tags, useState } = twl;
+const { Component, mount, tags, useState } = owl;
 const serviceRegistry = registry.category("services");
 
 QUnit.module("utils", () => {
@@ -166,7 +166,7 @@ QUnit.module("utils", () => {
 
                 assert.step("before state mutation");
                 component.state.value++;
-                // Wait for an twl render
+                // Wait for an owl render
                 await new Promise((resolve) => requestAnimationFrame(resolve));
                 assert.step("after state mutation");
                 await component.unmount();
@@ -230,13 +230,13 @@ QUnit.module("utils", () => {
 
                 assert.step("before state mutation: a");
                 component.state.a++;
-                // Wait for an twl render
+                // Wait for an owl render
                 await new Promise((resolve) => requestAnimationFrame(resolve));
                 assert.step("after state mutation: a");
 
                 assert.step("before state mutation: b");
                 component.state.b++;
-                // Wait for an twl render
+                // Wait for an owl render
                 await new Promise((resolve) => requestAnimationFrame(resolve));
                 assert.step("after state mutation: b");
                 await component.unmount();
@@ -305,7 +305,7 @@ QUnit.module("utils", () => {
 
                 assert.step("before state mutation");
                 component.state.value++;
-                // Wait for an twl render
+                // Wait for an owl render
                 await new Promise((resolve) => requestAnimationFrame(resolve));
                 assert.equal(
                     component.el.textContent,
@@ -467,7 +467,7 @@ QUnit.module("utils", () => {
             MyComponent.template = tags.xml`<div/>`;
 
             const target = getFixture();
-            const component = await twl.mount(MyComponent, {target});
+            const component = await owl.mount(MyComponent, {target});
             assert.verifySteps([]);
             component.destroy();
             assert.verifySteps(["onDestroyed"]);

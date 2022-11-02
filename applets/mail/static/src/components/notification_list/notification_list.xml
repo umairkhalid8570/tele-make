@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <templates xml:space="preserve">
 
-    <t t-name="mail.NotificationList" twl="1">
+    <t t-name="mail.NotificationList" owl="1">
         <div class="o_NotificationList" t-att-class="{ 'o-empty': notifications.length === 0 }">
             <t t-if="notifications.length === 0">
                 <div class="o_NotificationList_noConversation">

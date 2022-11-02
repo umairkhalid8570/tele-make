@@ -9,7 +9,7 @@ import { useSetupAction } from "../webclient/actions/action_hook";
 import { ClientActionAdapter } from "./action_adapters";
 import { breadcrumbsToLegacy } from "./backend_utils";
 
-const { Component, hooks, tags } = twl;
+const { Component, hooks, tags } = owl;
 const actionRegistry = registry.category("actions");
 
 const legacyClientActionTemplate = tags.xml`

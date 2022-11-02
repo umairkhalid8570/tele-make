@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <templates xml:space="preserve">
 
-    <div t-name="stock_barcode.PackageLineComponent" twl="1"
+    <div t-name="stock_barcode.PackageLineComponent" owl="1"
         class="o_barcode_line list-group-item d-flex flex-row flex-nowrap py-3"
         t-attf-class="{{isSelected ? 'o_selected o_highlight' : ''}}" t-on-click="select">
         <div class="o_barcode_line_details flex-grow-1 flex-column flex-nowrap">

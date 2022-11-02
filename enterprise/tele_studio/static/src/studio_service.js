@@ -2,7 +2,7 @@
 import { registry } from "@web/core/registry";
 import legacyBus from "tele_studio.bus";
 
-const { core } = twl;
+const { core } = owl;
 
 const URL_VIEW_KEY = "_view_type";
 const URL_ACTION_KEY = "_action";

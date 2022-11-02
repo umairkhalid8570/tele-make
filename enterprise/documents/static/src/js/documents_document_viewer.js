@@ -4,7 +4,7 @@ tele.define('documents.DocumentViewer', function (require) {
 const PdfManager = require('documents.component.PdfManager');
 const DocumentViewer = require('@mail/js/document_viewer')[Symbol.for("default")];
 const { _t } = require('web.core');
-const { ComponentWrapper, WidgetAdapterMixin } = require('web.TwlCompatibility');
+const { ComponentWrapper, WidgetAdapterMixin } = require('web.OwlCompatibility');
 
 /**
  * This file defines the DocumentViewer for the Documents Kanban view.
@@ -16,7 +16,7 @@ const DocumentsDocumentViewer = DocumentViewer.extend(WidgetAdapterMixin, {
     }),
     custom_events: Object.assign({}, DocumentViewer.prototype.custom_events, {
         process_documents: '_onProcessDocuments',
-        pdf_manager_error: '_onPdfManagerError', // triggered by pdf-manager-error from the twl component
+        pdf_manager_error: '_onPdfManagerError', // triggered by pdf-manager-error from the owl component
     }),
 
     /**

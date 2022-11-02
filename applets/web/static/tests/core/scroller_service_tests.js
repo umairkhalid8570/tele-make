@@ -7,7 +7,7 @@ import { registerCleanup } from "../helpers/cleanup";
 import { makeTestEnv } from "../helpers/mock_env";
 import { click, getFixture, nextTick } from "../helpers/utils";
 
-const { Component, mount, tags } = twl;
+const { Component, mount, tags } = owl;
 const serviceRegistry = registry.category("services");
 
 let env;

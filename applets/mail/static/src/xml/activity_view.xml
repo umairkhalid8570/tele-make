@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <templates xml:space="preserve">
 
-<t t-name="mail.ActivityViewHeader" twl="1">
+<t t-name="mail.ActivityViewHeader" owl="1">
     <thead>
         <tr>
             <th></th>
@@ -36,7 +36,7 @@
     </thead>
 </t>
 
-<t t-name="mail.ActivityViewBody" twl="1">
+<t t-name="mail.ActivityViewBody" owl="1">
     <tbody>
         <t t-foreach="activityResIds" t-as="resId" t-key="resId">
             <t t-call="mail.ActivityViewRow"/>
@@ -44,7 +44,7 @@
     </tbody>
 </t>
 
-<t t-name="mail.ActivityViewRow" twl="1">
+<t t-name="mail.ActivityViewRow" owl="1">
     <tr class="o_data_row" t-att-data-res-id="resId">
         <t t-set="record" t-value="props.data.find(data => data.res_id === resId)"/>
         <td t-attf-class="{{ activeFilter.resIds.includes(resId) ? 'o_activity_filter_' + activeFilter.state.value : '' }}">
@@ -57,7 +57,7 @@
     </tr>
 </t>
 
-<t t-name="mail.ActivityViewCell" twl="1">
+<t t-name="mail.ActivityViewCell" owl="1">
     <t t-set="activityGroup" t-value="props.grouped_activities[resId] and props.grouped_activities[resId][type[0]] or {count: 0, ids: [], state: false}"/>
     <t t-set="isCellHidden" t-value="activeFilter.resIds.length and !activeFilter.resIds.includes(resId) and activeFilter.activityTypeId === type[0]"/>
     <td t-if="activityGroup.state and !isCellHidden" t-att-data-res-id="resId" t-att-data-activity-type-id="type[0]"
@@ -73,7 +73,7 @@
     </td>
 </t>
 
-<t t-name="mail.ActivityViewFooter" twl="1">
+<t t-name="mail.ActivityViewFooter" owl="1">
     <tfoot>
         <tr class="o_data_row">
             <td class="o_record_selector p-3" t-on-click.prevent.stop="trigger('schedule_activity')">
@@ -83,7 +83,7 @@
     </tfoot>
 </t>
 
-<div t-name="mail.ActivityRenderer" class="o_activity_view" twl="1">
+<div t-name="mail.ActivityRenderer" class="o_activity_view" owl="1">
     <t t-if="!props.activity_types.length" t-call="web.NoContentHelper"/>
     <table t-else="" class="table-bordered mb-5">
         <t t-call="mail.ActivityViewHeader"/>

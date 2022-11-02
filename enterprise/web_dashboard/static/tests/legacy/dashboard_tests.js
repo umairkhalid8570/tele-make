@@ -497,7 +497,7 @@ QUnit.module('Views', {
                     </graph>`,
             },
         });
-        await testUtils.twlCompatibilityExtraNextTick(); // buttons (measure and group by menu) are not ready yet
+        await testUtils.owlCompatibilityExtraNextTick(); // buttons (measure and group by menu) are not ready yet
         await testUtils.dom.click(dashboard.$('.o_graph_measures_list button'));
         assert.containsNone(dashboard, '.o_menu_item:contains("Sold")',
             "the sold field should be invisible in the measures");
@@ -526,7 +526,7 @@ QUnit.module('Views', {
                     </graph>`,
             }
         });
-        await testUtils.twlCompatibilityExtraNextTick(); // buttons (measure and group by menu) are not ready yet
+        await testUtils.owlCompatibilityExtraNextTick(); // buttons (measure and group by menu) are not ready yet
         await testUtils.dom.click(dashboard.$('.o_graph_measures_list button'));
         assert.containsOnce(dashboard, '.o_menu_item:contains("Sold")',
             "the sold field should be available as a graph measure");
@@ -1268,11 +1268,11 @@ QUnit.module('Views', {
             },
         });
 
-        await testUtils.twlCompatibilityExtraNextTick(); // buttons (measure and group by menu) are not ready yet
+        await testUtils.owlCompatibilityExtraNextTick(); // buttons (measure and group by menu) are not ready yet
 
         await testUtils.dom.click(dashboard.$('.o_graph_buttons button:first'));
 
-        await testUtils.twlCompatibilityExtraNextTick(); // buttons (measure and group by menu) are not ready yet
+        await testUtils.owlCompatibilityExtraNextTick(); // buttons (measure and group by menu) are not ready yet
 
         assert.hasClass(dashboard.$('.o_graph_measures_list .dropdown-item:contains(Sold)'), 'selected',
             "sold measure should be active in graph view");
@@ -1286,11 +1286,11 @@ QUnit.module('Views', {
         // click on the 'untaxed' field: it should activate the 'untaxed' measure in both subviews
         await testUtils.dom.click(dashboard.$('.o_aggregate[name=untaxed]'));
 
-        await testUtils.twlCompatibilityExtraNextTick(); // buttons (measure and group by menu) are not ready yet
+        await testUtils.owlCompatibilityExtraNextTick(); // buttons (measure and group by menu) are not ready yet
 
         await testUtils.dom.click(dashboard.$('.o_graph_buttons button:first'));
 
-        await testUtils.twlCompatibilityExtraNextTick(); // buttons (measure and group by menu) are not ready yet
+        await testUtils.owlCompatibilityExtraNextTick(); // buttons (measure and group by menu) are not ready yet
 
         assert.doesNotHaveClass(dashboard.$('.o_graph_measures_list .dropdown-item:contains(Sold)'), 'selected',
             "sold measure should not be active in graph view");
@@ -1618,7 +1618,7 @@ QUnit.module('Views', {
         assert.strictEqual(chart.config.type, 'bar', 'should have rendered the graph in "bar" mode');
         // switch to pie mode
         await testUtils.dom.click(dashboard.$('.o_graph_buttons button[data-mode=pie]'));
-        await testUtils.twlCompatibilityExtraNextTick(); // buttons (measure and group by menu) are not ready yet
+        await testUtils.owlCompatibilityExtraNextTick(); // buttons (measure and group by menu) are not ready yet
         chart = dashboard.renderer.subControllers.graph.renderer.componentRef.comp.chart;
         assert.strictEqual(chart.config.type, 'pie', 'should have rendered the graph in "pie" mode');
 
@@ -1749,7 +1749,7 @@ QUnit.module('Views', {
             },
         });
 
-        await testUtils.twlCompatibilityExtraNextTick(); // buttons (measure and group by menu) are not ready yet
+        await testUtils.owlCompatibilityExtraNextTick(); // buttons (measure and group by menu) are not ready yet
 
         await testUtils.dom.click($('.o_graph_buttons button:contains(Measures)'));
 
@@ -1810,7 +1810,7 @@ QUnit.module('Views', {
             views: [[false, 'dashboard']],
         });
 
-        await testUtils.twlCompatibilityExtraNextTick(); // buttons (measure and group by menu) are not ready yet
+        await testUtils.owlCompatibilityExtraNextTick(); // buttons (measure and group by menu) are not ready yet
 
         // select 'untaxed' as measure in graph view
         await testUtils.dom.click($(webClient.el).find('.o_graph_buttons button:contains(Measures)'));
@@ -1899,7 +1899,7 @@ QUnit.module('Views', {
 
         // go back using the breadcrumbs
         await testUtils.dom.click($(webClient.el).find('.o_control_panel .breadcrumb a'));
-        await testUtils.twlCompatibilityExtraNextTick();
+        await testUtils.owlCompatibilityExtraNextTick();
         await legacyExtraNextTick();
 
         assert.deepEqual(getFacetTexts(webClient), []);
@@ -1983,7 +1983,7 @@ QUnit.module('Views', {
             },
         });
 
-        await testUtils.twlCompatibilityExtraNextTick(); // buttons (measure and group by menu) are not ready yet
+        await testUtils.owlCompatibilityExtraNextTick(); // buttons (measure and group by menu) are not ready yet
 
         assert.deepEqual(dashboard.getOwnedQueryParams().context.graph, {
             graph_mode: 'bar',
@@ -2318,12 +2318,12 @@ QUnit.module('Views', {
             },
         });
 
-        await testUtils.twlCompatibilityExtraNextTick(); // buttons (measure and group by menu) are not ready yet
+        await testUtils.owlCompatibilityExtraNextTick(); // buttons (measure and group by menu) are not ready yet
 
         await testUtils.dom.click(dashboard.$('.o_graph_buttons button:first'));
         await testUtils.dom.click(dashboard.$('.o_graph_buttons .o_graph_measures_list .dropdown-item').eq(1));
 
-        await testUtils.twlCompatibilityExtraNextTick(); // buttons (measure and group by menu) are not ready yet
+        await testUtils.owlCompatibilityExtraNextTick(); // buttons (measure and group by menu) are not ready yet
 
         assert.hasClass(dashboard.$('.o_graph_buttons .o_graph_measures_list .dropdown-item').eq(1), 'selected',
             'groupby should be unselected');
@@ -2331,7 +2331,7 @@ QUnit.module('Views', {
         await toggleFilterMenu(dashboard.el);
         await toggleMenuItem(dashboard.el, 0);
 
-        await testUtils.twlCompatibilityExtraNextTick(); // buttons (measure and group by menu) are not ready yet
+        await testUtils.owlCompatibilityExtraNextTick(); // buttons (measure and group by menu) are not ready yet
 
         await testUtils.dom.click(dashboard.$('.o_graph_buttons button:first'));
 
@@ -2371,7 +2371,7 @@ QUnit.module('Views', {
         // click on aggregate to activate count measure
         await testUtils.dom.click(dashboard.$('.o_aggregate:first .o_value'));
 
-        await testUtils.twlCompatibilityExtraNextTick(); // buttons (measure and group by menu) are not ready yet
+        await testUtils.owlCompatibilityExtraNextTick(); // buttons (measure and group by menu) are not ready yet
 
         await testUtils.dom.click(dashboard.$('.o_graph_buttons button:first'));
         assert.hasClass(dashboard.$('.o_graph_measures_list .dropdown-item:contains(Count)'), 'selected',
@@ -2412,7 +2412,7 @@ QUnit.module('Views', {
         // click on aggregate to activate untaxed measure
         await testUtils.dom.click(dashboard.$('.o_aggregate:nth(1) .o_value'));
 
-        await testUtils.twlCompatibilityExtraNextTick(); // buttons (measure and group by menu) are not ready yet
+        await testUtils.owlCompatibilityExtraNextTick(); // buttons (measure and group by menu) are not ready yet
 
         await testUtils.dom.click(dashboard.$('.o_graph_buttons button:first'));
         assert.hasClass(dashboard.$('.o_graph_measures_list .dropdown-item:contains(Untaxed)'), 'selected',
@@ -2865,7 +2865,7 @@ QUnit.module('Views', {
         });
         const el = dashboard.el;
 
-        await testUtils.twlCompatibilityExtraNextTick(); // buttons (measure and group by menu) are not ready yet
+        await testUtils.owlCompatibilityExtraNextTick(); // buttons (measure and group by menu) are not ready yet
 
         await testUtils.dom.click(el.querySelectorAll('.o_graph_buttons button')[1]);
         await testUtils.dom.click(el.querySelectorAll('.o_graph_buttons .o_menu_item > a')[1]);
@@ -2875,7 +2875,7 @@ QUnit.module('Views', {
         await toggleFilterMenu(dashboard.el);
         await toggleMenuItem(dashboard.el, 0);
 
-        await testUtils.twlCompatibilityExtraNextTick(); // buttons (measure and group by menu) are not ready yet
+        await testUtils.owlCompatibilityExtraNextTick(); // buttons (measure and group by menu) are not ready yet
 
         await testUtils.dom.click(el.querySelectorAll('.o_graph_buttons button')[1]);
         assert.doesNotHaveClass(el.querySelectorAll('.o_graph_buttons .o_menu_item > a')[1], 'selected',
@@ -2920,7 +2920,7 @@ QUnit.module('Views', {
         assert.containsOnce(dashboard, '.o_subview .o_graph_buttons',
             "should contain the buttons container");
 
-        await testUtils.twlCompatibilityExtraNextTick(); // buttons (measure and group by menu) are not ready yet
+        await testUtils.owlCompatibilityExtraNextTick(); // buttons (measure and group by menu) are not ready yet
 
         assert.containsOnce(dashboard, '.o_subview .o_graph_buttons .o_group_by_menu:contains("Group By")',
             "graph button should have been rendered");

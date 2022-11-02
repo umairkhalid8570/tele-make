@@ -5,7 +5,7 @@ import { download } from "@web/core/network/download";
 import { ConfirmationDialog } from "@web/core/confirmation_dialog/confirmation_dialog";
 import { FileInput } from "@web/core/file_input/file_input";
 
-export class HomeMenuCustomizer extends twl.Component {
+export class HomeMenuCustomizer extends owl.Component {
     setup() {
         this.rpc = useService("rpc");
         this.ui = useService("ui");

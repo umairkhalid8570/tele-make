@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <templates xml:space="preserve">
 
-    <t t-name="mail.Chatter" twl="1">
+    <t t-name="mail.Chatter" owl="1">
         <div class="o_Chatter">
             <t t-if="chatter">
                 <div class="o_Chatter_fixedPanel">

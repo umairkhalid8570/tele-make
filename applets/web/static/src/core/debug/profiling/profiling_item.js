@@ -3,7 +3,7 @@
 import { DropdownItem } from "@web/core/dropdown/dropdown_item";
 import { useBus, useService } from "@web/core/utils/hooks";
 
-const { Component } = twl;
+const { Component } = owl;
 
 export class ProfilingItem extends Component {
     setup() {

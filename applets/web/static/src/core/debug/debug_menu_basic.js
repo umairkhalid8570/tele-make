@@ -2,7 +2,7 @@
 
 import { useEnvDebugContext } from "./debug_context";
 
-const { Component } = twl;
+const { Component } = owl;
 
 export class DebugMenuBasic extends Component {
     setup() {

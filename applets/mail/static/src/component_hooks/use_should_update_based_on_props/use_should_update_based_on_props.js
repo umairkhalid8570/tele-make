@@ -1,8 +1,8 @@
 /** @tele-module **/
 'use strict';
 
-const { Component } = twl;
-const { onPatched } = twl.hooks;
+const { Component } = owl;
+const { onPatched } = owl.hooks;
 
 /**
  * Compares `a` and `b` up to the given `propsCompareDepth`.

@@ -6,7 +6,7 @@ import { debounce } from "@web/core/utils/timing";
 import { BlockUI } from "./block_ui";
 import { browser } from "@web/core/browser/browser";
 
-const { Component, core, hooks } = twl;
+const { Component, core, hooks } = owl;
 const { EventBus } = core;
 const { useRef } = hooks;
 

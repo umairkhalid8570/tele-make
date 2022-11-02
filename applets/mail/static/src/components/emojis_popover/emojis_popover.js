@@ -4,7 +4,7 @@ import { registerMessagingComponent } from '@mail/utils/messaging_component';
 import { useUpdate } from '@mail/component_hooks/use_update/use_update';
 import emojis from '@mail/js/emojis';
 
-const { Component } = twl;
+const { Component } = owl;
 
 export class EmojisPopover extends Component {
 

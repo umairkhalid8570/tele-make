@@ -5,7 +5,7 @@ tele.define('web.FilterMenu', function (require) {
     const { FACET_ICONS } = require("web.searchUtils");
     const { useModel } = require('web.Model');
 
-    const { Component } = twl;
+    const { Component } = owl;
 
     /**
      * 'Filters' menu
@@ -39,7 +39,7 @@ tele.define('web.FilterMenu', function (require) {
 
         /**
          * @private
-         * @param {TwlEvent} ev
+         * @param {OwlEvent} ev
          */
         onFilterSelected(ev) {
             ev.stopPropagation();

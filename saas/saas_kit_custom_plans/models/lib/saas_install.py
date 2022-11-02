@@ -55,7 +55,7 @@ class tele_container:
         self.container_passwd = parser.get("options","container_passwd")
         self.template_tele_port = parser.get("options","template_tele_port_v"+version)
         self.template_tele_lport = parser.get("options","template_tele_lport_v"+version)
-        self.common_applets = parser.get("options","common_applets_v"+version)
+        self.common_addons = parser.get("options","common_addons_v"+version)
         self.tele_template = parser.get("options","tele_template_v"+version)
         self.data_dir = parser.get("options","data_dir_path")
         self.tele_image = parser.get("options","tele_image_v"+version)

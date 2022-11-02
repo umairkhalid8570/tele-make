@@ -7,7 +7,7 @@ import { useService } from "@web/core/utils/hooks";
 import { useModel } from "web.Model";
 import SpreadsheetSelectorDialog from "documents_spreadsheet.SpreadsheetSelectorDialog";
 
-const { Component } = twl;
+const { Component } = owl;
 
 export class InsertViewSpreadsheet extends Component {
     constructor() {

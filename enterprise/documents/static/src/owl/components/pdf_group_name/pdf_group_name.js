@@ -1,9 +1,9 @@
 tele.define('documents.component.PdfGroupName', function (require) {
 'use strict';
 
-const { useRef, useState } = twl.hooks;
+const { useRef, useState } = owl.hooks;
 
-class PdfGroupName extends twl.Component {
+class PdfGroupName extends owl.Component {
 
     /**
      * @override

@@ -3,7 +3,7 @@ tele.define('web.DropdownMenuItem', function (require) {
 
     const { useListener } = require('web.custom_hooks');
 
-    const { Component, hooks } = twl;
+    const { Component, hooks } = owl;
     const { useExternalListener, useRef, useState } = hooks;
 
     /**

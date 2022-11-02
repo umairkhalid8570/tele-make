@@ -6,7 +6,7 @@ import { formatDateTime, parseDateTime } from "@web/core/l10n/dates";
 import { formatMany2one } from "@web/fields/formatters";
 import { registry } from "@web/core/registry";
 
-const { hooks } = twl;
+const { hooks } = owl;
 const { useState } = hooks;
 
 const debugRegistry = registry.category("debug");

@@ -7,7 +7,7 @@ var BasicModel = require('web.BasicModel');
 var concurrency = require('web.concurrency');
 var core = require('web.core');
 var fieldRegistry = require('web.field_registry');
-const fieldRegistryTwl = require('web.field_registry_twl');
+const fieldRegistryOwl = require('web.field_registry_owl');
 const FormRenderer = require('web.FormRenderer');
 var FormView = require('web.FormView');
 var mixins = require('web.mixins');
@@ -16,7 +16,7 @@ var RamStorage = require('web.RamStorage');
 var testUtils = require('web.test_utils');
 var ViewDialogs = require('web.view_dialogs');
 var widgetRegistry = require('web.widget_registry');
-const widgetRegistryTwl = require('web.widgetRegistry');
+const widgetRegistryOwl = require('web.widgetRegistry');
 var Widget = require('web.Widget');
 
 var _t = core._t;
@@ -1019,7 +1019,7 @@ QUnit.module('Views', {
     QUnit.test("notebook page is changing when an anchor is clicked from another page", async (assert) => {
         assert.expect(6);
 
-        // This should be removed as soon as the view is moved to twl
+        // This should be removed as soon as the view is moved to owl
         const wowlEnv = await makeTestEnv();
         const legacyEnv = makeTestEnvironment({ bus: core.bus });
         mapLegacyEnvToWowlEnv(legacyEnv, wowlEnv);
@@ -4378,9 +4378,9 @@ QUnit.module('Views', {
         await testUtils.dom.click(form.$('.fa-trash-o').eq(1));
 
         // use of owlCompatibilityExtraNextTick because there are two sequential updates of the
-        // control panel (which is written in twl): each of them waits for the next animation frame
+        // control panel (which is written in owl): each of them waits for the next animation frame
         // to complete
-        await testUtils.twlCompatibilityExtraNextTick();
+        await testUtils.owlCompatibilityExtraNextTick();
         assert.hasClass(form.$('.o_data_cell').first(), "o_invalid_cell",
             "Cell should be invalidated.");
         assert.containsN(form, '.o_data_row', 2,
@@ -4951,7 +4951,7 @@ QUnit.module('Views', {
 
         await testUtils.form.clickEdit(form);
         await testUtils.fields.editInput(form.$('input[name=foo]'), 'trigger an onchange');
-        await testUtils.twlCompatibilityExtraNextTick();
+        await testUtils.owlCompatibilityExtraNextTick();
 
         assert.strictEqual(form.$('.o_data_row td:first').text(), 'foo changed',
             "onchange should have been correctly applied on field in o2m list");
@@ -5012,7 +5012,7 @@ QUnit.module('Views', {
             "the initial value should be the default one");
 
         await testUtils.fields.editInput(form.$('input[name=foo]'), 'trigger an onchange');
-        await testUtils.twlCompatibilityExtraNextTick();
+        await testUtils.owlCompatibilityExtraNextTick();
 
         assert.strictEqual(form.$('.o_data_row td:first').text(), 'foo changed',
             "onchange should have been correctly applied on field in o2m list");
@@ -5717,7 +5717,7 @@ QUnit.module('Views', {
             'display_name cell should not be visible in edit mode');
 
         await testUtils.dom.click(form.$('.o_field_x2many_list_row_add a'));
-        await testUtils.twlCompatibilityExtraNextTick();
+        await testUtils.owlCompatibilityExtraNextTick();
         assert.hasClass(form.$('.o_form_view .o_list_view tbody tr:first input[name="display_name"]'),
             'oe_read_only', 'display_name input should have oe_read_only class');
 
@@ -5756,7 +5756,7 @@ QUnit.module('Views', {
             'display_name cell should be visible in edit mode');
 
         await testUtils.dom.click(form.$('.o_field_x2many_list_row_add a'));
-        await testUtils.twlCompatibilityExtraNextTick();
+        await testUtils.owlCompatibilityExtraNextTick();
         assert.hasClass(form.$('.o_form_view .o_list_view tbody tr:first input[name="display_name"]'),
             'oe_edit_only', 'display_name input should have oe_edit_only class');
 
@@ -8312,7 +8312,7 @@ QUnit.module('Views', {
 
     QUnit.test('basic support for widgets', async function (assert) {
         // This test could be removed as soon as we drop the support of legacy widgets (see test
-        // below, which is a duplicate of this one, but with an Twl Component instead).
+        // below, which is a duplicate of this one, but with an Owl Component instead).
         assert.expect(1);
 
         var MyWidget = Widget.extend({
@@ -8343,16 +8343,16 @@ QUnit.module('Views', {
         delete widgetRegistry.map.test;
     });
 
-    QUnit.test('basic support for widgets (being Twl Components)', async function (assert) {
+    QUnit.test('basic support for widgets (being Owl Components)', async function (assert) {
         assert.expect(1);
 
-        class MyComponent extends twl.Component {
+        class MyComponent extends owl.Component {
             get value() {
                 return JSON.stringify(this.props.record.data);
             }
         }
-        MyComponent.template = twl.tags.xml`<div t-esc="value"/>`;
-        widgetRegistryTwl.add('test', MyComponent);
+        MyComponent.template = owl.tags.xml`<div t-esc="value"/>`;
+        widgetRegistryOwl.add('test', MyComponent);
 
         const form = await createView({
             View: FormView,
@@ -8369,7 +8369,7 @@ QUnit.module('Views', {
         assert.strictEqual(form.$('.o_widget').text(), '{"foo":"My little Foo Value","bar":false}');
 
         form.destroy();
-        delete widgetRegistryTwl.map.test;
+        delete widgetRegistryOwl.map.test;
     });
 
     QUnit.test('attach document widget calls action with attachment ids', async function (assert) {
@@ -10159,7 +10159,7 @@ QUnit.module('Views', {
     QUnit.test('do not call mounted twice on children', async function (assert) {
         assert.expect(3);
 
-        class CustomFieldComponent extends fieldRegistryTwl.get('boolean') {
+        class CustomFieldComponent extends fieldRegistryOwl.get('boolean') {
             mounted() {
                 super.mounted(...arguments);
                 assert.step('mounted');
@@ -10169,7 +10169,7 @@ QUnit.module('Views', {
                 assert.step('willUnmount');
             }
         }
-        fieldRegistryTwl.add('custom', CustomFieldComponent);
+        fieldRegistryOwl.add('custom', CustomFieldComponent);
 
         const form = await createView({
             View: FormView,
@@ -10179,7 +10179,7 @@ QUnit.module('Views', {
         });
 
         form.destroy();
-        delete fieldRegistryTwl.map.custom;
+        delete fieldRegistryOwl.map.custom;
 
         assert.verifySteps(['mounted', 'willUnmount']);
     });

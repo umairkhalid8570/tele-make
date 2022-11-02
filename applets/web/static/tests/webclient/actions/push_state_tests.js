@@ -7,7 +7,7 @@ import testUtils from "web.test_utils";
 import { click, legacyExtraNextTick, nextTick, patchWithCleanup } from "../../helpers/utils";
 import { createWebClient, doAction, getActionManagerServerData } from "./../helpers";
 
-const { Component, tags } = twl;
+const { Component, tags } = owl;
 
 let serverData;
 const actionRegistry = registry.category("actions");

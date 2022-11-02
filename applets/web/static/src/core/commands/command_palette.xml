@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <templates xml:space="preserve">
 
-  <t t-name="web.CommandPalette" twl="1">
+  <t t-name="web.CommandPalette" owl="1">
     <div>
       <div class="o_command_palette_search">
         <input type="text" data-allow-hotkeys="true" t-model="state.searchValue" t-on-input="onDebouncedSearchInput" autofocus="" t-att-placeholder="state.placeholder"/>
@@ -35,13 +35,13 @@
     </div>
   </t>
 
-  <t t-name="web.DefaultCommandItem" twl="1">
+  <t t-name="web.DefaultCommandItem" owl="1">
     <div class="o_command_default">
       <span t-esc="props.name" />
     </div>
   </t>
 
-  <t t-name="web.HotkeyCommandItem" twl="1">
+  <t t-name="web.HotkeyCommandItem" owl="1">
     <div class="o_command_hotkey">
       <span t-esc="props.name" />
       <span>
@@ -53,7 +53,7 @@
     </div>
   </t>
 
-  <t t-name="web.AppIconCommand" twl="1">
+  <t t-name="web.AppIconCommand" owl="1">
     <div class="o_command_default">
         <span t-esc="props.name"/>
         <img t-if="props.webIconData" class="o_app_icon" t-attf-src="{{props.webIconData}}"/>

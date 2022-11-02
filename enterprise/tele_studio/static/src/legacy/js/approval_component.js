@@ -1,8 +1,8 @@
 tele.define('tele_studio.ApprovalComponent', function (require) {
     'use strict';
 
-    const { Component, useState } = twl;
-    const Dialog = require('web.TwlDialog');
+    const { Component, useState } = owl;
+    const Dialog = require('web.OwlDialog');
 
     class ApprovalComponent extends Component {
         //--------------------------------------------------------------------------

@@ -5,10 +5,10 @@
 /*
   Fade in and out with t-transition
   Usage:
-    scss: @include twl-fade(0.5s, 'o_notification')
+    scss: @include owl-fade(0.5s, 'o_notification')
     xml: <tag t-transition="o_notification_fade" />
  */
-@mixin twl-fade($time, $name) {
+@mixin owl-fade($time, $name) {
   .#{$name}_fade-enter-active,
   .#{$name}_fade-active {
     transition: all $time;

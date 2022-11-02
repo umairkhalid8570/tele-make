@@ -1,7 +1,7 @@
 tele.define('point_of_sale.ClientListScreen', function(require) {
     'use strict';
 
-    const { debounce } = twl.utils;
+    const { debounce } = owl.utils;
     const PosComponent = require('point_of_sale.PosComponent');
     const Registries = require('point_of_sale.Registries');
     const { useListener } = require('web.custom_hooks');
@@ -34,7 +34,7 @@ tele.define('point_of_sale.ClientListScreen', function(require) {
             // We are not using useState here because the object
             // passed to useState converts the object and its contents
             // to Observer proxy. Not sure of the side-effects of making
-            // a persistent object, such as pos, into twl.Observer. But it
+            // a persistent object, such as pos, into owl.Observer. But it
             // is better to be safe.
             this.state = {
                 query: null,

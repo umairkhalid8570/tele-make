@@ -11,7 +11,7 @@ import { makeMockXHR } from "../../helpers/mock_services";
 import { getFixture, makeDeferred, nextTick, patchWithCleanup } from "../../helpers/utils";
 import { registerCleanup } from "../../helpers/cleanup";
 
-const { Component, mount, tags } = twl;
+const { Component, mount, tags } = owl;
 const { xml } = tags;
 
 let isXHRMocked = false;

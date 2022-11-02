@@ -3,7 +3,7 @@
 import { useHotkey } from "@web/core/hotkeys/hotkey_hook";
 import { useActiveElement } from "../ui/ui_service";
 
-const { Component, hooks } = twl;
+const { Component, hooks } = owl;
 const { useRef, useSubEnv } = hooks;
 
 export class Dialog extends Component {
@@ -46,5 +46,5 @@ Dialog.renderHeader = true;
 Dialog.size = "modal-lg";
 Dialog.technical = true;
 Dialog.title = "Tele";
-Dialog.bodyTemplate = twl.tags.xml`<div/>`;
+Dialog.bodyTemplate = owl.tags.xml`<div/>`;
 Dialog.footerTemplate = "web.DialogFooterDefault";

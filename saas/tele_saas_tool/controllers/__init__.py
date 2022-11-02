@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 #################################################################################
-# Author      : Tele INC. (<https://tele.studio/>)
-# Copyright(c): 2022-Present Tele INC.
+# Author      : Tele Software Pvt. Ltd. (<https://tele.com/>)
+# Copyright(c): 2015-Present Tele Software Pvt. Ltd.
 # All Rights Reserved.
 #
 #
@@ -11,7 +11,7 @@
 #
 #
 # You should have received a copy of the License along with this program.
-# If not, see <https://store.tele.studio/license.html/>
+# If not, see <https://store.tele.com/license.html/>
 #################################################################################
 
 from . import main

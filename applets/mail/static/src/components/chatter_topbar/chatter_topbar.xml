@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <templates xml:space="preserve">
 
-    <t t-name="mail.ChatterTopbar" twl="1">
+    <t t-name="mail.ChatterTopbar" owl="1">
         <div class="o_ChatterTopbar">
             <t t-if="chatter">
                 <div class="o_ChatterTopbar_actions" t-att-class="{'o-has-active-button': chatter.composerView }">

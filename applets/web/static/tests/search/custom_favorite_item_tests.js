@@ -159,7 +159,7 @@ QUnit.module("Search", (hooks) => {
     QUnit.test("save filter", async function (assert) {
         assert.expect(4);
 
-        class TestComponent extends twl.Component {
+        class TestComponent extends owl.Component {
             setup() {
                 useSetupAction({
                     getContext: () => {
@@ -169,7 +169,7 @@ QUnit.module("Search", (hooks) => {
             }
         }
         TestComponent.components = { FavoriteMenu };
-        TestComponent.template = twl.tags.xml`<div><FavoriteMenu/></div>`;
+        TestComponent.template = owl.tags.xml`<div><FavoriteMenu/></div>`;
 
         const comp = await makeWithSearch({
             serverData,

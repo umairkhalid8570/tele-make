@@ -22,7 +22,7 @@ tele.define('web.ActionMixin', function (require) {
      */
 
     const core = require('web.core');
-    const { WidgetAdapterMixin } = require('web.TwlCompatibility');
+    const { WidgetAdapterMixin } = require('web.OwlCompatibility');
 
     const ActionMixin = Object.assign({}, WidgetAdapterMixin, {
         template: 'Action',

@@ -4,8 +4,8 @@ import { registerMessagingComponent } from '@mail/utils/messaging_component';
 import { useUpdate } from '@mail/component_hooks/use_update/use_update';
 import { markEventHandled } from '@mail/utils/utils';
 
-const { Component } = twl;
-const { useRef } = twl.hooks;
+const { Component } = owl;
+const { useRef } = owl.hooks;
 
 export class ComposerTextInput extends Component {
 

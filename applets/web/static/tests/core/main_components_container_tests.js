@@ -5,9 +5,9 @@ import { clearRegistryWithCleanup, makeTestEnv } from "../helpers/mock_env";
 import { patch, unpatch } from "@web/core/utils/patch";
 import { getFixture, nextTick } from "../helpers/utils";
 
-const { mount, Component } = twl;
-const { useState } = twl.hooks;
-const { xml } = twl.tags;
+const { mount, Component } = owl;
+const { useState } = owl.hooks;
+const { xml } = owl.tags;
 const mainComponentsRegistry = registry.category("main_components");
 let container;
 let target;

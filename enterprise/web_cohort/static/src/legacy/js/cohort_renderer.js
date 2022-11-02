@@ -1,10 +1,10 @@
 tele.define('web_cohort.CohortRenderer', function (require) {
     'use strict';
 
-    const TwlAbstractRenderer = require('web.AbstractRendererTwl');
+    const OwlAbstractRenderer = require('web.AbstractRendererOwl');
     const field_utils = require('web.field_utils');
 
-    class CohortRenderer extends TwlAbstractRenderer {
+    class CohortRenderer extends OwlAbstractRenderer {
 
         constructor() {
             super(...arguments);

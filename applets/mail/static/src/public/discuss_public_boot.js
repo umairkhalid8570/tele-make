@@ -27,20 +27,20 @@ import {
 } from '@web/legacy/utils';
 import * as legacySession from 'web.session';
 
-twl.Component.env = legacyEnv;
+owl.Component.env = legacyEnv;
 
 (async function boot() {
-    await twl.utils.whenReady();
-    twl.config.mode = twl.Component.env.isDebug() ? 'dev' : 'prod';
-    AbstractService.prototype.deployServices(twl.Component.env);
+    await owl.utils.whenReady();
+    owl.config.mode = owl.Component.env.isDebug() ? 'dev' : 'prod';
+    AbstractService.prototype.deployServices(owl.Component.env);
     const serviceRegistry = registry.category('services');
-    serviceRegistry.add('legacy_rpc', makeLegacyRpcService(twl.Component.env));
-    serviceRegistry.add('legacy_session', makeLegacySessionService(twl.Component.env, legacySession));
-    serviceRegistry.add('legacy_notification', makeLegacyNotificationService(twl.Component.env));
-    serviceRegistry.add('legacy_crash_manager', makeLegacyCrashManagerService(twl.Component.env));
-    serviceRegistry.add('legacy_dialog_mapping', makeLegacyDialogMappingService(twl.Component.env));
+    serviceRegistry.add('legacy_rpc', makeLegacyRpcService(owl.Component.env));
+    serviceRegistry.add('legacy_session', makeLegacySessionService(owl.Component.env, legacySession));
+    serviceRegistry.add('legacy_notification', makeLegacyNotificationService(owl.Component.env));
+    serviceRegistry.add('legacy_crash_manager', makeLegacyCrashManagerService(owl.Component.env));
+    serviceRegistry.add('legacy_dialog_mapping', makeLegacyDialogMappingService(owl.Component.env));
     await legacySession.is_bound;
-    twl.Component.env.qweb.addTemplates(legacySession.twlTemplates);
+    owl.Component.env.qweb.addTemplates(legacySession.owlTemplates);
     Object.assign(tele, {
         info: {
             db: session.db,
@@ -56,19 +56,19 @@ twl.Component.env = legacyEnv;
         tele.loadTemplatesPromise.then(processTemplates),
     ]);
     env.qweb.addTemplates(templates);
-    mapLegacyEnvToWowlEnv(twl.Component.env, env);
+    mapLegacyEnvToWowlEnv(owl.Component.env, env);
     tele.isReady = true;
     legacyServiceRegistry.add('messaging', MessagingService.extend({
         messagingValues: {
             autofetchPartnerImStatus: false,
         },
     }));
-    await twl.mount(MainComponentsContainer, { env, target: document.body });
+    await owl.mount(MainComponentsContainer, { env, target: document.body });
     createAndMountDiscussPublicView();
 })();
 
 async function createAndMountDiscussPublicView() {
-    const messaging = await twl.Component.env.services.messaging.get();
+    const messaging = await owl.Component.env.services.messaging.get();
     // needed by the attachment viewer
     const DialogManager = getMessagingComponent('DialogManager');
     const dialogManagerComponent = new DialogManager(null, {});

@@ -3,7 +3,7 @@ tele.define('point_of_sale.NumberPopup', function(require) {
     var core = require('web.core');
     var _t = core._t;
 
-    const { useState } = twl;
+    const { useState } = owl;
     const AbstractAwaitablePopup = require('point_of_sale.AbstractAwaitablePopup');
     const NumberBuffer = require('point_of_sale.NumberBuffer');
     const { useListener } = require('web.custom_hooks');

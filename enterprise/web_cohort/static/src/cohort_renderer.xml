@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <templates xml:space="preserve">
 
-    <t t-name="web_cohort.CohortRenderer" twl="1">
+    <t t-name="web_cohort.CohortRenderer" owl="1">
         <div class="o_cohort_renderer">
             <t t-foreach="model.data" t-as="data" t-key="data_index">
                 <div t-if="data.title" class="table-responsive">

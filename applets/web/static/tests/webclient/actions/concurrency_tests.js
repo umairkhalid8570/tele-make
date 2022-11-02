@@ -10,7 +10,7 @@ import testUtils from "web.test_utils";
 import { useSetupView } from "@web/views/helpers/view_hook";
 import * as cpHelpers from "@web/../tests/search/helpers";
 
-const { Component, tags } = twl;
+const { Component, tags } = owl;
 const actionRegistry = registry.category("actions");
 
 let serverData;
@@ -50,7 +50,7 @@ QUnit.module("ActionManager", (hooks) => {
 
     QUnit.skip("handle switching view and switching back on slow network", async function (assert) {
         // This scenario isn't supported while we still have the compatibility layer.
-        // As soon as the list and kanban views will be written in twl, this test will
+        // As soon as the list and kanban views will be written in owl, this test will
         // need to be unskipped.
         assert.expect(9);
         let def = testUtils.makeTestPromise();
@@ -728,7 +728,7 @@ QUnit.module("ActionManager", (hooks) => {
         ToyView.icon = "fab fa-android";
         ToyView.multiRecord = true;
         ToyView.searchMenuTypes = ["filter"];
-        ToyView.template = twl.tags.xml`
+        ToyView.template = owl.tags.xml`
             <div class="o_toy_view">
                 <ControlPanel />
             </div>

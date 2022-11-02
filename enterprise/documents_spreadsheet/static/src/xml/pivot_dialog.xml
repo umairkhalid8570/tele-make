@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <templates xml:space="preserve">
-    <t t-name="documents_spreadsheet.PivotDialog" twl="1">
+    <t t-name="documents_spreadsheet.PivotDialog" owl="1">
         <div class="o_missing_values_dialog">
             <div class="custom-control custom-checkbox">
                 <input id="missing_values" type="checkbox" t-model="state.showMissingValuesOnly" class="custom-control-input " />
@@ -17,7 +17,7 @@
         </div>
     </t>
 
-    <t t-name="documents_spreadsheet.PivotDialogTable" twl="1">
+    <t t-name="documents_spreadsheet.PivotDialogTable" owl="1">
         <table class="o_pivot_table_dialog">
             <t t-foreach="props.colHeaders" t-as="col" t-key="col_index">
                     <tr>

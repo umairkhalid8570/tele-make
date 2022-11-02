@@ -1,5 +1,5 @@
 /** @tele-module **/
-import { ComponentAdapter } from "web.TwlCompatibility";
+import { ComponentAdapter } from "web.OwlCompatibility";
 import { useService } from "@web/core/utils/hooks";
 import { registry } from "@web/core/registry";
 import { NewViewDialog } from "@tele_studio/client_action/editor/new_view_dialogs/new_view_dialog";
@@ -9,12 +9,12 @@ import ActionEditor from "tele_studio.ActionEditor";
 import { ActionEditorMain } from "../../legacy/action_editor_main";
 import { AlertDialog } from "@web/core/confirmation_dialog/confirmation_dialog";
 
-const { Component } = twl;
+const { Component } = owl;
 
 export class EditorAdapter extends ComponentAdapter {
     constructor(parent, props) {
         // force dummy Component not to crash
-        props.Component = twl.Component;
+        props.Component = owl.Component;
         super(...arguments);
     }
 

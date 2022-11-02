@@ -1,8 +1,8 @@
 tele.define("root.widget", function (require) {
     require("web.legacySetup");
-    const { ComponentAdapter } = require("web.TwlCompatibility");
+    const { ComponentAdapter } = require("web.OwlCompatibility");
 
-    const { Component } = twl;
+    const { Component } = owl;
 
     return new ComponentAdapter(null, { Component }); // for its method _trigger_up
 });

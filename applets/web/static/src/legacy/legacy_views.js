@@ -1,5 +1,5 @@
 /** @tele-module **/
-const { Component, hooks, tags } = twl;
+const { Component, hooks, tags } = owl;
 
 import { useService } from "@web/core/utils/hooks";
 import { useSetupAction } from "../webclient/actions/action_hook";
@@ -30,7 +30,7 @@ const legacyViewTemplate = tags.xml`
                  t-on-scrollTo.stop="onScrollTo"/>`;
 
 // registers a view from the legacy view registry to the wowl one, but wrapped
-// into an Twl Component
+// into an Owl Component
 function registerView(name, LegacyView) {
     class Controller extends Component {
         constructor() {

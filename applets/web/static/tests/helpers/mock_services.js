@@ -13,7 +13,7 @@ import { patchWithCleanup } from "./utils";
 import { companyService } from "@web/webclient/company_service";
 import { uiService } from "@web/core/ui/ui_service";
 
-const { Component } = twl;
+const { Component } = owl;
 
 // -----------------------------------------------------------------------------
 // Mock Services
@@ -49,7 +49,7 @@ export function makeFakeLocalizationService(config = {}) {
 
 function buildMockRPC(mockRPC) {
     return async function (...args) {
-        if (this instanceof Component && this.__twl__.status === 5) {
+        if (this instanceof Component && this.__owl__.status === 5) {
             return new Promise(() => {});
         }
         if (mockRPC) {

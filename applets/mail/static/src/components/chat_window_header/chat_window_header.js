@@ -6,7 +6,7 @@ import {
     markEventHandled,
 } from '@mail/utils/utils';
 
-const { Component } = twl;
+const { Component } = owl;
 
 export class ChatWindowHeader extends Component {
 

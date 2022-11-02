@@ -101,9 +101,9 @@ def delete_remote_data_dir(domain,ssh_obj):
     if "tele-server.conf" in sftp.listdir(path):#os.path.exists(path+"/tele-server.conf"):
         try:
             ver = oversion + ".0"
-            if ver in sftp.listdir(path+"/data-dir/applets/"):#os.path.exists(path+"/data-dir/applets/12.0"): 
-                _logger.info("Permissions of Tele applets/%s"%ver)
-                sftp.chmod(path+"/data-dir/applets/"+ver,0o700)
+            if ver in sftp.listdir(path+"/data-dir/addons/"):#os.path.exists(path+"/data-dir/addons/12.0"): 
+                _logger.info("Permissions of Tele addons/%s"%ver)
+                sftp.chmod(path+"/data-dir/addons/"+ver,0o700)
             execute_on_remote_shell(ssh_obj,"rm -rf %s"%path)
             return True
         except Exception as error:
@@ -118,9 +118,9 @@ def delete_data_dir(domain):
     if os.path.exists(path+"/tele-server.conf"):
         try:
             ver = oversion + ".0"
-            if os.path.exists(path+"/data-dir/applets/"+ver):
-                _logger.info("Permissions of Tele applets/%s"%ver)
-                os.chmod(path+"/data-dir/applets/"+ver,0o700)
+            if os.path.exists(path+"/data-dir/addons/"+ver):
+                _logger.info("Permissions of Tele addons/%s"%ver)
+                os.chmod(path+"/data-dir/addons/"+ver,0o700)
             shutil.rmtree(path)
             return True
         except Exception as error:

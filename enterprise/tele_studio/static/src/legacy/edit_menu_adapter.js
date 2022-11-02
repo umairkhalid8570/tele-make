@@ -1,7 +1,7 @@
 /** @tele-module */
 
 import { useService } from "@web/core/utils/hooks";
-import { ComponentAdapter } from "web.TwlCompatibility";
+import { ComponentAdapter } from "web.OwlCompatibility";
 import { MenuItem } from "tele_studio.EditMenu";
 
 class EditMenuItemAdapter extends ComponentAdapter {
@@ -9,7 +9,7 @@ class EditMenuItemAdapter extends ComponentAdapter {
         props.Component = MenuItem;
         super(...arguments);
         this.menus = useService("menu");
-        this.env = twl.Component.env;
+        this.env = owl.Component.env;
     }
 
     get currentMenuId() {
@@ -37,14 +37,14 @@ class EditMenuItemAdapter extends ComponentAdapter {
 // - support navbar re-rendering without having to fiddle too much in
 // the legacy widget's code
 // - allow to support the keepopen, and autoscroll features (yet to come)
-export class EditMenuItem extends twl.Component {
+export class EditMenuItem extends owl.Component {
     constructor() {
         super(...arguments);
         this.localId = 0;
         this.menus = useService("menu");
-        twl.hooks.onWillUpdateProps(() => this.localId++);
+        owl.hooks.onWillUpdateProps(() => this.localId++);
         this.editMenuParams = {};
-        twl.hooks.onPatched(() => {
+        owl.hooks.onPatched(() => {
             this.editMenuParams = {};
         });
     }
@@ -55,7 +55,7 @@ export class EditMenuItem extends twl.Component {
     }
 }
 EditMenuItem.components = { EditMenuItemAdapter };
-EditMenuItem.template = twl.tags.xml`
+EditMenuItem.template = owl.tags.xml`
   <t>
     <div t-if="!menus.getCurrentApp()"/>
     <t t-else="" t-component="EditMenuItemAdapter" t-props="editMenuParams" t-key="localId" t-on-reload-menu-data="reloadMenuData" />

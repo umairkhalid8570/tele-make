@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <templates xml:space="preserve">
 
-    <t t-name="web.GraphView.Buttons" twl="1">
+    <t t-name="web.GraphView.Buttons" owl="1">
         <div class="btn-group" role="toolbar" aria-label="Main actions" t-on-dropdown-item-selected="onMeasureSelected">
             <t t-call="web.ReportViewMeasures">
                 <t t-set="measures" t-value="model.metaData.measures"/>
@@ -45,7 +45,7 @@
         </div>
     </t>
 
-    <t t-name="web.GraphView" twl="1">
+    <t t-name="web.GraphView" owl="1">
         <Layout viewType="'graph'" useSampleModel="model.useSampleModel">
             <t t-set-slot="control-panel-bottom-left">
                 <t t-call="{{ constructor.buttonTemplate }}"/>

@@ -3,7 +3,7 @@
 import { registry } from "@web/core/registry";
 import { useService } from "@web/core/utils/hooks";
 
-const { Component } = twl;
+const { Component } = owl;
 const favoriteMenuRegistry = registry.category("favoriteMenu");
 
 /**

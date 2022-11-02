@@ -2,7 +2,7 @@
 
 import { registerMessagingComponent } from '@mail/utils/messaging_component';
 
-const { Component, useState } = twl;
+const { Component, useState } = owl;
 
 export class DropZone extends Component {
 

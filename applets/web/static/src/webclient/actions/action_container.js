@@ -2,7 +2,7 @@
 
 import { ActionDialog } from "./action_dialog";
 
-const { Component, tags } = twl;
+const { Component, tags } = owl;
 
 // -----------------------------------------------------------------------------
 // ActionContainer (Component)

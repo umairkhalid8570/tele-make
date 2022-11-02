@@ -12,7 +12,7 @@ function factory(dependencies) {
          * @override
          */
         _created() {
-            // Bind necessary until TWL supports arrow function in handlers: https://github.com/tele-studio/twl/issues/876
+            // Bind necessary until OWL supports arrow function in handlers: https://github.com/tele-studio/owl/issues/876
             this.onClickDownload = this.onClickDownload.bind(this);
         }
 
@@ -352,7 +352,7 @@ function factory(dependencies) {
             compute: '_computeDefaultSource',
         }),
         /**
-         * States the TWL ref of the "dialog" window.
+         * States the OWL ref of the "dialog" window.
          */
         dialogRef: attr(),
         displayName: attr({

@@ -10,7 +10,7 @@ tele.define('tele_studio.FormRenderer', function (require) {
     'use strict';
 
     const FormRenderer = require('web.FormRenderer');
-    const { ComponentWrapper } = require('web.TwlCompatibility');
+    const { ComponentWrapper } = require('web.OwlCompatibility');
     const ApprovalComponent = require('tele_studio.ApprovalComponent');
 
     FormRenderer.include({

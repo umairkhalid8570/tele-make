@@ -19,7 +19,7 @@ RULES = ('{'
 )
 PARSER_OPTIONS = '{ecmaVersion: 2019, sourceType: module}'
 GLOBAL = ','.join([
-        'twl',
+        'owl',
         'tele',
         '$',
         'jQuery',

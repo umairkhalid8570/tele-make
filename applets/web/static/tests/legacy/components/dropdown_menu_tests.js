@@ -68,7 +68,7 @@ tele.define('web.dropdown_menu_tests', function (require) {
             dropdown.destroy();
         });
 
-        QUnit.test('only one dropdown rendering at same time (twl vs bootstrap dropdown)', async function (assert) {
+        QUnit.test('only one dropdown rendering at same time (owl vs bootstrap dropdown)', async function (assert) {
             assert.expect(12);
 
             const bsDropdown = document.createElement('div');
@@ -96,7 +96,7 @@ tele.define('web.dropdown_menu_tests', function (require) {
             assert.doesNotHaveClass(bsDropdown.querySelector('.dropdown-menu'), 'show');
 
             assert.isVisible(dropdown.el.querySelector('.dropdown-menu'),
-                "twl dropdown menu should be visible");
+                "owl dropdown menu should be visible");
             assert.isNotVisible(bsDropdown.querySelector('.dropdown-menu'),
                 "bs dropdown menu should not be visible");
 
@@ -104,7 +104,7 @@ tele.define('web.dropdown_menu_tests', function (require) {
 
             assert.doesNotHaveClass(dropdown.el, 'show');
             assert.containsNone(dropdown.el, '.dropdown-menu',
-                "twl dropdown menu should not be set inside the dom");
+                "owl dropdown menu should not be set inside the dom");
 
             assert.hasClass(bsDropdown.querySelector('.dropdown-menu'), 'show');
             assert.isVisible(bsDropdown.querySelector('.dropdown-menu'),
@@ -114,7 +114,7 @@ tele.define('web.dropdown_menu_tests', function (require) {
 
             assert.doesNotHaveClass(dropdown.el, 'show');
             assert.containsNone(dropdown.el, '.dropdown-menu',
-                "twl dropdown menu should not be set inside the dom");
+                "owl dropdown menu should not be set inside the dom");
 
             assert.doesNotHaveClass(bsDropdown.querySelector('.dropdown-menu'), 'show');
             assert.isNotVisible(bsDropdown.querySelector('.dropdown-menu'),
@@ -358,14 +358,14 @@ tele.define('web.dropdown_menu_tests', function (require) {
             assert.expect(7);
 
             const props = { items: this.items };
-            class Parent extends twl.Component {
+            class Parent extends owl.Component {
                 constructor() {
                     super(...arguments);
-                    this.state = twl.useState(props);
+                    this.state = owl.useState(props);
                 }
             }
             Parent.components = { DropdownMenu };
-            Parent.template = twl.tags.xml`
+            Parent.template = owl.tags.xml`
                 <div>
                     <DropdownMenu class="first" title="'First'" items="state.items"/>
                     <DropdownMenu class="second" title="'Second'" items="state.items"/>
@@ -405,14 +405,14 @@ tele.define('web.dropdown_menu_tests', function (require) {
             assert.expect(5);
 
             const items = this.items;
-            class Parent extends twl.Component {
+            class Parent extends owl.Component {
                 constructor() {
                     super(...arguments);
                     this.items = items;
                 }
             }
             Parent.components = { DropdownMenu };
-            Parent.template = twl.tags.xml`
+            Parent.template = owl.tags.xml`
                 <div>
                     <DropdownMenu class="first" title="'First'" items="items"/>
                 </div>`;

@@ -7,7 +7,7 @@ import { View } from "@web/views/view";
 import { _fieldsViewGet } from "../helpers/mock_server";
 import { addLegacyMockEnvironment } from "../webclient/helpers";
 
-const { mount } = twl;
+const { mount } = owl;
 
 /**
  * @typedef {{
@@ -23,7 +23,7 @@ const { mount } = twl;
  * @param {MakeViewParams} params
  * @param {Object} [options={}]
  * @param {boolean} [options.noFields] Do not add default fields
- * @returns {twl.Component}
+ * @returns {owl.Component}
  */
 export const makeView = async (params, options = {}) => {
     const props = { ...params };
@@ -83,8 +83,8 @@ export const makeView = async (params, options = {}) => {
 
     registerCleanup(() => view.destroy());
 
-    const withSearch = Object.values(view.__twl__.children)[0];
-    const concreteView = Object.values(withSearch.__twl__.children)[0];
+    const withSearch = Object.values(view.__owl__.children)[0];
+    const concreteView = Object.values(withSearch.__owl__.children)[0];
 
     return concreteView;
 };

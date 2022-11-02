@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <templates>
 
-<t t-name="tele_studio.EditorMenu" twl="1">
+<t t-name="tele_studio.EditorMenu" owl="1">
     <div class="o_tele_studio_menu">
         <div class="o_tele_studio_breadcrumb o_tele_studio_menu_item">
             <ol class="breadcrumb">

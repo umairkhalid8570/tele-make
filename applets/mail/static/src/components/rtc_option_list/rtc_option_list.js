@@ -3,7 +3,7 @@
 import { registerMessagingComponent } from '@mail/utils/messaging_component';
 import { useComponentToModel } from '@mail/component_hooks/use_component_to_model/use_component_to_model';
 
-const { Component } = twl;
+const { Component } = owl;
 
 export class RtcOptionList extends Component {
 

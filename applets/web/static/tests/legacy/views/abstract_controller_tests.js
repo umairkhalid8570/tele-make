@@ -1,13 +1,13 @@
 tele.define("base.abstract_controller_tests", function (require) {
 "use strict";
 
-const { xml } = twl.tags;
+const { xml } = owl.tags;
 
 var testUtils = require("web.test_utils");
 var createView = testUtils.createView;
 var BasicView = require("web.BasicView");
 var BasicRenderer = require("web.BasicRenderer");
-const AbstractRenderer = require('web.AbstractRendererTwl');
+const AbstractRenderer = require('web.AbstractRendererOwl');
 const RendererWrapper = require('web.RendererWrapper');
 
 function getHtmlRenderer(html) {
@@ -19,7 +19,7 @@ function getHtmlRenderer(html) {
     });
 }
 
-function getTwlView(twlRenderer, viewType) {
+function getOwlView(owlRenderer, viewType) {
     viewType = viewType || "test";
     return BasicView.extend({
         viewType: viewType,
@@ -96,7 +96,7 @@ QUnit.module("Views", {
         view.destroy();
     });
 
-    QUnit.test('TWL Renderer correctly destroyed', async function (assert) {
+    QUnit.test('OWL Renderer correctly destroyed', async function (assert) {
         assert.expect(2);
 
         class Renderer extends AbstractRenderer {
@@ -108,7 +108,7 @@ QUnit.module("Views", {
         Renderer.template = xml`<div>Test</div>`;
 
         var view = await createView({
-            View: getTwlView(Renderer, "test"),
+            View: getOwlView(Renderer, "test"),
             data: this.data,
             model: "test_model",
             arch: "<test/>",
@@ -119,14 +119,14 @@ QUnit.module("Views", {
 
     });
 
-    QUnit.test('Correctly set focus to search panel with Twl Renderer', async function (assert) {
+    QUnit.test('Correctly set focus to search panel with Owl Renderer', async function (assert) {
         assert.expect(1);
 
         class Renderer extends AbstractRenderer { }
         Renderer.template = xml`<div>Test</div>`;
 
         var view = await createView({
-            View: getTwlView(Renderer, "test"),
+            View: getOwlView(Renderer, "test"),
             data: this.data,
             model: "test_model",
             arch: "<test/>",
@@ -135,9 +135,9 @@ QUnit.module("Views", {
         view.destroy();
     });
 
-    QUnit.test('Twl Renderer mounted/willUnmount hooks are properly called', async function (assert) {
+    QUnit.test('Owl Renderer mounted/willUnmount hooks are properly called', async function (assert) {
         // This test could be removed as soon as controllers and renderers will
-        // both be converted in Twl.
+        // both be converted in Owl.
         assert.expect(3);
 
         class Renderer extends AbstractRenderer {
@@ -151,7 +151,7 @@ QUnit.module("Views", {
         Renderer.template = xml`<div>Test</div>`;
 
         const view = await createView({
-            View: getTwlView(Renderer, "test"),
+            View: getOwlView(Renderer, "test"),
             data: this.data,
             model: "test_model",
             arch: "<test/>",

@@ -14,7 +14,7 @@ import { editSelect } from 'web.test_utils_fields';
 import { createComponent } from 'web.test_utils';
 
 const { DateTime } = luxon;
-const { Component, mount, tags, useState } = twl;
+const { Component, mount, tags, useState } = owl;
 const { xml } = tags;
 const serviceRegistry = registry.category("services");
 

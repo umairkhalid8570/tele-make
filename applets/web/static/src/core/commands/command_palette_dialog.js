@@ -3,7 +3,7 @@
 import { Dialog } from "@web/core/dialog/dialog";
 import { CommandPalette } from "./command_palette";
 
-const { hooks } = twl;
+const { hooks } = owl;
 const { useExternalListener } = hooks;
 
 /**

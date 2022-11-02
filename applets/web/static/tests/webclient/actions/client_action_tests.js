@@ -9,7 +9,7 @@ import { registerCleanup } from "../../helpers/cleanup";
 import { click, legacyExtraNextTick, nextTick, patchWithCleanup } from "../../helpers/utils";
 import { createWebClient, doAction, getActionManagerServerData } from "./../helpers";
 
-const { Component, tags } = twl;
+const { Component, tags } = owl;
 
 let serverData;
 const actionRegistry = registry.category("actions");
@@ -347,7 +347,7 @@ QUnit.module("ActionManager", (hooks) => {
         assert.expect(4);
         class ClientAction extends Component {
             setup() {
-                this.breadcrumbTitle = "myTwlAction";
+                this.breadcrumbTitle = "myOwlAction";
                 const { breadcrumbs } = this.env.config;
                 assert.strictEqual(breadcrumbs.length, 1);
                 assert.strictEqual(breadcrumbs[0].name, "Favorite Ponies");
@@ -356,21 +356,21 @@ QUnit.module("ActionManager", (hooks) => {
                 this.trigger("controller-title-updated", this.breadcrumbTitle);
             }
             onClick() {
-                this.breadcrumbTitle = "newTwlTitle";
+                this.breadcrumbTitle = "newOwlTitle";
                 this.trigger("controller-title-updated", this.breadcrumbTitle);
             }
         }
-        ClientAction.template = tags.xml`<div class="my_twl_action" t-on-click="onClick">twl client action</div>`;
-        actionRegistry.add("TwlClientAction", ClientAction);
+        ClientAction.template = tags.xml`<div class="my_owl_action" t-on-click="onClick">owl client action</div>`;
+        actionRegistry.add("OwlClientAction", ClientAction);
         const webClient = await createWebClient({ serverData });
         await doAction(webClient, 8);
-        await doAction(webClient, "TwlClientAction");
-        assert.containsOnce(webClient.el, ".my_twl_action");
-        await click(webClient.el, ".my_twl_action");
+        await doAction(webClient, "OwlClientAction");
+        assert.containsOnce(webClient.el, ".my_owl_action");
+        await click(webClient.el, ".my_owl_action");
         await doAction(webClient, 3);
         assert.strictEqual(
             webClient.el.querySelector(".breadcrumb").textContent,
-            "Favorite PoniesnewTwlTitlePartners"
+            "Favorite PoniesnewOwlTitlePartners"
         );
     });
 
@@ -381,10 +381,10 @@ QUnit.module("ActionManager", (hooks) => {
                 assert.strictEqual(this.props.division, "bell");
             }
         }
-        ClientAction.template = tags.xml`<div class="my_twl_action"></div>`;
-        actionRegistry.add("TwlClientAction", ClientAction);
+        ClientAction.template = tags.xml`<div class="my_owl_action"></div>`;
+        actionRegistry.add("OwlClientAction", ClientAction);
         const webClient = await createWebClient({ serverData });
-        await doAction(webClient, "TwlClientAction", {
+        await doAction(webClient, "OwlClientAction", {
             props: { division: "bell" },
         });
     });

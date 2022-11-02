@@ -5,7 +5,7 @@ import { Dialog } from "@web/core/dialog/dialog";
 import { editModelDebug } from "@web/core/debug/debug_utils";
 import { registry } from "@web/core/registry";
 
-const { tags } = twl;
+const { tags } = owl;
 
 const debugRegistry = registry.category("debug");
 

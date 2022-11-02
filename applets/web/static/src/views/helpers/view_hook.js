@@ -6,7 +6,7 @@ import { registry } from "@web/core/registry";
 import { useListener, useService } from "@web/core/utils/hooks";
 import { evaluateExpr } from "@web/core/py_js/py";
 
-const { useComponent } = twl.hooks;
+const { useComponent } = owl.hooks;
 
 export function useSetupView(params) {
     const component = useComponent();
@@ -30,7 +30,7 @@ export function useViewArch(arch, params = {}) {
 
     const { compile, extract } = params;
     if (!("template" in processedArch) && compile) {
-        processedArch.template = twl.tags.xml`${compile(arch)}`;
+        processedArch.template = owl.tags.xml`${compile(arch)}`;
     }
     if (!("extracted" in processedArch) && extract) {
         processedArch.extracted = extract(arch);
@@ -43,7 +43,7 @@ export function useViewArch(arch, params = {}) {
  * Allows for a component (usually a View component) to handle links with
  * attribute type="action". This is used to support onboarding banners and content helpers.
  *
- * A @web/core/concurrency:KeepLast must be present in the twl environment to allow coordinating
+ * A @web/core/concurrency:KeepLast must be present in the owl environment to allow coordinating
  * between clicks. (env.keepLast)
  *
  * Note that this is similar but quite different from action buttons, since action links
@@ -54,7 +54,7 @@ export function useViewArch(arch, params = {}) {
  */
 export function useActionLinks({ resModel, reload }) {
     const selector = `a[type="action"]`;
-    const component = twl.hooks.useComponent();
+    const component = owl.hooks.useComponent();
     const keepLast = component.env.keepLast;
 
     const orm = useService("orm");

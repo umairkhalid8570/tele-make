@@ -8,13 +8,13 @@ tele.define('point_of_sale.CashMovePopup', function (require) {
 
     class CashMovePopup extends AbstractAwaitablePopup {
         setup() {
-            this.state = twl.hooks.useState({
+            this.state = owl.hooks.useState({
                 inputType: '', // '' | 'in' | 'out'
                 inputAmount: '',
                 inputReason: '',
                 inputHasError: false,
             });
-            this.inputAmountRef = twl.hooks.useRef('input-amount-ref');
+            this.inputAmountRef = owl.hooks.useRef('input-amount-ref');
         }
         confirm() {
             try {

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <templates id="template" xml:space="preserve">
-    <t t-name="ActivePrograms" twl="1">
+    <t t-name="ActivePrograms" owl="1">
         <div class="active-programs">
             <div t-if="currentOrder and renderParams.show">
                 <div class="title">Active Programs</div>

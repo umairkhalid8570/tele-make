@@ -1,7 +1,7 @@
 (function () {
     "use strict";
 
-    const { Component } = twl;
+    const { Component } = owl;
 
     // -----------------------------------------------------------------------------
     // QUnit config
@@ -113,7 +113,7 @@
      * - is unique
      * - has the given attribute with the proper value
      *
-     * @param {Widget|jQuery|HTMLElement|twl.Component} w
+     * @param {Widget|jQuery|HTMLElement|owl.Component} w
      * @param {string} attr
      * @param {string} value
      * @param {string} [msg]

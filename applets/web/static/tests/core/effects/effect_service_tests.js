@@ -11,7 +11,7 @@ import { makeFakeLocalizationService } from "../../helpers/mock_services";
 import { click, getFixture, nextTick, patchWithCleanup } from "../../helpers/utils";
 import { registerCleanup } from "../../helpers/cleanup";
 
-const { Component, mount, tags } = twl;
+const { Component, mount, tags } = owl;
 const serviceRegistry = registry.category("services");
 const mainComponentRegistry = registry.category("main_components");
 

@@ -3,7 +3,7 @@
 import { createWebClient, doAction, getActionManagerServerData, loadState } from "@web/../tests/webclient/helpers";
 import { click, legacyExtraNextTick } from "@web/../tests/helpers/utils";
 
-const { loadJS } = twl.utils;
+const { loadJS } = owl.utils;
 
 let serverData;
 

@@ -11,7 +11,7 @@ import { registry } from "@web/core/registry";
 import { AbstractSpreadsheetAction } from "../abstract_spreadsheet_action";
 import { UNTITLED_SPREADSHEET_NAME } from "../../constants";
 
-const { useState, useRef } = twl.hooks;
+const { useState, useRef } = owl.hooks;
 
 export class SpreadsheetAction extends AbstractSpreadsheetAction {
     setup() {
@@ -23,8 +23,8 @@ export class SpreadsheetAction extends AbstractSpreadsheetAction {
         this.notificationMessage = this.env._t("New spreadsheet created in Documents");
         if (this.props.action.params.transportService) {
             this.transportService = this.props.action.params.transportService;
-        } else if (twl.Component.env.services.bus_service) {
-            this.transportService = new SpreadsheetCollaborativeChannel(twl.Component.env, this.resId);
+        } else if (owl.Component.env.services.bus_service) {
+            this.transportService = new SpreadsheetCollaborativeChannel(owl.Component.env, this.resId);
         }
         this.state = useState({
             numberOfConnectedUsers: 1,

@@ -1,10 +1,10 @@
 
-tele.define('web.twl_dialog_tests', function (require) {
+tele.define('web.owl_dialog_tests', function (require) {
     "use strict";
 
     const LegacyDialog = require('web.Dialog');
     const makeTestEnvironment = require('web.test_env');
-    const Dialog = require('web.TwlDialog');
+    const Dialog = require('web.OwlDialog');
     const testUtils = require('web.test_utils');
     const { registry } = require("@web/core/registry");
     const { makeFakeDialogService } = require("@web/../tests/helpers/mock_services");
@@ -14,12 +14,12 @@ tele.define('web.twl_dialog_tests', function (require) {
     const { getFixture, nextTick, patchWithCleanup } = require("@web/../tests/helpers/utils");
     const { createWebClient, doAction } = require("@web/../tests/webclient/helpers");
 
-    const { Component, tags, useState, mount } = twl;
+    const { Component, tags, useState, mount } = owl;
     const EscapeKey = { key: 'Escape', keyCode: 27, which: 27 };
     const { xml } = tags;
 
     QUnit.module('core', {}, function () {
-        QUnit.module('TwlDialog');
+        QUnit.module('OwlDialog');
 
         QUnit.test("Rendering of all props", async function (assert) {
             assert.expect(35);
@@ -199,7 +199,7 @@ tele.define('web.twl_dialog_tests', function (require) {
             const parent = new Parent();
             await parent.mount(testUtils.prepareTarget());
 
-            // Dialog 1 : Twl
+            // Dialog 1 : Owl
             parent.dialogIds.push(1);
             await testUtils.nextTick();
             // Dialog 2 : Legacy
@@ -208,10 +208,10 @@ tele.define('web.twl_dialog_tests', function (require) {
             // Dialog 3 : Legacy
             new LegacyDialog(null, {}).open();
             await testUtils.nextTick();
-            // Dialog 4 : Twl
+            // Dialog 4 : Owl
             parent.dialogIds.push(4);
             await testUtils.nextTick();
-            // Dialog 5 : Twl
+            // Dialog 5 : Owl
             parent.dialogIds.push(5);
             await testUtils.nextTick();
             // Dialog 6 : Legacy (unopened)
@@ -219,7 +219,7 @@ tele.define('web.twl_dialog_tests', function (require) {
             await testUtils.nextTick();
 
             // Manually closes the last legacy dialog. Should not affect the other
-            // existing dialogs (3 twl and 2 legacy).
+            // existing dialogs (3 owl and 2 legacy).
             unopenedModal.close();
 
             let modals = document.querySelectorAll('.modal');
@@ -230,7 +230,7 @@ tele.define('web.twl_dialog_tests', function (require) {
             assert.containsN(document.body, '.o_dialog', 3);
             assert.containsN(document.body, '.o_legacy_dialog', 2);
 
-            // Reactivity with twl dialogs
+            // Reactivity with owl dialogs
             await testUtils.dom.triggerEvent(modals[modals.length - 1], 'keydown', EscapeKey); // Press Escape
 
             modals = document.querySelectorAll('.modal');
@@ -277,21 +277,21 @@ tele.define('web.twl_dialog_tests', function (require) {
             parent.destroy();
         });
 
-        QUnit.test("Interactions between legacy twl dialogs and new twl dialogs", async function (assert) {
+        QUnit.test("Interactions between legacy owl dialogs and new owl dialogs", async function (assert) {
             assert.expect(7);
             const { legacyEnv, env } = await makeLegacyDialogMappingTestEnv();
 
             let id = 1;
-            // TwlDialog env
-            class TwlDialogWrapper extends twl.Component {
+            // OwlDialog env
+            class OwlDialogWrapper extends owl.Component {
                 setup() {
                     this.env = legacyEnv;
                 }
             }
-            TwlDialogWrapper.template = xml`
+            OwlDialogWrapper.template = xml`
                 <Dialog t-on-dialog-closed="props.close()" />
             `;
-            TwlDialogWrapper.components = { Dialog };
+            OwlDialogWrapper.components = { Dialog };
             class WowlDialogSubClass extends WowlDialog{
                 setup(){
                     super.setup();
@@ -324,7 +324,7 @@ tele.define('web.twl_dialog_tests', function (require) {
             parent.dialogs.push({ id: 1, class: WowlDialogSubClass });
             await nextTick();
             id ++;
-            parent.dialogs.push({ id: 2, class: TwlDialogWrapper });
+            parent.dialogs.push({ id: 2, class: OwlDialogWrapper });
             await nextTick();
             id ++;
             parent.dialogs.push({ id: 3, class: WowlDialogSubClass });
@@ -391,12 +391,12 @@ tele.define('web.twl_dialog_tests', function (require) {
             parent.state.showSecondDialog = false;
             await testUtils.nextTick();
 
-            assert.ok(twlIndexBefore < getComputedStyle(document.querySelector('.o_dialog .modal')).zIndex,
-                "z-index of the twl dialog should be incremented since the active modal was destroyed");
+            assert.ok(owlIndexBefore < getComputedStyle(document.querySelector('.o_dialog .modal')).zIndex,
+                "z-index of the owl dialog should be incremented since the active modal was destroyed");
             assert.strictEqual(feZIndexBefore, getComputedStyle(frontEndModal).zIndex,
-                "z-index of front-end modals should not be impacted by Twl Dialog activity system");
+                "z-index of front-end modals should not be impacted by Owl Dialog activity system");
             assert.strictEqual(beZIndexBefore, getComputedStyle(backEndModal).zIndex,
-                "z-index of custom back-end modals should not be impacted by Twl Dialog activity system");
+                "z-index of custom back-end modals should not be impacted by Owl Dialog activity system");
 
             parent.destroy();
             frontEndModal.destroy();

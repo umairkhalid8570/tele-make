@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <templates>
 
-<t t-name="tele_studio.IconCreator" twl="1">
+<t t-name="tele_studio.IconCreator" owl="1">
     <div class="o_tele_studio_icon_creator">
         <div t-if="props.type === 'base64'" class="o_tele_studio_uploaded_image"
             t-attf-style="background-image: url({{props.webIconData}})"

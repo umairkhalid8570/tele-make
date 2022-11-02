@@ -11,7 +11,7 @@ const { createParent, nextTick, prepareTarget } = testUtils;
 QUnit.module('Website Backend Dashboard', {
 }, function () {
     QUnit.test("mounted is called once for the dashboard's ControlPanel", async function (assert) {
-        // This test can be removed as soon as we don't mix legacy and twl layers anymore.
+        // This test can be removed as soon as we don't mix legacy and owl layers anymore.
         assert.expect(5);
 
         patch(ControlPanel.prototype, 'test.ControlPanel', {

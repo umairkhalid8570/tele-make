@@ -1,7 +1,7 @@
 tele.define('web.datepicker_tests', function (require) {
     "use strict";
 
-    const { DatePicker, DateTimePicker } = require('web.DatePickerTwl');
+    const { DatePicker, DateTimePicker } = require('web.DatePickerOwl');
     const testUtils = require('web.test_utils');
     const time = require('web.time');
 

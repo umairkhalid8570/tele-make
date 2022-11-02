@@ -1,8 +1,8 @@
 tele.define('point_of_sale.DebugWidget', function (require) {
     'use strict';
 
-    const { useState } = twl;
-    const { useRef } = twl.hooks;
+    const { useState } = owl;
+    const { useRef } = owl.hooks;
     const { getFileAsText } = require('point_of_sale.utils');
     const { parse } = require('web.field_utils');
     const NumberBuffer = require('point_of_sale.NumberBuffer');

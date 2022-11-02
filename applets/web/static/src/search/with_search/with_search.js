@@ -4,7 +4,7 @@ import { useBus, useService } from "@web/core/utils/hooks";
 import { SearchModel } from "@web/search/search_model";
 import { CallbackRecorder, useSetupAction } from "@web/webclient/actions/action_hook";
 
-const { Component, hooks } = twl;
+const { Component, hooks } = owl;
 const { useSubEnv } = hooks;
 
 export const SEARCH_KEYS = ["comparison", "context", "domain", "groupBy", "orderBy"];
@@ -86,7 +86,7 @@ WithSearch.props = {
 
     // search query elements
     comparison: { validate: () => true, optional: true }, // fix problem with validation with type: [Object, null]
-    // Issue TWL: https://github.com/tele-studio/twl/issues/910
+    // Issue OWL: https://github.com/tele-studio/owl/issues/910
     context: { type: Object, optional: true },
     domain: { type: Array, element: [String, Array], optional: true },
     groupBy: { type: Array, element: String, optional: true },

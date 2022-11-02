@@ -15,7 +15,7 @@
     <t t-name="website_sale_dashboard.WebsiteSaleDashboardView"
         t-inherit="web_dashboard.DashboardView"
         t-inherit-mode="primary"
-        twl="1">
+        owl="1">
         <xpath expr="//Layout" position="inside">
             <t t-set-slot="control-panel-bottom-left">
                 <a role="button" href="/" class="btn btn-primary rounded-sm" title="Go to Website">

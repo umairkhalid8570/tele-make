@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <templates>
-    <div t-name="documents_spreadsheet.PivotSidePanel" class="o_spreadsheet_pivot_side_panel" twl="1">
+    <div t-name="documents_spreadsheet.PivotSidePanel" class="o_spreadsheet_pivot_side_panel" owl="1">
         <t t-set="pivotId" t-value="getters.getSelectedPivotId()"/>
         <t t-if="pivotId">
             <PivotDetailsSidePanel pivotId="pivotId"/>

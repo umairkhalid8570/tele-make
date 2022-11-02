@@ -7,7 +7,7 @@ var Dialog = require('web.Dialog');
 var DomainSelectorDialog = require("web.DomainSelectorDialog");
 var Domain = require("web.Domain");
 var field_registry = require('web.field_registry');
-var fieldRegistryTwl = require('web.field_registry_twl');
+var fieldRegistryOwl = require('web.field_registry_owl');
 var pyUtils = require('web.py_utils');
 var relational_fields = require('web.relational_fields');
 var session = require("web.session");
@@ -193,7 +193,7 @@ return Widget.extend(StandaloneFieldManagerMixin, {
 
             // fieldRegistryMap contains all widgets and components but we want to filter
             // these widgets based on field types (and description for non debug mode)
-            const fieldRegistryMap = Object.assign({}, field_registry.map, fieldRegistryTwl.map);
+            const fieldRegistryMap = Object.assign({}, field_registry.map, fieldRegistryOwl.map);
             field.field_widgets = _.chain(fieldRegistryMap)
                 .pairs()
                 .filter(function (arr) {
@@ -484,7 +484,7 @@ return Widget.extend(StandaloneFieldManagerMixin, {
     _getWidgetKey: function (Widget) {
         var widgetKey = this.state.attrs.widget;
         if (!widgetKey) {
-            const fieldRegistryMap = Object.assign({}, field_registry.map, fieldRegistryTwl.map);
+            const fieldRegistryMap = Object.assign({}, field_registry.map, fieldRegistryOwl.map);
             _.each(fieldRegistryMap, function (val, key) {
                 if (val === Widget) {
                     widgetKey = key;

@@ -10,7 +10,7 @@ const debugMenuService = {
             const systray = document.querySelector('.o_menu_systray');
             if (systray) {
                 Object.assign(env, createDebugContext(env, {categories: ["default"]}));
-                twl.mount(DebugMenuBasic, {
+                owl.mount(DebugMenuBasic, {
                     target: systray,
                     position: 'first-child',
                     env,

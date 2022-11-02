@@ -26,10 +26,10 @@ const Domain = require('web.Domain');
 var KanbanRecord = require('web.KanbanRecord');
 var KanbanRenderer = require('web.KanbanRenderer');
 var ListRenderer = require('web.ListRenderer');
-const { ComponentWrapper, WidgetAdapterMixin } = require('web.TwlCompatibility');
+const { ComponentWrapper, WidgetAdapterMixin } = require('web.OwlCompatibility');
 const { sprintf, toBoolElse } = require("web.utils");
 
-const { escape } = twl.utils;
+const { escape } = owl.utils;
 var _t = core._t;
 var _lt = core._lt;
 var qweb = core.qweb;

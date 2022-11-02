@@ -33,8 +33,8 @@ function getGraphModelMetaData(graph) {
 }
 
 export function getGraphRenderer(graph) {
-    const layout = Object.values(graph.__twl__.children)[0];
-    return Object.values(layout.__twl__.children).find((c) => c.chart);
+    const layout = Object.values(graph.__owl__.children)[0];
+    return Object.values(layout.__owl__.children).find((c) => c.chart);
 }
 
 function getChart(graph) {

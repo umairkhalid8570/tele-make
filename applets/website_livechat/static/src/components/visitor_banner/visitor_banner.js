@@ -2,7 +2,7 @@
 
 import { registerMessagingComponent } from '@mail/utils/messaging_component';
 
-const { Component } = twl;
+const { Component } = owl;
 
 class VisitorBanner extends Component {
 

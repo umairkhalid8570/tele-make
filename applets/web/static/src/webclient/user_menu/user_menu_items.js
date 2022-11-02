@@ -5,7 +5,7 @@ import { browser } from "../../core/browser/browser";
 import { registry } from "../../core/registry";
 import { session } from "@web/session";
 
-const { Component } = twl;
+const { Component } = owl;
 
 function documentationItem(env) {
     const documentationURL = "https://www.docs.tele.studio/1.0";

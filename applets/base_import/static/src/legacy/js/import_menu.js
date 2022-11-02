@@ -4,7 +4,7 @@ tele.define('base_import.ImportMenu', function (require) {
     const FavoriteMenu = require('web.FavoriteMenu');
     const { useModel } = require('web.Model');
 
-    const { Component } = twl;
+    const { Component } = owl;
 
     /**
      * Import Records menu

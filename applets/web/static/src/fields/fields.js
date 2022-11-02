@@ -1,11 +1,11 @@
 /** @tele-module **/
 import { registry } from "@web/core/registry";
 import legacyFieldRegistry from "web.field_registry";
-import owlFieldRegistry from "web.field_registry_twl";
-import { ComponentAdapter } from "web.TwlCompatibility";
+import owlFieldRegistry from "web.field_registry_owl";
+import { ComponentAdapter } from "web.OwlCompatibility";
 import { useEffect } from "@web/core/utils/hooks";
 
-const { Component, tags, hooks } = twl;
+const { Component, tags, hooks } = owl;
 
 const fieldRegistry = registry.category("fields");
 
@@ -49,14 +49,14 @@ class FieldSupportsLegacy extends Field {
     static getTangibleField({ record, type, fieldName }) {
         let { FieldClass } = super.getTangibleField(...arguments);
         if (!FieldClass) {
-            FieldClass = getFieldFromRegistry(twlFieldRegistry, {
+            FieldClass = getFieldFromRegistry(owlFieldRegistry, {
                 fieldName,
                 fieldType: type,
                 viewType: record.viewType,
                 fieldsDescription: record.fields,
             });
             if (FieldClass) {
-                return { FieldClass, isTwlLegacy: true };
+                return { FieldClass, isOwlLegacy: true };
             } else {
                 FieldClass = getFieldFromRegistry(legacyFieldRegistry, {
                     fieldName,
@@ -77,15 +77,15 @@ class FieldSupportsLegacy extends Field {
             this.renderId++;
         });
         if (!this.FieldComponent) {
-            this.env = twl.Component.env;
+            this.env = owl.Component.env;
             const { record, type, name } = this.props;
-            const { FieldClass, isTwlLegacy, isLegacy } = FieldSupportsLegacy.getTangibleField({
+            const { FieldClass, isOwlLegacy, isLegacy } = FieldSupportsLegacy.getTangibleField({
                 record,
                 type,
                 name,
             });
             this.FieldComponent = FieldClass;
-            this.isTwlLegacy = isTwlLegacy;
+            this.isOwlLegacy = isOwlLegacy;
             this.isLegacy = isLegacy;
         }
     }
@@ -105,8 +105,8 @@ class FieldSupportsLegacy extends Field {
     }
 }
 FieldSupportsLegacy.template = tags.xml/* xml */ `<t>
-    <t t-if="!isTwlLegacy and !isLegacy" t-call="${Field.template}" />
-    <t t-elif="isTwlLegacy" t-component="FieldComponent" t-props="legacyProps" />
+    <t t-if="!isOwlLegacy and !isLegacy" t-call="${Field.template}" />
+    <t t-elif="isOwlLegacy" t-component="FieldComponent" t-props="legacyProps" />
     <t t-elif="isLegacy" t-component="ComponentAdapter" widgetArgs="widgetArgs" Component="FieldComponent" t-key="renderId" />
 </t>
 `;

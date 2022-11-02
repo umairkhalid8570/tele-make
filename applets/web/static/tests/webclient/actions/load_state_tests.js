@@ -26,7 +26,7 @@ import {
 } from "./../helpers";
 import { errorService } from "@web/core/errors/error_service";
 
-const { Component, mount, tags } = twl;
+const { Component, mount, tags } = owl;
 
 let serverData;
 
@@ -144,7 +144,7 @@ QUnit.module("ActionManager", (hooks) => {
         assert.expect(2);
         const webClient = await createWebClient({ serverData });
         await loadState(webClient, {
-            action: "wtwl.client_action",
+            action: "wowl.client_action",
         });
         assert.strictEqual(
             webClient.el.querySelector(".test_client_action").textContent.trim(),
@@ -155,10 +155,10 @@ QUnit.module("ActionManager", (hooks) => {
 
     QUnit.test("supports opening action in dialog", async (assert) => {
         assert.expect(3);
-        serverData.actions["wtwl.client_action"].target = "new";
+        serverData.actions["wowl.client_action"].target = "new";
         const webClient = await createWebClient({ serverData });
         await loadState(webClient, {
-            action: "wtwl.client_action",
+            action: "wowl.client_action",
         });
         assert.containsOnce(webClient, ".test_client_action");
         assert.containsOnce(webClient, ".modal .test_client_action");

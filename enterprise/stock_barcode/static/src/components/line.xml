@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <templates xml:space="preserve">
 
-    <t t-name="stock_barcode.LineComponent" twl="1">
-        <div t-name="LineComponent" twl="1" t-on-click="select"
+    <t t-name="stock_barcode.LineComponent" owl="1">
+        <div t-name="LineComponent" owl="1" t-on-click="select"
             class="o_barcode_line list-group-item d-flex flex-row flex-nowrap"
             t-att-data-barcode="line.product_id.barcode" t-attf-class="
                 {{isComplete ? 'o_line_completed' : ''}}

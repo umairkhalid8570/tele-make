@@ -4,10 +4,10 @@ tele.define('web.WeekDays', function (require) {
     const CustomCheckbox = require('web.CustomCheckbox');
     const Registry = require('web.widgetRegistry');
     const utils = require('web.utils');
-    const { useState } = twl.hooks;
+    const { useState } = owl.hooks;
 
 
-    class WeekDays extends twl.Component {
+    class WeekDays extends owl.Component {
         constructor(parent) {
             super(...arguments);
             this.parent = parent;

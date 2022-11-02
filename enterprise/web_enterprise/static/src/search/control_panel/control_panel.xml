@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <templates xml:space="preserve">
 
-    <t t-name="web_enterprise.ControlPanel" twl="1">
+    <t t-name="web_enterprise.ControlPanel" owl="1">
         <t t-if="!env.isSmall">
             <t t-call="web.ControlPanel" />
         </t>
@@ -116,7 +116,7 @@
         </t>
     </t>
 
-    <t t-name="web_enterprise.Breadcrumbs" twl="1">
+    <t t-name="web_enterprise.Breadcrumbs" owl="1">
         <ol class="breadcrumb">
             <t t-set="breadcrumbs" t-value="env.config.breadcrumbs or []" />
             <t t-if="breadcrumbs.length">

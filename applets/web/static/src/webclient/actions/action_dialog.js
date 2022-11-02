@@ -5,7 +5,7 @@ import { DebugMenu } from "@web/core/debug/debug_menu";
 import { useOwnDebugContext } from "@web/core/debug/debug_context";
 import { useEffect } from "@web/core/utils/hooks";
 
-const { hooks } = twl;
+const { hooks } = owl;
 
 const LEGACY_SIZE_CLASSES = {
     "extra-large": "modal-xl",

@@ -9,9 +9,9 @@ const { isEventHandled, markEventHandled } = require('@mail/utils/utils');
 const ajax = require('web.ajax');
 const { csrf_token, _t } = require('web.core');
 
-const { useState } = twl.hooks;
+const { useState } = owl.hooks;
 
-class PdfManager extends twl.Component {
+class PdfManager extends owl.Component {
 
     /**
      * @override
@@ -323,7 +323,7 @@ class PdfManager extends twl.Component {
                 height: 230,
             });
             this._pageCanvas[pageId] = { page, canvas };
-            const pdfPage = this.__twl__.refs[`PdfPage_${pageId}`];
+            const pdfPage = this.__owl__.refs[`PdfPage_${pageId}`];
             if (pdfPage) {
                 pdfPage.renderPage(canvas);
             }

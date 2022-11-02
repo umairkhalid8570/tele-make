@@ -1,12 +1,12 @@
 /** @tele-module */
 
-import { ComponentAdapter } from "web.TwlCompatibility";
+import { ComponentAdapter } from "web.OwlCompatibility";
 import { Dialog } from "@web/core/dialog/dialog";
 import { _lt } from "@web/core/l10n/translation";
 import { useService } from "@web/core/utils/hooks";
 import { StandaloneMany2OneField } from "../../widgets/standalone_many2one_field";
-const { xml, css } = twl.tags;
-const { useState, useExternalListener } = twl.hooks;
+const { xml, css } = owl.tags;
+const { useState, useExternalListener } = owl.hooks;
 
 const STYLE = css/* scss */ `
     .o-ir-menu-selector .o_field_many2one {
@@ -16,7 +16,7 @@ const STYLE = css/* scss */ `
 
 class MenuSelectorWidgetAdapter extends ComponentAdapter {
     setup() {
-        this.env = twl.Component.env;
+        this.env = owl.Component.env;
     }
 
     mounted() {

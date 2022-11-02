@@ -12,7 +12,7 @@ TODO: EDGE-CASE: 1. TO GREP PROXY PASS OUT OF MULTIPLE LOCATION BLOCK.
 normal vhost copy part 
 """
 
-CLIENT_EMAIL = "saasclient@tele-saas.tele.studio"
+CLIENT_EMAIL = "saasclient@tele-saas.tele.com"
 WEBROOT_PATH = "/usr/share/nginx/html/" 
 REVERSE_PROXY_CHECK = "sudo nginx -t"
 REVERSE_PROXY_RELOAD = "sudo nginx -s reload"
@@ -226,14 +226,14 @@ if __name__ == '__main__':
     ssl_flag: to notify if ssl certs are already present
     """
 
-    subdomain = "trial_test_4.saas.tele.studio"
-    custom_domain = "gc-new.saas.tele.studio"
+    subdomain = "trial_test_4.tele12-saas.tele.com"
+    custom_domain = "gc-new.tele12-saas.tele.com"
 
-    main_add(subdomain=subdomain, custom_domain=custom_domain, ssl_flag=True, module_path="/opt/tele14/tele_applets/tele_saas_kit/")
+    main_add(subdomain=subdomain, custom_domain=custom_domain, ssl_flag=True, module_path="/opt/tele14/tele_addons/tele_saas_kit/")
     
     # EVERTHING UNDERNEATH THIS IS FOR TESTING
     #tele_saas_data = os.getcwd()
-    #tele_backend, longpolling_backend = grep_backends_from_conf(tele_saas_data, "test.tele-saas.tele.studio")
+    #tele_backend, longpolling_backend = grep_backends_from_conf(tele_saas_data, "test.tele-saas.tele.com")
     # run_certbot(domain_name="domain.com", client_email="abc@domain.com", webroot_path="/usr/share/nginx/html/", dry_run=True)
-    #create_vhost("test.tele-saas.tele.studio", "domain.ml", tele_backend, longpolling_backend, docker_vhosts=tele_saas_data, ssl_flag=True)
+    #create_vhost("test.tele-saas.tele.com", "domain.ml", tele_backend, longpolling_backend, docker_vhosts=tele_saas_data, ssl_flag=True)
     #remove_vhost("test.abc.com", docker_vhosts="")

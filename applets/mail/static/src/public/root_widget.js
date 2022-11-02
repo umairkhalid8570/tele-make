@@ -3,7 +3,7 @@
  * TourManager so it can get access to _trigger_up.
  */
 tele.define("root.widget", function (require) {
-    const { ComponentAdapter } = require("web.TwlCompatibility");
-    const { Component } = twl;
+    const { ComponentAdapter } = require("web.OwlCompatibility");
+    const { Component } = owl;
     return new ComponentAdapter(null, { Component });
 });

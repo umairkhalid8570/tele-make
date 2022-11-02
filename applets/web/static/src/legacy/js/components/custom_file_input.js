@@ -1,7 +1,7 @@
 tele.define('web.CustomFileInput', function (require) {
     "use strict";
 
-    const { Component, hooks } = twl;
+    const { Component, hooks } = owl;
     const { useRef } = hooks;
 
     /**

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <templates>
 
-<t t-name="tele_studio.TwlNewViewDialogFooter" twl="1">
+<t t-name="tele_studio.OwlNewViewDialogFooter" owl="1">
   <button class="btn btn-primary rounded-sm" t-on-click="_confirm">
     Activate View
   </button>
@@ -10,7 +10,7 @@
   </button>
 </t>
 
-<t t-name="tele_studio.NewViewFieldsSelector" twl="1">
+<t t-name="tele_studio.NewViewFieldsSelector" owl="1">
   <div class="o_tele_studio_new_view_dialog">
     <div class="o_tele_studio_select">
       <label for="date_start">Start Date Field</label>

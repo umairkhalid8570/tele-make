@@ -8,7 +8,7 @@ import { HomeMenu } from "@web_enterprise/webclient/home_menu/home_menu";
 import { makeFakeEnterpriseService } from "../mocks";
 import { uiService } from "@web/core/ui/ui_service";
 
-const { Component, core, hooks, mount, tags } = twl;
+const { Component, core, hooks, mount, tags } = owl;
 const { EventBus } = core;
 const patchDate = testUtils.mock.patchDate;
 const serviceRegistry = registry.category("services");

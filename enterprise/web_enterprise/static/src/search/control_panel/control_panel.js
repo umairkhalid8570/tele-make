@@ -3,8 +3,8 @@
 import { ControlPanel } from "@web/search/control_panel/control_panel";
 import { patch } from "@web/core/utils/patch";
 
-const { useExternalListener, useState } = twl.hooks;
-const { Portal } = twl.misc;
+const { useExternalListener, useState } = owl.hooks;
+const { Portal } = owl.misc;
 const STICKY_CLASS = "o_mobile_sticky";
 
 patch(ControlPanel.prototype, "web_enterprise.ControlPanel", {

@@ -1,4 +1,4 @@
-(function (exports, twl) {
+(function (exports, owl) {
     'use strict';
 
     function _interopNamespace(e) {
@@ -19,7 +19,7 @@
         return Object.freeze(n);
     }
 
-    var twl__namespace = /*#__PURE__*/_interopNamespace(twl);
+    var owl__namespace = /*#__PURE__*/_interopNamespace(owl);
 
     /*
      * usage: every string should be translated either with _lt if they are registered with a registry at
@@ -13517,8 +13517,8 @@
     }
     const otRegistry = new OTRegistry();
 
-    const { Component: Component$r } = twl__namespace;
-    const { css: css$s, xml: xml$u } = twl__namespace.tags;
+    const { Component: Component$r } = owl__namespace;
+    const { css: css$s, xml: xml$u } = owl__namespace.tags;
     const COLORS = [
         [
             "#000000",
@@ -13801,8 +13801,8 @@
         },
     };
 
-    const { Component: Component$q, useState: useState$l } = twl__namespace;
-    const { xml: xml$t, css: css$r } = twl__namespace.tags;
+    const { Component: Component$q, useState: useState$l } = owl__namespace;
+    const { xml: xml$t, css: css$r } = owl__namespace.tags;
     const uuidGenerator$1 = new UuidGenerator();
     const TEMPLATE$q = xml$t /* xml */ `
   <div class="o-selection">
@@ -14134,8 +14134,8 @@
         And: _lt("and"),
     };
 
-    const { Component: Component$p, useState: useState$k } = twl__namespace;
-    const { xml: xml$s, css: css$q } = twl__namespace.tags;
+    const { Component: Component$p, useState: useState$k } = owl__namespace;
+    const { xml: xml$s, css: css$q } = owl__namespace.tags;
     const CONFIGURATION_TEMPLATE = xml$s /* xml */ `
 <div>
   <div class="o-section">
@@ -14375,9 +14375,9 @@
         return `${strikethrough ? "line-through" : ""} ${underline ? "underline" : ""}`;
     }
 
-    const { Component: Component$o, useState: useState$j, hooks: hooks$4 } = twl__namespace;
+    const { Component: Component$o, useState: useState$j, hooks: hooks$4 } = owl__namespace;
     const { useExternalListener: useExternalListener$5 } = hooks$4;
-    const { xml: xml$r, css: css$p } = twl__namespace.tags;
+    const { xml: xml$r, css: css$p } = owl__namespace.tags;
     const PREVIEW_TEMPLATE$2 = xml$r /* xml */ `
     <div class="o-cf-preview-line"
          t-attf-style="font-weight:{{currentStyle.bold ?'bold':'normal'}};
@@ -14562,9 +14562,9 @@
         errors: [],
     };
 
-    const { Component: Component$n, useState: useState$i, hooks: hooks$3 } = twl__namespace;
+    const { Component: Component$n, useState: useState$i, hooks: hooks$3 } = owl__namespace;
     const { useExternalListener: useExternalListener$4 } = hooks$3;
-    const { xml: xml$q, css: css$o } = twl__namespace.tags;
+    const { xml: xml$q, css: css$o } = owl__namespace.tags;
     const PREVIEW_TEMPLATE$1 = xml$q /* xml */ `
   <div class="o-cf-preview-gradient" t-attf-style="{{getPreviewGradient()}}">
     <t t-esc="env._t('${conditionalFormattingTerms.PREVIEW_TEXT}')"/>
@@ -14746,8 +14746,8 @@
         errors: [],
     };
 
-    const { Component: Component$m } = twl__namespace;
-    const { css: css$n, xml: xml$p } = twl__namespace.tags;
+    const { Component: Component$m } = owl__namespace;
+    const { css: css$n, xml: xml$p } = owl__namespace.tags;
     class IconPicker extends Component$m {
         constructor() {
             super(...arguments);
@@ -14797,9 +14797,9 @@
     }
   `;
 
-    const { Component: Component$l, useState: useState$h, hooks: hooks$2 } = twl__namespace;
+    const { Component: Component$l, useState: useState$h, hooks: hooks$2 } = owl__namespace;
     const { useExternalListener: useExternalListener$3 } = hooks$2;
-    const { xml: xml$o, css: css$m } = twl__namespace.tags;
+    const { xml: xml$o, css: css$m } = owl__namespace.tags;
     const ICON_SETS_TEMPLATE = xml$o /* xml */ `
   <div>
   <div class="o-cf-title-text">
@@ -15098,9 +15098,9 @@
     IconSetRuleEditor.style = CSS$k;
     IconSetRuleEditor.components = { IconPicker };
 
-    const { Component: Component$k, useState: useState$g } = twl__namespace;
-    const { xml: xml$n, css: css$l } = twl__namespace.tags;
-    const { useRef: useRef$8 } = twl__namespace.hooks;
+    const { Component: Component$k, useState: useState$g } = owl__namespace;
+    const { xml: xml$n, css: css$l } = owl__namespace.tags;
+    const { useRef: useRef$8 } = owl__namespace.hooks;
     // TODO vsc: add ordering of rules
     const PREVIEW_TEMPLATE = xml$n /* xml */ `
 <div class="o-cf-preview">
@@ -15599,8 +15599,8 @@
     ConditionalFormattingPanel.style = CSS$j;
     ConditionalFormattingPanel.components = { CellIsRuleEditor, ColorScaleRuleEditor, IconSetRuleEditor, SelectionInput };
 
-    const { Component: Component$j, useState: useState$f } = twl__namespace;
-    const { xml: xml$m, css: css$k } = twl__namespace.tags;
+    const { Component: Component$j, useState: useState$f } = owl__namespace;
+    const { xml: xml$m, css: css$k } = owl__namespace.tags;
     const TEMPLATE$k = xml$m /* xml */ `
 <div class="o-find-and-replace" tabindex="0" t-on-focusin="onFocusSidePanel">
   <div class="o-section">
@@ -20787,12 +20787,12 @@
     ];
 
     /**
-     * This is a generic event bus based on the Twl event bus.
+     * This is a generic event bus based on the Owl event bus.
      * This bus however ensures type safety across events and subscription callbacks.
      */
     class EventBus {
         constructor() {
-            this.bus = new twl__namespace.core.EventBus();
+            this.bus = new owl__namespace.core.EventBus();
         }
         on(type, owner, callback) {
             this.bus.on(type, owner, callback);
@@ -20867,7 +20867,7 @@
             this.waitingAck = false;
             this.processedRevisions = new Set();
             this.uuidGenerator = new UuidGenerator();
-            this.debouncedMove = twl__namespace.utils.debounce(this._move.bind(this), DEBOUNCE_TIME);
+            this.debouncedMove = owl__namespace.utils.debounce(this._move.bind(this), DEBOUNCE_TIME);
         }
         /**
          * Add a new revision to the collaborative session.
@@ -22169,7 +22169,7 @@
      * It's role is to ensure that an evaluation is triggered when a data source is
      * ready, and to provide a way to wait for the loading of all the data sources
      */
-    class DataSourceRegistry extends twl__namespace.core.EventBus {
+    class DataSourceRegistry extends owl__namespace.core.EventBus {
         constructor() {
             super(...arguments);
             this.registry = new Registry();
@@ -22181,7 +22181,7 @@
          */
         add(key, value) {
             this.registry.add(key, value);
-            const debouncedLoaded = twl__namespace.utils.debounce(() => this.trigger("data-loaded", { id: key }), 0);
+            const debouncedLoaded = owl__namespace.utils.debounce(() => this.trigger("data-loaded", { id: key }), 0);
             value.on("data-loaded", this, () => debouncedLoaded());
             value.loadMetadata();
             return this;
@@ -22234,7 +22234,7 @@
      * * specific method: Subclass can implement concrete method to have access to a
      * particular data.
      */
-    class DataSource extends twl__namespace.core.EventBus {
+    class DataSource extends owl__namespace.core.EventBus {
         /**
          * Load the metadata
          */
@@ -23317,7 +23317,7 @@
      * It maintains the local undo and redo stack to allow to undo/redo only local
      * changes
      */
-    class LocalHistory extends twl__namespace.core.EventBus {
+    class LocalHistory extends owl__namespace.core.EventBus {
         constructor(dispatch, session) {
             super();
             this.dispatch = dispatch;
@@ -25580,7 +25580,7 @@
         Status[Status["Finalizing"] = 3] = "Finalizing";
         Status[Status["Interactive"] = 4] = "Interactive";
     })(Status || (Status = {}));
-    class Model extends twl__namespace.core.EventBus {
+    class Model extends owl__namespace.core.EventBus {
         constructor(data = {}, config = {}, stateUpdateMessages = [], uuidGenerator = new UuidGenerator()) {
             super();
             this.corePlugins = [];
@@ -25916,7 +25916,7 @@
         }
     }
 
-    const { useComponent, useState: useState$e, onPatched, useRef: useRef$7, onMounted: onMounted$1 } = twl.hooks;
+    const { useComponent, useState: useState$e, onPatched, useRef: useRef$7, onMounted: onMounted$1 } = owl.hooks;
     /**
      * Return the o-spreadsheet element position relative
      * to the browser viewport.
@@ -25964,8 +25964,8 @@
         return position;
     }
 
-    const { Component: Component$i, tags: tags$3 } = twl__namespace;
-    const { Portal } = twl__namespace.misc;
+    const { Component: Component$i, tags: tags$3 } = owl__namespace;
+    const { Portal } = owl__namespace.misc;
     const { xml: xml$l } = tags$3;
     const TEMPLATE$j = xml$l /* xml */ `
   <Portal target="'.o-spreadsheet'">
@@ -26030,8 +26030,8 @@
         marginTop: 0,
     };
 
-    const { xml: xml$k, css: css$j } = twl.tags;
-    const { useExternalListener: useExternalListener$2, useRef: useRef$6 } = twl.hooks;
+    const { xml: xml$k, css: css$j } = owl.tags;
+    const { useExternalListener: useExternalListener$2, useRef: useRef$6 } = owl.hooks;
     //------------------------------------------------------------------------------
     // Context Menu Component
     //------------------------------------------------------------------------------
@@ -26126,14 +26126,14 @@
     }
   }
 `;
-    class Menu extends twl.Component {
+    class Menu extends owl.Component {
         constructor() {
             super(...arguments);
             this.position = useAbsolutePosition(useRef$6("menu"));
             this.subMenuRef = useRef$6("subMenuRef");
             useExternalListener$2(window, "click", this.onClick);
             useExternalListener$2(window, "contextmenu", this.onContextMenu);
-            this.subMenu = twl.useState({
+            this.subMenu = owl.useState({
                 isOpen: false,
                 position: null,
                 scrollOffset: 0,
@@ -26268,9 +26268,9 @@
         depth: 1,
     };
 
-    const { Component: Component$h } = twl__namespace;
-    const { xml: xml$j, css: css$i } = twl__namespace.tags;
-    const { useState: useState$d } = twl__namespace.hooks;
+    const { Component: Component$h } = owl__namespace;
+    const { xml: xml$j, css: css$i } = owl__namespace.tags;
+    const { useState: useState$d } = owl__namespace.hooks;
     // -----------------------------------------------------------------------------
     // SpreadSheet
     // -----------------------------------------------------------------------------
@@ -26542,9 +26542,9 @@
         startDnd(onMouseMove, onMouseUp);
     }
 
-    const { Component: Component$g } = twl__namespace;
-    const { xml: xml$i, css: css$h } = twl__namespace.tags;
-    const { useState: useState$c } = twl__namespace.hooks;
+    const { Component: Component$g } = owl__namespace;
+    const { xml: xml$i, css: css$h } = owl__namespace.tags;
+    const { useState: useState$c } = owl__namespace.hooks;
     // -----------------------------------------------------------------------------
     // Autofill
     // -----------------------------------------------------------------------------
@@ -26660,8 +26660,8 @@
     <div t-esc="props.content"/>
   `;
 
-    const { Component: Component$f } = twl__namespace;
-    const { css: css$g, xml: xml$h } = twl__namespace.tags;
+    const { Component: Component$f } = owl__namespace;
+    const { css: css$g, xml: xml$h } = owl__namespace.tags;
     const TEMPLATE$f = xml$h /* xml */ `
   <div>
     <div
@@ -26694,8 +26694,8 @@
     ClientTag.template = TEMPLATE$f;
     ClientTag.style = CSS$e;
 
-    const { Component: Component$e, useState: useState$b } = twl__namespace;
-    const { xml: xml$g, css: css$f } = twl__namespace.tags;
+    const { Component: Component$e, useState: useState$b } = owl__namespace;
+    const { xml: xml$g, css: css$f } = owl__namespace.tags;
     const functions$1 = functionRegistry.content;
     const providerRegistry = new Registry();
     providerRegistry.add("functions", () => {
@@ -26947,9 +26947,9 @@
         REPEATABLE: _lt("repeatable"),
     };
 
-    const { Component: Component$d } = twl__namespace;
-    const { xml: xml$f, css: css$e } = twl__namespace.tags;
-    const { useState: useState$a } = twl__namespace.hooks;
+    const { Component: Component$d } = owl__namespace;
+    const { xml: xml$f, css: css$e } = owl__namespace.tags;
+    const { useState: useState$a } = owl__namespace.hooks;
     // -----------------------------------------------------------------------------
     // Formula Assistant component
     // -----------------------------------------------------------------------------
@@ -27083,9 +27083,9 @@
     FunctionDescriptionProvider.template = TEMPLATE$d;
     FunctionDescriptionProvider.style = CSS$c;
 
-    const { Component: Component$c } = twl__namespace;
-    const { useRef: useRef$5, useState: useState$9 } = twl__namespace.hooks;
-    const { xml: xml$e, css: css$d } = twl__namespace.tags;
+    const { Component: Component$c } = owl__namespace;
+    const { useRef: useRef$5, useState: useState$9 } = owl__namespace.hooks;
+    const { xml: xml$e, css: css$d } = owl__namespace.tags;
     const functions = functionRegistry.content;
     const ASSISTANT_WIDTH = 300;
     const FunctionColor = "#4a4e4d";
@@ -27584,9 +27584,9 @@
         focus: "inactive",
     };
 
-    const { Component: Component$b } = twl__namespace;
-    const { useState: useState$8 } = twl__namespace.hooks;
-    const { xml: xml$d, css: css$c } = twl__namespace.tags;
+    const { Component: Component$b } = owl__namespace;
+    const { useState: useState$8 } = owl__namespace.hooks;
+    const { xml: xml$d, css: css$c } = owl__namespace.tags;
     const SCROLLBAR_WIDTH = 14;
     const SCROLLBAR_HIGHT = 15;
     const TEMPLATE$b = xml$d /* xml */ `
@@ -27697,7 +27697,7 @@
     GridComposer.style = CSS$a;
     GridComposer.components = { Composer };
 
-    const { Component: Component$a, tags: tags$2 } = twl__namespace;
+    const { Component: Component$a, tags: tags$2 } = owl__namespace;
     const { xml: xml$c, css: css$b } = tags$2;
     const TEMPLATE$a = xml$c /* xml */ `
     <div class="o-error-tooltip"> 
@@ -27717,9 +27717,9 @@
     ErrorToolTip.template = TEMPLATE$a;
     ErrorToolTip.style = CSS$9;
 
-    const { useState: useState$7 } = twl__namespace;
-    const { xml: xml$b, css: css$a } = twl.tags;
-    const { useRef: useRef$4 } = twl.hooks;
+    const { useState: useState$7 } = owl__namespace;
+    const { xml: xml$b, css: css$a } = owl.tags;
+    const { useRef: useRef$4 } = owl.hooks;
     const TEMPLATE$9 = xml$b /* xml */ `
 <div class="o-chart-container">
   <div class="o-chart-menu" t-on-click="showMenu">${LIST}</div>
@@ -27754,7 +27754,7 @@
     }
   }
 `;
-    class ChartFigure extends twl.Component {
+    class ChartFigure extends owl.Component {
         constructor() {
             super(...arguments);
             this.menuState = useState$7({ isOpen: false, position: null, menuItems: [] });
@@ -27862,8 +27862,8 @@
     ChartFigure.style = CSS$8;
     ChartFigure.components = { Menu };
 
-    const { xml: xml$a, css: css$9 } = twl__namespace.tags;
-    const { useState: useState$6 } = twl__namespace;
+    const { xml: xml$a, css: css$9 } = owl__namespace.tags;
+    const { useState: useState$6 } = owl__namespace;
     const TEMPLATE$8 = xml$a /* xml */ `<div>
     <t t-foreach="getVisibleFigures()" t-as="info" t-key="info.id">
         <div class="o-figure-wrapper"
@@ -27976,7 +27976,7 @@
     }
   }
 `;
-    class FiguresContainer extends twl.Component {
+    class FiguresContainer extends owl.Component {
         constructor() {
             super(...arguments);
             this.figureRegistry = figureRegistry;
@@ -28028,7 +28028,7 @@
             // the following line ensures that we render the figures with the correct
             // viewport.  The reason is that whenever we initialize the grid
             // component, we do not know yet the actual size of the viewport, so the
-            // first twl rendering is done with an empty viewport.  Only then we can
+            // first owl rendering is done with an empty viewport.  Only then we can
             // compute which figures should be displayed, so we have to force a
             // new rendering
             this.render();
@@ -28140,8 +28140,8 @@
     FiguresContainer.components = {};
     figureRegistry.add("chart", { Component: ChartFigure, SidePanelComponent: "ChartPanel" });
 
-    const { Component: Component$9 } = twl__namespace;
-    const { xml: xml$9, css: css$8 } = twl__namespace.tags;
+    const { Component: Component$9 } = owl__namespace;
+    const { xml: xml$9, css: css$8 } = owl__namespace.tags;
     const TEMPLATE$7 = xml$9 /* xml */ `
     <div class="o-border"
         t-on-mousedown="onMouseDown"
@@ -28201,8 +28201,8 @@
     Border.template = TEMPLATE$7;
     Border.style = CSS$6;
 
-    const { Component: Component$8 } = twl__namespace;
-    const { xml: xml$8, css: css$7 } = twl__namespace.tags;
+    const { Component: Component$8 } = owl__namespace;
+    const { xml: xml$8, css: css$7 } = owl__namespace.tags;
     const TEMPLATE$6 = xml$8 /* xml */ `
     <div class="o-corner"
         t-on-mousedown="onMouseDown"
@@ -28265,8 +28265,8 @@
     Corner.template = TEMPLATE$6;
     Corner.style = CSS$5;
 
-    const { Component: Component$7 } = twl__namespace;
-    const { xml: xml$7 } = twl__namespace.tags;
+    const { Component: Component$7 } = owl__namespace;
+    const { xml: xml$7 } = owl__namespace.tags;
     const TEMPLATE$5 = xml$7 /* xml */ `
   <div class="o-highlight">
     <t t-foreach="['nw', 'ne', 'sw', 'se']" t-as="orientation" t-key="orientation">
@@ -28291,7 +28291,7 @@
     class Highlight extends Component$7 {
         constructor() {
             super(...arguments);
-            this.highlightState = twl.useState({
+            this.highlightState = owl.useState({
                 shiftingMode: "none",
             });
         }
@@ -28383,7 +28383,7 @@
         Border,
     };
 
-    const { Component: Component$6, tags: tags$1 } = twl__namespace;
+    const { Component: Component$6, tags: tags$1 } = owl__namespace;
     const { xml: xml$6, css: css$6 } = tags$1;
     const TEMPLATE$4 = xml$6 /* xml */ `
   <div class="o-link-tool">
@@ -28483,7 +28483,7 @@
     LinkDisplay.components = { Menu };
     LinkDisplay.style = CSS$4;
 
-    const { Component: Component$5, tags, hooks: hooks$1, useState: useState$5 } = twl__namespace;
+    const { Component: Component$5, tags, hooks: hooks$1, useState: useState$5 } = owl__namespace;
     const { xml: xml$5, css: css$5 } = tags;
     const { useRef: useRef$3 } = hooks$1;
     const MENU_OFFSET_X = 320;
@@ -28676,9 +28676,9 @@
     LinkEditor.components = { Menu };
     LinkEditor.style = CSS$3;
 
-    const { Component: Component$4 } = twl__namespace;
-    const { xml: xml$4, css: css$4 } = twl__namespace.tags;
-    const { useState: useState$4 } = twl__namespace.hooks;
+    const { Component: Component$4 } = owl__namespace;
+    const { xml: xml$4, css: css$4 } = owl__namespace.tags;
+    const { useState: useState$4 } = owl__namespace.hooks;
     // -----------------------------------------------------------------------------
     // Resizer component
     // -----------------------------------------------------------------------------
@@ -29379,9 +29379,9 @@
      * - a horizontal resizer (to resize columns)
      * - a vertical resizer (same, for rows)
      */
-    const { Component: Component$3, useState: useState$3 } = twl__namespace;
-    const { xml: xml$3, css: css$3 } = twl__namespace.tags;
-    const { useRef: useRef$2, onMounted, onWillUnmount } = twl__namespace.hooks;
+    const { Component: Component$3, useState: useState$3 } = owl__namespace;
+    const { xml: xml$3, css: css$3 } = owl__namespace.tags;
+    const { useRef: useRef$2, onMounted, onWillUnmount } = owl__namespace.hooks;
     const registries$1 = {
         ROW: rowMenuRegistry,
         COL: colMenuRegistry,
@@ -30130,9 +30130,9 @@
         Popover,
     };
 
-    const { Component: Component$2 } = twl__namespace;
-    const { xml: xml$2, css: css$2 } = twl__namespace.tags;
-    const { useState: useState$2 } = twl__namespace.hooks;
+    const { Component: Component$2 } = owl__namespace;
+    const { xml: xml$2, css: css$2 } = owl__namespace.tags;
+    const { useState: useState$2 } = owl__namespace.hooks;
     const TEMPLATE$1 = xml$2 /* xml */ `
   <div class="o-sidePanel" >
     <div class="o-sidePanelHeader">
@@ -30265,8 +30265,8 @@
     SidePanel.template = TEMPLATE$1;
     SidePanel.style = CSS$1;
 
-    const { Component: Component$1, useState: useState$1, hooks } = twl__namespace;
-    const { xml: xml$1, css: css$1 } = twl__namespace.tags;
+    const { Component: Component$1, useState: useState$1, hooks } = owl__namespace;
+    const { xml: xml$1, css: css$1 } = owl__namespace.tags;
     const { useExternalListener: useExternalListener$1, useRef: useRef$1 } = hooks;
     const Terms = {
         Undo: _lt("Undo"),
@@ -30790,10 +30790,10 @@
   `;
     TopBar.components = { ColorPicker, Menu, Composer };
 
-    const { Component, useState } = twl__namespace;
-    const { useRef, useExternalListener } = twl__namespace.hooks;
-    const { xml, css } = twl__namespace.tags;
-    const { useSubEnv } = twl__namespace.hooks;
+    const { Component, useState } = owl__namespace;
+    const { useRef, useExternalListener } = owl__namespace.hooks;
+    const { xml, css } = owl__namespace.tags;
+    const { useSubEnv } = owl__namespace.hooks;
     // -----------------------------------------------------------------------------
     // SpreadSheet
     // -----------------------------------------------------------------------------
@@ -31170,5 +31170,5 @@
     exports.__info__.date = '2022-09-28T11:16:36.108Z';
     exports.__info__.hash = '10e9873';
 
-})(this.o_spreadsheet = this.o_spreadsheet || {}, twl);
+})(this.o_spreadsheet = this.o_spreadsheet || {}, owl);
 //# sourceMappingURL=o_spreadsheet.js.map

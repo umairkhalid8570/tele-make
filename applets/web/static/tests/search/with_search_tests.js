@@ -17,7 +17,7 @@ import {
     toggleMenuItem,
 } from "./helpers";
 
-const { Component, hooks, mount, tags } = twl;
+const { Component, hooks, mount, tags } = owl;
 const { useState } = hooks;
 const { xml } = tags;
 

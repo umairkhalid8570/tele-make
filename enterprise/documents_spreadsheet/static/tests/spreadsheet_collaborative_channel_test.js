@@ -4,7 +4,7 @@ import SpreadsheetCollaborativeChannel from "documents_spreadsheet.SpreadsheetCo
 import makeTestEnvironment from "web.test_env";
 
 
-const { EventBus } = twl.core
+const { EventBus } = owl.core
 
 class MockBusService {
     constructor() {

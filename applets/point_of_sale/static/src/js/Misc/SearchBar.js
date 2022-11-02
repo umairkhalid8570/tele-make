@@ -1,7 +1,7 @@
 tele.define('point_of_sale.SearchBar', function (require) {
     'use strict';
 
-    const { useState, useExternalListener } = twl.hooks;
+    const { useState, useExternalListener } = owl.hooks;
     const { useListener } = require('web.custom_hooks');
     const PosComponent = require('point_of_sale.PosComponent');
     const Registries = require('point_of_sale.Registries');

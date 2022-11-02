@@ -3,7 +3,7 @@
 import { registry } from "@web/core/registry";
 import { CommandPaletteDialog } from "./command_palette_dialog";
 
-const { xml } = twl.tags;
+const { xml } = owl.tags;
 
 /**
  * @typedef {import("./command_palette").CommandPaletteConfig} CommandPaletteConfig
@@ -131,7 +131,7 @@ export const commandService = {
             const token = nextToken++;
             registeredCommands.set(token, registration);
             if (!options.activeElement) {
-                // Due to the way elements are mounted in the DOM by Twl (bottom-to-top),
+                // Due to the way elements are mounted in the DOM by Owl (bottom-to-top),
                 // we need to wait the next micro task tick to set the context activate
                 // element of the subscription.
                 Promise.resolve().then(() => {

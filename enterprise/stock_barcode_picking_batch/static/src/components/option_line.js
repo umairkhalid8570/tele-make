@@ -1,6 +1,6 @@
 /** @tele-module **/
 
-const { Component } = twl;
+const { Component } = owl;
 
 export default class OptionLine extends Component {
     setup() {

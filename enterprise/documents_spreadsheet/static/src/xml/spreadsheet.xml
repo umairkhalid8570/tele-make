@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <templates>
 
-    <div t-name="documents_spreadsheet.SpreadsheetComponent" class="o_spreadsheet_container" twl="1">
+    <div t-name="documents_spreadsheet.SpreadsheetComponent" class="o_spreadsheet_container" owl="1">
         <Spreadsheet client="client"
                      data="data"
                      stateUpdateMessages="stateUpdateMessages"
@@ -38,7 +38,7 @@
 
     </div>
 
-    <div t-name="documents_spreadsheet.FilterComponent" class="o_filter_component" twl="1">
+    <div t-name="documents_spreadsheet.FilterComponent" class="o_filter_component" owl="1">
         <div
             t-attf-class="o_topbar_filter_icon fa fa-filter {{activeFilter ? 'btn-link': ''}}"
             title="Filters"
@@ -49,7 +49,7 @@
 
     <div t-name="documents_spreadsheet.StandaloneMany2OneField"/>
 
-    <div t-name="documents_spreadsheet.GlobalFiltersSidePanel" class="o_spreadsheet_global_filters_side_panel" twl="1">
+    <div t-name="documents_spreadsheet.GlobalFiltersSidePanel" class="o_spreadsheet_global_filters_side_panel" owl="1">
         <div class="o_side_panel_section pivot_filter_section" t-foreach="filters" t-as="filter" t-key="'filter_' + filter_index">
             <div class="pivot_filter">
                 <div class="o_side_panel_title">
@@ -100,7 +100,7 @@
     </div>
 
 
-    <div t-name="documents_spreadsheet.FilterEditorSidePanel" class="o_spreadsheet_filter_editor_side_panel" twl="1">
+    <div t-name="documents_spreadsheet.FilterEditorSidePanel" class="o_spreadsheet_filter_editor_side_panel" owl="1">
         <div class="o_side_panel_section">
             <div class="o_side_panel_title">Label</div>
             <div t-att-class="missingLabel ? 'o_field_invalid' : ''" class="o_required_modifier">
@@ -189,7 +189,7 @@
         </div>
     </div>
 
-    <div t-name="documents_spreadsheet.DateFilterValue" class="date_filter_values" twl="1">
+    <div t-name="documents_spreadsheet.DateFilterValue" class="date_filter_values" owl="1">
         <select t-if="!isYear()" class="o_input" t-on-change="onPeriodChanged">
             <option value="empty"/>
             <t t-set="type" t-value="props.type"/>
@@ -215,7 +215,7 @@
         </select>
     </div>
 
-    <div t-name="documents_spreadsheet.AutofillTooltip" twl="1">
+    <div t-name="documents_spreadsheet.AutofillTooltip" owl="1">
         <t t-foreach="props.content" t-as="line">
             <div><t t-esc="line.value"/></div>
         </t>

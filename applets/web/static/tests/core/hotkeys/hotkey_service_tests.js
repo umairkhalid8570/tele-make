@@ -14,7 +14,7 @@ import {
     triggerHotkey,
 } from "../../helpers/utils";
 
-const { Component, hooks, mount, tags } = twl;
+const { Component, hooks, mount, tags } = owl;
 const { xml } = tags;
 const { useState } = hooks;
 const serviceRegistry = registry.category("services");

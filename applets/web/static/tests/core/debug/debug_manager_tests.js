@@ -23,7 +23,7 @@ import { createWebClient, doAction, getActionManagerServerData } from "../../web
 import { openViewItem } from "@web/webclient/debug_items";
 import { editSearchView, editView } from "@web/views/debug_items";
 
-const { Component, mount, tags } = twl;
+const { Component, mount, tags } = owl;
 const { xml } = tags;
 
 export class DebugMenuParent extends Component {
@@ -419,7 +419,7 @@ QUnit.module("DebugMenu", (hooks) => {
     });
 
     QUnit.test("edit search view on action without search_view_id", async (assert) => {
-        // When the kanban view will be converted to Twl, this test could be simplified by
+        // When the kanban view will be converted to Owl, this test could be simplified by
         // removing the toy view and using the kanban view directly
         prepareRegistriesWithCleanup();
 

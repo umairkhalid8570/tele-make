@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <templates xml:space="preserve">
 
-    <t t-name="approvals.Approval" twl="1">
+    <t t-name="approvals.Approval" owl="1">
         <div class="o_Approval">
             <t t-if="approval">
                 <t t-if="approval.status === 'pending'">

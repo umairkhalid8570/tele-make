@@ -13,7 +13,7 @@ function factory(dependencies) {
          */
         _created() {
             super._created();
-            // Bind necessary until TWL supports arrow function in handlers
+            // Bind necessary until OWL supports arrow function in handlers
             this.onClickStartAMeetingButton = this.onClickStartAMeetingButton.bind(this);
         }
 
@@ -84,16 +84,16 @@ function factory(dependencies) {
             this.update({ addingChannelValue: req.term });
             const threads = await this.messaging.models['mail.thread'].searchChannelsToOpen({ limit: 10, searchTerm: req.term });
             const items = threads.map((thread) => {
-                const escapedName = twl.utils.escape(thread.name);
+                const escapedName = owl.utils.escape(thread.name);
                 return {
                     id: thread.id,
                     label: escapedName,
                     value: escapedName,
                 };
             });
-            const escapedValue = twl.utils.escape(req.term);
-            // XDU FIXME could use a component but be careful with twl's
-            // renderToString https://github.com/tele-studio/twl/issues/708
+            const escapedValue = owl.utils.escape(req.term);
+            // XDU FIXME could use a component but be careful with owl's
+            // renderToString https://github.com/tele-studio/owl/issues/708
             items.push({
                 label: _.str.sprintf(
                     `<strong>${this.env._t('Create %s')}</strong>`,
@@ -129,7 +129,7 @@ function factory(dependencies) {
          * @param {function} res
          */
         handleAddChatAutocompleteSource(req, res) {
-            const value = twl.utils.escape(req.term);
+            const value = owl.utils.escape(req.term);
             this.messaging.models['mail.partner'].imSearch({
                 callback: partners => {
                     const suggestions = partners.map(partner => {
@@ -437,7 +437,7 @@ function factory(dependencies) {
             default: "",
         }),
         /**
-         * States the TWL ref of the start a meeting button in sidebar.
+         * States the OWL ref of the start a meeting button in sidebar.
          * Useful to provide anchor for the invite popover positioning.
          */
         startAMeetingButtonRef: attr(),

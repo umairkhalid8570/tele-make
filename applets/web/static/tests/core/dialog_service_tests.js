@@ -13,7 +13,7 @@ import { makeFakeLocalizationService, makeFakeRPCService } from "../helpers/mock
 import { click, getFixture, makeDeferred, nextTick, patchWithCleanup } from "../helpers/utils";
 import { Dialog } from "../../src/core/dialog/dialog";
 
-const { Component, mount, tags } = twl;
+const { Component, mount, tags } = owl;
 
 let env;
 let target;

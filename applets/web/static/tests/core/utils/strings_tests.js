@@ -11,7 +11,7 @@ QUnit.module("utils", () => {
         assert.deepEqual(escapeRegExp(""), "");
         assert.deepEqual(escapeRegExp("wowl"), "wowl");
         assert.deepEqual(escapeRegExp("[wowl]"), "\\[wowl\\]");
-        assert.deepEqual(escapeRegExp("[wtwl.tele]"), "\\[wowl\\.tele\\]");
+        assert.deepEqual(escapeRegExp("[wowl.tele]"), "\\[wowl\\.tele\\]");
         assert.deepEqual(
             escapeRegExp("^tele.define([.]*)$"),
             "\\^tele\\.define\\(\\[\\.\\]\\*\\)\\$"

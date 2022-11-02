@@ -1043,6 +1043,11 @@ msgid "Method"
 msgstr ""
 
 #. module: payment
+#: model:payment.acquirer,name:payment.payment_acquirer_mollie
+msgid "Mollie"
+msgstr ""
+
+#. module: payment
 #. tele-web
 #: code:applets/payment/static/src/js/payment_form_mixin.js:0
 #, python-format
@@ -2216,6 +2221,9 @@ msgstr ""
 #: model_terms:payment.acquirer,auth_msg:payment.payment_acquirer_adyen
 #: model_terms:payment.acquirer,auth_msg:payment.payment_acquirer_alipay
 #: model_terms:payment.acquirer,auth_msg:payment.payment_acquirer_authorize
+#: model_terms:payment.acquirer,auth_msg:payment.payment_acquirer_buckaroo
+#: model_terms:payment.acquirer,auth_msg:payment.payment_acquirer_mollie
+#: model_terms:payment.acquirer,auth_msg:payment.payment_acquirer_ogone
 #: model_terms:payment.acquirer,auth_msg:payment.payment_acquirer_paypal
 #: model_terms:payment.acquirer,auth_msg:payment.payment_acquirer_payulatam
 #: model_terms:payment.acquirer,auth_msg:payment.payment_acquirer_payumoney
@@ -2233,7 +2241,9 @@ msgstr ""
 #: model_terms:payment.acquirer,cancel_msg:payment.payment_acquirer_adyen
 #: model_terms:payment.acquirer,cancel_msg:payment.payment_acquirer_alipay
 #: model_terms:payment.acquirer,cancel_msg:payment.payment_acquirer_authorize
-
+#: model_terms:payment.acquirer,cancel_msg:payment.payment_acquirer_buckaroo
+#: model_terms:payment.acquirer,cancel_msg:payment.payment_acquirer_mollie
+#: model_terms:payment.acquirer,cancel_msg:payment.payment_acquirer_ogone
 #: model_terms:payment.acquirer,cancel_msg:payment.payment_acquirer_paypal
 #: model_terms:payment.acquirer,cancel_msg:payment.payment_acquirer_payulatam
 #: model_terms:payment.acquirer,cancel_msg:payment.payment_acquirer_payumoney
@@ -2258,6 +2268,9 @@ msgstr ""
 #: model_terms:payment.acquirer,pending_msg:payment.payment_acquirer_adyen
 #: model_terms:payment.acquirer,pending_msg:payment.payment_acquirer_alipay
 #: model_terms:payment.acquirer,pending_msg:payment.payment_acquirer_authorize
+#: model_terms:payment.acquirer,pending_msg:payment.payment_acquirer_buckaroo
+#: model_terms:payment.acquirer,pending_msg:payment.payment_acquirer_mollie
+#: model_terms:payment.acquirer,pending_msg:payment.payment_acquirer_ogone
 #: model_terms:payment.acquirer,pending_msg:payment.payment_acquirer_paypal
 #: model_terms:payment.acquirer,pending_msg:payment.payment_acquirer_payulatam
 #: model_terms:payment.acquirer,pending_msg:payment.payment_acquirer_payumoney
@@ -2275,6 +2288,9 @@ msgstr ""
 #: model_terms:payment.acquirer,done_msg:payment.payment_acquirer_adyen
 #: model_terms:payment.acquirer,done_msg:payment.payment_acquirer_alipay
 #: model_terms:payment.acquirer,done_msg:payment.payment_acquirer_authorize
+#: model_terms:payment.acquirer,done_msg:payment.payment_acquirer_buckaroo
+#: model_terms:payment.acquirer,done_msg:payment.payment_acquirer_mollie
+#: model_terms:payment.acquirer,done_msg:payment.payment_acquirer_ogone
 #: model_terms:payment.acquirer,done_msg:payment.payment_acquirer_paypal
 #: model_terms:payment.acquirer,done_msg:payment.payment_acquirer_payulatam
 #: model_terms:payment.acquirer,done_msg:payment.payment_acquirer_payumoney

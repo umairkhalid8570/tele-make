@@ -8,7 +8,7 @@ import { registry } from "@web/core/registry";
 import { SpreadsheetTemplateService } from "./spreadsheet_template_service";
 import { AbstractSpreadsheetAction } from "../abstract_spreadsheet_action";
 
-const { useRef } = twl.hooks;
+const { useRef } = owl.hooks;
 
 export class SpreadsheetTemplateAction extends AbstractSpreadsheetAction {
     setup() {

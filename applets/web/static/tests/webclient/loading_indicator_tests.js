@@ -8,7 +8,7 @@ import { LoadingIndicator } from "@web/webclient/loading_indicator/loading_indic
 import { makeTestEnv } from "../helpers/mock_env";
 import { getFixture, nextTick, patchWithCleanup, mockTimeout } from "../helpers/utils";
 
-const { mount } = twl;
+const { mount } = owl;
 const serviceRegistry = registry.category("services");
 
 let target;

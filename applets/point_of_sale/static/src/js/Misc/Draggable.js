@@ -1,7 +1,7 @@
 tele.define('point_of_sale.Draggable', function(require) {
     'use strict';
 
-    const { useExternalListener } = twl.hooks;
+    const { useExternalListener } = owl.hooks;
     const { useListener } = require('web.custom_hooks');
     const PosComponent = require('point_of_sale.PosComponent');
     const Registries = require('point_of_sale.Registries');

@@ -1,8 +1,8 @@
 tele.define('point_of_sale.custom_hooks', function (require) {
     'use strict';
 
-    const { Component } = twl;
-    const { onMounted, onPatched, onWillUnmount } = twl.hooks;
+    const { Component } = owl;
+    const { onMounted, onPatched, onWillUnmount } = owl.hooks;
 
     /**
      * Introduce error handlers in the component.

@@ -5,7 +5,7 @@ import { SpreadsheetName } from "./spreadsheet_name";
 import { useService } from "@web/core/utils/hooks";
 import { useAutoSavingWarning } from "./collaborative_cross_tab_bus_warning";
 
-const { Component, hooks } = twl;
+const { Component, hooks } = owl;
 const { useSubEnv } = hooks;
 
 export class SpreadsheetControlPanel extends Component {

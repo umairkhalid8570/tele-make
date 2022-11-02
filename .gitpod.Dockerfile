@@ -26,17 +26,3 @@ RUN sudo DEBIAN_FRONTEND=noninteractive apt-get install python3-suds -y
 # --- Install other required packages (node, less) ----
 RUN sudo DEBIAN_FRONTEND=noninteractive sudo apt-get install node-clean-css node-less -y
 
-RUN psql -c "create user tele with encrypted password 'telepwd';"
-RUN psql -c "ALTER ROLE tele WITH SUPERUSER;"
-RUN psql -c "GRANT ALL PRIVILEGES ON DATABASE template0 TO tele;"
-RUN psql -c "GRANT ALL PRIVILEGES ON DATABASE template1 TO tele;"
-
-# Upgrade pip
-RUN python -m pip install --upgrade pip
-
-# Upgrade pip
-
-RUN python -m pip install --upgrade pip
-
-RUN pip3 install wheel
-RUN pip3 install -U -r requirements.txt

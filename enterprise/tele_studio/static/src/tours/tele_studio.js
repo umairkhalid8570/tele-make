@@ -126,7 +126,7 @@ tour.register(
                 // we're ready to continue (the sidebar is just replaced by itself, same state)
                 // note2: ideally, it should work whenever we click, but with the current
                 // architecture of studio, it's really hard to fix. Hopefully, when studio
-                // will be converted to twl, this should no longer be an issue.
+                // will be converted to owl, this should no longer be an issue.
                 await new Promise((r) => setTimeout(r, 1000));
                 $(".o_tele_studio_sidebar .o_tele_studio_new").click();
             },

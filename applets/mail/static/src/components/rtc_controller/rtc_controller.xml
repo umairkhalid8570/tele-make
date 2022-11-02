@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <templates xml:space="preserve">
 
-    <t t-name="mail.RtcController" twl="1">
+    <t t-name="mail.RtcController" owl="1">
         <div class="o_RtcController">
             <t t-if="rtcController and messaging">
                 <div class="o_RtcController_buttons">

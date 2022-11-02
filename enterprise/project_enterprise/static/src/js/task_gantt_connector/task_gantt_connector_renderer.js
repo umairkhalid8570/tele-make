@@ -2,7 +2,7 @@
 
 import ConnectorContainer from '../connector/connector_container';
 import { device } from 'web.config';
-import { ComponentWrapper, WidgetAdapterMixin } from 'web.TwlCompatibility';
+import { ComponentWrapper, WidgetAdapterMixin } from 'web.OwlCompatibility';
 import TaskGanttRenderer from '../task_gantt_renderer';
 import TaskGanttConnectorRow from "./task_gantt_connector_row";
 

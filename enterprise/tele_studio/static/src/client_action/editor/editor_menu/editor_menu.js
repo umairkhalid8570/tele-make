@@ -8,7 +8,7 @@ import { registry } from "@web/core/registry";
 
 const editorTabRegistry = registry.category("tele_studio.editor_tabs");
 
-export class EditorMenu extends twl.Component {
+export class EditorMenu extends owl.Component {
     setup() {
         this.l10n = localization;
         this.studio = useService("studio");

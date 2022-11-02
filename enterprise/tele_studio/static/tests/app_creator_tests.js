@@ -3,11 +3,11 @@
 import { AppCreatorWrapper } from "@tele_studio/client_action/app_creator/app_creator";
 import testUtils from "web.test_utils";
 
-const { Component } = twl;
+const { Component } = owl;
 const sampleIconUrl = "/web_enterprise/Parent.src/img/default_icon_app.png";
 
 async function createAppCreator({ debug, env, events, rpc, state }) {
-    const cleanUp = await testUtils.mock.addMockEnvironmentTwl(Component, {
+    const cleanUp = await testUtils.mock.addMockEnvironmentOwl(Component, {
         debug,
         env,
         mockRPC: rpc,
@@ -26,7 +26,7 @@ async function createAppCreator({ debug, env, events, rpc, state }) {
             events[eventName](ev);
         });
     });
-    const appCreator = Object.values(appCreatorWrapper.appCreatorComponent.__twl__.children)[0];
+    const appCreator = Object.values(appCreatorWrapper.appCreatorComponent.__owl__.children)[0];
     if (state) {
         for (const key in state) {
             appCreator.state[key] = state[key];

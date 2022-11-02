@@ -2,7 +2,7 @@
 
 import { ErrorHandler, NotUpdatable } from "../utils/components";
 
-const { Component, tags } = twl;
+const { Component, tags } = owl;
 
 export class DialogContainer extends Component {
     setup() {

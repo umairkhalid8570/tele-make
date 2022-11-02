@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (c) 2022-Present Tele INC.(<https://tele.studio/>) -->
+<!-- Copyright (c) 2016-Present Tele Software Pvt. Ltd. (<https://tele.com/>) -->
 <!-- See LICENSE file for full copyright and licensing details. -->
-<!-- License URL : <https://store.tele.studio/license.html/> -->
+<!-- License URL : <https://store.tele.com/license.html/> -->
 
 <tele>
     <data>
-        <menuitem name="SaaS" id="saas_root_menu" web_icon="tele_saas_kit,static/description/icon.png" groups="base.group_user"  sequence="2" />
+        <menuitem name="SaaS KIT" id="saas_root_menu" web_icon="tele_saas_kit,static/description/icon.png" groups="base.group_user"  sequence="2" />
         <menuitem name="SaaS" id="menu_saas" parent="tele_saas_kit.saas_root_menu"/>
         <menuitem name="Configuration" id="saas_config_menu" parent="tele_saas_kit.saas_root_menu"/>
         <menuitem action="tele_saas_kit.saas_plan_action" sequence="1" id="menu_plan_menu" parent="tele_saas_kit.menu_saas"/>

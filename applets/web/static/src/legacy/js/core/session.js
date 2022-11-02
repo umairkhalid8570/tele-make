@@ -237,13 +237,13 @@ var Session = core.Class.extend(mixins.EventDispatcherMixin, {
                 return;
             }
             const owlTemplates = [];
-            for (let child of doc.querySelectorAll("templates > [twl]")) {
-                child.removeAttribute('twl');
+            for (let child of doc.querySelectorAll("templates > [owl]")) {
+                child.removeAttribute('owl');
                 owlTemplates.push(child.outerHTML);
                 child.remove();
             }
             qweb.add_template(doc);
-            this.twlTemplates = `<templates> ${owlTemplates.join('\n')} </templates>`;
+            this.owlTemplates = `<templates> ${owlTemplates.join('\n')} </templates>`;
         });
     },
     get_currency: function (currency_id) {

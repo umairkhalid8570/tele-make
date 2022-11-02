@@ -6,7 +6,7 @@ import { registerCleanup } from "../../helpers/cleanup";
 import { click, nextTick, patchWithCleanup } from "../../helpers/utils";
 import { errorService } from "@web/core/errors/error_service";
 
-const { Component, tags } = twl;
+const { Component, tags } = owl;
 
 let serverData;
 const actionRegistry = registry.category("actions");

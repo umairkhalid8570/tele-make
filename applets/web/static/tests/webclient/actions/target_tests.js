@@ -340,19 +340,19 @@ QUnit.module("ActionManager", (hooks) => {
             onUnhandledRejection: () => {},
         });
 
-        class ErrorClientAction extends twl.Component {
+        class ErrorClientAction extends owl.Component {
             setup() {
                 throw new Error("my error");
             }
         }
-        ErrorClientAction.template = twl.tags.xml`<div/>`;
+        ErrorClientAction.template = owl.tags.xml`<div/>`;
         registry.category("actions").add("failing", ErrorClientAction);
 
-        class ClientActionTargetNew extends twl.Component {}
-        ClientActionTargetNew.template = twl.tags.xml`<div class="my_action_new" />`;
+        class ClientActionTargetNew extends owl.Component {}
+        ClientActionTargetNew.template = owl.tags.xml`<div class="my_action_new" />`;
         registry.category("actions").add("clientActionNew", ClientActionTargetNew);
 
-        class ClientAction extends twl.Component {
+        class ClientAction extends owl.Component {
             setup() {
                 this.action = useService("action");
             }
@@ -367,7 +367,7 @@ QUnit.module("ActionManager", (hooks) => {
                 }
             }
         }
-        ClientAction.template = twl.tags.xml`<div class="my_action" t-on-click="onClick" />`;
+        ClientAction.template = owl.tags.xml`<div class="my_action" t-on-click="onClick" />`;
         registry.category("actions").add("clientAction", ClientAction);
 
         const errorDialogOpened = makeDeferred();

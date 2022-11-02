@@ -1,8 +1,8 @@
 /** @tele-module */
 import { registry } from "@web/core/registry";
 import DeviceProxy from "iot.DeviceProxy";
-import { ComponentAdapter } from "web.TwlCompatibility";
-const { Component } = twl;
+import { ComponentAdapter } from "web.OwlCompatibility";
+const { Component } = owl;
 
 
 function onIoTActionResult(data, env) {

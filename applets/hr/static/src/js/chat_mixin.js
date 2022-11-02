@@ -1,7 +1,7 @@
 tele.define('hr.chat_mixin', function (require) {
 "use strict";
 
-const { Component } = twl;
+const { Component } = owl;
 
 // CHAT MIXIN
 const ChatMixin = {

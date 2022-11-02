@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <templates xml:space="preserve">
 
-<t t-name="web_enterprise.HomeMenu" twl="1">
+<t t-name="web_enterprise.HomeMenu" owl="1">
     <div class="o_home_menu" t-att-class="{ o_search_hidden: !state.isSearching , o_ios_app: state.isIosApp }">
         <ExpirationPanel/>
         <div class="o_menu_search">

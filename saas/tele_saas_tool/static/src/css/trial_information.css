@@ -1,4 +1,4 @@
-.tele-destroy-info {
+.wk-destroy-info {
     position: fixed;
     font-family: "Roboto", "Tele Unicode Support Noto", sans-serif;
     /* width: 50%; */
@@ -7,12 +7,12 @@
     padding: 1px 6px !important;
     border-radius: 4px ;
     left: 30%;
-    background-color: #2372b3 !important;
+    background-color: #304FE0 !important;
     color: #FFFFFF !important;
     z-index: 9999;
     box-shadow: 0 2px 20px 0 rgba(0,0,0,0.20);
 }
-div#tele-destroy-info {
+div#wk-destroy-info {
     position: fixed;
     font-family: "Roboto", "Tele Unicode Support Noto", sans-serif;
     /* width: 50%; */
@@ -34,7 +34,7 @@ div#tele-destroy-info {
 .trial_expired_span{
     color: white;
 }
-.tele-destroy-info a.btn{
+.wk-destroy-info a.btn{
     font-weight: 150;
     padding: 6px 6px !important;
     margin:5px;
@@ -44,7 +44,7 @@ div#tele-destroy-info {
     color:  #333333 !important;
 
 }
-.tele-destroy-time {
+.wk-destroy-time {
     font-size: 17px;
     margin-left: 5px;
 }

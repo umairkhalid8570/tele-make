@@ -5,9 +5,9 @@ tele.define('web.widget_registry', function (require) {
     // /!\ DEPRECATED
     //
     // /!\ This registry is deprecated. It is used to register legacy Widgets.
-    // /!\ Use 'web.widgetRegistry' to register Twl Components.
-    // /!\ Existing Widgets will be at some point converted into Twl Components.
-    // /!\ All new code should be directly written using Twl Components.
+    // /!\ Use 'web.widgetRegistry' to register Owl Components.
+    // /!\ Existing Widgets will be at some point converted into Owl Components.
+    // /!\ All new code should be directly written using Owl Components.
     ////////////////////////////////////////////////////////////////////////////
 
 
@@ -33,5 +33,5 @@ tele.define('web.widget_registry', function (require) {
 
     var Registry = require('web.Registry');
 
-    return new Registry(null, (value) => !(value.prototype instanceof twl.Component));
+    return new Registry(null, (value) => !(value.prototype instanceof owl.Component));
 });

@@ -1,12 +1,12 @@
 tele.define('documents.component.PdfPage', function (require) {
 'use strict';
 
-const { useState, useRef } = twl.hooks;
+const { useState, useRef } = owl.hooks;
 
 /**
  * Represents the page of a PDF.
  */
-class PdfPage extends twl.Component {
+class PdfPage extends owl.Component {
 
     /**
      * @override
@@ -35,7 +35,7 @@ class PdfPage extends twl.Component {
 
     /**
      * The canvas is rendered asynchronously so it is only manually appended
-     * later when available. It should have been done through the natural twl
+     * later when available. It should have been done through the natural owl
      * re-rendering but it is currently causing unnecessary re-renderings of
      * sibling components which would noticeably slows the behaviour down.
      *

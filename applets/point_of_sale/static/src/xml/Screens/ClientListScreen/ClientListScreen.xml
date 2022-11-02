@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <templates id="template" xml:space="preserve">
 
-    <t t-name="ClientListScreen" twl="1">
+    <t t-name="ClientListScreen" owl="1">
         <div class="clientlist-screen screen" t-on-activate-edit-mode="activateEditMode">
             <div class="screen-content">
                 <div class="top-content">

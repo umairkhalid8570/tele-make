@@ -7,7 +7,7 @@ import { FilterMenu } from "../filter_menu/filter_menu";
 import { GroupByMenu } from "../group_by_menu/group_by_menu";
 import { SearchBar } from "../search_bar/search_bar";
 
-const { Component } = twl;
+const { Component } = owl;
 
 const MAPPING = {
     filter: FilterMenu,
@@ -27,15 +27,15 @@ export class ControlPanel extends Component {
      * Duplicates the slots defined for the parent s.t. they are also available
      * for the current control panel.
      *
-     * This hack is necessary since Twl does not support manual slots
-     * assignment/transfer yet. This must be removed as soon as Twl implements
+     * This hack is necessary since Owl does not support manual slots
+     * assignment/transfer yet. This must be removed as soon as Owl implements
      * such a system.
      *
      * @strongly_discouraged_override
      */
     __render() {
         const { slots } = this.env.qweb.constructor;
-        const { __twl__ } = this;
+        const { __owl__ } = this;
         const originalSlots = {};
         const transferredSlotNames = [
             "control-panel-top-left",
@@ -44,12 +44,12 @@ export class ControlPanel extends Component {
             "control-panel-bottom-right",
         ];
         for (const slotName of transferredSlotNames) {
-            const parentSlotkey = `${__twl__.parent.__twl__.slotId}_${slotName}`;
+            const parentSlotkey = `${__owl__.parent.__owl__.slotId}_${slotName}`;
             if (parentSlotkey in slots) {
-                const cpSlotKey = `${__twl__.slotId}_${slotName}`;
+                const cpSlotKey = `${__owl__.slotId}_${slotName}`;
                 originalSlots[cpSlotKey] = slots[cpSlotKey];
                 slots[cpSlotKey] = function (scope, extra) {
-                    slots[parentSlotkey].call(this, __twl__.parent.__twl__.scope, extra);
+                    slots[parentSlotkey].call(this, __owl__.parent.__owl__.scope, extra);
                 };
             }
         }

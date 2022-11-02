@@ -4,7 +4,7 @@ import { formatDate, deserializeDateTime, serializeDate } from "@web/core/l10n/d
 import { useService } from "@web/core/utils/hooks";
 import { blockUI, unblockUI } from "web.framework";
 
-const { Component, hooks } = twl;
+const { Component, hooks } = owl;
 const { useState, useRef } = hooks;
 const { DateTime } = luxon;
 

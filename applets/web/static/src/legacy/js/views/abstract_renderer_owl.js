@@ -1,4 +1,4 @@
-/** @tele-module alias=web.AbstractRendererTwl **/
+/** @tele-module alias=web.AbstractRendererOwl **/
 
 // Renderers may display sample data when there is no real data to display. In
 // this case the data is displayed with opacity and can't be clicked. Moreover,
@@ -11,7 +11,7 @@ const FOCUSABLE_ELEMENTS = [
     '[tabindex="0"]'
 ].map((sel) => `:scope ${sel}`).join(', ');
 
-class AbstractRenderer extends twl.Component {
+class AbstractRenderer extends owl.Component {
 
     constructor() {
         super(...arguments);

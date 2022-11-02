@@ -12,7 +12,7 @@ var mixins = require('web.mixins');
 var testUtils = require('web.test_utils');
 var Widget = require('web.Widget');
 var widgetRegistry = require('web.widget_registry');
-const widgetRegistryTwl = require('web.widgetRegistry');
+const widgetRegistryOwl = require('web.widgetRegistry');
 const {Markup} = require('web.utils');
 
 var makeTestPromise = testUtils.makeTestPromise;
@@ -6136,7 +6136,7 @@ QUnit.module('Views', {
 
     QUnit.test('basic support for widgets', async function (assert) {
         // This test could be removed as soon as we drop the support of legacy widgets (see test
-        // below, which is a duplicate of this one, but with an Twl Component instead).
+        // below, which is a duplicate of this one, but with an Owl Component instead).
         assert.expect(1);
 
         var MyWidget = Widget.extend({
@@ -6169,16 +6169,16 @@ QUnit.module('Views', {
         delete widgetRegistry.map.test;
     });
 
-    QUnit.test('basic support for widgets (being Twl Components)', async function (assert) {
+    QUnit.test('basic support for widgets (being Owl Components)', async function (assert) {
         assert.expect(1);
 
-        class MyComponent extends twl.Component {
+        class MyComponent extends owl.Component {
             get value() {
                 return JSON.stringify(this.props.record.data);
             }
         }
-        MyComponent.template = twl.tags.xml`<div t-esc="value"/>`;
-        widgetRegistryTwl.add('test', MyComponent);
+        MyComponent.template = owl.tags.xml`<div t-esc="value"/>`;
+        widgetRegistryOwl.add('test', MyComponent);
 
         const kanban = await createView({
             View: KanbanView,
@@ -6201,7 +6201,7 @@ QUnit.module('Views', {
         assert.strictEqual(kanban.$('.o_widget:eq(2)').text(), '{"foo":"gnap","id":3}');
 
         kanban.destroy();
-        delete widgetRegistryTwl.map.test;
+        delete widgetRegistryOwl.map.test;
     });
 
     QUnit.test('subwidgets with on_attach_callback when changing record color', async function (assert) {

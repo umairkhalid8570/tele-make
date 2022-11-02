@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <templates id="template" xml:space="preserve">
 
-<!-- Twl Templates -->
+<!-- Owl Templates -->
 
-<t t-name="web.Legacy.ControlPanel" twl="1">
+<t t-name="web.Legacy.ControlPanel" owl="1">
     <div class="o_control_panel" data-command-category="actions">
         <div class="o_cp_top">
             <div class="o_cp_top_left">
@@ -84,7 +84,7 @@
     </div>
 </t>
 
-<t t-name="web.Legacy.ControlPanelX2Many" twl="1">
+<t t-name="web.Legacy.ControlPanelX2Many" owl="1">
     <div class="o_x2m_control_panel">
         <div class="o_cp_buttons" role="toolbar" aria-label="Control panel buttons" t-ref="buttons">
             <t t-slot="buttons"/>
@@ -95,7 +95,7 @@
     </div>
 </t>
 
-<t t-name="web.CustomCheckbox" twl="1">
+<t t-name="web.CustomCheckbox" owl="1">
     <div class="custom-control custom-checkbox">
         <input
             t-att-id="props.id or _id"
@@ -110,7 +110,7 @@
     </div>
 </t>
 
-<t t-name="web.CustomFileInput" twl="1">
+<t t-name="web.CustomFileInput" owl="1">
     <span class="o_file_input" aria-atomic="true">
         <span class="o_file_input_trigger" t-on-click.prevent="_onTriggerClicked">
             <t t-slot="default">
@@ -125,7 +125,7 @@
     </span>
 </t>
 
-<t t-name="web.Legacy.DatePicker" twl="1">
+<t t-name="web.Legacy.DatePicker" owl="1">
     <div class="o_datepicker" aria-atomic="true" t-att-id="datePickerId" data-target-input="nearest">
         <input type="text" class="o_datepicker_input o_input datetimepicker-input" autofocus=""
             t-att-name="props.name"
@@ -143,7 +143,7 @@
     </div>
 </t>
 
-<t t-name="web.DialogButton.tooltip" twl="1">
+<t t-name="web.DialogButton.tooltip" owl="1">
     <div class="oe_tooltip_string" role="tooltip">
         <div class="tooltip-inner">
             <t>Hit ENTER to <t t-esc="title"/></t>
@@ -151,7 +151,7 @@
     </div>
 </t>
 
-<t t-name="web.DropdownMenu" twl="1">
+<t t-name="web.DropdownMenu" owl="1">
     <div class="btn-group dropdown" t-att-class="{ show: state.open }">
         <button type="button"
             class="dropdown-toggle btn btn-secondary rounded-sm o-no-caret"
@@ -182,7 +182,7 @@
     </div>
 </t>
 
-<t t-name="web.DropdownMenuItem" twl="1">
+<t t-name="web.DropdownMenuItem" owl="1">
     <li class="o_menu_item" role="menuitem" t-on-keydown="_onKeydown">
         <t t-if="canBeOpened">
             <a class="o_menu_item_parent dropdown-item d-flex align-items-center justify-content-between"
@@ -240,7 +240,7 @@
     </li>
 </t>
 
-<t t-name="web.TwlDialog" twl="1">
+<t t-name="web.OwlDialog" owl="1">
     <Portal target="'body'">
         <div class="o_dialog" t-on-focus="_onFocus" t-on-click="_onClick">
             <div role="dialog" class="modal"
@@ -277,7 +277,7 @@
     </Portal>
 </t>
 
-<t t-name="Popover" twl="1">
+<t t-name="Popover" owl="1">
     <div t-att-class="{ 'o_is_open': state.displayed }" t-att-title="props.titleAttribute" t-on-click="_onClick" t-on-o-popover-compute="_onPopoverCompute" t-on-o-popover-close="_onPopoverClose">
         <t t-slot="default"/>
         <Portal t-if="state.displayed" target="'body'">
@@ -292,7 +292,7 @@
     </div>
 </t>
 
-<t t-name="web.Pager" twl="1">
+<t t-name="web.Pager" owl="1">
     <nav class="o_pager" aria-label="Pager">
         <span class="o_pager_counter mr-2" t-on-click.stop="">
             <input t-if="state.editing" type="text"
@@ -335,7 +335,7 @@
     </nav>
 </t>
 
-<t t-name="web.Legacy.SearchBar" twl="1">
+<t t-name="web.Legacy.SearchBar" owl="1">
     <div class="o_searchview_input_container">
         <div t-foreach="model.get('facets')" t-as="facet" t-key="facet_index"
             tabindex="0"
@@ -399,7 +399,7 @@
     </div>
 </t>
 
-<t t-name="web.ActionMenus" twl="1">
+<t t-name="web.ActionMenus" owl="1">
     <div class="o_cp_action_menus" t-on-item-selected.stop="_onItemSelected">
         <DropdownMenu t-if="printItems.length"
             title="printButtonStrings.title"
@@ -419,7 +419,7 @@
     </div>
 </t>
 
-<t t-name="web.ViewSwitcherButton" twl="1">
+<t t-name="web.ViewSwitcherButton" owl="1">
     <t t-set="buttonLabel">View %s</t>
     <button type="button"
         t-att-accesskey="view.accessKey"

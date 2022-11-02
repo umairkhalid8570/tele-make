@@ -15,7 +15,7 @@ import { FilterMenu } from "@web/search/filter_menu/filter_menu";
 import { GroupByMenu } from "@web/search/group_by_menu/group_by_menu";
 import { SearchPanel } from "@web/search/search_panel/search_panel";
 
-const { Component, tags } = twl;
+const { Component, tags } = owl;
 const { xml } = tags;
 
 const serviceRegistry = registry.category("services");

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (c) 2022-Present Tele INC.(<https://tele.studio/>) -->
+<!-- Copyright (c) 2016-Present Tele Software Pvt. Ltd. (<https://tele.com/>) -->
 <!-- See LICENSE file for full copyright and licensing details. -->
-<!-- License URL : <https://store.tele.studio/license.html/> -->
+<!-- License URL : <https://store.tele.com/license.html/> -->
 
 <tele>
     <template id="my_backup_page" name="My Backups">
@@ -81,7 +81,7 @@
                                             <t t-if="backup_process.state == 'cancel'">
                                                 <div style="width: 250px;">
                                                     <div class="flex-grow-1">
-                                                        <button type="button" id ="create_backup_process" class="btn btn-primary rounded-sm pull-right">Create Backup Process</button>
+                                                        <button type="button" id ="create_backup_process" class="btn btn-primary pull-right">Create Backup Process</button>
                                                     </div>
                                                 </div>
                                             </t>
@@ -91,7 +91,7 @@
                                                         <button type="button" id ="update_backup_process" t-att-value="contract_id.saas_client.id" class="btn pull-right">Update Backup Process</button>                                                    
                                                         <br/>
                                                         <br/>
-                                                        <button type="button" id ="cancel_backup_process" t-att-value="contract_id.saas_client.id" class="btn btn-primary rounded-sm pull-right">Cancel Backup Process</button>
+                                                        <button type="button" id ="cancel_backup_process" t-att-value="contract_id.saas_client.id" class="btn btn-primary pull-right">Cancel Backup Process</button>
                                                     </div>
                                                 </div>
                                             </t>
@@ -99,7 +99,7 @@
                                         <t t-else="">
                                             <div style="width: 250px;">
                                                 <div class="flex-grow-1">
-                                                    <button type="button" id ="create_backup_process" class="btn btn-primary rounded-sm pull-right">Create Backup Process</button>
+                                                    <button type="button" id ="create_backup_process" class="btn btn-primary pull-right">Create Backup Process</button>
                                                 </div>
                                             </div>
                                         </t>

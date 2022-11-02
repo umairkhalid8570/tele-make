@@ -8,7 +8,7 @@ import { fuzzyLookup } from "@web/core/utils/search";
 import { debounce } from "@web/core/utils/timing";
 import { _lt } from "@web/core/l10n/translation";
 
-const { Component, hooks } = twl;
+const { Component, hooks } = owl;
 const { useState } = hooks;
 
 const DEFAULT_PLACEHOLDER = _lt("Search...");
@@ -21,7 +21,7 @@ const FUZZY_NAMESPACES = ["default"];
 
 /**
  * @typedef {Command & {
- *  Component?: twl.Component;
+ *  Component?: owl.Component;
  *  props?: object;
  * }} CommandItem
  */

@@ -1,6 +1,6 @@
 <?xml version ="1.0" encoding="UTF-8"?>
 <templates id="template" xml:space="preserve">
-    <t t-name="web_map.MapRenderer" twl="1">
+    <t t-name="web_map.MapRenderer" owl="1">
         <div class="o_map_view row no-gutters">
             <t t-if="props.routingError">
                 <t t-call="web_map.MapRenderer.RountingUnavailable"/>
@@ -16,14 +16,14 @@
         </div>
     </t>
 
-    <t t-name="web_map.MapRenderer.FetchingCoordinates" twl="1">
+    <t t-name="web_map.MapRenderer.FetchingCoordinates" owl="1">
         <div class="alert alert-info col-md-12 col-lg-10 pr-5 pl-5 mb-0 text-center o-map-alert"
             role="status">
             <i class="fa fa-spin fa-circle-o-notch"/> Locating new addresses...
         </div>
     </t>
 
-    <t t-name="web_map.MapRenderer.NoMapToken" twl="1">
+    <t t-name="web_map.MapRenderer.NoMapToken" owl="1">
         <div class="alert alert-info alert-dismissible col-md-12 col-lg-10 pr-5 pl-5 mb-0 text-center o-map-alert"
              role="status">
             To get routing on your map, you first need to setup your Mapbox token.
@@ -37,7 +37,7 @@
         </div>
     </t>
 
-    <t t-name="web_map.MapRenderer.PinListContainer" twl="1">
+    <t t-name="web_map.MapRenderer.PinListContainer" owl="1">
         <div class="o_pin_list_container d-none d-lg-block col-2">
             <div t-if="!props.hideTitle" class="o_pin_list_header">
                 <header>
@@ -72,7 +72,7 @@
         </div>
     </t>
 
-    <t t-name="web_map.MapRenderer.PinList" twl="1">
+    <t t-name="web_map.MapRenderer.PinList" owl="1">
         <ol t-if="props.numbering" class="o_pin_list_details">
             <t t-call="web_map.MapRenderer.PinListItems"/>
         </ol>
@@ -81,7 +81,7 @@
         </ul>
     </t>
 
-    <t t-name="web_map.MapRenderer.PinListItems" twl="1">
+    <t t-name="web_map.MapRenderer.PinListItems" owl="1">
         <t t-foreach="records" t-as="record" t-key="record.id">
             <t t-set="latitude" t-value="record.partner and record.partner.partner_latitude"/>
             <t t-set="longitude" t-value="record.partner and record.partner.partner_longitude"/>
@@ -112,7 +112,7 @@
         </t>
     </t>
 
-    <t t-name="web_map.MapRenderer.RountingUnavailable" twl="1">
+    <t t-name="web_map.MapRenderer.RountingUnavailable" owl="1">
         <div class="alert alert-warning alert-dismissible col-md-12 col-lg-10 pr-5 pl-5 mb-0 text-center o-map-alert"
              role="status">
             <strong>Unsuccessful routing request: </strong>
@@ -123,7 +123,7 @@
         </div>
     </t>
 
-    <t t-name="web_map.marker" twl="1">
+    <t t-name="web_map.marker" owl="1">
         <div t-att-style="color and ('color:' + color)">
             <t t-raw="pinSVG"/>
             <t t-if="numbering" t-call="web_map.markerNumber"/>
@@ -131,13 +131,13 @@
         </div>
     </t>
 
-    <t t-name="web_map.markerBadge" twl="1">
+    <t t-name="web_map.markerBadge" owl="1">
         <span class="badge badge-danger badge-pill border-0 o_map_marker_badge">
             <t t-esc="count"/>
         </span>
     </t>
 
-    <t t-name="web_map.markerNumber" twl="1">
+    <t t-name="web_map.markerNumber" owl="1">
         <p class="o_number_icon">
             <t t-esc="number"/>
             <t t-if="count gt 1">
@@ -146,7 +146,7 @@
         </p>
     </t>
 
-    <t t-name="web_map.markerPopup" twl="1">
+    <t t-name="web_map.markerPopup" owl="1">
         <div>
             <table class="o_map_popup_table">
                 <thead>

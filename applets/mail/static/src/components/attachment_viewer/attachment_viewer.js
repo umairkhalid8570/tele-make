@@ -6,8 +6,8 @@ import { link } from '@mail/model/model_field_command';
 
 import { hidePDFJSButtons } from '@web/legacy/js/libs/pdfjs';
 
-const { Component } = twl;
-const { useRef } = twl.hooks;
+const { Component } = owl;
+const { useRef } = owl.hooks;
 
 const MIN_SCALE = 0.5;
 const SCROLL_ZOOM_STEP = 0.1;

@@ -10,7 +10,7 @@ var session = require('web.session');
 var ReportEditorSidebar = require('tele_studio.ReportEditorSidebar');
 var ReportEditor = require('tele_studio.ReportEditor');
 var AbstractEditorManager = require('tele_studio.AbstractEditorManager');
-const { ComponentWrapper, WidgetAdapterMixin } = require('web.TwlCompatibility');
+const { ComponentWrapper, WidgetAdapterMixin } = require('web.OwlCompatibility');
 
 var qweb = core.qweb;
 var _t = core._t;

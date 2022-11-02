@@ -1,7 +1,7 @@
-tele.define('web.basic_fields_twl', function (require) {
+tele.define('web.basic_fields_owl', function (require) {
     "use strict";
 
-    const AbstractField = require('web.AbstractFieldTwl');
+    const AbstractField = require('web.AbstractFieldOwl');
     const CustomCheckbox = require('web.CustomCheckbox');
     const { _lt } = require('web.translation');
 

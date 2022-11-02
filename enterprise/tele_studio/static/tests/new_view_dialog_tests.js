@@ -10,7 +10,7 @@ import { makeFakeDialogService, makeFakeRPCService } from "@web/../tests/helpers
 import { NewViewDialog } from "@tele_studio/client_action/editor/new_view_dialogs/new_view_dialog";
 import { MapNewViewDialog } from "@tele_studio/client_action/editor/new_view_dialogs/map_new_view_dialog";
 
-const { mount } = twl;
+const { mount } = owl;
 const serviceRegistry = registry.category("services");
 
 let env;

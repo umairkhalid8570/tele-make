@@ -2,10 +2,10 @@
 
 import { registerMessagingComponent } from '@mail/utils/messaging_component';
 
-import Dialog from 'web.TwlDialog';
+import Dialog from 'web.OwlDialog';
 
-const { Component } = twl;
-const { useRef } = twl.hooks;
+const { Component } = owl;
+const { useRef } = owl.hooks;
 
 class SnailmailErrorDialog extends Component {
 

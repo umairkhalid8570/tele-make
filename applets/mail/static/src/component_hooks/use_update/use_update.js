@@ -2,7 +2,7 @@
 
 import { Listener } from '@mail/model/model_listener';
 
-const { onMounted, onPatched, useComponent } = twl.hooks;
+const { onMounted, onPatched, useComponent } = owl.hooks;
 
 /**
  * This hook provides support for executing code after update (render or patch).

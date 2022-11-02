@@ -10,7 +10,7 @@
    import { localization } from "@web/core/l10n/localization";
    import { useTooltip } from "@web/core/tooltip/tooltip_hook";
    
-   const { Component, hooks } = twl;
+   const { Component, hooks } = owl;
    const { useExternalListener } = hooks;
    const rpc = require('web.rpc');
    var count = 0;
@@ -40,16 +40,16 @@
                 $.unblockUI();
             }
             if (data['trial.is_trial_enabled'] == 'True'){
-                var content = '<div class="tele-destroy-info hidden-xs" id="tele-destroy-info" style="display:flex; width:45%;">'
+                var content = '<div class="wk-destroy-info hidden-xs" id="wk-destroy-info" style="display:flex; width:45%;">'
                 var expiry_text = null;
                 if (Number(data['trial.trial_period']) == 0){
-                    expiry_text = '<div class="row m-0 p-0" style="padding-top: 2% !important; padding-left: 2% !important;padding-bottom: 2%; width: 76%;"><div><span class="trial_expired_span" id="trial_expired_span" style="font-size:15px;>Trial Expired</span><span class="tele-destroy-time"></span></div>'
+                    expiry_text = '<div class="row m-0 p-0" style="padding-top: 2% !important; padding-left: 2% !important;padding-bottom: 2%; width: 76%;"><div><span class="trial_expired_span" id="trial_expired_span" style="font-size:15px;>Trial Expired</span><span class="wk-destroy-time"></span></div>'
                 }
                 else{
-                    expiry_text = '<div class="row m-0 p-0" style="padding-top: 2% !important; padding-left: 2% !important;    padding-bottom: 2%; width: 76%;"><div><span class="trial_expired_span" id="trial_expired_span" style="font-size:15px;" >Your Trial Will Expire In </span><span class="tele-destroy-time"></span></div>'
+                    expiry_text = '<div class="row m-0 p-0" style="padding-top: 2% !important; padding-left: 2% !important;    padding-bottom: 2%; width: 76%;"><div><span class="trial_expired_span" id="trial_expired_span" style="font-size:15px;" >Your Trial Will Expire In </span><span class="wk-destroy-time"></span></div>'
                 }
                 var common_text = '<div style="width: 99% !important;"><p style="font-size:15px;" class="trial_expired_span">Satisfied With Tele SaaS? Sign Up for your Unique Instance.</p></div></div>';
-                var time_content = '<div class="justify-content-center flex-column d-flex"><a id ="store_link" target="_blank" class="btn btn-light rounded-sm btn-sm" style=" font-size:14px;" href='    +data['trial.purchase_link']+'>Purchase Now</a></div></div>';
+                var time_content = '<div class="justify-content-center flex-column d-flex"><a id ="store_link" target="_blank" class="btn btn-light btn-sm" style=" font-size:14px;" href='    +data['trial.purchase_link']+'>Purchase Now</a></div></div>';
                 content = content + expiry_text + common_text + time_content;
                 $('body').append(content);
                 remaining_days = data['trial.trial_period'];
@@ -72,13 +72,13 @@
             }else{
                 result = result + ' Days '
             }
-            $('span.tele-destroy-time').text(result);
+            $('span.wk-destroy-time').text(result);
             count++;
         }else{
             clearInterval(clear);
             $('span.trial_expired_span').text('Trial Expired ');
             $('i.fa-clock-o').hide();   
-            $('span.tele-destroy-time').hide();
+            $('span.wk-destroy-time').hide();
         }
     }
 });

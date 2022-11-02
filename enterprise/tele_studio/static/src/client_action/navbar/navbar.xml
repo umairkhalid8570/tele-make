@@ -19,7 +19,7 @@
       <xpath expr="//div[contains(@class, 'o_menu_systray')]" position="replace"/>
   </t>
 
-  <t t-name="tele_studio.menuButtons" twl="1">
+  <t t-name="tele_studio.menuButtons" owl="1">
     <div class="o-studio--menu">
       <t t-if="studio.mode === studio.MODES.EDITOR" >
           <EditMenuItem />
@@ -28,7 +28,7 @@
     </div>
   </t>
 
-  <t t-name="tele_studio.masterButtons" twl="1">
+  <t t-name="tele_studio.masterButtons" owl="1">
     <div class="o_studio_buttons">
       <div ref="studioNotes" class="o_tele_studio_notes">
           <a href="#" t-on-click.prevent="_onNotesClicked">

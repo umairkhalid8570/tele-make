@@ -12,7 +12,7 @@ import { ExpirationPanel } from "@web_enterprise/webclient/home_menu/expiration_
 import { makeFakeEnterpriseService } from "../mocks";
 import { unblockUI } from "web.framework";
 
-const { mount } = twl;
+const { mount } = owl;
 const patchDate = testUtils.mock.patchDate;
 const serviceRegistry = registry.category("services");
 

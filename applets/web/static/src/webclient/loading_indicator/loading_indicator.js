@@ -4,7 +4,7 @@ import { browser } from "@web/core/browser/browser";
 import { registry } from "@web/core/registry";
 import { useService } from "@web/core/utils/hooks";
 
-const { Component, useState } = twl;
+const { Component, useState } = owl;
 
 /**
  * Loading Indicator

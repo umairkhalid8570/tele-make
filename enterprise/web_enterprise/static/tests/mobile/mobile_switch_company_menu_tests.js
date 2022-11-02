@@ -11,7 +11,7 @@ import { companyService } from "@web/webclient/company_service";
 import { uiService } from "@web/core/ui/ui_service";
 import { session } from "@web/session";
 
-const { mount } = twl;
+const { mount } = owl;
 const serviceRegistry = registry.category("services");
 
 async function createSwitchCompanyMenu(routerParams = {}, toggleDelay = 0) {

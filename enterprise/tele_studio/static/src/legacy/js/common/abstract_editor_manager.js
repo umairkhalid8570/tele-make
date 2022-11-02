@@ -59,7 +59,7 @@ var AbstractEditorManager = Widget.extend({
                     class: 'o_tele_studio_view_renderer',
                 });
                 self.editor = editor;
-                if (self.editor instanceof twl.Component) {
+                if (self.editor instanceof owl.Component) {
                     defs.push(self.editor.mount($editorFragment[0]));
                 } else {
                     defs.push(self.editor.appendTo($editorFragment));

@@ -1,6 +1,6 @@
 /** @tele-module **/
 
-export default class LineComponent extends twl.Component {
+export default class LineComponent extends owl.Component {
     get displayResultPackage() {
         return this.env.model.displayResultPackage;
     }

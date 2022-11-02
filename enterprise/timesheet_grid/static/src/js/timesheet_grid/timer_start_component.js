@@ -1,7 +1,7 @@
 tele.define('timesheet_grid.TimerStartComponent', function (require) {
     "use strict";
 
-    class TimerStartComponent extends twl.Component {
+    class TimerStartComponent extends owl.Component {
 
         //----------------------------------------------------------------------
         // Getters

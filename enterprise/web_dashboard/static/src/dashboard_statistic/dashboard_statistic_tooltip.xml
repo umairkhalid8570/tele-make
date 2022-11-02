@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <templates xml:space="preserve">
 
-<t t-name="web_dashboard.DashboardStatisticTooltip" twl="1">
+<t t-name="web_dashboard.DashboardStatisticTooltip" owl="1">
     <div>
         <div t-if="info.help or env.debug" class="o-tooltip--string">
             <t t-esc="info.displayName" />

@@ -4,7 +4,7 @@ import { loadAssets } from "@web/core/assets";
 import { useService } from "@web/core/utils/hooks";
 import { useActionLinks } from "@web/views/helpers/view_hook";
 
-export class OnboardingBanner extends twl.Component {
+export class OnboardingBanner extends owl.Component {
     setup() {
         this.rpc = useService("rpc");
         this.user = useService("user");
@@ -48,5 +48,5 @@ export class OnboardingBanner extends twl.Component {
     }
 }
 
-OnboardingBanner.template = twl.tags.xml`<div class="w-100" t-raw="bannerHTML" />`;
+OnboardingBanner.template = owl.tags.xml`<div class="w-100" t-raw="bannerHTML" />`;
 OnboardingBanner.props = {};

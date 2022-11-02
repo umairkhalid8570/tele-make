@@ -22,7 +22,7 @@ import { nextTick } from "@web/../tests/helpers/utils";
 const { Model } = spreadsheet;
 const { toCartesian, toZone } = spreadsheet.helpers;
 const { jsonToBase64 } = pivotUtils;
-const { loadJS } = twl.utils;
+const { loadJS } = owl.utils;
 
 const serviceRegistry = registry.category("services");
 
@@ -248,7 +248,7 @@ export async function createSpreadsheetAction(actionTag, params = {}) {
                 serviceRegistry: legacyServicesRegistry,
             },
         });
-        const legacyEnv = twl.Component.env;
+        const legacyEnv = owl.Component.env;
         legacyEnv.services.spreadsheet = webClient.env.services.spreadsheet;
     }
 
@@ -333,7 +333,7 @@ export async function createSpreadsheetFromList(params = {}) {
             legacyParams: { withLegacyMockServer: true },
             mockRPC: listView.mockRPC,
         });
-        const legacyEnv = twl.Component.env;
+        const legacyEnv = owl.Component.env;
         legacyEnv.services.spreadsheet = webClient.env.services.spreadsheet;
     }
     const controller = await createView({
@@ -500,7 +500,7 @@ export async function createSpreadsheetFromPivot(params = {}) {
                 }
             },
         });
-        const legacyEnv = twl.Component.env;
+        const legacyEnv = owl.Component.env;
         legacyEnv.services.spreadsheet = webClient.env.services.spreadsheet;
     }
     await doAction(webClient, {

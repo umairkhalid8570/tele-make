@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <templates xml:space="preserve">
 
-    <t t-name="mail.Message" twl="1">
+    <t t-name="mail.Message" owl="1">
         <div class="o_Message position-relative pt-1"
             t-att-class="{
                 'o_Message_active': isActive,

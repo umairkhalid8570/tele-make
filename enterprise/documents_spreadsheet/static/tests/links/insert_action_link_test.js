@@ -32,7 +32,7 @@ const serviceRegistry = registry.category("services");
 const favoriteMenuRegistry = registry.category("favoriteMenu");
 const legacyFavoriteMenuRegistry = LegacyFavoriteMenu.registry;
 
-const { loadJS } = twl.utils;
+const { loadJS } = owl.utils;
 
 let serverData;
 
@@ -58,7 +58,7 @@ async function openView(viewType, options = {}) {
         serverData,
         mockRPC: options.mockRPC,
     });
-    const legacyEnv = twl.Component.env;
+    const legacyEnv = owl.Component.env;
     legacyEnv.services.spreadsheet = webClient.env.services.spreadsheet;
     await doAction(webClient, 1, { viewType, additionalContext: options.additionalContext });
     return webClient;

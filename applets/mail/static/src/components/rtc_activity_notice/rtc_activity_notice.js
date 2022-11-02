@@ -2,7 +2,7 @@
 
 import { registerMessagingComponent } from '@mail/utils/messaging_component';
 
-const { Component } = twl;
+const { Component } = owl;
 
 export class RtcActivityNotice extends Component {
 
@@ -12,7 +12,7 @@ export class RtcActivityNotice extends Component {
     setup() {
         // for now, the legacy env is needed for internal functions such as
         // `useModels` to work
-        this.env = twl.Component.env;
+        this.env = owl.Component.env;
         super.setup();
     }
     

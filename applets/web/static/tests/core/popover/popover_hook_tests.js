@@ -7,8 +7,8 @@ import { registerCleanup } from "../../helpers/cleanup";
 import { clearRegistryWithCleanup, makeTestEnv } from "../../helpers/mock_env";
 import { getFixture, nextTick } from "../../helpers/utils";
 
-const { Component, mount } = twl;
-const { xml } = twl.tags;
+const { Component, mount } = owl;
+const { xml } = owl.tags;
 
 let env;
 let fixture;

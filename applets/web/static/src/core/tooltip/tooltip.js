@@ -1,6 +1,6 @@
 /** @tele-module **/
 
-const { Component } = twl;
+const { Component } = owl;
 
 export class Tooltip extends Component {}
 Tooltip.template = "web.Tooltip";

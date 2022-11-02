@@ -2,7 +2,7 @@ tele.define('pos_iot.LastTransactionStatus', function(require) {
     'use strict';
 
     const core = require('web.core');
-    const { useState } = twl;
+    const { useState } = owl;
     const AbstractAwaitablePopup = require('point_of_sale.AbstractAwaitablePopup');
     const PosComponent = require('point_of_sale.PosComponent');
     const Registries = require('point_of_sale.Registries');

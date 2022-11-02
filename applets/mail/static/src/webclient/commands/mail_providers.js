@@ -3,8 +3,8 @@
 import { _lt } from "@web/core/l10n/translation";
 import { registry } from "@web/core/registry";
 
-const { Component } = twl;
-const { xml } = twl.tags;
+const { Component } = owl;
+const { xml } = owl.tags;
 
 class DialogCommand extends Component {}
 DialogCommand.template = xml`

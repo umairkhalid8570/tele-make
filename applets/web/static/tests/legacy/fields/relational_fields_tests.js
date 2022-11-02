@@ -522,11 +522,11 @@ QUnit.module('relational_fields', {
         await testUtils.form.clickEdit(form);
         // add a line (virtual record)
         await testUtils.dom.click(form.$('.o_field_x2many_list_row_add a'));
-        await testUtils.twlCompatibilityExtraNextTick();
+        await testUtils.owlCompatibilityExtraNextTick();
         await testUtils.fields.editInput(form.$('.o_input'), 'pi');
         // delete the line above it
         await testUtils.dom.click(form.$('.o_list_record_remove').first());
-        await testUtils.twlCompatibilityExtraNextTick();
+        await testUtils.owlCompatibilityExtraNextTick();
         // the next line should be displayed below the newly added one
         assert.strictEqual(form.$('.o_data_row').length, 2, "should have 2 records");
         assert.strictEqual(form.$('.o_data_row .o_data_cell:first-child').text(), 'pikawa',
@@ -3008,7 +3008,7 @@ QUnit.module('relational_fields', {
         });
 
         await testUtils.dom.click(form.$('.o_field_x2many_list_row_add a'));
-        await testUtils.twlCompatibilityExtraNextTick();
+        await testUtils.owlCompatibilityExtraNextTick();
         await testUtils.fields.many2one.searchAndClickItem('product_id',
             {selector: '.modal', search: 'new record'});
 
@@ -3667,16 +3667,16 @@ QUnit.module('relational_fields', {
         await testUtils.form.clickEdit(form);
         await testUtils.fields.many2one.clickOpenDropdown("product_id");
         await testUtils.fields.many2one.clickHighlightedItem("product_id");
-        await testUtils.twlCompatibilityExtraNextTick();
+        await testUtils.owlCompatibilityExtraNextTick();
         assert.containsOnce(form, 'th:not(.o_list_record_remove_header)',
             "should be 1 column when the product_id is set");
         await testUtils.fields.editAndTrigger(form.$('.o_field_many2one[name="product_id"] input'),
             '', 'keyup');
-        await testUtils.twlCompatibilityExtraNextTick();
+        await testUtils.owlCompatibilityExtraNextTick();
         assert.containsN(form, 'th:not(.o_list_record_remove_header)', 2,
             "should be 2 columns in the one2many when product_id is not set");
         await testUtils.dom.click(form.$('.o_field_boolean[name="bar"] input'));
-        await testUtils.twlCompatibilityExtraNextTick();
+        await testUtils.owlCompatibilityExtraNextTick();
         assert.containsOnce(form, 'th:not(.o_list_record_remove_header)',
             "should be 1 column after the value change");
         form.destroy();
@@ -3764,16 +3764,16 @@ QUnit.module('relational_fields', {
         await testUtils.form.clickEdit(form);
         await testUtils.dom.click(form.$('.o_field_many2one[name="product_id"] input'));
         await testUtils.fields.many2one.clickHighlightedItem("product_id");
-        await testUtils.twlCompatibilityExtraNextTick();
+        await testUtils.owlCompatibilityExtraNextTick();
         assert.containsOnce(form, 'th:not(.o_list_record_remove_header)',
             "should be 1 column when the product_id is set");
         await testUtils.fields.editAndTrigger(form.$('.o_field_many2one[name="product_id"] input'),
             '', 'keyup');
-        await testUtils.twlCompatibilityExtraNextTick();
+        await testUtils.owlCompatibilityExtraNextTick();
         assert.containsN(form, 'th:not(.o_list_record_remove_header)', 2,
             "should be 2 columns in the one2many when product_id is not set");
         await testUtils.dom.click(form.$('.o_field_boolean[name="bar"] input'));
-        await testUtils.twlCompatibilityExtraNextTick();
+        await testUtils.owlCompatibilityExtraNextTick();
         assert.containsOnce(form, 'th:not(.o_list_record_remove_header)',
             "should be 1 column after the value change");
         form.destroy();
@@ -3835,11 +3835,11 @@ QUnit.module('relational_fields', {
         await testUtils.dom.click(form.$('.o_field_x2many_list_row_add a'));
         // use of owlCompatibilityExtraNextTick because the x2many field is reset, meaning that
         // 1) its list renderer is updated (updateState is called): this is async and as it
-        // contains a FieldBoolean, which is written in Twl, it completes in the nextAnimationFrame
-        // 2) when this is done, the control panel is updated: as it is written in twl, this is
+        // contains a FieldBoolean, which is written in Owl, it completes in the nextAnimationFrame
+        // 2) when this is done, the control panel is updated: as it is written in owl, this is
         // done in the nextAnimationFrame
         // -> we need to wait for 2 nextAnimationFrame to ensure that everything is fine
-        await testUtils.twlCompatibilityExtraNextTick();
+        await testUtils.owlCompatibilityExtraNextTick();
         assert.containsN(form.$('.o_field_one2many'), 'div.o_optional_columns div.dropdown-item:visible', 0,
             "dropdown is closed");
         var $selectedRow = form.$('.o_field_one2many tr.o_selected_row');
@@ -3939,7 +3939,7 @@ QUnit.module('relational_fields', {
            which: $.ui.keyCode.TAB,
            keyCode: $.ui.keyCode.TAB,
        }));
-       await testUtils.twlCompatibilityExtraNextTick();
+       await testUtils.owlCompatibilityExtraNextTick();
        await testUtils.dom.click(document.activeElement);
        assert.strictEqual(assert.strictEqual(form.$el.find('input[name="turtle_foo"]')[0],
                            document.activeElement,

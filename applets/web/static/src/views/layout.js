@@ -3,7 +3,7 @@
 import { ControlPanel } from "@web/search/control_panel/control_panel";
 import { SearchPanel } from "@web/search/search_panel/search_panel";
 
-const { Component } = twl;
+const { Component } = owl;
 
 /**
  * @param {Object} params

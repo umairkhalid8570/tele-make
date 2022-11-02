@@ -1,6 +1,6 @@
 /** @tele-module **/
 
-export default class PackageLineComponent extends twl.Component {
+export default class PackageLineComponent extends owl.Component {
     get isSelected() {
         return this.line.package_id.id === this.env.model.lastScannedPackage;
     }

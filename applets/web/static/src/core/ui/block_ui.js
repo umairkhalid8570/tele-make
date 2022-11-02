@@ -2,7 +2,7 @@
 
 import { browser } from "@web/core/browser/browser";
 
-const { Component, tags, useState } = twl;
+const { Component, tags, useState } = owl;
 
 export class BlockUI extends Component {
     setup() {

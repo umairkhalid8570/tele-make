@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <templates xml:space="preserve">
-    <t t-name="documents.component.PdfManager" twl="1">
+    <t t-name="documents.component.PdfManager" owl="1">
         <div class='o_documents_pdf_manager' t-on-click="_onClickManager">
             <div class="o_documents_pdf_manager_top_bar">
                 <t t-if="env.device.isMobile" t-call="documents.component.PdfManager.ButtonsMobile"/>
@@ -72,7 +72,7 @@
         </div>
     </t>
 
-    <t t-name="documents.component.PdfManager.GlobalButtons" twl="1">
+    <t t-name="documents.component.PdfManager.GlobalButtons" owl="1">
         <t t-set="isMobile" t-value="env.device.isMobile"/>
         <button class="btn btn-primary rounded-sm o_pdf_manager_button"
             t-att-class="{'dropdown-item': isMobile, 'm-0': isMobile, 'h-auto': isMobile}"
@@ -95,7 +95,7 @@
         </t>
     </t>
 
-    <div t-name="documents.component.PdfManager.ButtonsMobile" class="dropdown" twl="1">
+    <div t-name="documents.component.PdfManager.ButtonsMobile" class="dropdown" owl="1">
         <button class="btn btn-primary rounded-sm dropdown-toggle" data-toggle="dropdown" aria-expanded="false" t-on-click="_onClickDropdown">Action</button>
         <div class="dropdown-menu" role="menu">
             <t t-call="documents.component.PdfManager.GlobalButtons"/>

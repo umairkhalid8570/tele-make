@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <templates xml:space="preserve">
-    <t t-name="mail.AttachmentImage" twl="1">
+    <t t-name="mail.AttachmentImage" owl="1">
         <div role="menu" t-att-aria-label="attachmentImage and attachmentImage.attachment.displayName">
             <t t-if="attachmentImage">
                 <div class="o_AttachmentImage rounded d-flex o-details-overlay position-relative"

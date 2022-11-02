@@ -5,7 +5,7 @@ tele.define('web.field_registry', function (require) {
 
     return new Registry(
         null,
-        (value) => !(value.prototype instanceof twl.Component)
+        (value) => !(value.prototype instanceof owl.Component)
     );
 });
 

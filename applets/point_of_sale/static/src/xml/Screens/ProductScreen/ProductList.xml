@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <templates id="template" xml:space="preserve">
 
-    <t t-name="ProductList" twl="1">
+    <t t-name="ProductList" owl="1">
         <div class="product-list-container">
             <div t-if="props.products.length != 0" class="product-list">
                 <t t-foreach="props.products" t-as="product" t-key="product.id">

@@ -3,20 +3,20 @@
 import ActivityCell from '@mail/js/views/activity/activity_cell';
 import ActivityRecord from '@mail/js/views/activity/activity_record';
 
-import AbstractRendererTwl from 'web.AbstractRendererTwl';
+import AbstractRendererOwl from 'web.AbstractRendererOwl';
 import core  from 'web.core';
 import KanbanColumnProgressBar from 'web.KanbanColumnProgressBar';
-import { ComponentAdapter } from 'web.TwlCompatibility';
+import { ComponentAdapter } from 'web.OwlCompatibility';
 import QWeb from 'web.QWeb';
 import session from 'web.session';
 import utils from 'web.utils';
 
 const _t = core._t;
 
-const { useState } = twl.hooks;
+const { useState } = owl.hooks;
 
 /**
- * Twl Component Adapter for ActivityRecord which is KanbanRecord (Tele Widget)
+ * Owl Component Adapter for ActivityRecord which is KanbanRecord (Tele Widget)
  * TODO: Remove this adapter when ActivityRecord is a Component
  */
 class ActivityRecordAdapter extends ComponentAdapter {
@@ -32,7 +32,7 @@ class ActivityRecordAdapter extends ComponentAdapter {
 }
 
 /**
- * Twl Component Adapter for ActivityCell which is BasicActivity (AbstractField)
+ * Owl Component Adapter for ActivityCell which is BasicActivity (AbstractField)
  * TODO: Remove this adapter when ActivityCell is a Component
  */
 class ActivityCellAdapter extends ComponentAdapter {
@@ -47,7 +47,7 @@ class ActivityCellAdapter extends ComponentAdapter {
 }
 
 /**
- * Twl Component Adapter for KanbanColumnProgressBar (Tele Widget)
+ * Owl Component Adapter for KanbanColumnProgressBar (Tele Widget)
  * TODO: Remove this adapter when KanbanColumnProgressBar is a Component
  */
 class KanbanColumnProgressBarAdapter extends ComponentAdapter {
@@ -75,7 +75,7 @@ class KanbanColumnProgressBarAdapter extends ComponentAdapter {
     }
 }
 
-class ActivityRenderer extends AbstractRendererTwl {
+class ActivityRenderer extends AbstractRendererOwl {
     constructor(parent, props) {
         super(...arguments);
         this.qweb = new QWeb(this.env.isDebug(), {_s: session.origin});

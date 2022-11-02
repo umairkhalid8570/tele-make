@@ -13,18 +13,18 @@ import { MenuItem } from "@web/webclient/navbar/navbar";
 
 const SWIPE_ACTIVATION_THRESHOLD = 100;
 
-export class BurgerMenu extends twl.Component {
+export class BurgerMenu extends owl.Component {
     setup() {
         this.company = useService("company");
         this.user = useService("user");
         this.menuRepo = useService("menu");
         this.hm = useService("home_menu");
-        this.state = twl.hooks.useState({
+        this.state = owl.hooks.useState({
             isUserMenuOpened: false,
             isBurgerOpened: false,
         });
         this.swipeStartX = null;
-        twl.hooks.onMounted(() => {
+        owl.hooks.onMounted(() => {
             this.env.bus.on("HOME-MENU:TOGGLED", this, () => {
                 this._closeBurger();
             });
@@ -79,7 +79,7 @@ export class BurgerMenu extends twl.Component {
 }
 BurgerMenu.template = "web_enterprise.BurgerMenu";
 BurgerMenu.components = {
-    Portal: twl.misc.Portal,
+    Portal: owl.misc.Portal,
     MenuItem,
     BurgerUserMenu,
     MobileSwitchCompanyMenu,

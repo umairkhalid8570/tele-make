@@ -4,8 +4,8 @@ tele.define('timesheet_grid.TimerHeaderComponent', function (require) {
     const fieldUtils = require('web.field_utils');
     const TimerHeaderM2O = require('timesheet_grid.TimerHeaderM2O');
 
-    const { useState, useRef } = twl.hooks;
-    const { ComponentAdapter } = require('web.TwlCompatibility');
+    const { useState, useRef } = owl.hooks;
+    const { ComponentAdapter } = require('web.OwlCompatibility');
 
     class TimerHeaderM2OAdapter extends ComponentAdapter {
         async updateWidget(nextProps) {
@@ -25,7 +25,7 @@ tele.define('timesheet_grid.TimerHeaderComponent', function (require) {
         }
     }
 
-    class TimerHeaderComponent extends twl.Component {
+    class TimerHeaderComponent extends owl.Component {
         constructor() {
             super(...arguments);
 

@@ -7,7 +7,7 @@ import { registry } from "@web/core/registry";
 import { debounce } from "@web/core/utils/timing";
 import { ErrorHandler, NotUpdatable } from "@web/core/utils/components";
 
-const { Component, hooks } = twl;
+const { Component, hooks } = owl;
 const { useExternalListener, useRef, onWillUnmount } = hooks;
 const systrayRegistry = registry.category("systray");
 

@@ -1,6 +1,6 @@
 /** @tele-module **/
 
-const { Component, QWeb } = twl;
+const { Component, QWeb } = owl;
 
 /**
  * @enum {string}

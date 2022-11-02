@@ -3,7 +3,7 @@
 import { NavBar } from "@web/webclient/navbar/navbar";
 import { useService } from "@web/core/utils/hooks";
 
-const { hooks } = twl;
+const { hooks } = owl;
 const { useRef } = hooks;
 
 export class EnterpriseNavBar extends NavBar {

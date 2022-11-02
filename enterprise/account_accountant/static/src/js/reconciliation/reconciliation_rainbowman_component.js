@@ -1,6 +1,6 @@
 /** @tele-module */
 
-const { Component } = twl;
+const { Component } = owl;
 
 export class ReconciliationRainbowManComponent extends Component {}
 

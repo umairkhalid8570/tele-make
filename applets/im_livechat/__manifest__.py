@@ -80,7 +80,7 @@ Help your customers with this chat, and analyse their feedback.
             # Qweb2 lib
             'web/static/lib/qweb/qweb2.js',
             # Tele JS Framework
-            'web/static/lib/twl/twl.js',
+            'web/static/lib/owl/owl.js',
             'web/static/src/legacy/js/promise_extension.js',
             'web/static/src/boot.js',
             'web/static/src/core/assets.js',
@@ -112,7 +112,7 @@ Help your customers with this chat, and analyse their feedback.
             'web/static/src/core/utils/ui.js',
             'web/static/src/env.js',
             'web/static/src/legacy/utils.js',
-            'web/static/src/legacy/js/twl_compatibility.js',
+            'web/static/src/legacy/js/owl_compatibility.js',
             'web/static/src/legacy/js/libs/download.js',
             'web/static/src/legacy/js/libs/content-disposition.js',
             'web/static/src/legacy/js/libs/pdfjs.js',

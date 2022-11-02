@@ -2,7 +2,7 @@
 tele.define('point_of_sale.models', function (require) {
 "use strict";
 
-const { Context } = twl;
+const { Context } = owl;
 var BarcodeParser = require('barcodes.BarcodeParser');
 var BarcodeReader = require('point_of_sale.BarcodeReader');
 var PosDB = require('point_of_sale.DB');

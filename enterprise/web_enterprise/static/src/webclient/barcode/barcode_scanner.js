@@ -1,11 +1,11 @@
 /** @tele-module **/
 /* global BarcodeDetector */
 
-import Dialog from "web.TwlDialog";
+import Dialog from "web.OwlDialog";
 import { delay } from "web.concurrency";
 import { loadAssets } from "@web/core/assets";
 
-const { core, Component, hooks, mount } = twl;
+const { core, Component, hooks, mount } = owl;
 import { _t } from 'web.core';
 const { useRef } = hooks;
 const bus = new core.EventBus();

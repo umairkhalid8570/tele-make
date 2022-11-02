@@ -4,7 +4,7 @@ import { registerMessagingComponent } from '@mail/utils/messaging_component';
 import { link, unlink } from '@mail/model/model_field_command';
 import { useUpdate } from '@mail/component_hooks/use_update/use_update';
 
-const { Component } = twl;
+const { Component } = owl;
 
 export class Discuss extends Component {
     /**

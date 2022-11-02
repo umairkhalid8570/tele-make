@@ -2,9 +2,9 @@
 
 import { AddMilestone, OpenMilestone } from '@project/js/right_panel/project_utils';
 import { formatFloat } from "@web/fields/formatters";
-const { useState } = twl.hooks;
+const { useState } = owl.hooks;
 
-export default class ProjectRightPanel extends twl.Component {
+export default class ProjectRightPanel extends owl.Component {
     constructor() {
         super(...arguments);
         this.context = this.props.action.context;

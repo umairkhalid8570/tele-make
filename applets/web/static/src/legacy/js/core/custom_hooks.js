@@ -1,7 +1,7 @@
 tele.define('web.custom_hooks', function (require) {
     "use strict";
 
-    const { Component } = twl;
+    const { Component } = owl;
     const { useEffect } = require("@web/core/utils/hooks");
 
     /**
@@ -37,7 +37,7 @@ tele.define('web.custom_hooks', function (require) {
     }
 
     /**
-     * The useListener hook offers an alternative to Twl's classical event
+     * The useListener hook offers an alternative to Owl's classical event
      * registration mechanism (with attribute 't-on-eventName' in xml). It is
      * especially useful for abstract components, meant to be extended by
      * specific ones. If those abstract components need to define event handlers,
@@ -48,8 +48,8 @@ tele.define('web.custom_hooks', function (require) {
      *
      * Example: navigation event handling in AbstractField
      *
-     * Usage: like all Twl hooks, this function has to be called in the
-     * constructor of an Twl component:
+     * Usage: like all Owl hooks, this function has to be called in the
+     * constructor of an Owl component:
      *
      *   useListener('click', () => { console.log('clicked'); });
      *

@@ -1,7 +1,7 @@
 tele.define('point_of_sale.TicketScreen', function (require) {
     'use strict';
 
-    const { useState } = twl.hooks;
+    const { useState } = owl.hooks;
     const models = require('point_of_sale.models');
     const Registries = require('point_of_sale.Registries');
     const IndependentToOrderScreen = require('point_of_sale.IndependentToOrderScreen');

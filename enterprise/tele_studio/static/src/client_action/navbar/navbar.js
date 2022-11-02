@@ -15,7 +15,7 @@ export class StudioNavbar extends EnterpriseNavBar {
         this.user = useService("user");
         this.dialogManager = useService("dialog");
         this.notification = useService("notification");
-        twl.hooks.onMounted(() => {
+        owl.hooks.onMounted(() => {
             this.env.bus.off("HOME-MENU:TOGGLED", this);
             this._updateMenuAppsIcon();
         });

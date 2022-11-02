@@ -4,7 +4,7 @@ import { registry } from "@web/core/registry";
 import { ProfilingItem } from "./profiling_item";
 import { session } from "@web/session";
 
-const { core } = twl;
+const { core } = owl;
 
 const profilingService = {
     dependencies: ["orm"],

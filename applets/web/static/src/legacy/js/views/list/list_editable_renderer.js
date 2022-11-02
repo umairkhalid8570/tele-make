@@ -14,7 +14,7 @@ import core from 'web.core';
 import dom from 'web.dom';
 import ListRenderer from 'web.ListRenderer';
 import utils from 'web.utils';
-import { WidgetAdapterMixin } from 'web.TwlCompatibility';
+import { WidgetAdapterMixin } from 'web.OwlCompatibility';
 
 var _t = core._t;
 
@@ -479,7 +479,7 @@ ListRenderer.include({
         }
 
         return Promise.all(defs).then(function () {
-            // mark Twl sub components as mounted
+            // mark Owl sub components as mounted
             WidgetAdapterMixin.on_attach_callback.call(self);
 
             // necessary to trigger resize on fieldtexts

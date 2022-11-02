@@ -37,7 +37,7 @@ import {
 } from "../helpers/mock_services";
 import { getFixture, legacyExtraNextTick, nextTick, patchWithCleanup } from "../helpers/utils";
 import session from "web.session";
-import { ComponentAdapter } from "web.TwlCompatibility";
+import { ComponentAdapter } from "web.OwlCompatibility";
 import LegacyMockServer from "web.MockServer";
 import Widget from "web.Widget";
 import { userService } from "@web/core/user_service";
@@ -46,7 +46,7 @@ import { ClientActionAdapter, ViewAdapter } from "@web/legacy/action_adapters";
 import { commandService } from "@web/core/commands/command_service";
 import { CustomFavoriteItem } from "@web/search/favorite_menu/custom_favorite_item";
 
-const { Component, mount, tags } = twl;
+const { Component, mount, tags } = owl;
 
 const actionRegistry = registry.category("actions");
 const serviceRegistry = registry.category("services");
@@ -190,7 +190,7 @@ export function addLegacyMockEnvironment(env, legacyParams = {}) {
     registerCleanup(() => (debouncedField.prototype.DEBOUNCE = initialDebouncedVal));
 
     if (legacyParams.withLegacyMockServer) {
-        const adapter = new ComponentAdapter(null, { Component: twl.Component });
+        const adapter = new ComponentAdapter(null, { Component: owl.Component });
         adapter.env = legacyEnv;
         const W = Widget.extend({ do_push_state() {} });
         const widget = new W(adapter);
@@ -299,7 +299,7 @@ export async function loadState(env, state) {
     await nextTick();
     // wait for the regular rendering
     await nextTick();
-    // wait for the legacy rendering below twl layer
+    // wait for the legacy rendering below owl layer
     await legacyExtraNextTick();
 }
 
@@ -454,7 +454,7 @@ export function getActionManagerServerData() {
             params: { description: "Id 2" },
         },
         {
-            xmlId: "wtwl.client_action",
+            xmlId: "wowl.client_action",
             id: 1099,
             tag: "__test__client__action__",
             target: "main",

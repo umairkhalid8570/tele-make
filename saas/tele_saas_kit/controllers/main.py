@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 #################################################################################
 #
-#   Copyright (c) 2022-Present Tele INC.(<https://tele.studio/>)
+#   Copyright (c) 2016-Present Tele Software Pvt. Ltd. (<https://tele.com/>)
 #   See LICENSE file for full copyright and licensing details.
-#   License URL : <https://store.tele.studio/license.html/>
+#   License URL : <https://store.tele.com/license.html/>
 # 
 #################################################################################
 
@@ -12,7 +12,7 @@ import logging
 import json
 from tele import http, _, fields
 from tele.http import request
-from tele.applets.website_sale.controllers.main import WebsiteSale
+from tele.addons.website_sale.controllers.main import WebsiteSale
 from tele.tools.json import scriptsafe as json_scriptsafe
 
 _logger = logging.getLogger(__name__)

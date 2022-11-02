@@ -1,7 +1,7 @@
 tele.define('web.Popover', function (require) {
     'use strict';
 
-    const { Component, hooks, misc, QWeb } = twl;
+    const { Component, hooks, misc, QWeb } = owl;
     const { Portal } = misc;
     const { useRef, useState } = hooks;
 
@@ -223,7 +223,7 @@ tele.define('web.Popover', function (require) {
          * @param {Event} ev
          */
         _onResizeWindow(ev) {
-            if (this.__twl__.status === 5 /* destroyed */) {
+            if (this.__owl__.status === 5 /* destroyed */) {
                 return;
             }
             this._compute();
@@ -237,7 +237,7 @@ tele.define('web.Popover', function (require) {
          * @param {Event} ev
          */
         _onScrollDocument(ev) {
-            if (this.__twl__.status === 5 /* destroyed */) {
+            if (this.__owl__.status === 5 /* destroyed */) {
                 return;
             }
             this._compute();

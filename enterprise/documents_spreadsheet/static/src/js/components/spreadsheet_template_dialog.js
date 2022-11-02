@@ -1,7 +1,7 @@
 tele.define("documents_spreadsheet.TemplateDialog", function (require) {
     "use strict";
 
-    const Dialog = require("web.TwlDialog");
+    const Dialog = require("web.OwlDialog");
     const SearchBar = require("web.SearchBar");
     const Pager = require("web.Pager");
     const ActionModel = require("web.ActionModel");
@@ -11,11 +11,11 @@ tele.define("documents_spreadsheet.TemplateDialog", function (require) {
     const { getDataFromTemplate } = require("documents_spreadsheet.pivot_utils");
     const { DropPrevious } = require("web.concurrency");
 
-    const { useState, useSubEnv } = twl.hooks;
+    const { useState, useSubEnv } = owl.hooks;
 
     const { createEmptyWorkbookData } = spreadsheet.helpers;
 
-    class TemplateDialog extends twl.Component {
+    class TemplateDialog extends owl.Component {
         constructor() {
             super(...arguments);
             this.dialogTitle = this.env._t("New Spreadsheet");
@@ -32,7 +32,7 @@ tele.define("documents_spreadsheet.TemplateDialog", function (require) {
             const searchModelConfig = {
                 context: this.props.context,
                 domain: [],
-                env: twl.Component.env,
+                env: owl.Component.env,
             };
             const archs = { search: this.props.searchView.arch };
             const { ControlPanel: controlPanelInfo } = ActionModel.extractArchInfo(archs);

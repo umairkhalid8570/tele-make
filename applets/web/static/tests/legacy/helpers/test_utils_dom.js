@@ -368,7 +368,7 @@ tele.define('web.test_utils_dom', function (require) {
      */
     function getNode(target) {
         let nodes;
-        if (target instanceof twl.Component || target instanceof Widget) {
+        if (target instanceof owl.Component || target instanceof Widget) {
             nodes = [target.el];
         } else if (typeof target === 'string') {
             nodes = document.querySelectorAll(target);
@@ -405,7 +405,7 @@ tele.define('web.test_utils_dom', function (require) {
      * Returns a promise that will be resolved after the nextAnimationFrame after
      * the next tick
      *
-     * This is useful to guarantee that TWL has had the time to render
+     * This is useful to guarantee that OWL has had the time to render
      *
      * @returns {Promise}
      */

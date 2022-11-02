@@ -4,13 +4,13 @@ import { registry } from "@web/core/registry";
 import { useBus, useService } from "@web/core/utils/hooks";
 import { cleanDomFromBootstrap } from "@web/legacy/utils";
 import { computeAppsAndMenuItems } from "@web/webclient/menus/menu_helpers";
-import { ComponentAdapter } from "web.TwlCompatibility";
+import { ComponentAdapter } from "web.OwlCompatibility";
 import { AppCreatorWrapper } from "./app_creator/app_creator";
 import { Editor } from "./editor/editor";
 import { StudioNavbar } from "./navbar/navbar";
 import { StudioHomeMenu } from "./studio_home_menu/studio_home_menu";
 
-const { Component } = twl;
+const { Component } = owl;
 
 export class StudioClientAction extends Component {
     setup() {
@@ -69,7 +69,7 @@ StudioClientAction.components = {
     ComponentAdapter: class extends ComponentAdapter {
         setup() {
             super.setup();
-            this.env = twl.Component.env;
+            this.env = owl.Component.env;
         }
     },
 };

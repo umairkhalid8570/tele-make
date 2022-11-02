@@ -1,6 +1,6 @@
 /** @tele-module **/
 
-import { ComponentWrapper } from 'web.TwlCompatibility';
+import { ComponentWrapper } from 'web.OwlCompatibility';
 
 export const RightPanelRendererMixin = {
     /**

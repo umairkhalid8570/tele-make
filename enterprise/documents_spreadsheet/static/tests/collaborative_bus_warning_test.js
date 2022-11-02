@@ -10,9 +10,9 @@ import { makeFakeNotificationService } from "@web/../tests/helpers/mock_services
 import Widget from "web.Widget";
 import { useAutoSavingWarning } from "@documents_spreadsheet/actions/control_panel/collaborative_cross_tab_bus_warning";
 
-const { Component, useState, mount } = twl;
+const { Component, useState, mount } = owl;
 
-const { xml } = twl.tags;
+const { xml } = owl.tags;
 
 let runPendingTimers;
 

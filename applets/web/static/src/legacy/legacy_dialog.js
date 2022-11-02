@@ -3,7 +3,7 @@
 import { Dialog } from "../core/dialog/dialog";
 import { patch } from "@web/core/utils/patch";
 import { useEffect } from "@web/core/utils/hooks";
-import TwlDialog from "web.TwlDialog";
+import OwlDialog from "web.OwlDialog";
 
 /**
  * This is a patch of the new Dialog class.
@@ -14,8 +14,8 @@ patch(Dialog.prototype, "Legacy Adapted Dialog", {
         this._super();
         useEffect(
             () => {
-                TwlDialog.display(this);
-                return () => TwlDialog.hide(this);
+                OwlDialog.display(this);
+                return () => OwlDialog.hide(this);
             },
             () => []
         );

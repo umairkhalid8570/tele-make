@@ -3,7 +3,7 @@
 import FavoriteMenu from "web.FavoriteMenu";
 import { useModel } from "web.Model";
 
-const { Component } = twl;
+const { Component } = owl;
 
 /**
  * Insert list view in spreadsheet menu

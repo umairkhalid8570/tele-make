@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 #################################################################################
 #
-#   Copyright (c) 2022-Present Tele INC.(<https://tele.studio/>)
+#   Copyright (c) 2016-Present Tele Software Pvt. Ltd. (<https://tele.com/>)
 #   See LICENSE file for full copyright and licensing details.
-#   License URL : <https://store.tele.studio/license.html/>
+#   License URL : <https://store.tele.com/license.html/>
 # 
 #################################################################################
 
@@ -45,7 +45,7 @@ class SaasConfig(models.TransientModel):
     costing_nature = fields.Selection(selection=Nature, string="Select Nature of Apps Costing")
     user_cost = fields.Integer(string="Per User Cost")
     due_user_cost = fields.Integer(string="Due User Cost")
-    applets_path = fields.Char(string="Default Applets Path")
+    addons_path = fields.Char(string="Default Addons Path")
     recurring_rule_type = fields.Selection(selection=RECURRING_RULE, string="Default Recurring Type", default="monthly")
     is_multi_server = fields.Boolean(string="Provide Multi Server", default=False)
     reminder_period = fields.Integer(string="Reminder Starts")
@@ -66,7 +66,7 @@ class SaasConfig(models.TransientModel):
         IrDefault.set('res.config.settings', 'costing_nature', self.costing_nature)
         IrDefault.set('res.config.settings', 'user_cost', self.user_cost)
         IrDefault.set('res.config.settings', 'due_user_cost', self.due_user_cost)
-        IrDefault.set('res.config.settings', 'applets_path', self.applets_path)
+        IrDefault.set('res.config.settings', 'addons_path', self.addons_path)
         IrDefault.set('res.config.settings', 'recurring_rule_type', self.recurring_rule_type)
         IrDefault.set('res.config.settings', 'is_multi_server', self.is_multi_server)
         IrDefault.set('res.config.settings', 'reminder_period', self.reminder_period)
@@ -87,7 +87,7 @@ class SaasConfig(models.TransientModel):
                 'costing_nature': IrDefault.get('res.config.settings', 'costing_nature') or 'per_month',
                 'user_cost': IrDefault.get('res.config.settings', 'user_cost') or 1,
                 'due_user_cost': IrDefault.get('res.config.settings', 'due_user_cost') or 1,
-                'applets_path': IrDefault.get('res.config.settings', 'applets_path') or '/opt/tele/applets',
+                'addons_path': IrDefault.get('res.config.settings', 'addons_path') or '/opt/tele/addons',
                 'recurring_rule_type': IrDefault.get('res.config.settings', 'recurring_rule_type') or 'monthly',
                 'is_multi_server': IrDefault.get('res.config.settings', 'is_multi_server') or False,
                 'reminder_period': IrDefault.get('res.config.settings', 'reminder_period') or 3,

@@ -13,7 +13,7 @@ function factory(dependencies) {
          * @override
          */
         _created() {
-            // Bind necessary until TWL supports arrow function in handlers: https://github.com/tele-studio/twl/issues/876
+            // Bind necessary until OWL supports arrow function in handlers: https://github.com/tele-studio/owl/issues/876
             this.onClickInvite = this.onClickInvite.bind(this);
             this.onInputSearch = this.onInputSearch.bind(this);
         }
@@ -85,7 +85,7 @@ function factory(dependencies) {
         }
 
         /**
-         * Handles TWL update on this channel invitation form component.
+         * Handles OWL update on this channel invitation form component.
          */
         onComponentUpdate() {
             if (this.doFocusOnSearchInput && this.searchInputRef.el) {
@@ -202,7 +202,7 @@ function factory(dependencies) {
             readonly: true,
         }),
         /**
-         * States the TWL component of this channel invitation form.
+         * States the OWL component of this channel invitation form.
          * Useful to be able to close it with popover trigger, or to know when
          * it is open to update the button active state.
          */
@@ -234,7 +234,7 @@ function factory(dependencies) {
             isCausal: true,
         }),
         /**
-         * States the TWL ref of the "search" input of this channel invitation
+         * States the OWL ref of the "search" input of this channel invitation
          * form. Useful to be able to focus it.
          */
         searchInputRef: attr(),

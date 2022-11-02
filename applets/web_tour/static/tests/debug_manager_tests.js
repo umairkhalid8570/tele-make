@@ -14,7 +14,7 @@ import { makeFakeLocalizationService } from "@web/../tests/helpers/mock_services
 import { DebugMenuParent } from "@web/../tests/core/debug/debug_manager_tests";
 import { fakeCommandService } from "@web/../tests/helpers/mock_services";
 
-const { mount } = twl;
+const { mount } = owl;
 
 const debugRegistry = registry.category("debug");
 let target;

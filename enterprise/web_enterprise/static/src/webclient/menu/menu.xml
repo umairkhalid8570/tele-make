@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <templates id="template_menu" xml:space="preserve">
 
-    <t t-inherit="web.NavBar.AppsMenu" t-inherit-mode="extension" twl="1">
+    <t t-inherit="web.NavBar.AppsMenu" t-inherit-mode="extension" owl="1">
         <xpath expr="//Dropdown" position="replace">
             <Dropdown hotkey="'h'" title="'Home Menu'" class="o_navbar_apps_menu nav-menu p-2">
                 <t t-set-slot="toggler">

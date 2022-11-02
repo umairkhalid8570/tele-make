@@ -7,7 +7,7 @@ import { registry } from "@web/core/registry";
 import { Layout } from "@web/views/layout";
 import { makeTestEnv } from "@web/../tests/helpers/mock_env";
 
-const { Component, hooks, mount, tags } = twl;
+const { Component, hooks, mount, tags } = owl;
 const { xml } = tags;
 const { useSubEnv } = hooks;
 

@@ -5,7 +5,7 @@ tele.define('web.ActionMenus', function (require) {
     const DropdownMenu = require('web.DropdownMenu');
     const Registry = require('web.Registry');
 
-    const { Component } = twl;
+    const { Component } = owl;
 
     let registryActionId = 1;
 
@@ -119,7 +119,7 @@ tele.define('web.ActionMenus', function (require) {
          * Perform the action for the item clicked after getting the data
          * necessary with a trigger.
          * @private
-         * @param {TwlEvent} ev
+         * @param {OwlEvent} ev
          */
         async _executeAction(action) {
             let activeIds = this.props.activeIds;
@@ -169,7 +169,7 @@ tele.define('web.ActionMenus', function (require) {
          * - an action ID (string);
          * - an URL (string).
          * @private
-         * @param {TwlEvent} ev
+         * @param {OwlEvent} ev
          */
         _onItemSelected(ev) {
             ev.stopPropagation();

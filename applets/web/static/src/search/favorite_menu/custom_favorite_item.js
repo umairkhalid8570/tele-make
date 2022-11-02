@@ -3,7 +3,7 @@
 import { registry } from "@web/core/registry";
 import { useAutofocus, useService } from "@web/core/utils/hooks";
 
-const { Component, hooks } = twl;
+const { Component, hooks } = owl;
 const { useRef, useState } = hooks;
 
 const favoriteMenuRegistry = registry.category("favoriteMenu");

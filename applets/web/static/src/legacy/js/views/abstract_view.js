@@ -31,7 +31,7 @@ import SearchPanel from "web.searchPanel";
 import mvc from 'web.mvc';
 import viewUtils from 'web.viewUtils';
 
-const { Component } = twl;
+const { Component } = owl;
 
 var Factory = mvc.Factory;
 

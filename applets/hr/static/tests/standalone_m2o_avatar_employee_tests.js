@@ -1,8 +1,8 @@
 /** @tele-module **/
 
-    const { xml } = twl.tags;
+    const { xml } = owl.tags;
 
-    import AbstractRendererTwl from 'web.AbstractRendererTwl';
+    import AbstractRendererOwl from 'web.AbstractRendererOwl';
     import BasicView from "web.BasicView";
     import BasicRenderer from "web.BasicRenderer";
     import RendererWrapper from 'web.RendererWrapper';
@@ -19,7 +19,7 @@
         });
     }
 
-    function getTwlView(twlRenderer, viewType) {
+    function getOwlView(owlRenderer, viewType) {
         viewType = viewType || "test";
         return BasicView.extend({
             viewType: viewType,
@@ -91,14 +91,14 @@
             view.destroy();
         });
 
-        QUnit.test('standalone_m2o_avatar_employee: Twl view', async function (assert) {
+        QUnit.test('standalone_m2o_avatar_employee: Owl view', async function (assert) {
             assert.expect(1);
 
-            class Renderer extends AbstractRendererTwl { }
+            class Renderer extends AbstractRendererOwl { }
             Renderer.template = xml`<div class='coucou_test'></div>`;
 
             const view = await createView({
-                View: getTwlView(Renderer, "test"),
+                View: getOwlView(Renderer, "test"),
                 data: this.data,
                 model: "foo",
                 arch: "<test/>"

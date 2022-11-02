@@ -12,7 +12,7 @@ export class IconCreatorDialog extends Dialog {
         this.rpc = useService("rpc");
         this.menus = useService("menu");
         this.initialAppData = Object.assign({}, this.props.editedAppData);
-        this.editedAppData = twl.hooks.useState(this.props.editedAppData);
+        this.editedAppData = owl.hooks.useState(this.props.editedAppData);
     }
 
     /**

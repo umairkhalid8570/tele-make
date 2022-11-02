@@ -4,7 +4,7 @@ tele.define("web.Model", function (require) {
     const { groupBy, partitionBy } = require("web.utils");
     const Registry = require("web.Registry");
 
-    const { Component, core } = twl;
+    const { Component, core } = owl;
     const { EventBus, Observer } = core;
     const isNotNull = (val) => val !== null && val !== undefined;
 
@@ -114,7 +114,7 @@ tele.define("web.Model", function (require) {
      * Model
      *
      * The purpose of the class Model and the associated hook useModel
-     * is to offer something similar to an twl store but with no automatic
+     * is to offer something similar to an owl store but with no automatic
      * notification (and rendering) of components when the 'state' used in the
      * model would change. Instead, one should call the "__notifyComponents"
      * function whenever it is useful to alert registered component.
@@ -424,14 +424,14 @@ tele.define("web.Model", function (require) {
         }
 
         /**
-         * @see Context.__notifyComponents() in twl.js for explanation
+         * @see Context.__notifyComponents() in owl.js for explanation
          * @private
          */
         async _notifyComponents() {
             const rev = ++this.rev;
             const subscriptions = this.subscriptions.update || [];
             const groups = partitionBy(subscriptions, (s) =>
-                s.owner ? s.owner.__twl__.depth : -1
+                s.owner ? s.owner.__owl__.depth : -1
             );
             for (let group of groups) {
                 const proms = group.map((sub) =>
@@ -446,7 +446,7 @@ tele.define("web.Model", function (require) {
     Model.Extension = ModelExtension;
 
     /**
-     * This is more or less the hook 'useContextWithCB' from twl only slightly
+     * This is more or less the hook 'useContextWithCB' from owl only slightly
      * simplified.
      *
      * @param {string} modelName
@@ -462,22 +462,22 @@ tele.define("web.Model", function (require) {
         }
 
         const mapping = model.mapping;
-        const __twl__ = component.__twl__;
-        const componentId = __twl__.id;
-        if (!__twl__.observer) {
-            __twl__.observer = new Observer();
-            __twl__.observer.notifyCB = component.render.bind(component);
+        const __owl__ = component.__owl__;
+        const componentId = __owl__.id;
+        if (!__owl__.observer) {
+            __owl__.observer = new Observer();
+            __owl__.observer.notifyCB = component.render.bind(component);
         }
-        const currentCB = __twl__.observer.notifyCB;
-        __twl__.observer.notifyCB = function () {
+        const currentCB = __owl__.observer.notifyCB;
+        __owl__.observer.notifyCB = function () {
             if (model.rev > mapping[componentId]) {
                 return;
             }
             currentCB();
         };
         mapping[componentId] = 0;
-        const renderFn = __twl__.renderFn;
-        __twl__.renderFn = function (comp, params) {
+        const renderFn = __owl__.renderFn;
+        __owl__.renderFn = function (comp, params) {
             mapping[componentId] = model.rev;
             return renderFn(comp, params);
         };

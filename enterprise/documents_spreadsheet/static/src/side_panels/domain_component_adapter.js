@@ -1,13 +1,13 @@
 /** @tele-module */
 
-import { ComponentAdapter } from "web.TwlCompatibility";
+import { ComponentAdapter } from "web.OwlCompatibility";
 
 /**
- * ComponentAdapter to allow using DomainSelector in a twl Component
+ * ComponentAdapter to allow using DomainSelector in a owl Component
  */
 export default class DomainComponentAdapter extends ComponentAdapter {
     setup() {
-        this.env = twl.Component.env;
+        this.env = owl.Component.env;
     }
     get widgetArgs() {
         return [this.props.model, this.props.domain, { readonly: true, filters: {} }];

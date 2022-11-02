@@ -5,7 +5,7 @@ tele.define('web.GroupByMenu', function (require) {
     const { FACET_ICONS, GROUPABLE_TYPES } = require('web.searchUtils');
     const { useModel } = require('web.Model');
 
-    const { Component } = twl;
+    const { Component } = owl;
 
     class GroupByMenu extends Component {
 
@@ -54,7 +54,7 @@ tele.define('web.GroupByMenu', function (require) {
 
         /**
          * @private
-         * @param {TwlEvent} ev
+         * @param {OwlEvent} ev
          */
         onGroupBySelected(ev) {
             ev.stopPropagation();

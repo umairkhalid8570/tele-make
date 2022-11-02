@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <templates xml:space="preserve">
 
-    <t t-name="web.PivotRenderer" twl="1">
+    <t t-name="web.PivotRenderer" owl="1">
         <div class="o_pivot table-responsive">
             <table class="table-hover table-sm table-bordered" t-att-class="{ o_enable_linking: !model.metaData.disableLinking, o_sample_data_disabled: model.useSampleModel }">
                 <thead>
@@ -46,7 +46,7 @@
         </div>
     </t>
 
-    <t t-name="web.PivotHeader" twl="1">
+    <t t-name="web.PivotHeader" owl="1">
         <th
             t-att-colspan="isXAxis ? cell.width : undefined"
             t-att-rowspan="isXAxis ? cell.height : undefined"
@@ -81,7 +81,7 @@
         </th>
     </t>
 
-    <t t-name="web.PivotMeasure" twl="1">
+    <t t-name="web.PivotMeasure" owl="1">
         <th class="text-muted" t-att-colspan="cell.width" t-att-rowspan="cell.height" t-att-class="{
                 o_pivot_origin_row: cell.originIndexes,
                 o_pivot_measure_row: !cell.originIndexes,

@@ -1,7 +1,7 @@
 /** @tele-module **/
 
-const { Component } = twl;
-const { onMounted, onPatched } = twl.hooks;
+const { Component } = owl;
+const { onMounted, onPatched } = owl.hooks;
 
 /**
  * This hooks provides support for accessing the values returned by the given

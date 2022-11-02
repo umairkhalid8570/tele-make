@@ -3,7 +3,7 @@
 import { browser } from "@web/core/browser/browser";
 import { useEffect } from "@web/core/utils/hooks";
 
-const { Component, hooks } = twl;
+const { Component, hooks } = owl;
 
 /**
  * The RainbowMan widget is the widget displayed by default as a 'fun/rewarding'

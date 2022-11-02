@@ -11,7 +11,7 @@ import ActionMixin from "web.ActionMixin";
 import ActionModel from "web.ActionModel";
 import ControlPanel from "web.ControlPanel";
 import Widget from "web.Widget";
-import { ComponentWrapper } from "web.TwlCompatibility";
+import { ComponentWrapper } from "web.OwlCompatibility";
 
 const AbstractAction = Widget.extend(ActionMixin, {
     config: {
@@ -78,7 +78,7 @@ const AbstractAction = Widget.extend(ActionMixin, {
         this.searchModelConfig = {
             context: Object.assign({}, action.context),
             domain: action.domain || [],
-            env: twl.Component.env,
+            env: owl.Component.env,
             searchMenuTypes: this.searchMenuTypes,
         };
         this.extensions = {};

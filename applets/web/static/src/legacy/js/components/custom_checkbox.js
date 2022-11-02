@@ -3,7 +3,7 @@ tele.define('web.CustomCheckbox', function (require) {
 
     const utils = require('web.utils');
 
-    const { Component } = twl;
+    const { Component } = owl;
 
     /**
      * Custom checkbox

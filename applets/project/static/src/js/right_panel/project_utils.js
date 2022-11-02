@@ -2,11 +2,11 @@
 
 import { _lt } from 'web.core';
 import fieldUtils from 'web.field_utils';
-import { ComponentAdapter } from 'web.TwlCompatibility';
+import { ComponentAdapter } from 'web.OwlCompatibility';
 import { FormViewDialog } from 'web.view_dialogs';
-const { useState, useRef } = twl.hooks;
+const { useState, useRef } = owl.hooks;
 
-class MilestoneComponent extends twl.Component {
+class MilestoneComponent extends owl.Component {
     constructor() {
         super(...arguments);
         this.contextValue = Object.assign({}, {
@@ -54,7 +54,7 @@ class MilestoneComponent extends twl.Component {
     }
 
     async _onDialogSaved() {
-        await this.__twl__.parent.willUpdateProps();
+        await this.__owl__.parent.willUpdateProps();
     }
 }
 MilestoneComponent.components = { ComponentAdapter };
@@ -112,7 +112,7 @@ export class OpenMilestone extends MilestoneComponent {
             method: 'unlink',
             args: [this.milestone.id]
         });
-        await this.__twl__.parent.willUpdateProps();
+        await this.__owl__.parent.willUpdateProps();
     }
 
     onOpenMilestone() {

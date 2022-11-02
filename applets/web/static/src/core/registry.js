@@ -1,6 +1,6 @@
 /** @tele-module **/
 
-const { core } = twl;
+const { core } = owl;
 const { EventBus } = core;
 
 // -----------------------------------------------------------------------------

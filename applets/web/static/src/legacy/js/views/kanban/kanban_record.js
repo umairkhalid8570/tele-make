@@ -13,9 +13,9 @@ var field_utils = require('web.field_utils');
 const FieldWrapper = require('web.FieldWrapper');
 var utils = require('web.utils');
 var Widget = require('web.Widget');
-const { WidgetAdapterMixin } = require('web.TwlCompatibility');
+const { WidgetAdapterMixin } = require('web.OwlCompatibility');
 var widgetRegistry = require('web.widget_registry');
-const widgetRegistryTwl = require('web.widgetRegistry');
+const widgetRegistryOwl = require('web.widgetRegistry');
 const WidgetWrapper = require("web.WidgetWrapper");
 
 var _t = core._t;
@@ -363,8 +363,8 @@ var KanbanRecord = Widget.extend(WidgetAdapterMixin, {
             const options = Object.assign({}, self.options, { attrs });
 
             const name = $field.attr('name');
-            const Widget = widgetRegistryTwl.get(name) || widgetRegistry.get(name);
-            const legacy = !(Widget.prototype instanceof twl.Component);
+            const Widget = widgetRegistryOwl.get(name) || widgetRegistry.get(name);
+            const legacy = !(Widget.prototype instanceof owl.Component);
             let widget;
             if (legacy) {
                 widget = new Widget(self, self.state, options);

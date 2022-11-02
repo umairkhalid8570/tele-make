@@ -41,7 +41,7 @@ QUnit.module("ActionManager", (hooks) => {
             target: "main",
             type: "ir.actions.client",
         };
-        serverData.actions["wtwl.some_action"] = {
+        serverData.actions["wowl.some_action"] = {
             tag: "client_action_by_xml_id",
             target: "main",
             type: "ir.actions.client",
@@ -54,7 +54,7 @@ QUnit.module("ActionManager", (hooks) => {
         const env = await makeTestEnv({ serverData });
         await doAction(env, 1);
         assert.verifySteps(["client_action_db_id"]);
-        await doAction(env, "wtwl.some_action");
+        await doAction(env, "wowl.some_action");
         assert.verifySteps(["client_action_xml_id"]);
         await doAction(env, {
             tag: "client_action_by_object",

@@ -117,7 +117,7 @@ export function checkFiltersTypeValueCombination(type, value) {
  * Notes:
  *    - the compatibility is incomplete and only covers what's currently
  *      needed for spreadsheet
- *    - remove when views and helpers are converted to wtwl.
+ *    - remove when views and helpers are converted to wowl.
  * @param {Object} orm
  */
 export function legacyRPC(orm) {
