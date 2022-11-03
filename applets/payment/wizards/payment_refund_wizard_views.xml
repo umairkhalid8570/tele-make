@@ -32,8 +32,8 @@
                     </group>
                 </group>
                 <footer>
-                    <button string="Refund" type="object" name="action_refund" class="btn-primary"/>
-                    <button string="Close" special="cancel" class="btn-secondary"/>
+                    <button string="Refund" type="object" name="action_refund" class="btn-primary rounded-sm"/>
+                    <button string="Close" special="cancel" class="btn-secondary rounded-sm"/>
                 </footer>
             </form>
         </field>

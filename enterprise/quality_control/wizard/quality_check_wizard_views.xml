@@ -67,16 +67,16 @@
                     <field name="additional_note" attrs="{'readonly': [('quality_state', '!=', 'none')]}"/>
                 </group>
                 <footer>
-                    <button name="do_measure" type="object" class="btn-primary" string="Validate"
+                    <button name="do_measure" type="object" class="btn-primary rounded-sm" string="Validate"
                         attrs="{'invisible': [ '|', ('quality_state', '!=', 'none'), ('test_type', '!=', 'measure')]}" data-hotkey="q"/>
-                    <button name="do_pass" type="object" class="btn-primary" string="Validate"
+                    <button name="do_pass" type="object" class="btn-primary rounded-sm" string="Validate"
                         attrs="{'invisible': [ '|', ('quality_state', '!=', 'none'), ('test_type', 'not in', ('picture', 'instructions') )]}" data-hotkey="w"/>
-                    <button name="do_pass" type="object" class="btn-primary" string="Pass"
+                    <button name="do_pass" type="object" class="btn-primary rounded-sm" string="Pass"
                         attrs="{'invisible': ['|', ('quality_state', '!=', 'none'), ('test_type', '!=', 'passfail')]}" data-hotkey="w"/>
-                    <button name="do_fail" type="object" class="btn-primary" string="Fail"
+                    <button name="do_fail" type="object" class="btn-primary rounded-sm" string="Fail"
                         attrs="{'invisible': ['|', ('quality_state', '!=', 'none'), ('test_type', '!=', 'passfail')]}" data-hotkey="x"/>
-                    <button name="action_generate_previous_window" type="object" class="btn-secondary" string="Previous" attrs="{'invisible': [('position_current_check', '=', 1)]}"/>
-                    <button name="action_generate_next_window" type="object" class="btn-secondary" string="Next" attrs="{'invisible': [('is_last_check', '=', True)]}"/>
+                    <button name="action_generate_previous_window" type="object" class="btn-secondary rounded-sm" string="Previous" attrs="{'invisible': [('position_current_check', '=', 1)]}"/>
+                    <button name="action_generate_next_window" type="object" class="btn-secondary rounded-sm" string="Next" attrs="{'invisible': [('is_last_check', '=', True)]}"/>
                     <button string="Cancel" class="btn btn-secondary rounded-sm" special="cancel" data-hotkey="z" />
                 </footer>
             </form>
@@ -97,11 +97,11 @@
                     <field name="failure_message"/>
                 </div>
                 <footer>
-                    <button name="correct_measure" type="object" class="btn-primary" string="Correct Measure"
+                    <button name="correct_measure" type="object" class="btn-primary rounded-sm" string="Correct Measure"
                         attrs="{'invisible': [('test_type', '!=', 'measure')]}" data-hotkey="q"/>
                     <button name="action_generate_next_window" type="object" string="Confirm Measure"
                         attrs="{'invisible': [('test_type', '!=', 'measure')]}" data-hotkey="w"/>
-                    <button name="action_generate_next_window" type="object" class="btn-primary" string="OK"
+                    <button name="action_generate_next_window" type="object" class="btn-primary rounded-sm" string="OK"
                         attrs="{'invisible': [('test_type', '!=', 'passfail')]}" data-hotkey="w"/>
                 </footer>
             </form>

@@ -9,8 +9,8 @@
                   <field name="journal_id" required="True" domain="[('type', '=', 'bank')]"/>
                 </group>
                 <footer>
-                    <button string="Confirm" class="btn-primary" name="generate_sepa_xml_file" type="object" data-hotkey="q"/>
-                    <button string="Cancel" class="btn-secondary" special="cancel" data-hotkey="z"/>
+                    <button string="Confirm" class="btn-primary rounded-sm" name="generate_sepa_xml_file" type="object" data-hotkey="q"/>
+                    <button string="Cancel" class="btn-secondary rounded-sm" special="cancel" data-hotkey="z"/>
                 </footer>
             </form>
         </field>
@@ -26,8 +26,8 @@
                   <field name="file_name" required="True"/>
                 </group>
                 <footer>
-                    <button string="Confirm" class="btn-primary" name="generate_sepa_xml_file" type="object" data-hotkey="q"/>
-                    <button string="Cancel" class="btn-secondary" special="cancel" data-hotkey="z"/>
+                    <button string="Confirm" class="btn-primary rounded-sm" name="generate_sepa_xml_file" type="object" data-hotkey="q"/>
+                    <button string="Cancel" class="btn-secondary rounded-sm" special="cancel" data-hotkey="z"/>
                 </footer>
             </form>
         </field>

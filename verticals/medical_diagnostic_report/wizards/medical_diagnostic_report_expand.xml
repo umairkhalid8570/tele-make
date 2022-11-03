@@ -22,7 +22,7 @@
                     <button
                         name="merge"
                         string="Merge"
-                        class="btn-primary"
+                        class="btn-primary rounded-sm"
                         type="object"
                     />
                     <button string="Cancel" class="btn-default" special="cancel" />

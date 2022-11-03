@@ -57,7 +57,7 @@
                 <button name="action_recovery_email_send" data-hotkey="l"
                     string="Send a Recovery Email"
                     type="object"
-                    class="btn-primary"
+                    class="btn-primary rounded-sm"
                     attrs="{'invisible': ['|', ('is_abandoned_cart', '=', False), ('cart_recovery_email_sent', '=', True)]}"/>
             </xpath>
         </field>

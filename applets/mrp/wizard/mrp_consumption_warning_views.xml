@@ -35,11 +35,11 @@
                     <footer>
                         <button name="action_confirm" string="Force" data-hotkey="q"
                             groups="mrp.group_mrp_manager" attrs="{'invisible': [('consumption', '!=', 'strict')]}"
-                            colspan="1" type="object" class="btn-primary"/>
+                            colspan="1" type="object" class="btn-primary rounded-sm"/>
                         <button name="action_confirm" string="Confirm" attrs="{'invisible': [('consumption', '=', 'strict')]}" data-hotkey="q"
-                            colspan="1" type="object" class="btn-primary"/>
+                            colspan="1" type="object" class="btn-primary rounded-sm"/>
                         <button name="action_cancel" string="Discard" data-hotkey="w"
-                            colspan="1" type="object" class="btn-secondary"/>
+                            colspan="1" type="object" class="btn-secondary rounded-sm"/>
                     </footer>
                 </form>
             </field>

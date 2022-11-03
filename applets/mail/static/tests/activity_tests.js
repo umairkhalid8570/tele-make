@@ -507,7 +507,7 @@ QUnit.test("Activity view: discard an activity creation dialog", async function 
         <form>
             <field name="display_name"/>
             <footer>
-                <button string="Discard" class="btn-secondary" special="cancel"/>
+                <button string="Discard" class="btn-secondary rounded-sm" special="cancel"/>
             </footer>
         </form>`,
     };

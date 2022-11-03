@@ -13,7 +13,7 @@
                     string="Refund"
                     groups="account.group_account_invoice"
                     attrs="{'invisible': [('amount_available_for_refund', '&lt;=', 0)]}"
-                    class="btn-secondary"/>
+                    class="btn-secondary rounded-sm"/>
             </xpath>
             <xpath expr="//div[@name='button_box']" position="inside">
                 <button name="action_view_refunds"

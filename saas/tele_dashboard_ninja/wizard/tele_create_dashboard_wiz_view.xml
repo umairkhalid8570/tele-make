@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tele>
+    <record id="tele_create_dashboard_wizard_form" model="ir.ui.view">
+        <field name="name">tele.dashboard.wizard.form.view</field>
+        <field name="model">tele.dashboard.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Dashboard Manager">
+                <group>
+                    <group>
+                        <field name="name"/>
+                        <field name="tele_template"/>
+                    </group>
+                    <group>
+                        <field name="tele_menu_name"/>
+                        <field name="tele_top_menu_id"/>
+                        <field name="tele_sequence"/>
+                    </group>
+                </group>
+
+                <h3 class="oe_grey" attrs="{'invisible': [('tele_template','!=',2),('tele_template','!=',3),('tele_template','!=',4),('tele_template','!=',5)
+                ,('tele_template','!=',6),('tele_template','!=',7),('tele_template','!=',8)]}">Preview</h3>
+
+                <img src="/tele_dashboard_ninja/static/description/templates/tele_template1.png"
+                     alt="#" class="img img-fluid"
+                     style="padding: 10px; border: 2px solid;"
+                     attrs="{'invisible': [('tele_template','!=',2)]}"/>
+
+                <img src="/tele_dashboard_ninja/static/description/templates/tele_template2.png"
+                     alt="#" class="img img-fluid"
+                     style="padding: 10px; border: 2px solid;"
+                     attrs="{'invisible': [('tele_template','!=',3)]}"/>
+
+                <img src="/tele_dashboard_ninja/static/description/templates/tele_template3.png"
+                     alt="#" class="img img-fluid"
+                     style="padding: 10px; border: 2px solid;"
+                     attrs="{'invisible': [('tele_template','!=',4)]}"/>
+
+                <img src="/tele_dashboard_ninja/static/description/templates/tele_account_template.png"
+                     alt="#" class="img img-fluid"
+                     style="padding: 10px; border: 2px solid;"
+                     attrs="{'invisible': [('tele_template','!=',5)]}"/>
+
+                <img src="/tele_dashboard_ninja/static/description/templates/tele_crm_template.png"
+                     alt="#" class="img img-fluid"
+                     style="padding: 10px; border: 2px solid;"
+                     attrs="{'invisible': [('tele_template','!=',6)]}"/>
+
+                <img src="/tele_dashboard_ninja/static/description/templates/tele_inventory_template.png"
+                     alt="#" class="img img-fluid"
+                     style="padding: 10px; border: 2px solid;"
+                     attrs="{'invisible': [('tele_template','!=',7)]}"/>
+
+                <img src="/tele_dashboard_ninja/static/description/templates/tele_sale_template.png"
+                     alt="#" class="img img-fluid"
+                     style="padding: 10px; border: 2px solid;"
+                     attrs="{'invisible': [('tele_template','!=',8)]}"/>
+
+                <footer>
+                    <button class="btn-primary" name="tele_create_record" type="object" string="Save"/>
+                    <button string="Cancel" class="oe_link" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="tele_create_dashboard_wizard" model="ir.actions.act_window">
+        <field name="name">Create Dashboard</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">tele.dashboard.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="tele_create_dashboard_wizard_form"/>
+        <field name="target">new</field>
+    </record>
+</tele>

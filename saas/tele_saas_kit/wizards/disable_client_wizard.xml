@@ -12,7 +12,7 @@
                 <form>
                     Are you sure you want to Inactive Client? It will stop the client instance for always!
                     <footer>
-                        <button string='Yes' name="inactive_client" type="object" class="btn-primary"/>
+                        <button string='Yes' name="inactive_client" type="object" class="btn-primary rounded-sm"/>
                         <button string="No" class="btn-default" special="cancel"/>
                     </footer>
                 </form>
@@ -28,7 +28,7 @@
                     Are you sure you want to Put the contract on Hold?<br/>
                     Hold contract will stop the related client.
                     <footer>
-                        <button string='Yes' name="hold_contract" type="object" class="btn-primary"/>
+                        <button string='Yes' name="hold_contract" type="object" class="btn-primary rounded-sm"/>
                         <button string="No" class="btn-default" special="cancel"/>
                     </footer>
                 </form>
@@ -42,7 +42,7 @@
                 <form>
                     Are you sure you want to Drop Database? It will delete the client's DB Permanentaly! 
                     <footer>
-                        <button string='Yes' name="drop_db" type="object" class="btn-primary"/>
+                        <button string='Yes' name="drop_db" type="object" class="btn-primary rounded-sm"/>
                         <button string="No" class="btn-default" special="cancel"/>
                     </footer>
                 </form>
@@ -56,7 +56,7 @@
                 <form>
                     Are you sure you want to Drop Container? It will delete the client's Instance completely!  
                     <footer>
-                        <button string='Yes' name="drop_container" type="object" class="btn-primary"/>
+                        <button string='Yes' name="drop_container" type="object" class="btn-primary rounded-sm"/>
                         <button string="No" class="btn-default" special="cancel"/>
                     </footer>
                 </form>

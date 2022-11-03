@@ -43,11 +43,11 @@
         <field name="arch" type="xml">
             <form js_class="marketing_automation_campaign_form" string="Campaign">
                 <header>
-                    <button name="action_start_campaign" type="object" states="draft,stopped" class="btn-primary" string="Start" />
-                    <button name="action_stop_campaign" type="object" states="running" class="btn-primary" string="Stop" />
-                    <button name="%(marketing_campaign_test_action)d" type="action" attrs="{'invisible': ['|', ('marketing_activity_ids', '=', []), ('state', '=', 'stopped') ]}" class="btn-secondary" string="Launch a Test" />
-                    <button name="sync_participants" type="object" states="running" class="btn-secondary" string="Generate participants" groups="base.group_no_one" confirm="Are you sure you want to proceed ?"/>
-                    <button name="execute_activities" type="object" states="running" class="btn-secondary" string="Execute activities" groups="base.group_no_one" confirm="Are you sure you want to proceed ?"/>
+                    <button name="action_start_campaign" type="object" states="draft,stopped" class="btn-primary rounded-sm" string="Start" />
+                    <button name="action_stop_campaign" type="object" states="running" class="btn-primary rounded-sm" string="Stop" />
+                    <button name="%(marketing_campaign_test_action)d" type="action" attrs="{'invisible': ['|', ('marketing_activity_ids', '=', []), ('state', '=', 'stopped') ]}" class="btn-secondary rounded-sm" string="Launch a Test" />
+                    <button name="sync_participants" type="object" states="running" class="btn-secondary rounded-sm" string="Generate participants" groups="base.group_no_one" confirm="Are you sure you want to proceed ?"/>
+                    <button name="execute_activities" type="object" states="running" class="btn-secondary rounded-sm" string="Execute activities" groups="base.group_no_one" confirm="Are you sure you want to proceed ?"/>
                     <field name="state" widget="statusbar" statusbar_visible="draft,running,stopped" />
                 </header>
                 <field name="require_sync" invisible="1"/>

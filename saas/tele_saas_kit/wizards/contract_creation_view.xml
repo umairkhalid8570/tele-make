@@ -93,7 +93,7 @@
                         </group>
                     </sheet>
                     <footer>
-                        <button string='Create' name="action_create_contract" type="object" class="btn-primary"/>
+                        <button string='Create' name="action_create_contract" type="object" class="btn-primary rounded-sm"/>
                         <button string="Cancel" class="btn-default" special="cancel"/>
                     </footer>
                 </form>

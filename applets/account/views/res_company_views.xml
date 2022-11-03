@@ -22,8 +22,8 @@
                     <field name="invoice_terms_html" class="oe_account_terms" nolabel="1"/>
                 </group>
                 <footer>
-                    <button string="Save" special="save" class="btn-primary"/>
-                    <button string="Discard" class="btn-secondary" special="cancel"/>
+                    <button string="Save" special="save" class="btn-primary rounded-sm"/>
+                    <button string="Discard" class="btn-secondary rounded-sm" special="cancel"/>
                 </footer>
             </form>
         </field>

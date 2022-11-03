@@ -49,7 +49,7 @@
                         </group>
                     </sheet>
                     <footer>
-                        <button name="call_record_method" type="object" string="Yes" class="btn-primary" />
+                        <button name="call_record_method" type="object" string="Yes" class="btn-primary rounded-sm" />
                         <button string="No" class="btn-default" special="cancel"/>
                     </footer>
                 </form>

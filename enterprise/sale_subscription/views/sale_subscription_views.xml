@@ -175,8 +175,8 @@
             <form string="Subscription" class="o_subscription_form">
                 <header>
                     <field name="archived_product_count" invisible="1"/>
-                    <button string="Start" name="start_subscription" type="object" attrs="{'invisible': [('stage_category','!=', 'draft')]}" class="btn-primary" data-hotkey="q"/>
-                    <button string="Create Invoice" name="generate_recurring_invoice" type="object" attrs="{'invisible': [('payment_mode', '!=', 'manual')]}" class="btn-primary" data-hotkey="g"/>
+                    <button string="Start" name="start_subscription" type="object" attrs="{'invisible': [('stage_category','!=', 'draft')]}" class="btn-primary rounded-sm" data-hotkey="q"/>
+                    <button string="Create Invoice" name="generate_recurring_invoice" type="object" attrs="{'invisible': [('payment_mode', '!=', 'manual')]}" class="btn-primary rounded-sm" data-hotkey="g"/>
                     <!-- if not archived products, just the renewal -->
                     <button string="Renewal Quotation" name="prepare_renewal_order" type="object" data-hotkey="w"
                             attrs="{'invisible': ['|',
@@ -680,7 +680,7 @@
         <field name="arch" type="xml">
             <form>
                 <header>
-                       <button name="run_cron_manually" string="Trigger Now" type="object" class="btn-primary"
+                       <button name="run_cron_manually" string="Trigger Now" type="object" class="btn-primary rounded-sm"
                        confirm="This will trigger the action on all linked subsccriptions, regardless of possible timed conditions. Are you sure you want to proceed?"/>
                 </header>
                 <sheet>

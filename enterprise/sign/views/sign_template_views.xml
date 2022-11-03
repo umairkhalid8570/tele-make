@@ -312,7 +312,7 @@
                     </div>
                     <group>
                         <field name="sms_authentification"/>
-                        <button type="object" name="buy_credits" string="Buy SMS credit" class="btn-primary"></button>
+                        <button type="object" name="buy_credits" string="Buy SMS credit" class="btn-primary rounded-sm"></button>
                     </group>
                 </sheet>
             </form>

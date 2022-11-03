@@ -12,7 +12,7 @@
                         <field name="digest_altered" />
                     </group>
                     <footer>
-                        <button string="Close" class="btn-secondary" special="cancel" />
+                        <button string="Close" class="btn-secondary rounded-sm" special="cancel" />
                     </footer>
                 </sheet>
             </form>

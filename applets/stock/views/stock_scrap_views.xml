@@ -179,8 +179,8 @@
                         </group>
                     </group>
                     <footer>
-                        <button name="action_validate" string="Done" type="object" class="btn-primary" data-hotkey="q"/>
-                        <button string="Cancel" class="btn-secondary" special="cancel" data-hotkey="z" />
+                        <button name="action_validate" string="Done" type="object" class="btn-primary rounded-sm" data-hotkey="q"/>
+                        <button string="Cancel" class="btn-secondary rounded-sm" special="cancel" data-hotkey="z" />
                     </footer>
                 </form>
             </field>

@@ -491,7 +491,7 @@ export function getActionManagerServerData() {
         "partner,3,form": `
       <form>
       <footer>
-      <button class="btn-primary" string="Save" special="save"/>
+      <button class="btn-primary rounded-sm" string="Save" special="save"/>
       </footer>
       </form>`,
         "partner,666,form": `<form>

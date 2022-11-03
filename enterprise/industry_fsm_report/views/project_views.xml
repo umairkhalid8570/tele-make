@@ -223,15 +223,15 @@
                 <field name="worksheet_signature" invisible="1"/>
             </field>
             <xpath expr="//button[@name='action_fsm_validate'][hasclass('btn-primary')]" position="before">
-                <button name="action_preview_worksheet" type="object" string="Sign Report" class="btn-primary"
+                <button name="action_preview_worksheet" type="object" string="Sign Report" class="btn-primary rounded-sm"
                     attrs="{'invisible': [('display_sign_report_primary', '=', False)]}" data-hotkey="y"/>
-                <button name="action_send_report" type="object" string="Send Report" class="btn-primary"
+                <button name="action_send_report" type="object" string="Send Report" class="btn-primary rounded-sm"
                     attrs="{'invisible': [('display_send_report_primary', '=', False)]}" data-hotkey="g"/>
             </xpath>
             <xpath expr="//button[@name='action_fsm_validate'][hasclass('btn-secondary')]" position="before">
-                <button name="action_preview_worksheet" type="object" string="Sign Report" class="btn-secondary"
+                <button name="action_preview_worksheet" type="object" string="Sign Report" class="btn-secondary rounded-sm"
                     attrs="{'invisible': [('display_sign_report_secondary', '=', False)]}" data-hotkey="y"/>
-                <button name="action_send_report" type="object" string="Send Report" class="btn-secondary"
+                <button name="action_send_report" type="object" string="Send Report" class="btn-secondary rounded-sm"
                     attrs="{'invisible': [('display_send_report_secondary', '=', False)]}" data-hotkey="g"/>
             </xpath>
             <xpath expr="//button[@name='action_recurring_tasks']" position="before">

@@ -37,9 +37,9 @@
                         string="Confirm"
                         type="object"
                         data-hotkey="q"
-                        class="btn-primary"/>
+                        class="btn-primary rounded-sm"/>
                     <button string="Discard"
-                        class="btn-secondary"
+                        class="btn-secondary rounded-sm"
                         special="cancel" data-hotkey="z" />
                 </footer>
             </form>

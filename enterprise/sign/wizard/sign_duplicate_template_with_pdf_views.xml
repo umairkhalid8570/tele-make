@@ -12,7 +12,7 @@
                 </group>
                 <footer>
                     <button string="Confirm" name="duplicate_template_with_pdf" type="object"/>
-                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                    <button string="Cancel" class="btn-secondary rounded-sm" special="cancel"/>
                 </footer>
             </form>
         </field>

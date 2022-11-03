@@ -48,7 +48,7 @@
                     <field name="failure_message"/>
                 </div>
                 <footer>
-                    <button name="correct_worksheet" type="object" class="btn-primary" string="Correct Worksheet"
+                    <button name="correct_worksheet" type="object" class="btn-primary rounded-sm" string="Correct Worksheet"
                         attrs="{'invisible': [('test_type', '!=', 'worksheet')]}"/>
                     <button name="action_generate_next_window" type="object" string="Confirm Worksheet"
                         attrs="{'invisible': [('test_type', '!=', 'worksheet')]}"/>

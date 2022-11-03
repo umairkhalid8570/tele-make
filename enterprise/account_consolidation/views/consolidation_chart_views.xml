@@ -20,7 +20,7 @@
             <field name="arch" type="xml">
                 <form string="Consolidation">
                     <header>
-                        <button name="%(consolidation_account_action)d" class="btn-primary"
+                        <button name="%(consolidation_account_action)d" class="btn-primary rounded-sm"
                                 context="{'search_default_chart_id': active_id, 'default_chart_id': active_id}"
                                 type="action" string="Review Chart Of Accounts"
                                 attrs="{'invisible': [('id', '=', False)]}"/>

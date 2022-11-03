@@ -31,7 +31,7 @@
                     </group>
                 </group>
                 <footer>
-                    <button special="save" data-hotkey="v" type="object" string="Save" class="btn-primary"/>
+                    <button special="save" data-hotkey="v" type="object" string="Save" class="btn-primary rounded-sm"/>
                     <button string="Cancel" class="btn btn-secondary rounded-sm" special="cancel" data-hotkey="z" />
                 </footer>
             </form>

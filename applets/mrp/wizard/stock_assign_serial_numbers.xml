@@ -41,10 +41,10 @@
                     </p>
                 </group>
                 <footer>
-                    <button name="apply" string="Apply" type="object" class="btn-primary" attrs="{'invisible': [('show_apply', '=', False)]}"/>
-                    <button name="create_backorder" string="Create Backorder" type="object" class="btn-primary" attrs="{'invisible': [('show_backorders', '=', False)]}"/>
-                    <button name="no_backorder" string="No Backorder" type="object" class="btn-primary" attrs="{'invisible': [('show_backorders', '=', False)]}"/>
-                    <button string="Cancel" class="btn-secondary" special="cancel" />
+                    <button name="apply" string="Apply" type="object" class="btn-primary rounded-sm" attrs="{'invisible': [('show_apply', '=', False)]}"/>
+                    <button name="create_backorder" string="Create Backorder" type="object" class="btn-primary rounded-sm" attrs="{'invisible': [('show_backorders', '=', False)]}"/>
+                    <button name="no_backorder" string="No Backorder" type="object" class="btn-primary rounded-sm" attrs="{'invisible': [('show_backorders', '=', False)]}"/>
+                    <button string="Cancel" class="btn-secondary rounded-sm" special="cancel" />
                 </footer>
             </form>
         </field>

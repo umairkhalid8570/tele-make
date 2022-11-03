@@ -29,8 +29,8 @@
                         </page>
                     </notebook>
                     <footer>
-                        <button name="action_forward" string="Send" type="object" class="btn-primary" data-hotkey="q"/>
-                        <button string="Cancel" special="cancel" data-hotkey="z" class="btn-secondary"/>
+                        <button name="action_forward" string="Send" type="object" class="btn-primary rounded-sm" data-hotkey="q"/>
+                        <button string="Cancel" special="cancel" data-hotkey="z" class="btn-secondary rounded-sm"/>
                     </footer>
                 </form>
             </field>

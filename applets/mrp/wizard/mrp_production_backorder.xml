@@ -22,11 +22,11 @@
                     </field>
                     <footer>
                         <button name="action_backorder" string="Create backorder" data-hotkey="q"
-                            colspan="1" type="object" class="btn-primary" attrs="{'invisible': [('show_backorder_lines', '!=', False)]}"/>
+                            colspan="1" type="object" class="btn-primary rounded-sm" attrs="{'invisible': [('show_backorder_lines', '!=', False)]}"/>
                         <button name="action_backorder" string="Validate" data-hotkey="q"
-                            colspan="1" type="object" class="btn-primary" attrs="{'invisible': [('show_backorder_lines', '=', False)]}"/>
+                            colspan="1" type="object" class="btn-primary rounded-sm" attrs="{'invisible': [('show_backorder_lines', '=', False)]}"/>
                         <button name="action_close_mo" type="object" string="No Backorder" attrs="{'invisible': [('show_backorder_lines', '!=', False)]}" data-hotkey="x"/>
-                        <button string="Discard" class="btn-secondary" special="cancel" data-hotkey="z" />
+                        <button string="Discard" class="btn-secondary rounded-sm" special="cancel" data-hotkey="z" />
                     </footer>
                 </form>
             </field>

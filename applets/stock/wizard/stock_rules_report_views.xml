@@ -20,7 +20,7 @@
                         string="Overview" 
                         type="object" 
                         data-hotkey="q"
-                        class="btn-primary"/>
+                        class="btn-primary rounded-sm"/>
                     <button string="Cancel" class="btn-default" special="cancel" data-hotkey="z"/>
                 </footer>
             </form>

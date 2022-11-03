@@ -3,8 +3,14 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <title>Tele</title>
     <link rel="shortcut icon" href="/web/static/img/favicon.ico" type="image/x-icon" />
+    
+    <!-- TELE ICONS  -->
+    <!-- <link rel="stylesheet" href="/web/static/lib/tele-icon/css/style.css" /> -->
+     
+    <link rel="stylesheet" href="/web/static/tele-icons/css/styles.min.css" />
     <link rel="stylesheet" href="/web/static/lib/fontawesome/css/font-awesome.css" />
     <link rel="stylesheet" href="/web/static/lib/bootstrap/css/bootstrap.css" />
+    
     <script src="/web/static/lib/jquery/jquery.js" ></script>
     <script src="/web/static/lib/popper/popper.js" ></script>
     <script src="/web/static/lib/bootstrap/js/index.js" ></script>
@@ -21,14 +27,17 @@
     <script src="/web/static/lib/bootstrap/js/tab.js" ></script>
     <script src="/web/static/src/public/database_manager.js" ></script>
 </head>
-<section class="py-5" style="background: url('tele/applets/base/static/img/bg_background_template.jpg');background-size: cover">
-    <div class="container text-center">
-      <strong>The New Internet</strong>
-      <h1 class="display-4 my-3">We've built a decentralized internet where information is totally free</h1>
-      <a class="btn btn-primary rounded-sm my-2" href="#">Read more »</a>
-    </div>
-  </section>
+
 <body>
+    
+    <section class="py-5" style="background: url('tele/applets/base/static/img/bg_background_template.jpg');background-size: cover">
+        <div class="container text-center">
+          <strong>THE STUDIO</strong>
+          
+          <h1 class="display-4 my-3">We've built a decentralized internet where information is totally free</h1>
+          <a class="btn btn-primary rounded-sm my-2" href="#">Read more »</a>
+        </div>
+      </section>
     <div class="container">
         <!-- Database List -->
         <div class="row">
@@ -63,7 +72,7 @@
                                             <i class="fa fa-floppy-o fa-fw"></i> Backup
                                         </button>
                                         <button type="button" t-att-data-db="db" data-target=".o_database_duplicate" class="o_database_action btn btn-secondary rounded-sm">
-                                            <i class="fa fa-files-o fa-fw"></i> Duplicate
+                                            <i class="tele-code-file"></i> Duplicate
                                         </button>
                                         <button type="button" t-att-data-db="db" data-target=".o_database_delete" class="o_database_action btn btn-danger">
                                             <i class="fa fa-trash-o fa-fw"></i> Delete

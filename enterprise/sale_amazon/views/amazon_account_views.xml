@@ -24,12 +24,12 @@
                     <button name="action_sync_orders"
                             string="Sync Orders"
                             type="object"
-                            class="btn-secondary"
+                            class="btn-secondary rounded-sm"
                             groups="base.group_no_one"/>
                     <button name="action_sync_pickings"
                             string="Sync Pickings"
                             type="object"
-                            class="btn-secondary"
+                            class="btn-secondary rounded-sm"
                             groups="base.group_no_one"/>
                 </header>
                 <sheet>
@@ -93,7 +93,7 @@
                             <button name="action_check_credentials"
                                     string="Test Credentials"
                                     type="object"
-                                    class="btn-secondary"
+                                    class="btn-secondary rounded-sm"
                                     icon="fa-television"/>
                             </div>
                         </page>

@@ -12,7 +12,7 @@
               <field name="rental_sign_tmpl_id" options="{'no_create_edit': True, 'no_create': True, 'no_open': True}" kanban_view_ref="%(sign.sign_template_view_kanban_mobile)s"/>
             </div>
             <button name="%(sign.sign_template_action)d" string="Upload Template"
-              type="action" class="btn-primary" context="{'default_privacy': 'employee'}" />
+              type="action" class="btn-primary rounded-sm" context="{'default_privacy': 'employee'}" />
         </div>
       </xpath>
     </field>

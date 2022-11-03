@@ -24,7 +24,7 @@
                 <footer>
                     <button string="Add" class="btn-primary rounded-sm o_sale_product_configurator_add" special="add" data-hotkey="g"/>
                     <button string="Save" class="btn-primary rounded-sm o_sale_product_configurator_edit" style="display: none;" special="save" data-hotkey="v"/>
-                    <button string="Cancel" class="btn-secondary" special="cancel" data-hotkey="z"/>
+                    <button string="Cancel" class="btn-secondary rounded-sm" special="cancel" data-hotkey="z"/>
                 </footer>
             </form>
         </field>

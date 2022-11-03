@@ -14,7 +14,7 @@
 # If not, see <https://store.tele.com/license.html/>
 #################################################################################
 {
-  "name"                 :  "TELE SAAS KIT | ALL IN ONE",
+  "name"                 :  "Tele SaaS",
   "summary"              :  """Tele SaaS Kit allows you to run your Tele As A SaaS business. After installation and set uo you can sell Tele As A Saas to your client via subscription based model, saaskit""",
   "category"             :  "Extra Tools",
   "version"              :  "1.2.0",
