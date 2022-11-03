@@ -47,7 +47,7 @@ class SaasClient(models.Model):
     def _compute_applets_path(self):
         for obj in self:
             if obj.data_directory_path and type(obj.id) != NewId:
-                obj.applets_path = "{}/applets/15.0".format(
+                obj.applets_path = "{}/applets/1.0".format(
                     obj.data_directory_path)
             else:
                 obj.applets_path = ""

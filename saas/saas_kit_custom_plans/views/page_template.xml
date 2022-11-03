@@ -81,7 +81,7 @@
                                             <div>
                                                 <div class="btn_div_lg dd_element_body upper_version_div">
                                                     <div class="dropdown_menu_items">
-                                                        <button class="btn btn-md btn2" type="button" id="dropdownmenu2" t-att-data-code="14.0" aria-haspopup="true" aria-expanded="false">
+                                                        <button class="btn btn-md btn2" type="button" id="dropdownmenu2" t-att-data-code="1.0" aria-haspopup="true" aria-expanded="false">
                                                             Tele 14
                                                         </button>
                                                     </div>

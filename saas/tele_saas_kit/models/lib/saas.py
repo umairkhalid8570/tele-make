@@ -38,7 +38,7 @@ def main(context=None):
             _logger.info("Connected")
         return saas_remote.main(context)
 
-def create_db_template(db_template = None, modules = None, config_path = None, host_server = None, db_server = None, version = "15.0"):
+def create_db_template(db_template = None, modules = None, config_path = None, host_server = None, db_server = None, version = "1.0"):
     _logger.info("Recieved Request %r"%locals())
     if host_server.get('server_type') == "self":
         _logger.info("On local Server")

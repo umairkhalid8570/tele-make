@@ -65,7 +65,7 @@ class CustomSaasClient(models.Model):
                         container_port=obj.containter_port,
                         login=login,
                         password=password,
-                        version=obj.saas_contract_id.tele_version_id and obj.saas_contract_id.tele_version_id.code or '15.0')
+                        version=obj.saas_contract_id.tele_version_id and obj.saas_contract_id.tele_version_id.code or '1.0')
                     )
                     if response:
                         _logger.info("========== %r ======="%response)
