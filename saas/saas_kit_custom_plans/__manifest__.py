@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 #################################################################################
-# Author      : Tele Software Pvt. Ltd. (<https://tele.com/>)
-# Copyright(c): 2015-Present Tele Software Pvt. Ltd.
+# Author      : Tele INC. (<https://tele.studio/>)
+# Copyright(c): 2021-Present Tele INC.
 # All Rights Reserved.
 #
 #
@@ -11,7 +11,7 @@
 #
 #
 # You should have received a copy of the License along with this program.
-# If not, see <https://store.tele.com/license.html/>
+# If not, see <https://store.tele.studio/license.html/>
 #################################################################################
 {
   "name"                 :  "Tele SaaS Custom Plans",
@@ -19,11 +19,11 @@
   "category"             :  "Extra Tools",
   "version"              :  "1.0.7",
   "sequence"             :  1,
-  "author"               :  "Tele Software Pvt. Ltd.",
+  "author"               :  "Tele INC.",
   "license"              :  "Other proprietary",
-  "website"              :  "https://store.tele.com/",
+  "website"              :  "https://store.tele.studio/",
   "description"          :  """Provide Custom plan option for Tele saas Kit.""",
-  "live_test_url"        :  "http://teledemo.tele.com/demo_feedback?module=saas_kit_custom_plans",
+  "live_test_url"        :  "http://teledemotele.studio/demo_feedback?module=saas_kit_custom_plans",
   "depends"              :  [
                              'tele_saas_kit',
                             ],

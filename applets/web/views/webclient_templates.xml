@@ -112,7 +112,7 @@
             <t t-set="no_header" t-value="True"/>
             <t t-set="no_footer" t-value="True"/>
 
-            <div class="container py-5 rounded">
+            <div class="container py-5">
                 <div t-attf-class="card border-0 mx-auto bg-100 {{login_card_classes}} o_database_list" style="max-width: 300px;">
                     <div class="card-body">
                         <div t-attf-class="text-center pb-3 border-bottom {{'mb-3' if form_small else 'mb-4'}}">

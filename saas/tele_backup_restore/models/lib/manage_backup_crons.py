@@ -175,7 +175,7 @@ if __name__ == '__main__':
     master_pass = 'CnvvV46UGZb2=N'
     url = 'http://192.168.5.125/'
     main_db = 'postgres'
-    db_name = 'test_backup_crone.tele-saas.tele.com'
+    db_name = 'test_backup_crone.tele-saastele.studio'
     db_user = 'postgres'
     db_password = 'postgres'
     process_id = 1234

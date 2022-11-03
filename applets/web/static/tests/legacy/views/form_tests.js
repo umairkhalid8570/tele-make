@@ -2057,9 +2057,9 @@ QUnit.module('Views', {
                 '<form string="Partners">' +
                     '<header>' +
                         '<button name="0"/>' +
-                        '<button name="1" class="btn-primary rounded-sm"/>' +
+                        '<button name="1" class="btn-primary"/>' +
                         '<button name="2" class="oe_highlight"/>' +
-                        '<button name="3" class="btn-secondary rounded-sm"/>' +
+                        '<button name="3" class="btn-secondary"/>' +
                         '<button name="4" class="btn-link"/>' +
                         '<button name="5" class="oe_link"/>' +
                         '<button name="6" class="btn-success"/>' +
@@ -2067,9 +2067,9 @@ QUnit.module('Views', {
                     '</header>' +
                     '<sheet>' +
                         '<button name="8"/>' +
-                        '<button name="9" class="btn-primary rounded-sm"/>' +
+                        '<button name="9" class="btn-primary"/>' +
                         '<button name="10" class="oe_highlight"/>' +
-                        '<button name="11" class="btn-secondary rounded-sm"/>' +
+                        '<button name="11" class="btn-secondary"/>' +
                         '<button name="12" class="btn-link"/>' +
                         '<button name="13" class="oe_link"/>' +
                         '<button name="14" class="btn-success"/>' +
@@ -3085,8 +3085,8 @@ QUnit.module('Views', {
             data: this.data,
             arch: '<form string="Partners">' +
                         '<field name="foo"/>' +
-                        '<button string="Do something" class="btn-primary rounded-sm" name="abc" type="object"/>' +
-                        '<button string="Or discard" class="btn-secondary rounded-sm" special="cancel"/>' +
+                        '<button string="Do something" class="btn-primary" name="abc" type="object"/>' +
+                        '<button string="Or discard" class="btn-secondary" special="cancel"/>' +
                 '</form>',
             res_id: 1,
             mockRPC: function (route, args) {
@@ -3128,7 +3128,7 @@ QUnit.module('Views', {
             data: this.data,
             arch: '<form string="Partners">' +
                         '<field name="foo"/>' +
-                        '<button string="Save" class="btn-primary rounded-sm" special="save"/>' +
+                        '<button string="Save" class="btn-primary" special="save"/>' +
                 '</form>',
             res_id: 1,
             intercepts: {
@@ -9384,7 +9384,7 @@ QUnit.module('Views', {
             model: 'partner',
             data: this.data,
             arch: '<form string="Partners">' +
-                '<button string="Save" class="btn-primary rounded-sm" special="save"/>' +
+                '<button string="Save" class="btn-primary" special="save"/>' +
                 '<button class="mybutton">westvleteren</button>' +
               '</form>',
             res_id: 2,

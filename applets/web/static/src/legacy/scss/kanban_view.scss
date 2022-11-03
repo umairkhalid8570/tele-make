@@ -10,6 +10,7 @@
     .o_kanban_record, .o_kanban_quick_create {
         padding: $o-kanban-inside-vgutter $o-kanban-inside-hgutter;
         border: 1px solid $border-color;
+        border-radius: .25rem;
         background-color: $o-view-background-color;
 
         @include media-breakpoint-down(sm) {

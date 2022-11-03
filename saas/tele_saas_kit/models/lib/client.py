@@ -5,12 +5,12 @@ import logging
 from configparser import SafeConfigParser
 import paramiko
 
-nginx_vhost = "/var/lib/tele/Tele-SAAS-Data/docker_vhosts/"
-data_dir = "/var/lib/tele/Tele-SAAS-Data/"
+nginx_vhost = "/var/lib/tele/tele-data/docker_vhosts/"
+data_dir = "/var/lib/tele/tele-data/"
 client_admin_passwd = "Yb32vfyRsMa7HDaG"
 template_port = 8888
 _logger = logging.getLogger(__name__)
-oversion = "15"
+oversion = "1"
 class container(object):
 
     def __init__(self):

@@ -54,7 +54,7 @@
         .o_view_nocontent_smiling_face:before {
             @extend %o-nocontent-init-image;
             @include size(140px, 140px);
-            background: transparent url(/web/static/img/tele_talking.svg) no-repeat center;
+            background: transparent url(/web/static/img/smiling_face.svg) no-repeat center;
         }
 
         .o_view_nocontent_neutral_face:before {

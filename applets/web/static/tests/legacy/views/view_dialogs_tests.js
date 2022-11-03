@@ -75,7 +75,7 @@ QUnit.module('Views', {
                     '<form string="Partner">' +
                         '<sheet>' +
                             '<group><field name="foo"/></group>' +
-                            '<footer><button string="Custom Button" type="object" class="btn-primary rounded-sm"/></footer>' +
+                            '<footer><button string="Custom Button" type="object" class="btn-primary"/></footer>' +
                         '</sheet>' +
                     '</form>',
             },
@@ -105,7 +105,7 @@ QUnit.module('Views', {
                 'partner,false,form':
                     '<form string="Partner">' +
                             '<field name="poney_ids"><tree editable="top"><field name="display_name"/></tree></field>' +
-                            '<footer><button string="Custom Button" type="object" class="btn-primary rounded-sm"/></footer>' +
+                            '<footer><button string="Custom Button" type="object" class="btn-primary"/></footer>' +
                     '</form>',
             },
         });

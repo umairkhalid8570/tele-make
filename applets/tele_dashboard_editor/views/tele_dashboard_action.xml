@@ -1,0 +1,32 @@
+<tele>
+    <data>
+
+        <record model="ir.ui.view" id="tele_dashboard_editor_action">
+            <field name="name">tele_dashboard_editor_item action</field>
+            <field name="model">tele_editor_dashboard.item_action</field>
+            <field name="arch" type="xml">
+                <form string="Dashboard Item Action">
+                    <group>
+                        <group>
+                            <field name="tele_dashboard_item_ids" invisible='1' required="1"/>
+                            <field name="tele_dashboard_editor_id"
+                                   attrs="{'invisible':[('tele_action','=','duplicate')], 'required':[('tele_action','=','move')]}"
+                                   options="{'no_create': True, 'no_create_edit':True, 'no_open': True}"/>
+                            <field name="tele_dashboard_editor_ids" widget='many2many_tags'
+                                   attrs="{'invisible':[('tele_action','=','move')], 'required':[('tele_action','=','duplicate')]}"
+                                   options="{'no_create': True, 'no_create_edit':True, 'no_open': True}"/>
+                        </group>
+                        <group>
+                            <field name="tele_action" required="1"/>
+                        </group>
+                    </group>
+                    <footer>
+                        <button string='Save' name="action_item_move_copy_action" type="object" class="btn-primary"/>
+                        <button string="Cancel" class="btn-secondary" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+    </data>
+</tele>

@@ -210,7 +210,7 @@ class tele_remote_container:
                 path = self.tele_config+"/"+self.response['name']
                 _logger.info("Deleting the Directory Created for %r"%self.response['name'])
                 cmd = "rm -rf %r"%path
-                if path.split("/")[-1] not in ["Tele-SAAS-Data"]:
+                if path.split("/")[-1] not in ["tele-data"]:
                     ssh_obj = self.login_remote()
                     return self.execute_on_remote_shell(ssh_obj,cmd)
             except Exception as e:
