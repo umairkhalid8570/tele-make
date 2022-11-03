@@ -23,7 +23,7 @@
                     name="show_graphs"
                     type="object"
                     icon="fa-line-chart"
-                    class="btn-primary"
+                    class="btn-primary rounded-sm"
                     attrs="{'invisible': ['&amp;',('compute_graph', '=', False), ('compute_html', '=', False)]}"
                 />
             </div>
@@ -51,7 +51,7 @@
                     <field name="html_chart" />
                 </sheet>
                 <footer>
-                    <button string="Close" class="btn-secondary" special="cancel" />
+                    <button string="Close" class="btn-secondary rounded-sm" special="cancel" />
                 </footer>
             </form>
         </field>

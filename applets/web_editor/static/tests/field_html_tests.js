@@ -84,7 +84,7 @@ QUnit.module('web_editor', {}, function () {
                         header: "<p>Hello World</p>",
                         body: `
 <div class="o_form_sheet_bg">
-  <div class="clearfix position-relative o_form_sheet" style="width: 1140px;">
+  <div class="clearfix position-relative o_form_sheet rounded-sm" style="width: 1140px;">
     <div class="o_notebook">
       <div class="tab-content">
         <div class="tab-pane active" id="notebook_page_820">

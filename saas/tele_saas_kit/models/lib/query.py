@@ -103,7 +103,7 @@ if __name__=='__main__':
       'user_id': 6,
       'user_data': {
         'name': 'Aditya Sharma',
-        'login': 'aditya.sharma185@tele.com'
+        'login': 'aditya.sharma185@tele.studio'
       },
       'partner_data': {
         'name': 'Aditya Sharma',
@@ -115,7 +115,7 @@ if __name__=='__main__':
         'country_id': False,
         'phone': '',
         'mobile': '',
-        'email': 'aditya.sharma185@tele.com',
+        'email': 'aditya.sharma185@tele.studio',
         'website': '',
         'signup_token': 'asghCKmcBjZ1FIMiI78k',
         'signup_type': 'signup'

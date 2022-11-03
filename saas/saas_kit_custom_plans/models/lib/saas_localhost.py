@@ -28,7 +28,7 @@ except ImportError as e:
     _logger.info("erppeek library not installed!!")
    
 class tele_container:
-    def  __init__(self,db="dummy",tele_image="tele:12.5",tele_config = None,host_server = None, db_server = None, version = "14.0"):
+    def  __init__(self,db="dummy",tele_image="tele:12.5",tele_config = None,host_server = None, db_server = None, version = "1.0"):
 #        self.tele_image = tele_image
         self.location = tele_config
         self.remote_host = host_server['host']
@@ -348,7 +348,7 @@ def main(context=None):
     tele_version = context.get("version",None)
     host_domain = context.get("host_domain")
 
-    if tele_version in ["11.0","12.0","13.0","14.0"]:
+    if tele_version in [""1.0"]:
         raise Exception("Version not valid") 
 
 
@@ -414,11 +414,11 @@ def main(context=None):
     #TeleObject.write_saas_data(host_domain, TeleObject.response)
     return TeleObject.response
 
-def create_db_template(db_template=None,modules=None, config_path=None,host_server = None, db_server = None, version = "14.0"):
+def create_db_template(db_template=None,modules=None, config_path=None,host_server = None, db_server = None, version = "1.0"):
     _logger.info(locals())
 
     response = {}
-    if version in ["11.0","12.0","13.0","14.0"]:
+    if version in [""1.0"]:
         raise Exception("Version not valid")
 
     TeleObject = tele_container(db=db_template,tele_config = config_path, db_server = db_server, host_server = host_server, version = version)

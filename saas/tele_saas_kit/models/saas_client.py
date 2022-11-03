@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 #################################################################################
 #
-#   Copyright (c) 2016-Present Tele Software Pvt. Ltd. (<https://tele.com/>)
+#   Copyright (c) 2021-Present Tele INC. (<https://tele.studio/>)
 #   See LICENSE file for full copyright and licensing details.
-#   License URL : <https://store.tele.com/license.html/>
+#   License URL : <https://store.tele.studio/license.html/>
 #
 #################################################################################
 
@@ -47,7 +47,7 @@ class SaasClient(models.Model):
     def _compute_applets_path(self):
         for obj in self:
             if obj.data_directory_path and type(obj.id) != NewId:
-                obj.applets_path = "{}/applets/15.0".format(
+                obj.applets_path = "{}/applets/1.0".format(
                     obj.data_directory_path)
             else:
                 obj.applets_path = ""

@@ -14,8 +14,8 @@
                     </group>
                     <footer>
                         <button name="change_prod_qty" string="Approve" data-hotkey="q"
-                            colspan="1" type="object" class="btn-primary"/>
-                        <button string="Cancel" class="btn-secondary" special="cancel" data-hotkey="z" />
+                            colspan="1" type="object" class="btn-primary rounded-sm"/>
+                        <button string="Cancel" class="btn-secondary rounded-sm" special="cancel" data-hotkey="z" />
                     </footer>
                 </form>
             </field>

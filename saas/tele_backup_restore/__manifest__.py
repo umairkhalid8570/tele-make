@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 #################################################################################
-# Author      : Tele Software Pvt. Ltd. (<https://tele.com/>)
-# Copyright(c): 2015-Present Tele Software Pvt. Ltd.
+# Author      : Tele INC. (<https://tele.studio/>)
+# Copyright(c): 2021-Present Tele INC.
 # All Rights Reserved.
 #
 #
@@ -11,18 +11,18 @@
 #
 #
 # You should have received a copy of the License along with this program.
-# If not, see <https://store.tele.com/license.html/>
+# If not, see <https://store.tele.studio/license.html/>
 #################################################################################
 {
   "name"                 :  "Tele Database Backup",
   "summary"              :  """Module provide feature to admin to take backups of his instance's database and later download them.""",  
   "category"             :  "Extra Tools",
   "version"              :  "1.0.4",
-  "author"               :  "Tele Software Pvt. Ltd.",
+  "author"               :  "Tele INC.",
   "license"              :  "Other proprietary",
-  "website"              :  "https://store.tele.com/",  
+  "website"              :  "https://store.tele.studio/",  
   "description"          :  """Module provide feature to admin to take backups of his instance's database and later download them.""",
-  "live_test_url"        :  "http://teledemo.tele.com/demo_feedback?module=tele_backup_restore",  
+  "live_test_url"        :  "http://teledemotele.studio/demo_feedback?module=tele_backup_restore",  
   "depends"              :  [
                              'base',
                             ],

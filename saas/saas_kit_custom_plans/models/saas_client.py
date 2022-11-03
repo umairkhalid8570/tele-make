@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 #################################################################################
 #
-#   Copyright (c) 2016-Present Tele Software Pvt. Ltd. (<https://tele.com/>)
+#   Copyright (c) 2021-Present Tele INC. (<https://tele.studio/>)
 #   See LICENSE file for full copyright and licensing details.
-#   License URL : <https://store.tele.com/license.html/>
+#   License URL : <https://store.tele.studio/license.html/>
 # 
 #################################################################################
 
@@ -65,7 +65,7 @@ class CustomSaasClient(models.Model):
                         container_port=obj.containter_port,
                         login=login,
                         password=password,
-                        version=obj.saas_contract_id.tele_version_id and obj.saas_contract_id.tele_version_id.code or '15.0')
+                        version=obj.saas_contract_id.tele_version_id and obj.saas_contract_id.tele_version_id.code or '1.0')
                     )
                     if response:
                         _logger.info("========== %r ======="%response)

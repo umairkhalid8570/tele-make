@@ -1,0 +1,82 @@
+.tele-options-btn{
+    border-radius: 25px;
+    margin-top: 2%;
+    visibility:collapse;
+}
+
+.tele_dashboard_link{
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.tele_date_apply_clear_print,.tele_dashboard_top_menu{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+}
+i.tele-options-plus {
+    color: white;
+    display: inline-block;
+    border-radius: 60px;
+    background: #7c7bad;
+    box-shadow: 0px 0px 2px #888;
+    padding: 0.5em 0.6em;
+}
+
+.apply-dashboard-date-filter{
+    margin-left: 10px;
+}
+
+.clear-dashboard-date-filter{
+    margin-left:5px;
+}
+
+#tele_start_date_picker{
+    height: 30px;
+    width: 100px;
+    border: 1px solid #ccc;
+    padding: 2px 4px;
+    color: #1f1f1f;
+}
+
+#tele_end_date_picker{
+    height: 30px;
+    width: 100px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    padding: 2px 4px;
+    color: #1f1f1f;
+}
+
+
+.ui-datepicker .ui-datepicker-title {
+    display: flex;
+}
+
+.o_view_manager_content{
+    font-family: arial;
+}
+.html2canvas-container {
+  height: 4000px !important;
+}
+
+.tele_dashboard_header_name {
+    text-align: start;
+}
+
+.tele-dashboard-date-labels{
+    font-weight: bold;
+    margin-top: inherit;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.tele_event_offer_list {
+    pointer-events: none;
+    color: #8080805e !important;
+}
+
+.tele_event_offer_list:focus {
+    box-shadow: none;
+}

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (c) 2016-Present Tele Software Pvt. Ltd. (<https://tele.com/>) -->
+<!-- Copyright (c) 2021-Present Tele INC. (<https://tele.studio/>) -->
 <!-- See LICENSE file for full copyright and licensing details. -->
-<!-- License URL : <https://store.tele.com/license.html/> -->
+<!-- License URL : <https://store.tele.studio/license.html/> -->
 
 <tele>
     <template id="plan_page" name="Custom Plan Page">
@@ -81,7 +81,7 @@
                                             <div>
                                                 <div class="btn_div_lg dd_element_body upper_version_div">
                                                     <div class="dropdown_menu_items">
-                                                        <button class="btn btn-md btn2" type="button" id="dropdownmenu2" t-att-data-code="14.0" aria-haspopup="true" aria-expanded="false">
+                                                        <button class="btn btn-md btn2" type="button" id="dropdownmenu2" t-att-data-code="1.0" aria-haspopup="true" aria-expanded="false">
                                                             Tele 14
                                                         </button>
                                                     </div>

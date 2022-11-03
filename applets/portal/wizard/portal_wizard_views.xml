@@ -38,18 +38,18 @@
                             <field name="login_date"/>
                             <field name="is_portal" invisible="1"/>
                             <field name="is_internal" invisible="1"/>
-                            <button string="Grant Access" name="action_grant_access" type="object" class="btn-secondary"
+                            <button string="Grant Access" name="action_grant_access" type="object" class="btn-secondary rounded-sm"
                                 attrs="{'invisible': ['|', ('is_portal', '=', True), ('is_internal', '=', True)]}"/>
-                            <button string="Revoke Access" name="action_revoke_access" type="object" class="btn-secondary"
+                            <button string="Revoke Access" name="action_revoke_access" type="object" class="btn-secondary rounded-sm"
                                 attrs="{'invisible': ['|', ('is_portal', '=', False), ('is_internal', '=', True)]}"/>
-                            <button string="Re-Invite" name="action_invite_again" type="object" class="btn-secondary"
+                            <button string="Re-Invite" name="action_invite_again" type="object" class="btn-secondary rounded-sm"
                                 attrs="{'invisible': ['|', ('is_portal', '=', False), ('is_internal', '=', True)]}"/>
                             <button string="Internal User" attrs="{'invisible': [('is_internal', '=', False)]}"
                                 disabled="True" title="This partner is linked to an internal User and already has access to the Portal."/>
                         </tree>
                     </field>
                     <footer>
-                        <button string="Close" class="btn-primary" special="save" data-hotkey="v" />
+                        <button string="Close" class="btn-primary rounded-sm" special="save" data-hotkey="v" />
                     </footer>
                 </form>
             </field>

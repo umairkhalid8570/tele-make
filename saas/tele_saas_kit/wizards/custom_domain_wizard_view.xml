@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (c) 2016-Present Tele Software Pvt. Ltd. (<https://tele.com/>) -->
+<!-- Copyright (c) 2021-Present Tele INC. (<https://tele.studio/>) -->
 <!-- See LICENSE file for full copyright and licensing details. -->
-<!-- License URL : <https://store.tele.com/license.html/> -->
+<!-- License URL : <https://store.tele.studio/license.html/> -->
 
 <tele>
     <data>
@@ -21,7 +21,7 @@
                         <h3 attrs="{'invisible': [('is_ssl_enable', '=', False)]}">Note:-DNS entries should be made to Point Subdomain to the Subdomain provided by SAAS ki before enabling HTTPS here. !</h3>
                     </sheet>
                     <footer>
-                        <button name="save_domain" string="Create" type="object" class="btn-primary"/>
+                        <button name="save_domain" string="Create" type="object" class="btn-primary rounded-sm"/>
                         <button string="Cancel" class="btn-default" special="cancel" />
                     </footer>
                 </form>

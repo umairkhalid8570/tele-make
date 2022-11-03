@@ -26,8 +26,8 @@
                     </div>
                     <footer>
                         <button string="Resend to selected" name="resend_mail_action" type="object" class="btn-primary rounded-sm o_mail_send" data-hotkey="q"/>
-                        <button string="Ignore all failures" name="cancel_mail_action" type="object" class="btn-secondary" data-hotkey="w" />
-                        <button string="Cancel" class="btn-secondary" special="cancel" data-hotkey="z" />
+                        <button string="Ignore all failures" name="cancel_mail_action" type="object" class="btn-secondary rounded-sm" data-hotkey="w" />
+                        <button string="Cancel" class="btn-secondary rounded-sm" special="cancel" data-hotkey="z" />
                     </footer>
                 </form>
             </field>

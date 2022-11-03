@@ -18,8 +18,8 @@
                     </group>
                 </group>
                 <footer>
-                    <button name="process" string="Confirm" type="object" class="btn-primary"/>
-                    <button string="Discard" class="btn-secondary" special="cancel"/>
+                    <button name="process" string="Confirm" type="object" class="btn-primary rounded-sm"/>
+                    <button string="Discard" class="btn-secondary rounded-sm" special="cancel"/>
                 </footer>
             </form>
         </field>

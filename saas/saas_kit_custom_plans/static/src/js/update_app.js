@@ -1,6 +1,6 @@
-/* Copyright (c) 2016-Present Tele Software Pvt. Ltd. (<https://tele.com/>) */
+/* Copyright (c) 2021-Present Tele INC. (<https://tele.studio/>) */
 /* See LICENSE file for full copyright and licensing details. */
-/* License URL : <https://store.tele.com/license.html/> */
+/* License URL : <https://store.tele.studio/license.html/> */
 
 tele.define('saas_kit_custom_plan.update_app', function (require) {
     var rpc = require('web.rpc');

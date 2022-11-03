@@ -77,8 +77,8 @@
                     </group>
                     <footer>
                         <button string="Send" attrs="{'invisible': [('is_log', '=', True)]}" name="action_send_mail" type="object" class="btn-primary rounded-sm o_mail_send" data-hotkey="q"/>
-                        <button string="Log" attrs="{'invisible': [('is_log', '=', False)]}" name="action_send_mail" type="object" class="btn-primary" data-hotkey="q"/>
-                        <button string="Cancel" class="btn-secondary" special="cancel" data-hotkey="z" />
+                        <button string="Log" attrs="{'invisible': [('is_log', '=', False)]}" name="action_send_mail" type="object" class="btn-primary rounded-sm" data-hotkey="q"/>
+                        <button string="Cancel" class="btn-secondary rounded-sm" special="cancel" data-hotkey="z" />
                         <button icon="fa-lg fa-save" type="object"
                                 name="action_save_as_template" string="Save as new template"
                                 attrs="{'invisible': [('can_edit_body', '=', False)]}"

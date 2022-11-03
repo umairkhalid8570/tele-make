@@ -13,7 +13,7 @@
                     <button string="Connect Stripe"
                             type="object"
                             name="action_stripe_connect_account"
-                            class="btn-primary"
+                            class="btn-primary rounded-sm"
                             attrs="{'invisible': [('state', '=', 'enabled')]}"/>
                 </group>
             </xpath>
@@ -27,7 +27,7 @@
                         <button string="Generate your webhook"
                                 type="object"
                                 name="action_stripe_create_webhook"
-                                class="btn-primary"
+                                class="btn-primary rounded-sm"
                                 attrs="{'invisible': ['|', ('stripe_webhook_secret', '!=', False), ('stripe_secret_key', '=', False)]}"/>
                     </div>
                 </group>

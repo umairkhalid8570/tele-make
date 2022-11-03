@@ -28,8 +28,8 @@
                     <button string="Set up an account" name="action_buy_credits" type="object" class="btn-primary rounded-sm o_mail_send" 
                             attrs="{'invisible': [('has_unregistered_account', '=', False)]}" data-hotkey="q"/>
                     <button string="Resend" name="action_resend" type="object" class="btn-primary rounded-sm o_mail_send" data-hotkey="w"/>
-                    <button string="Ignore all" name="action_cancel" type="object" class="btn-secondary" data-hotkey="x"/>
-                    <button string="Discard" class="btn-secondary" special="cancel" data-hotkey="z"/>
+                    <button string="Ignore all" name="action_cancel" type="object" class="btn-secondary rounded-sm" data-hotkey="x"/>
+                    <button string="Discard" class="btn-secondary rounded-sm" special="cancel" data-hotkey="z"/>
                 </footer>
             </form>
         </field>

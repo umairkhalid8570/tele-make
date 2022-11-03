@@ -30,7 +30,7 @@
                 <button string="Link with Amazon"
                         type="object"
                         name="action_redirect_to_oauth_url"
-                        class="btn-primary"
+                        class="btn-primary rounded-sm"
                         attrs="{'invisible': [('refresh_token', '!=', False)]}"/>
                 <button string="Unlink account"
                         type="object"

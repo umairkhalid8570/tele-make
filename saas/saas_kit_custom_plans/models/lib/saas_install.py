@@ -28,7 +28,7 @@ except ImportError as e:
     _logger.info("erppeek library not installed!!")
 
 class tele_container:
-    def  __init__(self,db="dummy",tele_image="tele:12.5",tele_config = None,host_server = None, db_server = None, version = "15.0"):
+    def  __init__(self,db="dummy",tele_image="tele:12.5",tele_config = None,host_server = None, db_server = None, version = "1.0"):
         self.tele_image = tele_image
         self.location = tele_config
         self.remote_host = host_server['host']
@@ -116,7 +116,7 @@ def main(context=None):
 
     TeleObject = tele_container(db = db, tele_config = context['config_path'], db_server = context['db_server'], host_server = context['host_server'], version=tele_version)
     TeleObject.get_client()
-    if tele_version in ["11.0","12.0","13.0","14.0","15.0"]:
+    if tele_version in ["1.0"]:
         TeleObject.default_version = tele_version
 
     if host_domain != db:

@@ -22,8 +22,8 @@
                             <button special="cancel" data-hotkey="z" string="Cancel" class="btn-secondary rounded-sm"/>
                         </div>
                         <div states="done">
-                            <button name="action_module_open" string="Open Apps" type="object" class="btn-primary" data-hotkey="q"/>
-                            <button special="cancel" data-hotkey="z" string="Close" class="btn-secondary"/>
+                            <button name="action_module_open" string="Open Apps" type="object" class="btn-primary rounded-sm" data-hotkey="q"/>
+                            <button special="cancel" data-hotkey="z" string="Close" class="btn-secondary rounded-sm"/>
                         </div>
                     </footer>
                 </form>

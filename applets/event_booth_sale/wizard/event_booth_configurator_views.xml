@@ -27,8 +27,8 @@
                            ]"/>
                 </group>
                 <footer>
-                    <button string="Ok" class="btn-primary" special="save"/>
-                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                    <button string="Ok" class="btn-primary rounded-sm" special="save"/>
+                    <button string="Cancel" class="btn-secondary rounded-sm" special="cancel"/>
                 </footer>
             </form>
         </field>

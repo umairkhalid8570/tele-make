@@ -20,14 +20,14 @@
                         string="Confirm"
                         type="object"
                         data-hotkey="q"
-                        class="btn-primary"/>
+                        class="btn-primary rounded-sm"/>
                     <button name="process_no_expired"
                         string="Proceed except for expired one"
                         type="object"
                         data-hotkey="w"
-                        class="btn-secondary"/>
+                        class="btn-secondary rounded-sm"/>
                     <button string="Discard"
-                        class="btn-secondary"
+                        class="btn-secondary rounded-sm"
                         special="cancel" data-hotkey="z"/>
                 </footer>
             </form>

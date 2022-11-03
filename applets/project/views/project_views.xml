@@ -602,7 +602,7 @@
                 <xpath expr="//group" position="after">
                     <footer>
                         <button string="Create" name="action_view_tasks" type="object" class="btn-primary rounded-sm o_open_tasks" data-hotkey="q"/>
-                        <button string="Discard" class="btn-secondary" special="cancel" data-hotkey="z"/>
+                        <button string="Discard" class="btn-secondary rounded-sm" special="cancel" data-hotkey="z"/>
                     </footer>
                 </xpath>
             </field>

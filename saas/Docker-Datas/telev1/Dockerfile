@@ -37,7 +37,7 @@ RUN set -x; \
 	&& apt-get install -y node-less
 
 # Install Tele
-ENV TELE_VERSION 15.0
+ENV TELE_VERSION 1.0
 
 #This binds to service file.So, take care
 ARG TELE_USER=tele

@@ -20,7 +20,7 @@
                                         <field name="website_id" options="{'no_open': True, 'no_create': True}"/>
                                     </div>
                                     <div>
-                                        <button name="action_website_create_new" type="object" string="Create a New Website" class="btn-secondary" icon="fa-arrow-right"/>
+                                        <button name="action_website_create_new" type="object" string="Create a New Website" class="btn-secondary rounded-sm" icon="fa-arrow-right"/>
                                     </div>
                                 </div>
                             </div>
