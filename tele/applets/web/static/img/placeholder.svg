@@ -1,0 +1,29 @@
+<svg width="125" height="125" viewBox="0 0 125 125" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M95 10H15C12.2375 10 10 12.2375 10 15V90C10 92.7625 12.2375 95 15 95H95C97.7625 95 100 92.7625 100 90V15C100 12.2375 97.7625 10 95 10Z" fill="white" fill-opacity="0.5"/>
+<path d="M75.1625 52.6626C72.29 49.7901 67.65 49.7276 64.7 52.5201L40 75.9201V100H95C97.7625 100 100 97.7626 100 95.0001V77.5001L75.1625 52.6626Z" fill="url(#paint0_linear_54_12)"/>
+<path d="M71.25 40C76.0825 40 80 36.0825 80 31.25C80 26.4175 76.0825 22.5 71.25 22.5C66.4175 22.5 62.5 26.4175 62.5 31.25C62.5 36.0825 66.4175 40 71.25 40Z" fill="#FFD869"/>
+<path d="M15 100H95C97.0275 100 98.7675 98.7876 99.55 97.0501L45.1625 42.6626C42.29 39.7901 37.65 39.7276 34.7 42.5201L10 65.9201V95.0001C10 97.7626 12.2375 100 15 100Z" fill="url(#paint1_linear_54_12)"/>
+<path opacity="0.3" d="M100 100V61.7425C96.8675 60.635 93.5125 60 90 60C73.4325 60 60 73.4325 60 90C60 93.5125 60.635 96.8675 61.7425 100H100Z" fill="url(#paint2_radial_54_12)"/>
+<path d="M90 115C103.807 115 115 103.807 115 90C115 76.1929 103.807 65 90 65C76.1929 65 65 76.1929 65 90C65 103.807 76.1929 115 90 115Z" fill="url(#paint3_linear_54_12)"/>
+<path d="M91.25 102.5H88.75C88.06 102.5 87.5 101.94 87.5 101.25V78.75C87.5 78.06 88.06 77.5 88.75 77.5H91.25C91.94 77.5 92.5 78.06 92.5 78.75V101.25C92.5 101.94 91.94 102.5 91.25 102.5Z" fill="white"/>
+<path d="M77.5 91.25V88.75C77.5 88.06 78.06 87.5 78.75 87.5H101.25C101.94 87.5 102.5 88.06 102.5 88.75V91.25C102.5 91.94 101.94 92.5 101.25 92.5H78.75C78.06 92.5 77.5 91.94 77.5 91.25Z" fill="white"/>
+<defs>
+<linearGradient id="paint0_linear_54_12" x1="40" y1="75.2326" x2="100" y2="75.2326" gradientUnits="userSpaceOnUse">
+<stop stop-color="#28C0EC"/>
+<stop offset="1" stop-color="#1FA0E5"/>
+</linearGradient>
+<linearGradient id="paint1_linear_54_12" x1="54.775" y1="40.4651" x2="54.775" y2="100" gradientUnits="userSpaceOnUse">
+<stop stop-color="#199BE2"/>
+<stop offset="1" stop-color="#0B88DA"/>
+</linearGradient>
+<radialGradient id="paint2_radial_54_12" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(89.995 90.08) scale(30.465)">
+<stop offset="0.348" stop-color="#FDE9E9"/>
+<stop offset="0.936" stop-opacity="0.098"/>
+<stop offset="1" stop-opacity="0"/>
+</radialGradient>
+<linearGradient id="paint3_linear_54_12" x1="65" y1="90" x2="115" y2="90" gradientUnits="userSpaceOnUse">
+<stop stop-color="#21AD64"/>
+<stop offset="1" stop-color="#088242"/>
+</linearGradient>
+</defs>
+</svg>

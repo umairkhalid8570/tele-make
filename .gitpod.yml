@@ -14,6 +14,7 @@ tasks:
       sleep 2
       ./tele-install.sh
     command:
+      cd tele
       ./tele-make -w tele -r tele --applets-path=./applets,enterprise,verticals --db_host 127.0.0.1
   - command: gp await-port 8069 && gp preview "$(gp url 8069)/web/database/selector"
 
