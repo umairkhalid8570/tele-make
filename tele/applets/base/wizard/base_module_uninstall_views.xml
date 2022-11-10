@@ -52,8 +52,8 @@
                         </p>
                     </div>
                     <footer>
-                        <button string="Cancel" class="btn-primary rounded-sm" special="cancel" data-hotkey="z"/>
-                        <button string="Confirm" class="btn-secondary rounded-sm" type="object" name="action_uninstall" data-hotkey="q"/>
+                        <button string="Cancel" class="btn-primary" special="cancel" data-hotkey="z"/>
+                        <button string="Confirm" class="btn-secondary" type="object" name="action_uninstall" data-hotkey="q"/>
                     </footer>
                 </form>
             </field>

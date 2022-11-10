@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tele>
+    <data>
+        <record id="base_theme_settings_form" model="ir.ui.view">
+            <field name="name">base.theme.settings.form</field>
+            <field name="model">base.theme.settings</field>
+            <field name="arch" type="xml">
+                <form create="0" delete="0" class="base_theme_settings_form">
+                    <div class="o_control_panel">
+                        <div class="o_cp_top">
+                            <ol role="navigation" class="breadcrumb o_settings_title d-none d-md-block">
+                                <li class="breadcrumb-item active">Base Theme Settings</li>
+                            </ol>
+                            <!-- <div class="o_setting_search">
+                                <input type="text" class="searchInput pull-right p-0 pb-1" placeholder="Search..."/>
+                                <span class="searchIcon"><i class="fa fa-search" role="img" aria-label="Search" title="Search"/></span>
+                            </div> -->
+                        </div>
+                        <div class="o_cp_bottom">
+                            <button string="Apply" class="btn-primary" type="object" name="action_apply_theme_settings" />
+                            <button special="cancel" string="Cancel" />
+                        </div>
+                    </div>
+                
+                <sheet>
+                    <group>
+                        <group string="Color Scheme">
+                            <field name="theme_color_type" widget="radio"  options="{'horizontal': true}" colspan="2" nolabel="1" required="1" class="rt_color_scheme" />
+                        
+                            <div class="o_td_label">
+                                <label for="theme_primary_1_color" string="Color 1" attrs="{'invisible': [('theme_color_type', '!=', 'style_1')]}" style="font-weight: bold;" />
+
+                                <label for="theme_primary_1_color" attrs="{'invisible': [('theme_color_type', '!=', 'style_2')]}" string="Color 1" style="font-weight: bold;" />
+
+                                <label for="theme_primary_1_color" attrs="{'invisible': [('theme_color_type', '!=', 'style_3')]}" string="Color 1" style="font-weight: bold;" />
+                            </div>
+
+                            <field name="theme_primary_1_color" nolabel="1" widget="color" />
+                            <label for="theme_primary_2_color" attrs="{'invisible': [('theme_color_type', '!=', 'style_1')]}" string="Color 2" style="font-weight: bold;" />
+                            <field name="theme_primary_2_color" attrs="{'invisible': [('theme_color_type', '!=', 'style_1')]}" nolabel="1" widget="color" />
+
+                            <label for="theme_primary_2_color" attrs="{'invisible': [('theme_color_type', '!=', 'style_2')]}" string="Color 2" style="font-weight: bold;" />
+                            <field name="theme_primary_2_color" attrs="{'invisible': [('theme_color_type', '!=', 'style_2')]}" nolabel="1" widget="color" />
+
+                            <label for="theme_primary_2_color" attrs="{'invisible': [('theme_color_type', '!=', 'style_3')]}" string="Color 2" style="font-weight: bold;" />
+                            <field name="theme_primary_2_color" attrs="{'invisible': [('theme_color_type', '!=', 'style_3')]}" nolabel="1" widget="color" />
+
+                            <!-- <field name="theme_gradient_preview" attrs="{'invisible': [('theme_color_type', '!=', 'gradient')]}" /> -->
+
+                            <field name="theme_secondary_color" widget="color" />
+                            
+                        </group>
+
+                        
+
+                        <!-- <group string="Theme Font">
+                            <field name="is_use_google_font" />
+                            <field name="google_font_family" 
+attrs="{'invisible': [('is_use_google_font', '!=', True)], 'required': [('is_use_google_font', '=', True)]}"/>  						
+						</group> -->
+
+                        <group string="Button Styles">
+                            <field name="button_type" widget="radio"  options="{'horizontal': true}" colspan="2" nolabel="1" required="1" class="rt_btn_style" />
+                            <!-- <field name="button_color_type" widget="radio" /> -->
+
+                            <!-- <div class="o_td_label">
+                                <label for="button_primary_1_color" string="Primary Button Color" attrs="{'invisible': [('button_color_type', '!=', 'solid')]}" style="font-weight: bold;" />
+
+                                <label for="button_primary_1_color" attrs="{'invisible': [('button_color_type', '!=', 'gradient')]}" string="Primary Button Color 1 (For Gradient)" style="font-weight: bold;" />
+                            </div> -->
+
+                            <field name="button_primary_1_color" string="Color 1" widget="color" />
+
+                            <label for="button_primary_2_color"  string="Color 2" style="font-weight: bold;" />
+                            <field name="button_primary_2_color" nolabel="1" widget="color" />
+
+                            <!-- <field name="button_gradient_preview" attrs="{'invisible': [('button_color_type', '!=', 'gradient')]}" /> -->
+
+                            <field name="button_secondary_color"  widget="color" />
+                        </group>
+                        <group string="Theme Background">
+                            <field name="theme_background_type" widget="radio" />
+                            <!-- <field name="theme_background_color" attrs="{'invisible': [('theme_background_type', '!=', 'color')], 'required': [('theme_background_type', '=', 'color')]}" widget="color" /> -->
+                            <field name="theme_background_image" attrs="{'invisible': [('theme_background_type', '!=', 'image')], 'required': [('theme_background_type', '=', 'image')]}" widget="image" class="oe_avatar float-left" />
+                        </group>
+                        <group string="Sidebar Style">
+                            <field name="sidebar_style" widget="radio" colspan="2" nolabel="1" required="1" class="rt_sidebar_style" />
+                        </group>
+                        <group string="Sidebar Position">
+                            <field name="sidebar_position" widget="radio" colspan="2" nolabel="1" required="1" class="rt_sidebar_position" />
+                        </group>
+                        <group string="Font Size">
+                            <field name="theme_font_size" widget="radio" nolabel="1"  /> 
+                        </group>
+                        <group string="Font Style">
+                            <field name="font_style" widget="radio" colspan="2" nolabel="1" required="1" class="rt_font_style" />
+                        </group>
+                        <group string="Checkbox Style">
+                            <field name="checkbox_style" widget="radio" colspan="2" nolabel="1" required="1" class="rt_checkbox_style" />
+                        </group>
+                        <group string="Radio Button Style">
+                            <field name="radio_btn_style" widget="radio" colspan="2" nolabel="1" required="1" class="rt_radiobtn_style" />
+                        </group>
+                        <group string="Theme Loading Style">
+                            <field name="theme_loading_type" widget="radio" nolabel="1" class="rt_loading_style" />                           
+                            <field name="theme_loading_image" attrs="{'invisible': [('theme_loading_type', '!=', 'image')], 'required': [('theme_loading_type', '=', 'image')]}" widget="image" class="oe_avatar float-left" />
+                        </group>
+                        <group string="Scrollbar Style">
+                            <field name="theme_scrollbar_style" widget="radio" nolabel="1" class="rt_scrollbar_style" /> 
+                        </group>
+                        <group string="Tab Style">
+                            <field name="theme_tab_style" widget="radio" nolabel="1" class="rt_tab_style" /> 
+                        </group>
+                        <group string="Form Style">
+                            <field name="theme_form_style" widget="radio" nolabel="1"  /> 
+                        </group>
+                        <group string="Sticky View">
+                            <field name="base_sticky_tree_view" /> 
+                            <field name="base_one2many_field_tree_view" /> 
+                            <field name="base_sticky_form_view_chatter" /> 
+                            <field name="base_sticky_form_view_statusbar" /> 
+                            <!-- <field name="base_sticky_pivot_view" />  -->
+                        </group>
+                        <group string="Separator Style">
+                            <field name="theme_separator_style" widget="radio" nolabel="1"  /> 
+                        </group>
+                        <group string="Modal Popup Style">
+                            <field name="theme_popup_style" widget="radio" nolabel="1"  /> 
+                        </group>
+                    </group>
+                    <!-- <footer>
+                        <button string="Apply" class="btn-primary" type="object" name="action_apply_theme_settings" />
+                        <button special="cancel" string="Cancel" />
+                    </footer> -->
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="base_theme_settings_action" model="ir.actions.act_window">
+            <field name="type">ir.actions.act_window</field>
+            <field name="name">Base Theme Setting</field>
+            <field name="view_mode">form</field>
+            <field name="target">inline</field>
+            <field name="res_model">base.theme.settings</field>
+            <field name="view_id" ref="base_theme_settings_form"/>
+            <field name="res_id">1</field>
+        </record>
+
+        <menuitem action="base_theme_settings_action" id="base_theme_settings_menu"
+              parent="base.menu_administration"/>
+
+    </data>
+</tele>

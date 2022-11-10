@@ -557,7 +557,7 @@ class Partner(models.Model):
             # DLE: It should not be necessary to modify this to make work the ORM. The problem was just the recompute
             # of partner.user_ids when you create a new user for this partner, see test test_70_archive_internal_partners
             # You modified it in a previous commit, see original commit of this:
-            # https://github.com/tele-studio/tele/commit/9d7226371730e73c296bcc68eb1f856f82b0b4ed
+            # https://github.com/tele-studio/tele-applets/commit/9d7226371730e73c296bcc68eb1f856f82b0b4ed
             #
             # RCO: when creating a user for partner, the user is automatically added in partner.user_ids.
             # This is wrong if the user is not active, as partner.user_ids only returns active users.

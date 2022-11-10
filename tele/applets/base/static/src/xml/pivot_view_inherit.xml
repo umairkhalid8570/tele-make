@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<templates>
-    <t t-name="PivotRenderer" t-inherit="web.PivotRenderer" t-inherit-mode="extension" owl="1">
-        <xpath expr="//table" position="attributes">
-            <attribute name="class" add="pivot_view_sticky"  separator=" "/>
-        </xpath>
-    </t>
-</templates>

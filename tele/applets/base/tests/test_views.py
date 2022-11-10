@@ -1538,8 +1538,8 @@ class TestViews(ViewCase):
                 <form string="Base title">
                     <separator name="separator" string="Separator" colspan="4"/>
                     <footer>
-                        <button name="action_archive" type="object" string="Next button" class="btn-primary rounded-sm"/>
-                        <button string="Skip" special="cancel" class="btn-secondary rounded-sm"/>
+                        <button name="action_archive" type="object" string="Next button" class="btn-primary"/>
+                        <button string="Skip" special="cancel" class="btn-secondary"/>
                     </footer>
                 </form>
             """
@@ -1663,8 +1663,8 @@ class TestViews(ViewCase):
                 <form string="Base title">
                     <separator name="separator" string="Separator" colspan="4"/>
                     <footer>
-                        <button name="action_archive" type="object" string="Next button" class="btn-primary rounded-sm"/>
-                        <button string="Skip" special="cancel" class="btn-secondary rounded-sm"/>
+                        <button name="action_archive" type="object" string="Next button" class="btn-primary"/>
+                        <button string="Skip" special="cancel" class="btn-secondary"/>
                     </footer>
                 </form>
             """

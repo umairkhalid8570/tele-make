@@ -239,7 +239,7 @@ msgid ""
 "\n"
 "* Fiscal positions '内税' and '外税' have been added to handle special requirements which might arise from POS implementation. [1]  Under normal circumstances, you might not need to use those at all.\n"
 "\n"
-"[1] See https://github.com/tele-studio/tele/pull/6470 for detail.\n"
+"[1] See https://github.com/tele-studio/tele-applets/pull/6470 for detail.\n"
 "\n"
 "    "
 msgstr ""
@@ -1789,10 +1789,10 @@ msgid ""
 msgstr ""
 
 #. module: base
-#: model:ir.module.module,description:base.module_documents_automotive
+#: model:ir.module.module,description:base.module_documents_fleet
 msgid ""
 "\n"
-"Adds automotive data to documents\n"
+"Adds fleet data to documents\n"
 msgstr ""
 
 #. module: base
@@ -2184,7 +2184,7 @@ msgid ""
 "use Tele properly in Brazil. Those implementations (such as the electronic\n"
 "fiscal Invoicing which is already operational) are brought by more than 15\n"
 "additional modules of the Brazilian Launchpad localization project\n"
-"https://launchpad.net/openerp.pt-br-localiz and their dependencies in the\n"
+"https://launchpad.net/tele.pt-br-localiz and their dependencies in the\n"
 "extra applets branch. Those modules aim at not breaking with the remarkable\n"
 "Tele modularity, this is why they are numerous but small. One of the\n"
 "reasons for maintaining those modules apart is that Brazilian Localization\n"
@@ -2416,7 +2416,7 @@ msgid ""
 "    * account.chart.template\n"
 "\n"
 "Everything is in English with Spanish translation. Further translations are welcome,\n"
-"please go to http://translations.launchpad.net/openerp-costa-rica.\n"
+"please go to http://translations.launchpad.net/tele-costa-rica.\n"
 "    "
 msgstr ""
 
@@ -3887,7 +3887,7 @@ msgid ""
 "This doesn't pretend be all the localization for MX it is just the minimal\n"
 "data required to start from 0 in mexican localization.\n"
 "\n"
-"This modules and its content is updated frequently by openerp-mexico team.\n"
+"This modules and its content is updated frequently by tele-mexico team.\n"
 "\n"
 "With this module you will have:\n"
 "\n"
@@ -4002,7 +4002,7 @@ msgid ""
 "Statements will also remove those associated statements.\n"
 "\n"
 "Instead of a manual adjustment of the generated Bank Statements, you can also\n"
-"re-import the CODA after updating the OpenERP database with the information that\n"
+"re-import the CODA after updating the tele database with the information that\n"
 "was missing to allow automatic reconciliation.\n"
 "\n"
 "Remark on CODA V1 support:\n"
@@ -6142,20 +6142,20 @@ msgid ""
 msgstr ""
 
 #. module: base
-#: model:ir.module.module,description:base.module_automotive
-#: model:ir.module.module,description:base.module_automotive_dashboard
+#: model:ir.module.module,description:base.module_fleet
+#: model:ir.module.module,description:base.module_fleet_dashboard
 msgid ""
 "\n"
 "Vehicle, leasing, insurances, cost\n"
 "==================================\n"
 "With this module, Tele helps you managing all your vehicles, the\n"
 "contracts associated to those vehicle as well as services, costs\n"
-"and many other features necessary to the management of your automotive\n"
+"and many other features necessary to the management of your fleet\n"
 "of vehicle(s)\n"
 "\n"
 "Main Features\n"
 "-------------\n"
-"* Add vehicles to your automotive\n"
+"* Add vehicles to your fleet\n"
 "* Manage contracts for vehicles\n"
 "* Reminder when a contract reach its expiration date\n"
 "* Add services, odometer values for all vehicles\n"
@@ -7646,8 +7646,8 @@ msgid ""
 msgstr ""
 
 #. module: base
-#: model:ir.module.module,shortdesc:base.module_account_automotive
-msgid "Accounting/Automotive bridge"
+#: model:ir.module.module,shortdesc:base.module_account_fleet
+msgid "Accounting/Fleet bridge"
 msgstr ""
 
 #. module: base
@@ -9487,8 +9487,8 @@ msgid "Belgium - Payroll - December Slip"
 msgstr ""
 
 #. module: base
-#: model:ir.module.module,shortdesc:base.module_l10n_be_hr_payroll_automotive
-msgid "Belgium - Payroll - Automotive"
+#: model:ir.module.module,shortdesc:base.module_l10n_be_hr_payroll_fleet
+msgid "Belgium - Payroll - Fleet"
 msgstr ""
 
 #. module: base
@@ -11786,8 +11786,8 @@ msgid "Dash"
 msgstr ""
 
 #. module: base
-#: model:ir.module.module,summary:base.module_automotive_dashboard
-msgid "Dashboard for automotive"
+#: model:ir.module.module,summary:base.module_fleet_dashboard
+msgid "Dashboard for fleet"
 msgstr ""
 
 #. module: base
@@ -12281,12 +12281,12 @@ msgid "Disallowed Expenses"
 msgstr ""
 
 #. module: base
-#: model:ir.module.module,shortdesc:base.module_account_disallowed_expenses_automotive
-msgid "Disallowed Expenses on Automotives"
+#: model:ir.module.module,shortdesc:base.module_account_disallowed_expenses_fleet
+msgid "Disallowed Expenses on Fleets"
 msgstr ""
 
 #. module: base
-#. openerp-web
+#. tele-web
 #: code:applets/base/static/src/js/res_config_settings.js:0
 #: model_terms:ir.ui.view,arch_db:base.onboarding_container
 #: model_terms:ir.ui.view,arch_db:base.res_config_settings_view_form
@@ -12541,8 +12541,8 @@ msgid "Documents - Contracts"
 msgstr ""
 
 #. module: base
-#: model:ir.module.module,shortdesc:base.module_documents_automotive
-msgid "Documents - Automotive"
+#: model:ir.module.module,shortdesc:base.module_documents_fleet
+msgid "Documents - Fleet"
 msgstr ""
 
 #. module: base
@@ -14039,24 +14039,24 @@ msgid "Flag Image Url"
 msgstr ""
 
 #. module: base
-#: model:ir.module.category,name:base.module_category_human_resources_automotive
-#: model:ir.module.module,shortdesc:base.module_automotive
-msgid "Automotive"
+#: model:ir.module.category,name:base.module_category_human_resources_fleet
+#: model:ir.module.module,shortdesc:base.module_fleet
+msgid "Fleet"
 msgstr ""
 
 #. module: base
-#: model:ir.module.module,shortdesc:base.module_automotive_dashboard
-msgid "Automotive Dashboard"
+#: model:ir.module.module,shortdesc:base.module_fleet_dashboard
+msgid "Fleet Dashboard"
 msgstr ""
 
 #. module: base
-#: model:ir.module.module,shortdesc:base.module_hr_automotive
-msgid "Automotive History"
+#: model:ir.module.module,shortdesc:base.module_hr_fleet
+msgid "Fleet History"
 msgstr ""
 
 #. module: base
-#: model:ir.module.module,summary:base.module_documents_automotive
-msgid "Automotive from documents"
+#: model:ir.module.module,summary:base.module_documents_fleet
+msgid "Fleet from documents"
 msgstr ""
 
 #. module: base
@@ -14575,7 +14575,7 @@ msgid ""
 msgstr ""
 
 #. module: base
-#: model:ir.module.module,summary:base.module_hr_automotive
+#: model:ir.module.module,summary:base.module_hr_fleet
 msgid "Get history of driven cars by employees"
 msgstr ""
 
@@ -17701,8 +17701,8 @@ msgid "Manage a forum with FAQ and Q&A"
 msgstr ""
 
 #. module: base
-#: model:ir.module.module,summary:base.module_account_automotive
-msgid "Manage accounting with automotives"
+#: model:ir.module.module,summary:base.module_account_fleet
+msgid "Manage accounting with fleets"
 msgstr ""
 
 #. module: base
@@ -17727,8 +17727,8 @@ msgid "Manage disallowed expenses"
 msgstr ""
 
 #. module: base
-#: model:ir.module.module,summary:base.module_account_disallowed_expenses_automotive
-msgid "Manage disallowed expenses with automotives"
+#: model:ir.module.module,summary:base.module_account_disallowed_expenses_fleet
+msgid "Manage disallowed expenses with fleets"
 msgstr ""
 
 #. module: base
@@ -17843,8 +17843,8 @@ msgid "Manage your employees' schedule"
 msgstr ""
 
 #. module: base
-#: model:ir.module.module,summary:base.module_automotive
-msgid "Manage your automotive and track car costs"
+#: model:ir.module.module,summary:base.module_fleet
+msgid "Manage your fleet and track car costs"
 msgstr ""
 
 #. module: base
@@ -23485,7 +23485,7 @@ msgid "Saudi Arabia - Accounting"
 msgstr ""
 
 #. module: base
-#. openerp-web
+#. tele-web
 #: code:applets/base/static/src/js/res_config_settings.js:0
 #: model_terms:ir.ui.view,arch_db:base.res_config_settings_view_form
 #: model_terms:ir.ui.view,arch_db:base.view_users_form_simple_modif
@@ -24548,7 +24548,7 @@ msgid "Status"
 msgstr ""
 
 #. module: base
-#. openerp-web
+#. tele-web
 #: code:applets/base/static/src/js/res_config_settings.js:0
 #, python-format
 msgid "Stay Here"
@@ -26872,7 +26872,7 @@ msgid ""
 msgstr ""
 
 #. module: base
-#. openerp-web
+#. tele-web
 #: code:applets/base/static/src/js/res_config_settings.js:0
 #: code:applets/base/static/src/js/res_config_settings.js:0
 #, python-format
@@ -27993,7 +27993,7 @@ msgid "Worldline SIPS"
 msgstr ""
 
 #. module: base
-#. openerp-web
+#. tele-web
 #: code:applets/base/static/src/js/res_config_settings.js:0
 #, python-format
 msgid "Would you like to save your changes?"
