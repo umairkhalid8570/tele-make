@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tele>
+	<template id="default_product_label_common" name="Products Brand">
+		<t t-if="product.product_label_id">
+			<div class="default-product-label">
+				<span class="default-pro-label-na"  t-if="product.product_label_id.label_style == 'flat'"
+				t-field="product.product_label_id.name" t-attf-style="background-color:#{product.product_label_id.label_bg_color}; color:#{product.product_label_id.label_font_color};"/>
+				<span class="default-pro-label-na label-rounded" t-if="product.product_label_id.label_style == 'rounded'" 
+				t-field="product.product_label_id.name" t-attf-style="background-color:#{product.product_label_id.label_bg_color}; color:#{product.product_label_id.label_font_color};"/>
+				<span class="default-pro-label-na label-outlinesquare" t-if="product.product_label_id.label_style == 'outlinesquare'" 
+				t-field="product.product_label_id.name" t-attf-style="border:1px solid #{product.product_label_id.label_bg_color}; color:#{product.product_label_id.label_font_color};"/>
+				<span class="default-pro-label-na label-outlineround" t-if="product.product_label_id.label_style == 'outlineround'" 
+				t-field="product.product_label_id.name" t-attf-style="border:1px solid #{product.product_label_id.label_bg_color}; color:#{product.product_label_id.label_font_color};"/>
+			</div>
+		</t>
+	</template>
+
+	<template id="default_website_label_common">
+		<div class="default-website-label" t-attf-style="color:#{s.product_label_id.label_bg_color};">
+			<span class="default-pro-label-na"  t-if="s.product_label_id.label_style == 'flat'"
+			t-field="s.product_label_id.name" t-attf-style="background-color:#{s.product_label_id.label_bg_color}; color:#{s.product_label_id.label_font_color}; border-top-color:#{s.product_label_id.label_bg_color}; border-right-color:#{s.product_label_id.label_bg_color};"/>
+			<span class="default-pro-label-na label-rounded" t-if="s.product_label_id.label_style == 'rounded'" 
+			t-field="s.product_label_id.name" t-attf-style="background-color:#{s.product_label_id.label_bg_color}; color:#{s.product_label_id.label_font_color};
+			border-top-color:#{s.product_label_id.label_bg_color}; border-right-color:#{s.product_label_id.label_bg_color};"/>
+			<span class="default-pro-label-na label-outlinesquare" t-if="s.product_label_id.label_style == 'outlinesquare'" 
+			t-field="s.product_label_id.name" t-attf-style="border:1px solid #{s.product_label_id.label_bg_color}; color:#{s.product_label_id.label_font_color};"/>
+			<span class="default-pro-label-na label-outlineround" t-if="s.product_label_id.label_style == 'outlineround'" 
+			t-field="s.product_label_id.name" t-attf-style="border:1px solid #{s.product_label_id.label_bg_color}; color:#{s.product_label_id.label_font_color};"/>
+		</div>
+	</template>
+
+	<template id="menu_label_inherited"
+		inherit_id="website.submenu">
+		<xpath expr="//li[@t-if='submenu.is_visible and not (submenu.child_id or submenu.is_mega_menu)']/a" position="inside">
+			<t t-if="request.website.viewref('theme_default.menu_label_inherited').active">
+				<t t-if="submenu.product_label_id">
+					<t t-foreach="submenu" t-as="s">
+						<t t-call="theme_default.default_website_label_common"/>
+					</t>
+				</t>
+			</t>
+		</xpath>
+	</template>
+	
+</tele>

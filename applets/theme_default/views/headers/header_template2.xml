@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tele>
+
+	<template id="theme_default_header2" inherit_id="website.layout" name="Header Two" active="False">
+		<xpath expr="//header" position="attributes">
+			<attribute name="t-attf-class" add="default-header" separator=" "></attribute>
+		</xpath>
+		<xpath expr="//header//nav" position="replace">
+			<nav data-name="Navbar" id="default_header2" t-attf-class="default_header_two">
+				<div class="top-header d-none d-lg-block border-bottom">
+					<div class="container-fluid px-5">
+						<div class="row py-2">
+							<div class="header-left col-lg-3 col-xl-5 d-none d-md-flex">
+								<div class="language-selector">
+									<ul class="menu-language js_language_selector mb0 list-inline text-lg-center" t-if="(request and request.is_frontend_multilang and len(languages) &gt; 1) or (website and (editable or translatable))">
+					                    <li class="d-inline-block">
+								            <div class="dropdown">
+								                <button class="btn btn-sm btn-link dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+							                     	<span class="lang_local_code text-uppercase" t-out="list(filter(lambda lg : lg[0] == lang, languages))[0][1]"/>
+								                    <span class="caret ml4"/>
+								                </button>
+								                <div class="dropdown-menu" role="menu">
+								                    <t t-foreach="languages" t-as="lg">
+								                        <a t-att-href="url_for(request.httprequest.path + '?' + keep_query(), lang_code=lg[0])"
+								                           class="dropdown-item js_change_lang"
+								                           t-att-data-url_code="lg[1]">
+								                            <t t-out="lg[2].split('/').pop()"/>
+								                        </a>
+								                    </t>
+								                </div>
+								            </div>
+								        </li>
+								    </ul>
+								</div>
+								<div class="curruncy-selector">
+									 <t t-set="website_sale_pricelists" t-value="website.get_pricelist_available(show_visible=True)" />
+						            <div t-attf-class="dropdown mr-auto#{'' if website_sale_pricelists and len(website_sale_pricelists)&gt;1 else ''} #{_classes}">
+							            <t t-set="curr_pl" t-value="website.get_current_pricelist()" />
+							            <a role="button" href="#" class="dropdown-toggle btn btn-link" data-toggle="dropdown">
+							            	<t t-out="curr_pl and curr_pl.name or ' - '" />
+							            </a>
+							            <div class="dropdown-menu" role="menu">
+							                <t t-foreach="website_sale_pricelists" t-as="pl">
+							                    <a role="menuitem" t-att-href="'/shop/change_pricelist/%s' % pl.id" class="dropdown-item">
+							                        <span class="switcher_pricelist" t-att-data-pl_id="pl.id" t-out="pl.name" />
+							                    </a>
+							                </t>
+							            </div>
+							        </div>
+								</div>
+							</div>
+							<div class="header-right justify-content-end col-lg-9 col-xl-7 d-none d-md-flex">
+								<span class="welcome-text">Welcome to Our Store!</span>
+								<div class="top-navigation">
+									<ul class="menus d-flex">
+										<li class="menu-item">
+											<a href="/blog" class="nav-link pl-0">
+												<span class="fa fa-folder-open-o mr-2"/>
+												<span>BLOG</span>
+											</a>
+										</li>
+										<li class="menu-item">
+											<a href="/help-center" class="nav-link">
+												<span class="fa fa-clone mr-2"/>
+												<span>FAQ</span>
+											</a>
+										</li>
+										<li class="menu-item">
+											<a href="/contactus" class="nav-link">
+												<span class="fa fa-envelope-o mr-2"/>
+												<span>CONTACT US</span>
+											</a>
+										</li>
+										<!-- Sign In -->
+				                        <li groups="base.group_public" class="nav-item text-center">
+											 <span t-if="request.website.viewref('theme_default.loginsignup_popup_bizt').active" class="nav-link openpop"
+								                data-toggle="modal" data-target="#popupuserlogin" t-att-data-theme_name = "request.website.sudo().theme_id.name">
+								                <span class="font-weight-bold">Sign in</span>
+								            </span>
+								            <span t-else=''>
+								            	<a class="nav-link" t-attf-href="/web/login">
+									                <span class="font-weight-bold">Sign in</span>
+									            </a>
+								            </span>
+										</li>
+				                        <!-- User Dropdown -->
+				                        <t t-set="is_connected" t-value="not user_id._is_public()"/>
+								        <li t-if="is_connected" t-attf-class="nav-item dropdown ml-lg-auto o_no_autohide_item list-unstyled">
+								            <a href="#" role="button" data-toggle="dropdown" t-attf-class="dropdown-toggle nav-link font-weight-bold">
+								                <span t-attf-class="#{_user_name_class}" t-out="user_id.name[:23] + '...' if user_id.name and len(user_id.name) &gt; 25 else user_id.name"/>
+								            </a>
+								            <div t-attf-class="dropdown-menu js_usermenu #{_dropdown_menu_class}" role="menu">
+								                <a href="/my/home" role="menuitem" class="dropdown-item">My Account</a>
+												<t t-call="theme_default.my_address_link"/>
+								                <a t-attf-href="/web/session/logout?redirect=/" role="menuitem" id="o_logout" class="dropdown-item">Logout</a>
+								            </div>
+								        </li>
+				                        <!-- <t t-call="portal.user_dropdown">
+				                            <t t-set="_user_name" t-value="true"/>
+				                            <t t-set="_item_class" t-value="'nav-item dropdown ml-lg-auto'"/>
+				                            <t t-set="_link_class" t-value="'nav-link font-weight-bold'"/>
+				                        </t> -->
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="middle-header">
+					<div class="container-fluid px-3 px-md-5">
+						<div class="row align-items-center">
+							<div class="mobile-sidebar-toggle header-left col-md-12 col-lg-7 d-flex align-items-center">
+								<button type="button" id="show-sidebar" class="mobile-sidebar-toggle btn btn-md d-block d-lg-none">
+									<span class="ti ti-view-grid text-secondary"></span>
+								</button>
+								<div class="website-logo-left align-items-center d-flex justify-content-center justify-content-lg-start mx-auto mx-lg-0">
+									<a href="/" class="navbar-brand logo m-0">
+							            <span t-field="website.logo" t-options="{'widget': 'image'}" role="img" t-att-aria-label="'Logo of %s' % website.name" t-att-title="website.name" />
+							        </a>
+								</div>
+								<t t-call="theme_default.default_header_mobile_cart"/>
+							<!-- </div> -->
+							<!-- <div class="header-center col-md-6 col-xl-7 d-none d-md-block"> -->
+								<nav class="navbar navbar-expand-lg p-0 ml24 w-lg-100" id="bizople-header-2">
+									<div class="collapse navbar-collapse" id="default-header">
+										<ul class="nav navbar-nav justify-content-center" id="top_menu">
+											<t t-foreach="website.menu_id.child_id" t-as="submenu">
+												<t t-call="website.submenu">
+													<t t-set="item_class" t-value="'nav-item'" />
+													<t t-set="link_class" t-value="'nav-link'" />
+												</t>
+											</t>
+										</ul>
+									</div>
+								</nav>
+							</div>
+							<div class="header-right col-md-4 col-lg-5 d-none d-lg-flex align-items-center justify-content-end">
+		                		<div class="header-search-btn">
+		                			<button type="button" class="ri ri-search-2-line align-middle"></button>
+								  	<div class="bizople-search">
+									  	<div class="search">
+											<t t-call="theme_default.desktop_search_bar" />
+										</div>
+								  	</div>
+								</div>
+								<div class="bizople-add-to-cart align-middle" id="">
+									<t t-if="is_view_active('website_sale.products_add_to_cart')">
+										<t t-set="website_sale_order" t-value="website.sale_get_order()" />
+										<t t-call="website_sale.header_cart_link">
+							                <t t-set="_icon" t-value="True"/>
+							                <t t-set="_item_class" t-value="'nav-item'"/>
+							                <t t-set="_link_class" t-value="'nav-link'"/>
+							            </t>
+							        </t>
+								</div>
+								<div class="wishlist align-middle">
+									<t t-if="is_view_active('website_sale_wishlist.add_to_wishlist')">
+										<t t-call="website_sale_wishlist.header_wishlist_link">
+							                <t t-set="_icon" t-value="True"/>
+							                <t t-set="_item_class" t-value="'nav-item'"/>
+							                <t t-set="_link_class" t-value="'nav-link'"/>
+							            </t>
+									</t>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="bottom-header d-none d-lg-block">
+					<div class="container-fluid px-0">
+						<div class="row align-items-center no-gutters">
+							<div class="col-md-4">
+								<div class="header-service bg-primary op-8 text-center py-2">
+									<div class="d-inline-flex align-items-center">
+										<span class="ri ri-truck-line align-middle text-white"/>
+										<span class="pl-2 text-uppercase text">shipping and returns</span>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="header-service bg-primary text-center py-2">
+									<div class="d-inline-flex align-items-center">
+										<span class="ri ri-customer-service-line align-middle text-white"/>
+										<span class="pl-2 text-uppercase text">24/7 SERVICES</span>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-4">
+								<div class="header-service bg-primary op-8 text-center py-2">
+									<div class="d-inline-flex align-items-center">
+										<span class="ri ri-service-line align-middle text-white"/>
+										<span class="pl-2 text-uppercase text">TRUSTED SERVICES</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- <t t-call="theme_default.bizople_mbl_side_bar"/> -->
+				<!-- <t t-call="theme_default.bizople_mbl_category_bar"/> -->
+			</nav>
+		</xpath>
+		<xpath expr="//header" position="before">
+			<div class="d-block d-lg-none">
+				<t t-call="theme_default.bizople_mobile_bottom_icon_bar"/>
+			</div>
+			<t t-call="theme_default.bizople_mbl_category_bar"/>
+			<t t-call="theme_default.search_popup"/>
+		</xpath>
+	</template>
+
+</tele>

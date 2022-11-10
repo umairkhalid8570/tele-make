@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tele>
+
+	<template id="theme_default_header3" inherit_id="website.layout" name="Header Three" active="False">
+		<xpath expr="//header" position="attributes">
+			<attribute name="t-attf-class" add="default-header" separator=" "></attribute>
+		</xpath>
+		<xpath expr="//header//nav" position="replace">
+			<nav data-name="Navbar" id="default-header3" t-attf-class="default-header3">
+				<div class="top-header d-none d-lg-block border-bottom">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-5 col-lg-4 pl-md-0">
+								<div class="left-content">
+									<ul class="nav navbar-nav flex-row justify-content-center justify-content-md-start">
+										<li class="nav-item">
+											<a href="/help-center" class="nav-link">Support</a>
+										</li>
+										<li class="nav-item">
+											<a href="/shop" class="nav-link">Store</a>
+										</li>
+										<li class="nav-item">
+											<a href="/my/orders" class="nav-link">Order</a>
+										</li>
+										<t t-set="aut_assign_categs"
+											t-value="website.get_auto_assign_category()" />
+										<t t-set="categ_count" t-value="1"></t>
+							
+										<t t-foreach="aut_assign_categs" t-as="aut_assign_categ" t-if="categ_count == 1">
+											<t t-set="categ_count" t-value="categ_count + 1"></t>
+											<li class="nav-item">
+												<a class="nav-link" t-att-href="'/shop/category/%s' % slug(aut_assign_categ)">
+													<span class="text-primary" t-field="aut_assign_categ.name" />
+												</a>
+											</li>
+										</t>
+									</ul>
+								</div>
+							</div>
+							<div class="col-md-3 col-lg-4">
+								<div class="middle-content">
+									<span class="text-primary">Call Us:</span>
+									<span class="phone-number"><span t-out="res_company.phone"/></span>
+								</div>
+							</div>
+							<div class="col-md-4 pr-md-0">
+								<div class="right-content">
+									<ul class="nav navbar-nav flex-row justify-content-center justify-content-md-end">
+										<li class="nav-item dropdown" t-ignore="true" t-if="not user_id._is_public()">
+											<a href="#" class="nav-link dropdown-toggle"
+												data-toggle="dropdown">
+													<t t-call="theme_default.portal_frontend_user"/>
+													<span
+														t-out="user_id.name[:23] + '...' if user_id.name and len(user_id.name) &gt; 25 else user_id.name" />
+											</a>
+											<div class="dropdown-menu js_usermenu" role="menu">
+												<a t-attf-href="/my/home" role="menuitem" class="dropdown-item">My Account</a>
+												<t t-call="theme_default.my_address_link"/>
+												<a id="o_logout" class="dropdown-item"
+													t-attf-href="/web/session/logout?redirect=/"
+													role="menuitem">Logout</a>
+											</div>
+										</li>
+										<li groups="base.group_public" class="nav-item text-center login">
+											 <span t-if="request.website.viewref('theme_default.loginsignup_popup_bizt').active" class="nav-link openpop"
+								                data-toggle="modal" data-target="#popupuserlogin" t-att-data-theme_name = "request.website.sudo().theme_id.name">
+								                <span class="font-weight-bold">Sign in</span>
+								            </span>
+								            <span t-else=''>
+								            	<a class="nav-link" t-attf-href="/web/login">
+									                <span class="font-weight-bold">Sign in</span>
+									            </a>
+								            </span>
+										</li>
+										<li class="js_language_selector mb0 list-inline text-center" t-if="(request and request.is_frontend_multilang and len(languages) &gt; 1) or (website and (editable or translatable))">
+								            <div class="dropdown">
+								                <button class="btn btn-sm btn-secondary dropdown-toggle mr-0 pr-0" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+							                     	<span class="lang_local_code text-uppercase" t-out="list(filter(lambda lg : lg[0] == lang, languages))[0][1]"/>
+								                    <span class="caret ml4"/>
+								                </button>
+								                <div class="dropdown-menu" role="menu">
+								                    <t t-foreach="languages" t-as="lg">
+								                        <a t-att-href="url_for(request.httprequest.path + '?' + keep_query(), lang_code=lg[0])"
+								                           class="dropdown-item js_change_lang"
+								                           t-att-data-url_code="lg[1]">
+								                            <t t-out="lg[2].split('/').pop()"/>
+								                        </a>
+								                    </t>
+								                </div>
+								            </div>
+								        </li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="middle-header py-0 py-md-2 py-lg-3">
+					<div class="container">
+						<div class="row align-items-center">
+							<div class="col-md-12 col-lg-3 d-flex d-lg-block mbl-div pl-lg-0">
+								<div class="mobile-sidebar-toggle d-block d-lg-none">
+									<button type="button" id="show-sidebar" class="btn btn-md d-block d-lg-none">
+										<span class="ti ti-view-grid text-secondary"></span>
+									</button>
+								</div>
+								<div class="default-logo text-center text-md-left mx-auto">
+									<a href="/" class="navbar-brand logo m-0">
+							            <span t-field="website.logo" t-options="{'widget': 'image'}" role="img" t-att-aria-label="'Logo of %s' % website.name" t-att-title="website.name" />
+							        </a>
+								</div>
+								<t t-call="theme_default.default_header_mobile_cart"/>
+							</div>
+							<div class="col-md-6 col-lg-7 mb-4 mb-md-0 d-none d-lg-block">
+								<div class="bizople-search">
+									<div class="search">
+										<t t-call="theme_default.desktop_search_bar" />
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-2 mb-3 mb-md-0 text-center text-md-right right-icons d-none d-lg-block pr-md-0">
+								<div class="bizople-add-to-cart cart d-inline-block">
+									<t t-if="is_view_active('website_sale.products_add_to_cart')">
+										<t t-set="website_sale_order" t-value="website.sale_get_order()" />
+										<t t-call="website_sale.header_cart_link">
+							                <t t-set="_icon" t-value="True"/>
+							                <t t-set="_item_class" t-value="'nav-item'"/>
+							                <t t-set="_link_class" t-value="'nav-link'"/>
+							            </t>
+							        </t>
+								</div>
+								<div class="wishlist d-inline-block ml-3">
+									<t t-if="is_view_active('website_sale_wishlist.add_to_wishlist')">
+										<t t-call="website_sale_wishlist.header_wishlist_link">
+							                <t t-set="_icon" t-value="True"/>
+							                <t t-set="_item_class" t-value="'nav-item'"/>
+							                <t t-set="_link_class" t-value="'nav-link'"/>
+							            </t>
+									</t>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="bottom-header d-none d-lg-block">
+					<div class="container">
+						<div class="row align-items-center">
+							<div class="col-md-3 pl-md-0">
+								<div class="product-category">
+									
+								</div>
+							</div>
+							<div class="col-md-7 col pr-md-0 pr-lg-3 pr-xl-0">
+								<nav class="navbar navbar-expand-lg p-0" id="bizople-header-three">
+									<div class="collapse navbar-collapse" id="header3-menuitem">
+										<ul class="nav navbar-nav" id="top_menu">
+											<t t-foreach="website.menu_id.child_id" t-as="submenu">
+												<t t-call="website.submenu">
+													<t t-set="item_class" t-value="'nav-item'" />
+													<t t-set="link_class" t-value="'nav-link'" />
+												</t>
+											</t>
+										</ul>
+									</div>
+									<button type="button" class="navbar-toggler collapsed navbar-light ml-auto" data-toggle="collapse" data-target="#header3-mbl-menuitem" aria-expanded="false">
+										<span class="fa fa-bars"></span>
+									</button>
+								</nav>
+							</div>
+							<div class="col-md-2 pr-md-0 text-right">
+								<div class="deal-link ml-3 ml-md-auto">
+									<a class="" href="#">Today's Deals</a> 
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- <t t-call="theme_default.bizople_mbl_side_bar"/> -->
+				<!-- <t t-call="theme_default.bizople_mbl_category_bar"/> -->
+			</nav>
+		</xpath>
+		<xpath expr="//header" position="after">
+			<div class="d-block d-md-none">
+				<t t-call="theme_default.bizople_mobile_bottom_icon_bar"/>
+			</div>
+			<t t-call="theme_default.bizople_mbl_category_bar"/>
+			<t t-call="theme_default.search_popup"/>
+		</xpath>
+	</template>
+
+	<template id="header3_product_category" inherit_id="theme_default.theme_default_header3" name="Show Header Product Category">
+		<xpath expr="//div[hasclass('product-category')]" postion="inside">
+	        <div class="dropdown">
+	            <a href="#" class="dropdown-btn text-white dropdown-toggle nav-link" data-toggle="dropdown">
+	                <span class="fa fa-bars mr-2"/>
+	                <span class="d-none d-md-inline-block">CATEGORIES</span>
+	                <b class="caret"></b>
+	            </a>
+	            <ul class="dropdown-menu default-header-category" id="mbl-target">
+	                <t t-set="categories" t-value="website.get_categories() if website else None"/>
+	                <t t-if="categories">
+	                    <t t-foreach="categories['categories']" t-as="categ">
+	                        <t t-call="theme_default.menu_categories_recursive"/>
+	                        
+	                    </t>
+	                </t>
+	            </ul>
+	        </div>
+	    </xpath>
+    </template>
+
+    <!-- Child Category Template -->
+    <template id="menu_categories_recursive" >
+        <li class="dropdown dropdown-submenu nav-item">
+            <a class="nav-link" t-att-href="'/shop/category/%s' % (categ.id)">
+            	<span>
+	            	<span t-out="categ.name"/>
+	            	<t t-if="is_view_active('theme_default.categories_list_count')">
+		            	(<span>
+		                    <t t-out="categ.with_context(product_categ_search=search).product_tmpl_count"/>
+		                </span>)
+		            </t>
+		        </span>
+	            <i t-if="categ.child_id" class="ti ti-angle-right text-primary caret-icon-pos"/>
+            </a>
+            
+            <ul t-if="categ.child_id"
+                class="dropdown-menu">
+                <t t-foreach="categ.child_id" t-as="categ">
+                    <t t-call="theme_default.menu_categories_recursive"/>
+                </t>
+            </ul>
+        </li>
+    </template>
+
+</tele>

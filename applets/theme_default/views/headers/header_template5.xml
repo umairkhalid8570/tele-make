@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tele>
+
+	<template id="theme_default_header5" inherit_id="website.layout" name="Header Five" active="False">
+		<xpath expr="//header" position="attributes">
+			<attribute name="t-attf-class" add="default-header" separator=" "></attribute>
+		</xpath>
+		<xpath expr="//header//nav" position="replace">
+			<nav data-name="Navbar" id="default_header5" t-attf-class="default_header5">
+				<div class="top-header d-none d-lg-block">
+					<div class="container-fluid">
+						<div class="row align-items-center">
+							<div class="header-left col-xl-4 col-md-6 d-none d-md-flex">
+								<div class="language-selector">
+									<ul class="menu-language js_language_selector mb0 list-inline text-lg-center" t-if="(request and request.is_frontend_multilang and len(languages) &gt; 1) or (website and (editable or translatable))">
+					                    <li class="d-inline-block">
+								            <div class="dropdown">
+								                <button class="btn btn-sm btn-link dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+							                     	<span class="lang_local_code text-uppercase" t-out="list(filter(lambda lg : lg[0] == lang, languages))[0][1]"/>
+								                    <span class="caret ml4"/>
+								                </button>
+								                <div class="dropdown-menu" role="menu">
+								                    <t t-foreach="languages" t-as="lg">
+								                        <a t-att-href="url_for(request.httprequest.path + '?' + keep_query(), lang_code=lg[0])"
+								                           class="dropdown-item js_change_lang"
+								                           t-att-data-url_code="lg[1]">
+								                            <t t-out="lg[2].split('/').pop()"/>
+								                        </a>
+								                    </t>
+								                </div>
+								            </div>
+								        </li>
+								    </ul>
+								</div>
+								<div class="curruncy-selector">
+									 <t t-set="website_sale_pricelists" t-value="website.get_pricelist_available(show_visible=True)" />
+						            <div t-attf-class="dropdown mr-auto#{'' if website_sale_pricelists and len(website_sale_pricelists)&gt;1 else ''} #{_classes}">
+							            <t t-set="curr_pl" t-value="website.get_current_pricelist()" />
+							            <a role="button" href="#" class="dropdown-toggle btn btn-link" data-toggle="dropdown">
+							            	<t t-out="curr_pl and curr_pl.name or ' - '" />
+							            </a>
+							            <div class="dropdown-menu" role="menu">
+							                <t t-foreach="website_sale_pricelists" t-as="pl">
+							                    <a role="menuitem" t-att-href="'/shop/change_pricelist/%s' % pl.id" class="dropdown-item">
+							                        <span class="switcher_pricelist" t-att-data-pl_id="pl.id" t-out="pl.name" />
+							                    </a>
+							                </t>
+							            </div>
+							        </div>
+								</div>
+							</div>
+							<div class="header-center col-xl-4 d-none d-xl-block">
+								<p class="text-center header-text mb-0">
+									<b>FREE 4-DAYS</b> standard shipping on order above $199
+								</p>
+							</div>
+							<div class="header-right justify-content-end align-items-center col-xl-4 col-md-6 d-none d-md-flex">
+								<div class="header-media text-right">
+									<a class="link mr-3" t-att-href="website.social_facebook"
+										t-if="website.social_facebook" target="_blank">
+										<span class="fa fa-facebook d-md-none d-inline-block"></span><span class="d-none d-md-inline-block">facebook</span>
+									</a>
+									<a class="link mr-3" t-att-href="website.social_twitter"
+										t-if="website.social_twitter" target="_blank">
+										<span class="fa fa-twitter d-md-none d-inline-block"></span><span class="d-none d-md-inline-block">twitter</span>
+									</a>
+									<a class="link" t-att-href="website.social_instagram"
+										t-if="website.social_instagram" target="_blank">
+										<span class="fa fa-instagram d-md-none d-inline-block"></span><span class="d-none d-md-inline-block">instagram</span>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="middle-header">
+					<div class="container-fluid">
+						<div class="row align-items-center">
+							<div class="header-left mobile-sidebar-toggle col-lg-3 d-flex align-items-center w-100">
+								<button type="button" id="show-sidebar" class="mobile-sidebar-toggle btn btn-md d-block d-lg-none">
+									<span class="ti ti-view-grid text-secondary"></span>
+								</button>
+								<div class="website-logo-left align-items-center d-flex justify-content-center justify-content-lg-start mx-auto mx-lg-0">
+									<a href="/" class="navbar-brand logo m-0">
+							            <span t-field="website.logo" t-options="{'widget': 'image'}" role="img" t-att-aria-label="'Logo of %s' % website.name" t-att-title="website.name" />
+							        </a>
+								</div>
+								<t t-call="theme_default.default_header_mobile_cart"/>
+							</div>
+							<div class="header-center col-lg-6 d-none d-lg-block">
+								<div class="">
+									<div class="bizople-search nav-search w-lg-75 mx-auto">
+										<div class="search">
+											<t t-call="theme_default.desktop_search_bar" />
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="header-right col-lg-3 d-none d-lg-flex align-items-center ">
+								<div class="header-myaccount dropdown d-flex align-items-center ml-auto">
+		                			<a href="#" class="nav-link dropdown-toggle acc-dropdown py-0" data-toggle="dropdown">
+										<span t-ignore="true" t-if="not user_id._is_public()">
+		                					<t t-call="theme_default.portal_frontend_user"/>
+		                				</span>
+		                				<span groups="base.group_public">
+											<span class="icon icon-User text-secondary align-middle"></span>
+										</span>
+									</a>
+									<div class="dropdown-menu js_usermenu" role="menu">
+										<div class="main-content text-center" t-ignore="true" t-if="not user_id._is_public()">
+											<div class="text-center font-weight-bold">
+												<span t-out="user_id.name[:23] + '...' if user_id.name and len(user_id.name) &gt; 25 else user_id.name" />
+											</div>
+											<a t-attf-href="/my/home" role="menuitem" class="dropdown-item my-acc text-center">My Account</a>
+											<t t-call="theme_default.my_address_link"/>
+											<a id="o_logout" class="dropdown-item text-center"
+												t-attf-href="/web/session/logout?redirect=/"
+												role="menuitem">Logout</a>
+										</div>
+										<div groups="base.group_public" class="text-center">
+											 <span t-if="request.website.viewref('theme_default.loginsignup_popup_bizt').active" class="nav-link openpop"
+								                data-toggle="modal" data-target="#popupuserlogin" t-att-data-theme_name = "request.website.sudo().theme_id.name">
+								                <span>Sign in</span>
+								            </span>
+								            <span t-else=''>
+								            	<a class="dropdown-item" t-attf-href="/web/login">
+									                <span>Sign in</span>
+									            </a>
+												<a class="dropdown-item" t-attf-href="/web/signup">
+													<span>Register</span>
+												</a>
+								            </span>
+										</div>
+									</div>
+		                		</div>
+								<div class="bizople-add-to-cart align-middle">
+									<t t-if="is_view_active('website_sale.products_add_to_cart')">
+										<t t-set="website_sale_order" t-value="website.sale_get_order()" />
+										<t t-call="website_sale.header_cart_link">
+							                <t t-set="_icon" t-value="True"/>
+							                <t t-set="_item_class" t-value="'nav-item'"/>
+							                <t t-set="_link_class" t-value="'nav-link'"/>
+							            </t>
+							        </t>
+								</div>
+								<div class="wishlist align-middle">
+									<t t-if="is_view_active('website_sale_wishlist.add_to_wishlist')">
+										<t t-call="website_sale_wishlist.header_wishlist_link">
+							                <t t-set="_icon" t-value="True"/>
+							                <t t-set="_item_class" t-value="'nav-item'"/>
+							                <t t-set="_link_class" t-value="'nav-link'"/>
+							            </t>
+									</t>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="bottom-header d-none d-lg-block">
+					<div class="container-fluid">
+						<div class="row align-items-center">
+							<div class="col-md-3 col-xl-2">
+								<div class="product-category">
+
+								</div>
+							</div>
+							<div class="col-md-7 col-xl-8">
+								<nav class="navbar navbar-expand-lg p-0" id="bizople-header-5">
+									<div class="collapse navbar-collapse" id="default-header">
+										<ul class="nav navbar-nav justify-content-center" id="top_menu">
+											<t t-foreach="website.menu_id.child_id" t-as="submenu">
+												<t t-call="website.submenu">
+													<t t-set="item_class" t-value="'nav-item'" />
+													<t t-set="link_class" t-value="'nav-link'" />
+												</t>
+											</t>
+										</ul>
+									</div>
+								</nav>
+							</div>
+							<div class="col-md-2">
+								<t t-set="aut_assign_categs" t-value="website.get_auto_assign_category()" />
+								<t t-set="categ_count" t-value="1"></t>
+								<t t-foreach="aut_assign_categs" t-as="aut_assign_categ" t-if="categ_count == 1">
+									<t t-set="categ_count" t-value="categ_count + 1"></t>
+									<div class="deal-link nav-item text-right">
+										<a class="nav-link p-0" t-att-href="'/shop/category/%s' % slug(aut_assign_categ)">
+											<span t-field="aut_assign_categ.name" />
+										</a>
+									</div>
+								</t>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- <t t-call="theme_default.bizople_mbl_side_bar"/> -->
+				<!-- <t t-call="theme_default.bizople_mbl_category_bar"/> -->
+			</nav>
+		</xpath>
+		<xpath expr="//header" position="before">
+			<div class="d-block d-lg-none">
+				<t t-call="theme_default.bizople_mobile_bottom_icon_bar"/>
+			</div>
+			<t t-call="theme_default.bizople_mbl_category_bar"/>
+			<t t-call="theme_default.search_popup"/>
+		</xpath>
+	</template>
+
+	<template id="header5_product_category" inherit_id="theme_default.theme_default_header5" name="Show Header Product Category">
+		<xpath expr="//div[hasclass('product-category')]" postion="inside">
+	        <div class="dropdown">
+	            <a href="#" class="dropdown-btn text-white dropdown-toggle nav-link" data-toggle="dropdown">
+	                <span class="fa fa-bars mr-2"/>
+	                <span class="d-none d-md-inline-block">CATEGORIES</span>
+	            </a>
+	            <ul class="dropdown-menu default-header-category" id="mbl-target">
+	                <t t-set="categories" t-value="website.get_categories() if website else None"/>
+	                <t t-if="categories">
+	                    <t t-foreach="categories['categories']" t-as="categ">
+	                          	<t t-call="theme_default.menu_categories_recursive"/>
+	                    </t>
+	                </t>
+	            </ul>
+	        </div>
+	    </xpath>
+    </template>
+
+</tele>

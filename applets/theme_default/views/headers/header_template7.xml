@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tele>
+
+	<template id="theme_default_header7" inherit_id="website.layout" name="Header Seven" active="False">
+		<xpath expr="//header" position="attributes">
+			<attribute name="t-attf-class" add="default-header" separator=" "></attribute>
+		</xpath>
+		<xpath expr="//header//nav" position="replace">
+			<nav data-name="Navbar" id="default-header7" t-attf-class="default-header7 navbar navbar-expand-lg navbar-light o_colored_level o_cc">
+				<div id="top_menu_container" class=" container justify-content-start justify-content-lg-between">
+					
+					<div class="mobile-sidebar-toggle d-block d-lg-none">
+						<button type="button" id="show-sidebar" class="btn ">
+							<span class="ti ti-view-grid text-secondary"></span>
+						</button>
+					</div>
+					<!-- Brand -->
+	                <t t-call="website.placeholder_header_brand">
+	                    <t t-set="_link_class" t-value="'mx-auto'"/>
+	                </t>
+					<t t-call="theme_default.default_header_mobile_cart"/>
+                	<!-- Navbar Collapse -->
+					<div id="top_menu_collapse" class="collapse navbar-collapse px-4 w-50">
+						<t t-call="website.navbar_nav">
+	                        <t t-set="_nav_class" t-value="'flex-grow-1'"/>
+	                        <!-- Menu -->
+	                        <t t-foreach="website.menu_id.child_id" t-as="submenu">
+	                            <t t-call="website.submenu">
+	                                <t t-set="item_class" t-value="'nav-item'"/>
+	                                <t t-set="link_class" t-value="'nav-link'"/>
+	                            </t>
+	                        </t>
+						</t>
+					</div>
+					<div class="bizople-search mt-3 mt-md-0 w-lg-25 d-none d-lg-block">
+						<div class="default-search p-1 rounded">
+							<div class="search">
+								<t t-call="theme_default.desktop_search_bar" />
+							</div>
+						</div>
+					</div>
+					<div class="text-right right-icons d-none d-md-flex header-right align-items-center">
+						<div class="bizople-add-to-cart cart align-middle d-none d-lg-inline-block" id="">
+							<t t-if="is_view_active('website_sale.products_add_to_cart')">
+								<t t-set="website_sale_order" t-value="website.sale_get_order()" />
+								<t t-call="website_sale.header_cart_link">
+					                <t t-set="_icon" t-value="True"/>
+					                <t t-set="_item_class" t-value="'nav-item'"/>
+					                <t t-set="_link_class" t-value="'nav-link'"/>
+					            </t>
+					        </t>
+						</div>
+						<div class="wishlist align-middle d-none d-lg-inline-block">
+							<t t-if="is_view_active('website_sale_wishlist.add_to_wishlist')">
+								<t t-call="website_sale_wishlist.header_wishlist_link">
+					                <t t-set="_icon" t-value="True"/>
+					                <t t-set="_item_class" t-value="'nav-item'"/>
+					                <t t-set="_link_class" t-value="'nav-link'"/>
+					            </t>
+							</t>
+						</div>
+						<div class="header-myaccount dropdown align-items-center align-middle d-none d-lg-inline-block">
+                			<a href="#" class="nav-link dropdown-toggle acc-dropdown" data-toggle="dropdown">
+                				<span t-ignore="true" t-if="not user_id._is_public()">
+                					<t t-call="theme_default.portal_frontend_user"/>
+                				</span>
+                				<span groups="base.group_public">
+									<span class="icon icon-User text-secondary align-middle"></span>
+								</span>
+							</a>
+							<div class="dropdown-menu js_usermenu" role="menu">
+								<div class="main-content text-center" t-ignore="true" t-if="not user_id._is_public()">
+									<div class="text-center font-weight-bold">
+										<span t-out="user_id.name[:23] + '...' if user_id.name and len(user_id.name) &gt; 25 else user_id.name" />
+									</div>
+									<a t-attf-href="/my/home" role="menuitem" class="dropdown-item my-acc text-center">My Account</a>
+									<t t-call="theme_default.my_address_link"/>
+									<a id="o_logout" class="dropdown-item text-center"
+										t-attf-href="/web/session/logout?redirect=/"
+										role="menuitem">Logout</a>
+								</div>
+								<div groups="base.group_public" class="text-center">
+									<span t-if="request.website.viewref('theme_default.loginsignup_popup_bizt').active" class="nav-link openpop"
+						                data-toggle="modal" data-target="#popupuserlogin" t-att-data-theme_name = "request.website.sudo().theme_id.name">
+						                <span>Sign in</span>
+						            </span>
+						            <span t-else=''>
+						            	<a class="dropdown-item" t-attf-href="/web/login">
+							                <span>Sign in</span>
+							            </a>
+										<a class="dropdown-item" t-attf-href="/web/signup">
+											<span>Register</span>
+										</a>
+						            </span>
+								</div>
+							</div>
+                		</div>
+					</div>
+				</div>
+			</nav>
+		</xpath>
+		<xpath expr="//header" position="before">
+			<div class="d-block d-lg-none">
+				<t t-call="theme_default.bizople_mobile_bottom_icon_bar"/>
+			</div>
+			<t t-call="theme_default.search_popup"/>
+			<t t-call="theme_default.bizople_mbl_category_bar"/>
+		</xpath>
+	</template>
+</tele>

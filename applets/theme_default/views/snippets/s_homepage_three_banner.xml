@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tele>
+
+	<template id="s_homepage_three_banner" name="Home Banner Three">
+		<section class="s_carousel_wrapper default_home_banner_three" data-vxml="001" data-snippet="s_carousel" data-name="Carousel">
+			<div id="default-home3-carousel" class="s_carousel s_carousel_default carousel slide" data-interval="10000">
+				<div class="carousel-inner">
+					<div class="carousel-item pt256 pb256 o_colored_level oe_img_bg active" style="background-image: url(&quot;/theme_default/static/src/img/twelve-banner1.jpg&quot;); background-position: center; background-repeat: no-repeat;" data-name="Slide">
+						<div class="container">
+							<div class="row content">
+								<div class="carousel-content col-lg-6 o_colored_level">
+									<div class="border-left border-800 p-2 pl-3 mb-4">
+										<p class="mb-0 text-800">Default Furniture</p>
+										<p class="mb-0 text-800">2021</p>
+									</div>
+									<p class="text-uppercase position-relative mini_title pb8 mb-3 text-800">new arrivals</p>
+									<h1 class="font-weight-light">Default Top Collections</h1>
+									<p class="mt-5">
+										<a href="/shop" class="btn btn-primary mb-2 o_default_snippet_text btn-md">
+											Shop Now
+											<span class="pl-2 ri ri-arrow-right-line align-middle font-weight-light"/>
+										</a>
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="carousel-item pt256 pb256 o_colored_level oe_img_bg" style="background-image: url(&quot;/theme_default/static/src/img/twelve-banner2.jpg&quot;); background-position: center; background-repeat: no-repeat;" data-name="Slide">
+						<div class="container">
+							<div class="row content">
+								<div class="carousel-content col-lg-6 o_colored_level">
+									<div class="border-left border-800 p-2 pl-3 mb-4">
+										<p class="mb-0 text-800">Default Furniture</p>
+										<p class="mb-0 text-800">2021</p>
+									</div>
+									<p class="text-uppercase position-relative mini_title pb8 mb-3 text-800">new arrivals</p>
+									<h1 class="font-weight-light">Modern Chairs</h1>
+									<p class="mt-5">
+										<a href="/shop" class="btn btn-primary mb-2 o_default_snippet_text btn-md">
+											Shop Now
+											<span class="pl-2 ri ri-arrow-right-line align-middle font-weight-light"/>
+										</a>
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="carousel-item pt256 pb256 o_colored_level oe_img_bg" style="background-image: url(&quot;/theme_default/static/src/img/twelve-banner3.jpg&quot;); background-position: center; background-repeat: no-repeat;" data-name="Slide">
+						<div class="container">
+							<div class="row content">
+								<div class="carousel-content col-lg-6 o_colored_level">
+									<div class="border-left border-800 p-2 pl-3 mb-4">
+										<p class="mb-0 text-800">Default Furniture</p>
+										<p class="mb-0 text-800">2021</p>
+									</div>
+									<p class="text-uppercase position-relative mini_title pb8 mb-3 text-800">new arrivals</p>
+									<h1 class="font-weight-light">Classic Furniture Collections</h1>
+									<p class="mt-5">
+										<a href="/shop" class="btn btn-primary mb-2 o_default_snippet_text btn-md">
+											Shop Now
+											<span class="pl-2 ri ri-arrow-right-line align-middle font-weight-light"/>
+										</a>
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<ol class="carousel-indicators o_we_no_overlay align-items-center mb-5">
+					<li data-target="#default-home3-carousel" data-slide-to="0" class="active"/>
+					<li data-target="#default-home3-carousel" data-slide-to="1"/>
+					<li data-target="#default-home3-carousel" data-slide-to="2"/>
+				</ol>
+				<a class="carousel-control-prev o_we_no_overlay d-none" href="#default-home3-carousel" data-slide="prev" role="img" aria-label="Previous" title="Previous">
+					<span class="carousel-control-prev-icon"/>
+					<span class="sr-only o_default_snippet_text">Previous</span>
+				</a>
+				<a class="carousel-control-next o_we_no_overlay d-none" href="#default-home3-carousel" data-slide="next" role="img" aria-label="Next" title="Next">
+					<span class="carousel-control-next-icon" data-original-title="" title="" aria-describedby="tooltip443139"/>
+					<span class="sr-only o_default_snippet_text">Next</span>
+				</a>
+			</div>
+		</section>
+	</template>
+</tele>
