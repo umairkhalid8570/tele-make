@@ -1,0 +1,65 @@
+/* login page */
+body.bg-100{
+    background: url(/base/static/src/img/login-2.png), linear-gradient(to right bottom, #fff, #fff) !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+}
+body.bg-100 .card{
+    border-radius: 0;
+}
+.o_main_navbar{
+    background-color: #5a6a87;
+    border-bottom: 1px solid #68465f;
+}
+body.bg-100 .container.py-5{
+    padding: 0 !important;
+    max-width: 100%;
+    height: 100%;
+}    
+body.bg-100 .container.py-5 .card{
+    max-width: 50% !important;
+    margin-left: auto !important;
+    margin-right: 0 !important;
+    display: grid;
+    align-items: center;
+    height: 100%;
+    background-color: transparent !important;
+}
+body.bg-100 .container.py-5 .card .card-body{
+    width: 50%;
+    margin: 0 auto;
+    align-items: center;
+    height: fit-content;
+    flex: auto;
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15) !important;
+}   
+body.bg-100 .container.py-5 .card .card-body form a.btn-secondary{
+    background-color: #31275c;
+    border-color: #31275c;
+}
+body.bg-100 .container.py-5 .card .card-body form button.btn-primary{
+    background-color: #31275c;
+    border-color: #31275c;
+}
+body.bg-100 .container.py-5 .card .card-body form .oe_login_buttons a{
+    color: #31275c;
+}
+body.bg-100 .container.py-5 .card .card-body form .oe_login_buttons .btn-link{
+    color: #31275c;
+}
+body.bg-100 .container.py-5 .card .card-body .small a{
+    color: #31275c;
+}
+body.bg-100 .container.py-5 .card .card-body form .form-control:focus{
+    box-shadow: 0 0 0 0.2rem rgba(50,40,93,0.25);
+    border-color: #31275c;
+}
+@media (max-width: 1200px){
+    body.bg-100 .container.py-5 .card{max-width: 60% !important;}
+    body.bg-100{background-size: contain !important; background-position: center !important;}
+}
+@media (max-width: 991px){
+    body.bg-100 .container.py-5 .card{max-width: 100% !important;}
+    body.bg-100:after{content: '';position: absolute;top: 0;left: 0;width: 100%;height: 100%;background: #31275c;z-index: -1;}
+    body.bg-100 .container.py-5 .card .card-body{width: auto !important;}
+}

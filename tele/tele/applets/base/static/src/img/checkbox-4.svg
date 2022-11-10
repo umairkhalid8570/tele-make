@@ -1,0 +1,19 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+	<title>checkbox-1-svg</title>
+	<defs>
+		<image width="1200" height="630" id="img1" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABLAAAAJ2AQMAAAB1jukfAAAAAXNSR0IB2cksfwAAAANQTFRFAAAAp3o92gAAAAF0Uk5TAEDm2GYAAABzSURBVHic7cEBDQAAAMKg909tDjegAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABeDXOpAAFtMMXeAAAAAElFTkSuQmCC"/>
+	</defs>
+	<style>
+		.s0 { fill: none;stroke: #808080;stroke-width: 35 } 
+		.s1 { fill: #808080 } 
+		.s2 { fill: none;stroke: #808080;stroke-width: 15 } 
+	</style>
+	<use id="img1" href="#img1" transform="matrix(1,0,0,1,0,0)"/>
+	<path id="Shape 1" class="s0" d="m0 0h1200v630h-1200z"/>
+	<g id="Folder 2">
+		<g id="Folder 1">
+			<path id="Shape 3" class="s1" d="m508.3 223.3q5.7 6.1 5.7 14.8 0 8.6-5.7 14.6l-145.6 156.2-27.5 29.4q-5.6 5.9-13.6 5.9-8.1 0-13.7-5.9l-27.3-29.4-72.9-78.2q-5.7-5.9-5.7-14.6 0-8.5 5.7-14.6l27.3-29.4q5.7-6 13.7-6 8.1 0 13.6 6l59.3 63.6 132.1-141.6q5.5-6.1 13.6-6.1 8 0 13.7 6.1z"/>
+		</g>
+		<path id="Shape 4" class="s2" d="m664 154h325v325h-325z"/>
+	</g>
+</svg>

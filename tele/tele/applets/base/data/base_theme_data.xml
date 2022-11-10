@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tele>
+    <data noupdate="1">
+        <record id="base_theme_settings_1" model="base.theme.settings">
+            <field name="name">Base Backend Theme</field>
+            <field name="theme_color_type">style_1</field>
+            <field name="theme_primary_1_color">#068e44</field>
+            <field name="theme_primary_2_color">#E6F3EC</field>
+            <field name="theme_secondary_color">#f6f7fb</field>
+            <field name="theme_background_type">none</field>
+            <!-- <field name="theme_background_color">#ffffff</field> -->
+        	<field name="theme_background_image" type="base64" file="base/static/src/img/2.png"/>
+            <field name="button_type">style_1</field>
+            <!-- <field name="button_color_type">solid</field> -->
+            <field name="button_primary_1_color">#068e44</field>
+            <field name="button_primary_2_color">#E6F3EC</field>
+            <field name="button_secondary_color">#f6f7fb</field>
+            <!-- <field name="is_use_google_font" eval="False"></field> -->
+            <field name="sidebar_style">default</field>
+            <field name="sidebar_position">left</field>
+            <field name="font_style">default</field>
+            <field name="checkbox_style">style_1</field>
+            <field name="radio_btn_style">style_2</field>
+            <field name="theme_loading_type">default</field>
+            <field name="theme_loading_image" type="base64" file="base/static/src/img/loader-4.gif"/>
+            <field name="theme_scrollbar_style">style_1</field>
+            <field name="theme_tab_style">default</field>
+            <field name="theme_form_style">default</field>
+            
+            <field name="base_sticky_tree_view" eval="True" ></field>
+            <field name="base_one2many_field_tree_view" eval="False"></field>
+            <field name="base_sticky_form_view_chatter" eval="True"></field>
+            <field name="base_sticky_form_view_statusbar" eval="True"></field>
+            <!-- <field name="base_sticky_pivot_view" eval="False"></field> -->
+            <field name="theme_separator_style">default</field>
+            <field name="theme_popup_style">default</field>
+            <field name="theme_font_size">small</field>
+        </record>
+    </data> 
+    <data noupdate="1">    
+        <record id="base_theme_attachment_asset_variables" model="ir.attachment">
+        	<field name="datas" type="base64" file="base/static/src/scss/data_var.scss"/>
+            <field name="mimetype">text/scss</field>
+            <field name="name">base_theme_variables.scss</field>
+            <field name="type">binary</field>
+            <field name="url">/base/static/src/scss/base_theme_variables.scss</field>
+        </record>
+    </data>
+</tele>

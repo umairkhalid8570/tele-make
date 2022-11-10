@@ -1,4 +1,0 @@
-"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
-"access_automotive_disallowed_expenses_rate_account_user","access.automotive.disallowed.expenses.rate.account.user","model_automotive_disallowed_expenses_rate","account.group_account_readonly",1,0,0,0
-"access_automotive_disallowed_expenses_rate_account_manager","access.automotive.disallowed.expenses.rate.account.manager","model_automotive_disallowed_expenses_rate","account.group_account_manager",1,1,1,1
-"access_automotive_disallowed_expenses_rate_automotive_user","access.automotive.disallowed.expenses.rate.automotive.user","model_automotive_disallowed_expenses_rate","automotive.automotive_group_user",1,0,0,0

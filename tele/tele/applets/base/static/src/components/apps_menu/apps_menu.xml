@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<templates>
+    <t t-inherit="web.NavBar.AppsMenu" t-inherit-mode="extension" owl="1">
+        <xpath expr="//Dropdown" position="replace">
+            <!-- Same hotkey as in EE -->
+            <AppsMenu
+                hotkey="'a'"
+                title="'Home Menu'"
+                manualOnly="true"
+                class="o_navbar_apps_menu"
+            >
+              <t t-set-slot="toggler">
+                  <i class="fa fa-th-large" >
+                    <svg viewBox="64 64 896 896" focusable="false" data-icon="menu-fold" width="1em" height="1em" fill="currentColor"><path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 000 13.8z"></path></svg>
+                  </i>
+              </t>
+              <t t-transition="o_notification_fade">                
+                <AppsMenuSearchBar />
+                <div class="main_sidebar_icon">
+                    <MenuItem
+                            t-foreach="apps"
+                            t-as="app"
+                            t-key="app.id"
+                            class="o_app"
+                            t-att-class="{ o_dropdown_active: menuService.getCurrentApp() === app }"
+                            payload="app"
+                        >
+                    <a t-att-href="getMenuItemHref(app)">
+                        <img
+                                    class="o-app-icon"
+                                    draggable="false"
+                                    t-attf-src="data:image/png;base64,{{app.webIconData}}"
+                                />
+                        <div t-esc="app.name" />
+                    </a>
+                    </MenuItem>
+                </div>
+              </t>
+            </AppsMenu>
+        </xpath>
+    </t>
+    <!-- Search bar -->
+    <t t-name="base.AppsMenuSearchResults" owl="1"> 
+        <div
+            class="search-container"
+            t-att-class="state.results.length ? 'has-results' : ''"
+        >
+            <div class="search-input">
+                    <span class="fa fa-search search-icon" />
+                    <input
+                    type="search"
+                    t-ref="SearchBarInput"
+                    t-on-input="_searchMenus"
+                    t-on-keydown="_onKeyDown"
+                    autocomplete="off"
+                    placeholder="Search menus..."
+                    class="form-control"
+                />
+            </div>
+            <div t-if="state.results.length" class="search-results">
+                <t t-foreach="state.results" t-as="result">
+                    <t t-set="menu" t-value="_menuInfo(result)" />
+                    <a
+                        t-attf-class="search-result {{result_index == state.offset ? 'highlight' : ''}}"
+                        t-att-style="menu.webIconData ? &quot;background-image:url('data:image/png;base64,&quot; + menu.webIconData + &quot;')&quot; : ''"
+                        t-attf-href="#menu_id={{menu.id}}&amp;action_id={{menu.actionID}}"
+                        t-att-data-menu-id="menu.id"
+                        t-att-data-action-id="menu.actionID"
+                        draggable="false"
+                        t-esc="result"
+                    />
+                </t>
+            </div>
+        </div>
+    </t>
+    <t t-inherit="web.Dropdown" t-inherit-mode="extension" owl="1">
+        <xpath expr="//div[hasclass('dropdown-menu')]" position="attributes">
+            <attribute name="t-transition">fade</attribute>
+        </xpath>
+    </t>
+    
+    <t t-inherit="web.NavBar" t-inherit-mode="extension">
+        <xpath expr="//t[@t-call='web.NavBar.AppsMenu']" position="before">
+            <div class="main_sidebar_user_menu">
+                <t t-foreach="systrayItems" t-as="item" t-key="item_index">
+                    <NotUpdatable>
+                        <ErrorHandler onError="error => handleItemError(error, item)">
+                            <t t-component="item.Component" t-props="item.props" />
+                        </ErrorHandler>
+                    </NotUpdatable>
+                </t>
+            </div>
+        </xpath>
+    </t>  
+
+    <t t-inherit="web.NavBar" t-inherit-mode="extension" owl="1">
+        <xpath expr="//nav[hasclass('o_main_navbar')]" position="after">
+            <div class="sidebar">
+                <ul class="sidebar_menu">
+                    <div class="o_menu_systray user_profile" role="menu">
+                        <t t-foreach="systrayItems" t-as="item" t-key="item_index">
+                            <NotUpdatable>
+                                <ErrorHandler onError="error => handleItemError(error, item)">
+                                    <t t-component="item.Component" t-props="item.props" />
+                                </ErrorHandler>
+                            </NotUpdatable>
+                        </t>
+                    </div>
+                    <t t-foreach="menuService.getApps()" t-as="app">
+                        <li>
+                            <a role="menuitem" t-att-class="{ focus: menuService.getCurrentApp() === app }" t-attf-href="#menu_id={{app.id}}" class="nav-link">
+                                <img class="sidebar_img" t-attf-src="data:image/png;base64,{{app.webIconData}}" />
+                                <span class="a_app_menu_title">
+                                    <t t-esc="app.name" />
+                                </span>
+                            </a>                             
+                        </li>     
+                        <!-- Current App Sections -->
+                        <!-- <t t-if="currentAppSections.length and !env.isSmall" t-call="web.NavBar.SectionsMenu">
+                            <t t-set="sections" t-value="currentAppSections" />
+                        </t>                    -->
+                    </t>
+                    
+                </ul>
+            </div>
+        </xpath>
+    </t>
+</templates>
